@@ -1,0 +1,34 @@
+line_length:
+- 250 # warning
+- 300 # error
+identifier_name:
+ allowed_symbols: "_"
+ min_length: 2
+ max_length:
+  warning: 90
+  error: 1000
+disabled_rules:
+- cyclomatic_complexity
+- colon
+- comma
+- control_statement
+- function_parameter_count
+- trailing_whitespace
+excluded:
+- Pods
+- AccountApp/Application/AppDelegate.swift
+- AccountApp/Application/SceneDelegate.swift
+custom_rules:
+    open_iboutlets:
+        included: ".*.swift"
+        name: "IBOutlet opening"
+        regex: '@IBOutlet ?(weak){0,1} var'
+        message: "IBOutlet should be private"
+        severity: error
+    
+    open_ibaction:
+        included: ".*.swift"
+        name: "IBAction opening"
+        regex: '@IBAction func'
+        message: "IBAction should be private"
+        severity: error 

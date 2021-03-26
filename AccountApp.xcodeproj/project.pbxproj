@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6F6FEBF953F2DB26B02037D5 /* Pods_AccountApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0502EE744CB9E9E26590DBA4 /* Pods_AccountApp.framework */; };
 		CE4514B9260DF1D40069CB6D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4514B8260DF1D40069CB6D /* AppDelegate.swift */; };
 		CE4514BB260DF1D40069CB6D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4514BA260DF1D40069CB6D /* SceneDelegate.swift */; };
 		CE4514BD260DF1D40069CB6D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4514BC260DF1D40069CB6D /* ViewController.swift */; };
@@ -17,6 +18,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0502EE744CB9E9E26590DBA4 /* Pods_AccountApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AccountApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2B337A2260642194A181D366 /* Pods-AccountApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AccountApp.debug.xcconfig"; path = "Target Support Files/Pods-AccountApp/Pods-AccountApp.debug.xcconfig"; sourceTree = "<group>"; };
+		581C8B406315EA81E6D31390 /* Pods-AccountApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AccountApp.release.xcconfig"; path = "Target Support Files/Pods-AccountApp/Pods-AccountApp.release.xcconfig"; sourceTree = "<group>"; };
 		CE4514B5260DF1D40069CB6D /* AccountApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AccountApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE4514B8260DF1D40069CB6D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE4514BA260DF1D40069CB6D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -33,17 +37,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6F6FEBF953F2DB26B02037D5 /* Pods_AccountApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0A60085C0CF9098343362313 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2B337A2260642194A181D366 /* Pods-AccountApp.debug.xcconfig */,
+				581C8B406315EA81E6D31390 /* Pods-AccountApp.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		779F9B7F1BE008107749426A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0502EE744CB9E9E26590DBA4 /* Pods_AccountApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		CE4514AC260DF1D40069CB6D = {
 			isa = PBXGroup;
 			children = (
 				CE4514B7260DF1D40069CB6D /* AccountApp */,
 				CE4514B6260DF1D40069CB6D /* Products */,
+				0A60085C0CF9098343362313 /* Pods */,
+				779F9B7F1BE008107749426A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,8 +82,7 @@
 		CE4514B7260DF1D40069CB6D /* AccountApp */ = {
 			isa = PBXGroup;
 			children = (
-				CE4514B8260DF1D40069CB6D /* AppDelegate.swift */,
-				CE4514BA260DF1D40069CB6D /* SceneDelegate.swift */,
+				CE45154E260E11F90069CB6D /* Application */,
 				CE4514BC260DF1D40069CB6D /* ViewController.swift */,
 				CE4514BE260DF1D40069CB6D /* Main.storyboard */,
 				CE4514C4260DF1D70069CB6D /* Assets.xcassets */,
@@ -70,6 +93,15 @@
 			path = AccountApp;
 			sourceTree = "<group>";
 		};
+		CE45154E260E11F90069CB6D /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				CE4514B8260DF1D40069CB6D /* AppDelegate.swift */,
+				CE4514BA260DF1D40069CB6D /* SceneDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -77,9 +109,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CE4514CC260DF1D70069CB6D /* Build configuration list for PBXNativeTarget "AccountApp" */;
 			buildPhases = (
+				AB2AA23768C57C7181490FE8 /* [CP] Check Pods Manifest.lock */,
+				CE451534260E09C50069CB6D /* Run Script */,
 				CE4514B1260DF1D40069CB6D /* Sources */,
 				CE4514B2260DF1D40069CB6D /* Frameworks */,
 				CE4514B3260DF1D40069CB6D /* Resources */,
+				A6358DFF97DBCE5BF3BC6331 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -134,6 +169,66 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A6358DFF97DBCE5BF3BC6331 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AccountApp/Pods-AccountApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AccountApp/Pods-AccountApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AccountApp/Pods-AccountApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AB2AA23768C57C7181490FE8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AccountApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CE451534260E09C50069CB6D /* Run Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "${PODS_ROOT}/SwiftLint/swiftlint\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		CE4514B1260DF1D40069CB6D /* Sources */ = {
@@ -287,12 +382,14 @@
 		};
 		CE4514CD260DF1D70069CB6D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2B337A2260642194A181D366 /* Pods-AccountApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4Y2TMA558G;
 				INFOPLIST_FILE = AccountApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -300,18 +397,20 @@
 				PRODUCT_BUNDLE_IDENTIFIER = by.vironit.mikovoz.AccountApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		CE4514CE260DF1D70069CB6D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 581C8B406315EA81E6D31390 /* Pods-AccountApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4Y2TMA558G;
 				INFOPLIST_FILE = AccountApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -319,7 +418,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = by.vironit.mikovoz.AccountApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
