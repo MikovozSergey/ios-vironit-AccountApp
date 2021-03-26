@@ -1,0 +1,38 @@
+PODS:
+  - KeychainSwift (19.0.0)
+  - RxCocoa (6.1.0):
+    - RxRelay (= 6.1.0)
+    - RxSwift (= 6.1.0)
+  - RxRelay (6.1.0):
+    - RxSwift (= 6.1.0)
+  - RxSwift (6.1.0)
+  - SkyFloatingLabelTextField (4.0.0)
+  - SwiftLint (0.42.0)
+
+DEPENDENCIES:
+  - KeychainSwift (= 19.0)
+  - RxCocoa (= 6.1.0)
+  - RxSwift (= 6.1.0)
+  - SkyFloatingLabelTextField (= 4.0)
+  - SwiftLint (= 0.42.0)
+
+SPEC REPOS:
+  trunk:
+    - KeychainSwift
+    - RxCocoa
+    - RxRelay
+    - RxSwift
+    - SkyFloatingLabelTextField
+    - SwiftLint
+
+SPEC CHECKSUMS:
+  KeychainSwift: a06190cf933ad46b1e0abc3d77d29c06331715c7
+  RxCocoa: 5c51f02d562cbd94629f6c26cf0c80fe4ab8d343
+  RxRelay: 483e1a19fad961b41f0b0c0bee506f46c1ae14fe
+  RxSwift: a834e5c538e89eca0cae86f403f4fbf0336786ce
+  SkyFloatingLabelTextField: 79ddc40e4ad59707fedbb48d605417aee48bb78a
+  SwiftLint: 4fa9579c63416865179bc416f0a92d55f009600d
+
+PODFILE CHECKSUM: 13f7fed440cd52e82dbc612eea21441f2f90321f
+
+COCOAPODS: 1.10.0
