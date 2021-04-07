@@ -1,10 +1,3 @@
-//
-//  SceneDelegate.swift
-//  AccountApp
-//
-//  Created by User on 3/26/21.
-//
-
 import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
