@@ -14,6 +14,12 @@
 		CE4514C3260DF1D40069CB6D /* AccountApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CE4514C1260DF1D40069CB6D /* AccountApp.xcdatamodeld */; };
 		CE4514C5260DF1D70069CB6D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE4514C4260DF1D70069CB6D /* Assets.xcassets */; };
 		CE4514C8260DF1D70069CB6D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE4514C6260DF1D70069CB6D /* LaunchScreen.storyboard */; };
+		CE47740E261F31CF00A6DD5B /* ListOfAccountsScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE47740D261F31CF00A6DD5B /* ListOfAccountsScreen.storyboard */; };
+		CE477411261F328600A6DD5B /* SettingsScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE477410261F328600A6DD5B /* SettingsScreen.storyboard */; };
+		CE477414261F337200A6DD5B /* ListOfAccountsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE477413261F337200A6DD5B /* ListOfAccountsViewController.swift */; };
+		CE477417261F33AB00A6DD5B /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE477416261F33AB00A6DD5B /* SettingsViewController.swift */; };
+		CE477431261F387D00A6DD5B /* CustomViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE47742F261F387D00A6DD5B /* CustomViewCell.swift */; };
+		CE477432261F387D00A6DD5B /* CustomViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE477430261F387D00A6DD5B /* CustomViewCell.xib */; };
 		CE47F435261DE19B005F1C69 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = CE47F434261DE19B005F1C69 /* .swiftlint.yml */; };
 		CE47F43E261DE374005F1C69 /* WelcomeScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE47F43D261DE374005F1C69 /* WelcomeScreenVC.swift */; };
 		CE47F447261DE3A6005F1C69 /* MainScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE47F446261DE3A6005F1C69 /* MainScreen.storyboard */; };
@@ -35,6 +41,12 @@
 		CE4514C4260DF1D70069CB6D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE4514C7260DF1D70069CB6D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE4514C9260DF1D70069CB6D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE47740D261F31CF00A6DD5B /* ListOfAccountsScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ListOfAccountsScreen.storyboard; sourceTree = "<group>"; };
+		CE477410261F328600A6DD5B /* SettingsScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingsScreen.storyboard; sourceTree = "<group>"; };
+		CE477413261F337200A6DD5B /* ListOfAccountsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOfAccountsViewController.swift; sourceTree = "<group>"; };
+		CE477416261F33AB00A6DD5B /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		CE47742F261F387D00A6DD5B /* CustomViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewCell.swift; sourceTree = "<group>"; };
+		CE477430261F387D00A6DD5B /* CustomViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomViewCell.xib; sourceTree = "<group>"; };
 		CE47F434261DE19B005F1C69 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		CE47F43D261DE374005F1C69 /* WelcomeScreenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeScreenVC.swift; sourceTree = "<group>"; };
 		CE47F446261DE3A6005F1C69 /* MainScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainScreen.storyboard; sourceTree = "<group>"; };
@@ -117,6 +129,24 @@
 			path = Application;
 			sourceTree = "<group>";
 		};
+		CE47741B261F33D100A6DD5B /* ListOfAccountsScreen */ = {
+			isa = PBXGroup;
+			children = (
+				CE47740D261F31CF00A6DD5B /* ListOfAccountsScreen.storyboard */,
+				CE477413261F337200A6DD5B /* ListOfAccountsViewController.swift */,
+			);
+			path = ListOfAccountsScreen;
+			sourceTree = "<group>";
+		};
+		CE47741C261F341700A6DD5B /* SettingsScreen */ = {
+			isa = PBXGroup;
+			children = (
+				CE477416261F33AB00A6DD5B /* SettingsViewController.swift */,
+				CE477410261F328600A6DD5B /* SettingsScreen.storyboard */,
+			);
+			path = SettingsScreen;
+			sourceTree = "<group>";
+		};
 		CE47F42C261DDFAC005F1C69 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -169,6 +199,8 @@
 		CE47F439261DE1F4005F1C69 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				CE47742F261F387D00A6DD5B /* CustomViewCell.swift */,
+				CE477430261F387D00A6DD5B /* CustomViewCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -176,6 +208,8 @@
 		CE47F43A261DE222005F1C69 /* MainScreen */ = {
 			isa = PBXGroup;
 			children = (
+				CE47741C261F341700A6DD5B /* SettingsScreen */,
+				CE47741B261F33D100A6DD5B /* ListOfAccountsScreen */,
 				CE47F446261DE3A6005F1C69 /* MainScreen.storyboard */,
 				CE4514BC260DF1D40069CB6D /* MainScreenVC.swift */,
 			);
@@ -261,10 +295,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE47F44A261DE3B0005F1C69 /* Main.storyboard in Resources */,
+				CE477411261F328600A6DD5B /* SettingsScreen.storyboard in Resources */,
 				CE47F435261DE19B005F1C69 /* .swiftlint.yml in Resources */,
 				CE4514C8260DF1D70069CB6D /* LaunchScreen.storyboard in Resources */,
+				CE477432261F387D00A6DD5B /* CustomViewCell.xib in Resources */,
 				CE47F475261DF19C005F1C69 /* RegistrationScreen.storyboard in Resources */,
 				CE4514C5260DF1D70069CB6D /* Assets.xcassets in Resources */,
+				CE47740E261F31CF00A6DD5B /* ListOfAccountsScreen.storyboard in Resources */,
 				CE47F447261DE3A6005F1C69 /* MainScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -337,12 +374,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE47F472261DF129005F1C69 /* RegistrationScreenVC.swift in Sources */,
+				CE477431261F387D00A6DD5B /* CustomViewCell.swift in Sources */,
 				CE4514BD260DF1D40069CB6D /* MainScreenVC.swift in Sources */,
 				CE4514C3260DF1D40069CB6D /* AccountApp.xcdatamodeld in Sources */,
+				CE477414261F337200A6DD5B /* ListOfAccountsViewController.swift in Sources */,
 				CE47F43E261DE374005F1C69 /* WelcomeScreenVC.swift in Sources */,
 				CE4514B9260DF1D40069CB6D /* AppDelegate.swift in Sources */,
 				CE47F44D261DE47F005F1C69 /* UserModel.swift in Sources */,
 				CE4514BB260DF1D40069CB6D /* SceneDelegate.swift in Sources */,
+				CE477417261F33AB00A6DD5B /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

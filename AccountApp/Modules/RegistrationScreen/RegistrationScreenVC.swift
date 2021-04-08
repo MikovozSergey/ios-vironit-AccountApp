@@ -17,7 +17,7 @@ class RegistrationViewController: UIViewController {
         
 //        self.navigationController?.navigationBar.topItem?.backBarButtonItem?.title = ""
 //        self.navigationController?.navigationBar.topItem?.backBarButtonItem?.tintColor = .white
-        navigationController?.view.tintColor = UIColor.white
+        navigationController?.view.tintColor = UIColor(red: 255/255, green: 215/255, blue: 0/255, alpha: 1)
 
     }
     

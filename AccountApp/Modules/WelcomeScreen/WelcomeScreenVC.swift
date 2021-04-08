@@ -21,7 +21,7 @@ class WelcomeViewController: UIViewController {
     
     @IBAction private func pressedLogInButton(_ sender: Any) {
         let storyboard = UIStoryboard(name: "MainScreen", bundle: nil)
-        guard let viewController = storyboard.instantiateViewController(identifier: "MainViewController") as? RegistrationViewController else { return }
+        guard let viewController = storyboard.instantiateViewController(identifier: "MainViewController") as? MainViewController else { return }
         navigationController?.pushViewController(viewController, animated: true)
     }
     @IBAction private func pressedRegistrationButton(_ sender: Any) {
