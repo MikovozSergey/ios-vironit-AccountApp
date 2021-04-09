@@ -10,7 +10,6 @@ final class CustomViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        
     }
     
     // MARK: - Open methods

@@ -29,7 +29,7 @@ extension ListOfAccountsViewController: UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.textColor = UIColor(red: 255/255, green: 215/255, blue: 0/255, alpha: 1)
+        cell.textLabel?.textColor = Colors.gold
         cell.textLabel?.text = myArray[indexPath.row]
         return cell
     }
