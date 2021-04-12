@@ -21,6 +21,15 @@ class SettingsViewController: UIViewController {
         }
     }
     
+    @IBAction private func tappedChangeLoginAndPassButton(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "ChangeProfileScreen", bundle: nil)
+        guard let viewController = storyboard.instantiateViewController(identifier: "ChangeProfileViewController") as? ChangeProfileViewController else { return }
+        navigationController?.pushViewController(viewController, animated: true)
+    }
+    
+    @IBAction private func tappedLogOutButton(_ sender: Any) {
+    }
+    
     // MARK: - Lifecycle
 
     override func viewDidLoad() {

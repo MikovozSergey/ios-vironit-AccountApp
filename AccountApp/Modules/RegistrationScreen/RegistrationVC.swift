@@ -3,7 +3,7 @@ import SkyFloatingLabelTextField
 import KeychainSwift
 import UIKit
 
-class RegistrationViewController: UIViewController, UITextFieldDelegate {
+class RegistrationViewController: UIViewController {
     
     // MARK: - IBOutlets
     
@@ -139,7 +139,7 @@ class RegistrationViewController: UIViewController, UITextFieldDelegate {
 
 // MARK: - UITextFieldDelegate
 
-extension MainViewController: UITextFieldDelegate {
+extension RegistrationViewController: UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         return true
     }

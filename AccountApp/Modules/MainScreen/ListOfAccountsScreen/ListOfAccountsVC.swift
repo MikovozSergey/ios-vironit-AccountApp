@@ -1,3 +1,4 @@
+import CoreData
 import UIKit
 
 class ListOfAccountsViewController: UIViewController {
@@ -6,6 +7,7 @@ class ListOfAccountsViewController: UIViewController {
     
     @IBOutlet private weak var tableView: UITableView!
     
+    // MARK: - Variables
     let myArray = ["Prank", "Liker", "Mem"]
     
     // MARK: - Lifecycle
@@ -18,6 +20,9 @@ class ListOfAccountsViewController: UIViewController {
         
         tableView.tableFooterView = UIView()
     }
+    
+    // MARK: - CoreData methods
+
 }
 
 // MARK: - Delegate / DataSource methods
