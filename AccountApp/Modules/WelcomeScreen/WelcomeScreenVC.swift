@@ -1,3 +1,5 @@
+import CoreData
+import KeychainSwift
 import UIKit
 
 class WelcomeViewController: UIViewController {
@@ -20,9 +22,9 @@ class WelcomeViewController: UIViewController {
     // MARK: - IBActions
     
     @IBAction private func pressedLogInButton(_ sender: Any) {
-        let storyboard = UIStoryboard(name: "MainScreen", bundle: nil)
-        guard let viewController = storyboard.instantiateViewController(identifier: "MainViewController") as? MainViewController else { return }
-        navigationController?.pushViewController(viewController, animated: true)
+        let storyboard = UIStoryboard(name: "LogInScreen", bundle: nil)
+        guard let vc = storyboard.instantiateViewController(identifier: "LogInViewController") as? LogInViewController else { return }
+        navigationController?.pushViewController(vc, animated: true)
     }
     @IBAction private func pressedRegistrationButton(_ sender: Any) {
         let storyboard = UIStoryboard(name: "RegistrationScreen", bundle: nil)
@@ -42,5 +44,4 @@ class WelcomeViewController: UIViewController {
         // registration button
         registrationButton.setTitle("Вы хотите зарегистрироваться?", for: .normal)
     }
-    
 }

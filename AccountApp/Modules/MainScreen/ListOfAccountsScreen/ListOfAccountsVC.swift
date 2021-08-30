@@ -38,5 +38,4 @@ extension ListOfAccountsViewController: UITableViewDelegate, UITableViewDataSour
         cell.textLabel?.text = myArray[indexPath.row]
         return cell
     }
-    
 }

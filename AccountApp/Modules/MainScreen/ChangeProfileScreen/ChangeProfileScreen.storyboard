@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vye-0s-U07">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -107,9 +107,6 @@
                             <constraint firstItem="6bu-mP-yOd" firstAttribute="centerX" secondItem="5XM-7V-siA" secondAttribute="centerX" id="h8N-tD-bte"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="LY5-OG-McL">
-                        <barButtonItem key="backBarButtonItem" title="&lt;" id="Gx1-CF-aNr"/>
-                    </navigationItem>
                     <connections>
                         <outlet property="loginTextField" destination="9a6-bs-kZR" id="jhN-e1-QPb"/>
                         <outlet property="passwordTextField" destination="D5V-B3-wo4" id="F47-uZ-D01"/>
@@ -123,10 +120,10 @@
     </scenes>
     <designables>
         <designable name="9a6-bs-kZR">
-            <size key="intrinsicContentSize" width="250" height="39.220703125"/>
+            <size key="intrinsicContentSize" width="32" height="34"/>
         </designable>
         <designable name="D5V-B3-wo4">
-            <size key="intrinsicContentSize" width="250" height="39.220703125"/>
+            <size key="intrinsicContentSize" width="32" height="34"/>
         </designable>
     </designables>
     <resources>

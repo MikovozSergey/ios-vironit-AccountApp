@@ -28,6 +28,7 @@ class SettingsViewController: UIViewController {
     }
     
     @IBAction private func tappedLogOutButton(_ sender: Any) {
+        navigationController?.popToRootViewController(animated: true)
     }
     
     // MARK: - Lifecycle

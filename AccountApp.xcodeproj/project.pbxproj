@@ -31,6 +31,9 @@
 		CE48AEC7262045EA0076B311 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE48AEC6262045EA0076B311 /* StringExtensions.swift */; };
 		CE48AED326207FC60076B311 /* ChangeProfileScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE48AED226207FC60076B311 /* ChangeProfileScreen.storyboard */; };
 		CE48AED626207FEF0076B311 /* ChangeProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE48AED526207FEF0076B311 /* ChangeProfileVC.swift */; };
+		CE63301126DCF56C00E8F311 /* LogInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE63301026DCF56C00E8F311 /* LogInVC.swift */; };
+		CE63301326DCF57E00E8F311 /* LogInScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE63301226DCF57E00E8F311 /* LogInScreen.storyboard */; };
+		CE63301526DCFD7200E8F311 /* CoreDataDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE63301426DCFD7200E8F311 /* CoreDataDB.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +65,9 @@
 		CE48AEC6262045EA0076B311 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		CE48AED226207FC60076B311 /* ChangeProfileScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChangeProfileScreen.storyboard; sourceTree = "<group>"; };
 		CE48AED526207FEF0076B311 /* ChangeProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeProfileVC.swift; sourceTree = "<group>"; };
+		CE63301026DCF56C00E8F311 /* LogInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInVC.swift; sourceTree = "<group>"; };
+		CE63301226DCF57E00E8F311 /* LogInScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LogInScreen.storyboard; sourceTree = "<group>"; };
+		CE63301426DCFD7200E8F311 /* CoreDataDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataDB.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,7 +172,6 @@
 		CE47F42D261DDFC2005F1C69 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				CE47F46B261DF0DD005F1C69 /* RegistrationScreen */,
 				CE47F43C261DE33D005F1C69 /* WelcomeScreen */,
 				CE47F43A261DE222005F1C69 /* MainScreen */,
 				CE4514C6260DF1D70069CB6D /* LaunchScreen.storyboard */,
@@ -193,6 +198,7 @@
 			isa = PBXGroup;
 			children = (
 				CE4514C1260DF1D40069CB6D /* AccountApp.xcdatamodeld */,
+				CE63301426DCFD7200E8F311 /* CoreDataDB.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -230,6 +236,8 @@
 		CE47F43C261DE33D005F1C69 /* WelcomeScreen */ = {
 			isa = PBXGroup;
 			children = (
+				CE63300F26DCF54C00E8F311 /* LogInScreen */,
+				CE47F46B261DF0DD005F1C69 /* RegistrationScreen */,
 				CE47F43D261DE374005F1C69 /* WelcomeScreenVC.swift */,
 				CE47F449261DE3B0005F1C69 /* Main.storyboard */,
 			);
@@ -252,6 +260,15 @@
 				CE48AED526207FEF0076B311 /* ChangeProfileVC.swift */,
 			);
 			path = ChangeProfileScreen;
+			sourceTree = "<group>";
+		};
+		CE63300F26DCF54C00E8F311 /* LogInScreen */ = {
+			isa = PBXGroup;
+			children = (
+				CE63301026DCF56C00E8F311 /* LogInVC.swift */,
+				CE63301226DCF57E00E8F311 /* LogInScreen.storyboard */,
+			);
+			path = LogInScreen;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -316,6 +333,7 @@
 			files = (
 				CE47F44A261DE3B0005F1C69 /* Main.storyboard in Resources */,
 				CE477411261F328600A6DD5B /* SettingsScreen.storyboard in Resources */,
+				CE63301326DCF57E00E8F311 /* LogInScreen.storyboard in Resources */,
 				CE47F435261DE19B005F1C69 /* .swiftlint.yml in Resources */,
 				CE4514C8260DF1D70069CB6D /* LaunchScreen.storyboard in Resources */,
 				CE477432261F387D00A6DD5B /* CustomViewCell.xib in Resources */,
@@ -398,12 +416,14 @@
 				CE48AEC7262045EA0076B311 /* StringExtensions.swift in Sources */,
 				CE47F472261DF129005F1C69 /* RegistrationVC.swift in Sources */,
 				CE477442261F526F00A6DD5B /* Constants.swift in Sources */,
+				CE63301526DCFD7200E8F311 /* CoreDataDB.swift in Sources */,
 				CE477431261F387D00A6DD5B /* CustomViewCell.swift in Sources */,
 				CE4514BD260DF1D40069CB6D /* MainVC.swift in Sources */,
 				CE4514C3260DF1D40069CB6D /* AccountApp.xcdatamodeld in Sources */,
 				CE477414261F337200A6DD5B /* ListOfAccountsVC.swift in Sources */,
 				CE47F43E261DE374005F1C69 /* WelcomeScreenVC.swift in Sources */,
 				CE4514B9260DF1D40069CB6D /* AppDelegate.swift in Sources */,
+				CE63301126DCF56C00E8F311 /* LogInVC.swift in Sources */,
 				CE47F44D261DE47F005F1C69 /* UserModel.swift in Sources */,
 				CE4514BB260DF1D40069CB6D /* SceneDelegate.swift in Sources */,
 				CE477417261F33AB00A6DD5B /* SettingsVC.swift in Sources */,
