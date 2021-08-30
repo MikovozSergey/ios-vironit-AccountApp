@@ -13,11 +13,8 @@ class RegistrationViewController: UIViewController {
     
     // MARK: - Variables
     
-    private let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    private let dataBase = DataBase()
     private let keychain = KeychainSwift()
-    private var context: NSManagedObjectContext!
-    private lazy var regexForLogin = "^(?=.*[а-я])(?=.*[А-Я])(?=.*\\d)(?=.*[$@$!%*?&#])[А-Яа-я\\d$@$!%*?&#]{3,}$"
-    private lazy var regexForPassword = "^(?=.*[а-я])(?=.*[А-Я])(?=.*\\d)(?=.*[$@$!%*?&#])[А-Яа-я\\d$@$!%*?&#]{8,}$"
     
     // MARK: - IBActions
     
@@ -32,15 +29,18 @@ class RegistrationViewController: UIViewController {
             passwordTextField.title = "Ваш пароль"
         }
     }
-    
+  
     @IBAction private func tappedSaveButton(_ sender: Any) {
         guard let login = loginTextField.text, let password = passwordTextField.text else { return }
         if !login.isEmpty && !password.isEmpty {
             if isValidLogin(login: login) && isValidPassword(password: password) {
                 setupStyleForTestFields(title: "Ок" , titleColor: .green)
-                keychain.set(password, forKey: "password")
-                openDatabse()
-                showAlert(title: "Поздравляем", message: "Регистрация прошла успешно!")
+                keychain.set(password, forKey: login)
+                dataBase.openDatabse(login: login)
+                timeOfStartSession()
+                let storyboard = UIStoryboard(name: "MainScreen", bundle: nil)
+                guard let vc = storyboard.instantiateViewController(identifier: "MainViewController") as? MainViewController else { return }
+                navigationController?.pushViewController(vc, animated: true)
             } else {
                 setupStyleForTestFields(title: "Неверно", titleColor: .red)
                 showAlert(title: "Ошибка", message: "Неверный логин или пароль. \nЛогин должен содержать: минимум 3 символа, минимум 1 букву и 1 число. \nПароль должен содержать: минимум 8 символов, 1 большую букву, 1 маленькую букву, 1 цифру и 1 специальный символ")
@@ -99,40 +99,21 @@ class RegistrationViewController: UIViewController {
         passwordTextField.titleColor = titleColor
     }
     
-    // MARK: - CoreData methods
+    private func timeOfStartSession() -> String {
+        let dateFormatter : DateFormatter = DateFormatter()
+         dateFormatter.dateFormat = "HH:mm"
+        let date = Date()
+        let dateString = dateFormatter.string(from: date)
+        _ = date.timeIntervalSince1970
+        return dateString
+    }
     
-    func openDatabse() {
-        context = appDelegate.persistentContainer.viewContext
-        let entity = NSEntityDescription.entity(forEntityName: "Account", in: context)
-        let newUser = NSManagedObject(entity: entity!, insertInto: context)
-        saveData(accountObj: newUser)
-    }
+    private func saveStartOfSession(login: String) {
+        let defaults = UserDefaults.standard
+        defaults.set(timeOfStartSession(), forKey: login)
 
-    func saveData(accountObj: NSManagedObject) {
-        accountObj.setValue(loginTextField.text, forKey: "login")
-
-        print("Storing Data..")
-        do {
-            try context.save()
-        } catch {
-            print("Storing data Failed")
-        }
-
-        fetchData()
-    }
-
-    func fetchData() {
-        print("Fetching Data..")
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Account")
-        request.returnsObjectsAsFaults = false
-        do {
-            let result = try context.fetch(request)
-            for data in result as! [NSManagedObject] {
-                guard let login = data.value(forKey: "login") as? String else { return }
-                print("User name is - \(login)")
-            }
-        } catch {
-            print("Fetching data Failed")
+        if let timeOfStart = defaults.string(forKey: login) {
+            print(timeOfStart)
         }
     }
 }
