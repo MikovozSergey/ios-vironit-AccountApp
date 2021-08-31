@@ -14,15 +14,14 @@ final public class DataBase {
     
     func openDatabse(login: String) {
       context = appDelegate.persistentContainer.viewContext
-        guard let context = context else { return }
         let entity = NSEntityDescription.entity(forEntityName: Keys.entityKey, in: context)
         let newUser = NSManagedObject(entity: entity!, insertInto: context)
         saveData(accountObj: newUser, login: login)
     }
     
     func saveData(accountObj: NSManagedObject, login: String) {
+        context = appDelegate.persistentContainer.viewContext
         accountObj.setValue(login, forKey: Keys.loginKey)
-        guard let context = context else { return }
         print("Storing Data..")
         do {
             try context.save()
@@ -38,10 +37,10 @@ final public class DataBase {
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: Keys.entityKey)
         request.returnsObjectsAsFaults = false
         do {
+            context = appDelegate.persistentContainer.viewContext
             let result = try context.fetch(request)
             for data in result as! [NSManagedObject] {
                 guard let login = data.value(forKey: Keys.loginKey) as? String else { return }
-                print(login)
                 arrayOfLogins.append(login)
             }
         } catch {

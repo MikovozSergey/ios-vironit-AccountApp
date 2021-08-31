@@ -8,16 +8,16 @@ class ListOfAccountsViewController: UIViewController {
     @IBOutlet private weak var tableView: UITableView!
     
     // MARK: - Variables
-    let myArray = ["Prank", "Liker", "Mem"]
+    
+    private let dataBase = DataBase()
     
     // MARK: - Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        dataBase.fetchData()
         tableView.delegate = self
         tableView.dataSource = self
-        
         tableView.tableFooterView = UIView()
     }
     
@@ -29,13 +29,13 @@ class ListOfAccountsViewController: UIViewController {
 
 extension ListOfAccountsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return myArray.count
+        return dataBase.arrayOfLogins.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         cell.textLabel?.textColor = Colors.gold
-        cell.textLabel?.text = myArray[indexPath.row]
+        cell.textLabel?.text = dataBase.arrayOfLogins[indexPath.row]
         return cell
     }
 }

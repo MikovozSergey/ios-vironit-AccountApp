@@ -34,6 +34,7 @@
 		CE63301126DCF56C00E8F311 /* LogInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE63301026DCF56C00E8F311 /* LogInVC.swift */; };
 		CE63301326DCF57E00E8F311 /* LogInScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE63301226DCF57E00E8F311 /* LogInScreen.storyboard */; };
 		CE63301526DCFD7200E8F311 /* CoreDataDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE63301426DCFD7200E8F311 /* CoreDataDB.swift */; };
+		CED9CF2326DE142900DC239B /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9CF2226DE142900DC239B /* SessionManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +69,7 @@
 		CE63301026DCF56C00E8F311 /* LogInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInVC.swift; sourceTree = "<group>"; };
 		CE63301226DCF57E00E8F311 /* LogInScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LogInScreen.storyboard; sourceTree = "<group>"; };
 		CE63301426DCFD7200E8F311 /* CoreDataDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataDB.swift; sourceTree = "<group>"; };
+		CED9CF2226DE142900DC239B /* SessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -208,6 +210,7 @@
 			children = (
 				CE477441261F526F00A6DD5B /* Constants.swift */,
 				CE48AEC6262045EA0076B311 /* StringExtensions.swift */,
+				CED9CF2226DE142900DC239B /* SessionManager.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -426,6 +429,7 @@
 				CE63301126DCF56C00E8F311 /* LogInVC.swift in Sources */,
 				CE47F44D261DE47F005F1C69 /* UserModel.swift in Sources */,
 				CE4514BB260DF1D40069CB6D /* SceneDelegate.swift in Sources */,
+				CED9CF2326DE142900DC239B /* SessionManager.swift in Sources */,
 				CE477417261F33AB00A6DD5B /* SettingsVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
