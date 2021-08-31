@@ -47,7 +47,8 @@ class LogInViewController: UIViewController {
         
         loginTextField.delegate = self
         passwordTextField.delegate = self
-        
+        loginTextField.text = "TestUser1"
+        passwordTextField.text = "Qwerty1234!"
         setupUI()
     }
     

@@ -17,101 +17,38 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="XzC-Kb-7jJ">
-                                <rect key="frame" x="42" y="353" width="330" height="190"/>
-                                <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="KoO-qe-D8u">
-                                        <rect key="frame" x="0.0" y="0.0" width="330" height="30"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Изменить язык на английский?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0tv-bn-Jxt">
-                                                <rect key="frame" x="0.0" y="0.0" width="250" height="30"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="250" id="YCo-tY-HdO"/>
-                                                    <constraint firstAttribute="height" constant="30" id="voa-L9-hHT"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name="KohinoorBangla-Regular" family="Kohinoor Bangla" pointSize="16"/>
-                                                <color key="textColor" red="0.99991279840000002" green="1" blue="0.99988144639999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="qyL-Ff-yg9">
-                                                <rect key="frame" x="280" y="0.0" width="52" height="30"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="30" id="7Wy-ph-ZPD"/>
-                                                    <constraint firstAttribute="width" constant="50" id="olW-fF-dME"/>
-                                                </constraints>
-                                                <connections>
-                                                    <action selector="tappedOnSwitcher:" destination="AFk-Tf-PIU" eventType="touchUpInside" id="ygC-1P-var"/>
-                                                </connections>
-                                            </switch>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="330" id="mj8-cs-ci8"/>
-                                            <constraint firstAttribute="height" constant="30" id="sQt-wg-ArX"/>
-                                        </constraints>
-                                    </stackView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K9W-h0-5mw">
-                                        <rect key="frame" x="65" y="70" width="200" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="MVl-pr-E2C"/>
-                                            <constraint firstAttribute="width" constant="200" id="OKr-BD-Q1I"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="KohinoorBangla-Regular" family="Kohinoor Bangla" pointSize="16"/>
-                                        <state key="normal" title="Изменить логин и пароль">
-                                            <color key="titleColor" red="0.99991279840000002" green="1" blue="0.99988144639999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="tappedChangeLoginAndPassButton:" destination="AFk-Tf-PIU" eventType="touchUpInside" id="hwM-Bk-wnd"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CYT-iW-lfK">
-                                        <rect key="frame" x="65" y="140" width="200" height="50"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="200" id="5bI-OZ-llv"/>
-                                            <constraint firstAttribute="height" constant="50" id="cPv-vZ-Th2"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="KohinoorBangla-Semibold" family="Kohinoor Bangla" pointSize="17"/>
-                                        <state key="normal" title="Выйти">
-                                            <color key="titleColor" red="0.99991279840000002" green="1" blue="0.99988144639999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <integer key="value" value="10"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <action selector="tappedLogOutButton:" destination="AFk-Tf-PIU" eventType="touchUpInside" id="QjT-8Z-Mso"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jPc-wo-oUy">
+                                <rect key="frame" x="0.0" y="282.5" width="414" height="331"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="330" id="CEP-jY-nQO"/>
-                                    <constraint firstAttribute="height" constant="190" id="Dsi-Uc-EnL"/>
+                                    <constraint firstAttribute="width" constant="414" id="iHP-Tx-lr3"/>
+                                    <constraint firstAttribute="height" constant="331" id="yN3-W8-1JN"/>
                                 </constraints>
-                            </stackView>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="iPq-58-Kwx"/>
                         <color key="backgroundColor" systemColor="labelColor"/>
                         <constraints>
-                            <constraint firstItem="XzC-Kb-7jJ" firstAttribute="centerX" secondItem="gaK-kc-XIf" secondAttribute="centerX" id="C3y-9g-ofE"/>
-                            <constraint firstItem="XzC-Kb-7jJ" firstAttribute="centerY" secondItem="gaK-kc-XIf" secondAttribute="centerY" id="DTR-v5-UYA"/>
+                            <constraint firstItem="jPc-wo-oUy" firstAttribute="centerY" secondItem="gaK-kc-XIf" secondAttribute="centerY" id="M0M-42-Cww"/>
+                            <constraint firstItem="jPc-wo-oUy" firstAttribute="centerX" secondItem="gaK-kc-XIf" secondAttribute="centerX" id="PCE-Tg-UO7"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Настройки" id="i7y-y0-DKv"/>
                     <connections>
-                        <outlet property="changeLoginAndPassButton" destination="K9W-h0-5mw" id="HhZ-qb-nid"/>
-                        <outlet property="languageLabel" destination="0tv-bn-Jxt" id="tMX-Di-WwN"/>
-                        <outlet property="languageSwitch" destination="qyL-Ff-yg9" id="Z2I-Py-zSy"/>
-                        <outlet property="logOutButton" destination="CYT-iW-lfK" id="4Fv-Kt-CCA"/>
+                        <outlet property="tableView" destination="jPc-wo-oUy" id="XjR-e6-U9p"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K87-Wz-Fe1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="122" y="1047"/>
+            <point key="canvasLocation" x="121.73913043478262" y="1046.6517857142858"/>
         </scene>
     </scenes>
     <resources>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
     </resources>
 </document>

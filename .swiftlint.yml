@@ -17,6 +17,7 @@ disabled_rules:
 - function_parameter_count
 - trailing_whitespace
 - force_cast
+- identifier_name
 excluded:
 - Pods
 - Weather/Application/AppDelegate.swift

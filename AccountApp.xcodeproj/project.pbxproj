@@ -18,8 +18,8 @@
 		CE477411261F328600A6DD5B /* SettingsScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE477410261F328600A6DD5B /* SettingsScreen.storyboard */; };
 		CE477414261F337200A6DD5B /* ListOfAccountsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE477413261F337200A6DD5B /* ListOfAccountsVC.swift */; };
 		CE477417261F33AB00A6DD5B /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE477416261F33AB00A6DD5B /* SettingsVC.swift */; };
-		CE477431261F387D00A6DD5B /* CustomViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE47742F261F387D00A6DD5B /* CustomViewCell.swift */; };
-		CE477432261F387D00A6DD5B /* CustomViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE477430261F387D00A6DD5B /* CustomViewCell.xib */; };
+		CE477431261F387D00A6DD5B /* CustomViewForEditCredentialsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE47742F261F387D00A6DD5B /* CustomViewForEditCredentialsCell.swift */; };
+		CE477432261F387D00A6DD5B /* CustomViewForEditCredentialsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE477430261F387D00A6DD5B /* CustomViewForEditCredentialsCell.xib */; };
 		CE477442261F526F00A6DD5B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE477441261F526F00A6DD5B /* Constants.swift */; };
 		CE47F435261DE19B005F1C69 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = CE47F434261DE19B005F1C69 /* .swiftlint.yml */; };
 		CE47F43E261DE374005F1C69 /* WelcomeScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE47F43D261DE374005F1C69 /* WelcomeScreenVC.swift */; };
@@ -35,6 +35,8 @@
 		CE63301326DCF57E00E8F311 /* LogInScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE63301226DCF57E00E8F311 /* LogInScreen.storyboard */; };
 		CE63301526DCFD7200E8F311 /* CoreDataDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE63301426DCFD7200E8F311 /* CoreDataDB.swift */; };
 		CED9CF2326DE142900DC239B /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9CF2226DE142900DC239B /* SessionManager.swift */; };
+		CED9CF2526DE265D00DC239B /* LogOutViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9CF2426DE265D00DC239B /* LogOutViewCell.swift */; };
+		CED9CF2726DE266C00DC239B /* LogOutViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CED9CF2626DE266C00DC239B /* LogOutViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,8 +55,8 @@
 		CE477410261F328600A6DD5B /* SettingsScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingsScreen.storyboard; sourceTree = "<group>"; };
 		CE477413261F337200A6DD5B /* ListOfAccountsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOfAccountsVC.swift; sourceTree = "<group>"; };
 		CE477416261F33AB00A6DD5B /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
-		CE47742F261F387D00A6DD5B /* CustomViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewCell.swift; sourceTree = "<group>"; };
-		CE477430261F387D00A6DD5B /* CustomViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomViewCell.xib; sourceTree = "<group>"; };
+		CE47742F261F387D00A6DD5B /* CustomViewForEditCredentialsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewForEditCredentialsCell.swift; sourceTree = "<group>"; };
+		CE477430261F387D00A6DD5B /* CustomViewForEditCredentialsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomViewForEditCredentialsCell.xib; sourceTree = "<group>"; };
 		CE477441261F526F00A6DD5B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		CE47F434261DE19B005F1C69 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		CE47F43D261DE374005F1C69 /* WelcomeScreenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeScreenVC.swift; sourceTree = "<group>"; };
@@ -70,6 +72,8 @@
 		CE63301226DCF57E00E8F311 /* LogInScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LogInScreen.storyboard; sourceTree = "<group>"; };
 		CE63301426DCFD7200E8F311 /* CoreDataDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataDB.swift; sourceTree = "<group>"; };
 		CED9CF2226DE142900DC239B /* SessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
+		CED9CF2426DE265D00DC239B /* LogOutViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogOutViewCell.swift; sourceTree = "<group>"; };
+		CED9CF2626DE266C00DC239B /* LogOutViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LogOutViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -218,8 +222,10 @@
 		CE47F439261DE1F4005F1C69 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				CE47742F261F387D00A6DD5B /* CustomViewCell.swift */,
-				CE477430261F387D00A6DD5B /* CustomViewCell.xib */,
+				CE47742F261F387D00A6DD5B /* CustomViewForEditCredentialsCell.swift */,
+				CE477430261F387D00A6DD5B /* CustomViewForEditCredentialsCell.xib */,
+				CED9CF2426DE265D00DC239B /* LogOutViewCell.swift */,
+				CED9CF2626DE266C00DC239B /* LogOutViewCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -334,12 +340,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CED9CF2726DE266C00DC239B /* LogOutViewCell.xib in Resources */,
 				CE47F44A261DE3B0005F1C69 /* Main.storyboard in Resources */,
 				CE477411261F328600A6DD5B /* SettingsScreen.storyboard in Resources */,
 				CE63301326DCF57E00E8F311 /* LogInScreen.storyboard in Resources */,
 				CE47F435261DE19B005F1C69 /* .swiftlint.yml in Resources */,
 				CE4514C8260DF1D70069CB6D /* LaunchScreen.storyboard in Resources */,
-				CE477432261F387D00A6DD5B /* CustomViewCell.xib in Resources */,
+				CE477432261F387D00A6DD5B /* CustomViewForEditCredentialsCell.xib in Resources */,
 				CE47F475261DF19C005F1C69 /* RegistrationScreen.storyboard in Resources */,
 				CE4514C5260DF1D70069CB6D /* Assets.xcassets in Resources */,
 				CE47740E261F31CF00A6DD5B /* ListOfAccountsScreen.storyboard in Resources */,
@@ -420,7 +427,7 @@
 				CE47F472261DF129005F1C69 /* RegistrationVC.swift in Sources */,
 				CE477442261F526F00A6DD5B /* Constants.swift in Sources */,
 				CE63301526DCFD7200E8F311 /* CoreDataDB.swift in Sources */,
-				CE477431261F387D00A6DD5B /* CustomViewCell.swift in Sources */,
+				CE477431261F387D00A6DD5B /* CustomViewForEditCredentialsCell.swift in Sources */,
 				CE4514BD260DF1D40069CB6D /* MainVC.swift in Sources */,
 				CE4514C3260DF1D40069CB6D /* AccountApp.xcdatamodeld in Sources */,
 				CE477414261F337200A6DD5B /* ListOfAccountsVC.swift in Sources */,
@@ -429,6 +436,7 @@
 				CE63301126DCF56C00E8F311 /* LogInVC.swift in Sources */,
 				CE47F44D261DE47F005F1C69 /* UserModel.swift in Sources */,
 				CE4514BB260DF1D40069CB6D /* SceneDelegate.swift in Sources */,
+				CED9CF2526DE265D00DC239B /* LogOutViewCell.swift in Sources */,
 				CED9CF2326DE142900DC239B /* SessionManager.swift in Sources */,
 				CE477417261F33AB00A6DD5B /* SettingsVC.swift in Sources */,
 			);

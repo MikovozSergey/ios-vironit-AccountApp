@@ -1,6 +1,6 @@
 import UIKit
 
-final class CustomViewCell: UITableViewCell {
+final class CustomViewForEditCredentialsCell: UITableViewCell {
     
     // MARK: - IBOutlets
     
@@ -9,11 +9,12 @@ final class CustomViewCell: UITableViewCell {
     // MARK: - Init
     override func awakeFromNib() {
         super.awakeFromNib()
-        
+        setup()
     }
     
     // MARK: - Open methods
     func setup() {
-        loginLabel.text = "Привет"
+        loginLabel.text = "Изменить логин и пароль?"
+        self.selectionStyle = .none
     }
 }
