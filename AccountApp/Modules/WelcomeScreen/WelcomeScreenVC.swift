@@ -37,11 +37,11 @@ class WelcomeViewController: UIViewController {
     private func setupUI() {
         
         // logIn button
-        logInButton.setTitle("Войти", for: .normal)
+        logInButton.setTitle("Enter".localized(), for: .normal)
         logInButton.layer.borderWidth = 1.5
         logInButton.layer.borderColor = CGColor(red: 255/255, green: 215/255, blue: 0/255, alpha: 1)
         
         // registration button
-        registrationButton.setTitle("Вы хотите зарегистрироваться?", for: .normal)
+        registrationButton.setTitle("WelcomeVCSignUpButton".localized(), for: .normal)
     }
 }

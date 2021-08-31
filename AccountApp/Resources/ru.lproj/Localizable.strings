@@ -1,0 +1,47 @@
+// MARK: Common Strings
+
+"Enter" = "Войти";
+"Save" = "Сохранить";
+
+// MARK: WelcomVC
+
+"WelcomeVCSignUpButton" = "Вы хотите зарегистрироваться?";
+
+// MARK: LogInVC
+
+"LogInVCLoginTitle" = "Ваш Логин";
+"LogInVCLoginPlaceholder" = "Введите логин";
+"LogInVCPasswordTitle" = "Ваш Пароль";
+"LogInVCPasswordPlaceholder" = "Введите пароль";
+
+// MARK: RegistrationVC
+
+"RegistrationVCLoginTitle" = "Ваш Логин";
+"RegistrationVCLoginPlaceholder" = "Введите логин";
+"RegistrationVCPasswordTitle" = "Ваш пароль";
+"RegistrationVCPasswordPlaceholder" = "Введите пароль";
+
+// MARK: SettingsProfileVC
+
+"SettingsProfileVCEditCredentialsTitle" = "Изменить логин и пароль?";
+"SettingsProfileVCLogOutButton" = "Выйти";
+
+// MARK: ChangeProfileVC
+
+"ChangeProfileVCLoginTitle" = "Ваш старый Логин";
+"ChangeProfileVCLoginPlaceholder" = "Введите старый логин";
+"ChangeProfileVCPasswordTitle" = "Ваш старый Пароль";
+"ChangeProfileVCPasswordPlaceholder" = "Введите старый пароль";
+"ChangeProfileVCNewLoginTitle" = "Ваш новый Логин";
+"ChangeProfileVCNewLoginPlaceholder" = "Введите новый логин";
+"ChangeProfileVCNewPasswordTitle" = "Ваш старый Пароль";
+"ChangeProfileVCNewPasswordPlaceholder" = "Введите новый пароль";
+
+// MARK: Alert
+
+"AlertDoneTitle" = "Ок";
+"AlertWrongTitle" = "Неверно";
+"AlertRecommendationForFieldsMessage" = "Неверный логин или пароль. \nЛогин должен содержать: минимум 3 символа, минимум 1 букву и 1 число. \nПароль должен содержать: минимум 8 символов, 1 большую букву, 1 маленькую букву, 1 цифру и 1 специальный символ";
+"AlertErrorTitle" = "Ошибка";
+"AlertErrorPasswordMessage" = "Неправильный логин или пароль";
+"AlertErrorEmptyFieldsMessage" = "Заполните поля для регистрации";

@@ -47,4 +47,18 @@ final public class DataBase {
             print("Fetching data Failed")
         }
     }
+    
+    func deleteObject(logIn: String) {
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: Keys.entityKey)
+        request.returnsObjectsAsFaults = false
+        if let result = try? context.fetch(request) {
+            for object in result as! [NSManagedObject] {
+                guard let login = object.value(forKey: Keys.loginKey) as? String else { return }
+                if login == logIn {
+                    context.delete(object)
+                    print("Delete object \(login) from DB")
+                }
+            }
+        }
+    }
 }

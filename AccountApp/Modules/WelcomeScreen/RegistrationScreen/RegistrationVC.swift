@@ -20,13 +20,13 @@ class RegistrationViewController: UIViewController {
     
     @IBAction private func tappedLoginTextField(_ sender: Any) {
         if loginTextField.text?.isEmpty != nil {
-            loginTextField.title = "Ваш логин"
+            loginTextField.title = "RegistrationVCLoginTitle".localized()
         }
     }
     
     @IBAction private func tappedPasswordTextField(_ sender: Any) {
         if passwordTextField.text?.isEmpty != nil {
-            passwordTextField.title = "Ваш пароль"
+            passwordTextField.title = "RegistrationVCPasswordTitle".localized()
         }
     }
   
@@ -34,23 +34,20 @@ class RegistrationViewController: UIViewController {
         guard let login = loginTextField.text, let password = passwordTextField.text else { return }
         if !login.isEmpty && !password.isEmpty {
             if isValidLogin(login: login) && isValidPassword(password: password) {
-                setupStyleForTestFields(title: "Ок" , titleColor: .green)
+                setupStyleForTestFields(title: "AlertDoneTitle".localized() , titleColor: .green)
                 keychain.set(password, forKey: login)
                 dataBase.openDatabse(login: login)
-                timeOfStartSession()
                 let storyboard = UIStoryboard(name: "MainScreen", bundle: nil)
                 guard let vc = storyboard.instantiateViewController(identifier: "MainViewController") as? MainViewController else { return }
                 navigationController?.pushViewController(vc, animated: true)
             } else {
-                setupStyleForTestFields(title: "Неверно", titleColor: .red)
-                showAlert(title: "Ошибка", message: "Неверный логин или пароль. \nЛогин должен содержать: минимум 3 символа, минимум 1 букву и 1 число. \nПароль должен содержать: минимум 8 символов, 1 большую букву, 1 маленькую букву, 1 цифру и 1 специальный символ")
+                setupStyleForTestFields(title: "AlertWrongTitle".localized(), titleColor: .red)
+                showAlert(title: "AlertErrorTitle".localized(), message: "AlertRecommendationForFieldsMessage".localized())
             }
-            
         } else {
-            setupStyleForTestFields(title: "Ошибка", titleColor: .red)
-            showAlert(title: "Ошибка", message: "Заполните поля для регистрации")
+            setupStyleForTestFields(title: "AlertErrorTitle".localized(), titleColor: .red)
+            showAlert(title: "AlertErrorTitle".localized(), message: "AlertErrorEmptyFieldsMessage".localized())
         }
-        
     }
     
     // MARK: - Lifecycle
@@ -72,21 +69,21 @@ class RegistrationViewController: UIViewController {
         
         // login label
         loginTextField.textAlignment = .center
-        loginTextField.placeholder = "Введите логин"
+        loginTextField.placeholder = "RegistrationVCLoginPlaceholder".localized()
         
         // password label
         passwordTextField.textAlignment = .center
-        passwordTextField.placeholder = "Введите пароль"
+        passwordTextField.placeholder = "RegistrationVCPasswordPlaceholder".localized()
         
         // save button
-        saveButton.setTitle("Сохранить", for: .normal)
+        saveButton.setTitle("Save".localized(), for: .normal)
         saveButton.layer.borderWidth = 1.5
         saveButton.layer.borderColor = CGColor(red: 255/255, green: 215/255, blue: 0/255, alpha: 1)
     }
     
     private func showAlert(title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let doneButton = UIAlertAction(title: "Ок", style: .default, handler: nil)
+        let doneButton = UIAlertAction(title: "AlertDoneTitle".localized(), style: .default, handler: nil)
         alert.addAction(doneButton)
         
         present(alert, animated: true)
@@ -97,24 +94,6 @@ class RegistrationViewController: UIViewController {
         loginTextField.titleColor = titleColor
         passwordTextField.title = title
         passwordTextField.titleColor = titleColor
-    }
-    
-    private func timeOfStartSession() -> String {
-        let dateFormatter : DateFormatter = DateFormatter()
-         dateFormatter.dateFormat = "HH:mm"
-        let date = Date()
-        let dateString = dateFormatter.string(from: date)
-        _ = date.timeIntervalSince1970
-        return dateString
-    }
-    
-    private func saveStartOfSession(login: String) {
-        let defaults = UserDefaults.standard
-        defaults.set(timeOfStartSession(), forKey: login)
-
-        if let timeOfStart = defaults.string(forKey: login) {
-            print(timeOfStart)
-        }
     }
 }
 
