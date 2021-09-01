@@ -10,10 +10,19 @@ class SettingsViewController: UIViewController {
     // MARK: - IBOutlets
     
     @IBOutlet private weak var tableView: UITableView!
+    @IBOutlet private weak var changeLanguageButton: UIButton!
+    
+    // MARK: - IBActions
+    
+    @IBAction private func tappedChangeLanguageButton(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "SwitchLanguageScreen", bundle: nil)
+        guard let viewController = storyboard.instantiateViewController(identifier: "SwitchLanguageViewController") as? SwitchLanguageViewController else { return }
+        navigationController?.pushViewController(viewController, animated: true)
+    }
     
     // MARK: - Variables
     
-    // MARK: - IBActions
+    private let languageHandler = LanguageNotificationHandler()
     
     // MARK: - Lifecycle
 
@@ -22,6 +31,7 @@ class SettingsViewController: UIViewController {
         setupDelegate()
         setupUI()
         registerNib()
+        handleLanguage()
     }
     
     private func setupDelegate() {
@@ -35,8 +45,22 @@ class SettingsViewController: UIViewController {
     }
     
     private func setupUI() {
+        // tableView
         tableView.tableFooterView = UIView()
         tableView.backgroundColor = .black
+        
+        // changeLanguageButton
+        setupStrings()
+    }
+    
+    private func setupStrings() {
+        changeLanguageButton.setTitle(L10n.switchLanguageVCTitle, for: .normal)
+    }
+    
+    private func handleLanguage() {
+        languageHandler.startListening { [weak self] in
+            self?.setupStrings()
+        }
     }
 }
 
@@ -45,11 +69,15 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
         
         if indexPath.row == 0 {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: Xib.CustomViewForEditCredentialsCell.rawValue, for: indexPath) as? CustomViewForEditCredentialsCell else { return UITableViewCell() }
+            guard let navigator = self.navigationController else { return UITableViewCell() }
             cell.backgroundColor = .black
+            cell.configureNavigation(navigator: navigator)
             return cell
         } else {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: Xib.LogOutViewCell.rawValue, for: indexPath) as? LogOutViewCell else { return UITableViewCell() }
+            guard let navigator = self.navigationController else { return UITableViewCell() }
             cell.backgroundColor = .black
+            cell.configureNavigation(navigator: navigator)
             return cell
         }
     }
@@ -60,16 +88,6 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 2
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.row == 0 {
-            let storyboard = UIStoryboard(name: "ChangeProfileScreen", bundle: nil)
-            guard let viewController = storyboard.instantiateViewController(identifier: "ChangeProfileViewController") as? ChangeProfileViewController else { return }
-            navigationController?.pushViewController(viewController, animated: true)
-        } else {
-            navigationController?.popToRootViewController(animated: true)
-        }
     }
 }
 

@@ -31,6 +31,11 @@
 		CE48AEC7262045EA0076B311 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE48AEC6262045EA0076B311 /* StringExtensions.swift */; };
 		CE48AED326207FC60076B311 /* ChangeProfileScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE48AED226207FC60076B311 /* ChangeProfileScreen.storyboard */; };
 		CE48AED626207FEF0076B311 /* ChangeProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE48AED526207FEF0076B311 /* ChangeProfileVC.swift */; };
+		CE5BEC2A26DFB6CC00685981 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5BEC2926DFB6CC00685981 /* Strings.swift */; };
+		CE5BEC2C26DFBD5C00685981 /* LanguageEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5BEC2B26DFBD5C00685981 /* LanguageEnum.swift */; };
+		CE5BEC2E26DFC6E000685981 /* NotificationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5BEC2D26DFC6E000685981 /* NotificationExtension.swift */; };
+		CE5BEC3026DFC72C00685981 /* LanguageNotificationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5BEC2F26DFC72C00685981 /* LanguageNotificationHandler.swift */; };
+		CE5BEC3226DFC74C00685981 /* NotificationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5BEC3126DFC74C00685981 /* NotificationHandler.swift */; };
 		CE63301126DCF56C00E8F311 /* LogInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE63301026DCF56C00E8F311 /* LogInVC.swift */; };
 		CE63301326DCF57E00E8F311 /* LogInScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE63301226DCF57E00E8F311 /* LogInScreen.storyboard */; };
 		CE63301526DCFD7200E8F311 /* CoreDataDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE63301426DCFD7200E8F311 /* CoreDataDB.swift */; };
@@ -38,6 +43,8 @@
 		CED9CF2526DE265D00DC239B /* LogOutViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9CF2426DE265D00DC239B /* LogOutViewCell.swift */; };
 		CED9CF2726DE266C00DC239B /* LogOutViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CED9CF2626DE266C00DC239B /* LogOutViewCell.xib */; };
 		CED9CF2B26DE513700DC239B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CED9CF2D26DE513700DC239B /* Localizable.strings */; };
+		CED9CF3126DE5CD500DC239B /* SwitchLanguageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9CF3026DE5CD500DC239B /* SwitchLanguageVC.swift */; };
+		CED9CF3326DE5CE300DC239B /* SwitchLanguageScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CED9CF3226DE5CE300DC239B /* SwitchLanguageScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,6 +76,12 @@
 		CE48AEC6262045EA0076B311 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		CE48AED226207FC60076B311 /* ChangeProfileScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChangeProfileScreen.storyboard; sourceTree = "<group>"; };
 		CE48AED526207FEF0076B311 /* ChangeProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeProfileVC.swift; sourceTree = "<group>"; };
+		CE5BEC2826DFB21800685981 /* swiftgen.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = swiftgen.yml; sourceTree = "<group>"; };
+		CE5BEC2926DFB6CC00685981 /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
+		CE5BEC2B26DFBD5C00685981 /* LanguageEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageEnum.swift; sourceTree = "<group>"; };
+		CE5BEC2D26DFC6E000685981 /* NotificationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationExtension.swift; sourceTree = "<group>"; };
+		CE5BEC2F26DFC72C00685981 /* LanguageNotificationHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageNotificationHandler.swift; sourceTree = "<group>"; };
+		CE5BEC3126DFC74C00685981 /* NotificationHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationHandler.swift; sourceTree = "<group>"; };
 		CE63301026DCF56C00E8F311 /* LogInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInVC.swift; sourceTree = "<group>"; };
 		CE63301226DCF57E00E8F311 /* LogInScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LogInScreen.storyboard; sourceTree = "<group>"; };
 		CE63301426DCFD7200E8F311 /* CoreDataDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataDB.swift; sourceTree = "<group>"; };
@@ -78,6 +91,8 @@
 		CED9CF2826DE50CD00DC239B /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		CED9CF2C26DE513700DC239B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		CED9CF2E26DE513B00DC239B /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		CED9CF3026DE5CD500DC239B /* SwitchLanguageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchLanguageVC.swift; sourceTree = "<group>"; };
+		CED9CF3226DE5CE300DC239B /* SwitchLanguageScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SwitchLanguageScreen.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +127,7 @@
 		CE4514AC260DF1D40069CB6D = {
 			isa = PBXGroup;
 			children = (
+				CE5BEC2826DFB21800685981 /* swiftgen.yml */,
 				CE4514B7260DF1D40069CB6D /* AccountApp */,
 				779F9B7F1BE008107749426A /* Frameworks */,
 				0A60085C0CF9098343362313 /* Pods */,
@@ -131,10 +147,12 @@
 		CE4514B7260DF1D40069CB6D /* AccountApp */ = {
 			isa = PBXGroup;
 			children = (
+				CE5BEC0D26DFA05000685981 /* SwiftGen */,
 				CE45154E260E11F90069CB6D /* Application */,
 				CE47F432261DE0A2005F1C69 /* CoreData */,
 				CE47F42C261DDFAC005F1C69 /* Models */,
 				CE47F42D261DDFC2005F1C69 /* Modules */,
+				CE4514C6260DF1D70069CB6D /* LaunchScreen.storyboard */,
 				CE47F42E261DE007005F1C69 /* Network */,
 				CE47F42F261DE015005F1C69 /* Resources */,
 				CE47F433261DE0B9005F1C69 /* Utils */,
@@ -165,6 +183,8 @@
 		CE47741C261F341700A6DD5B /* SettingsScreen */ = {
 			isa = PBXGroup;
 			children = (
+				CED9CF2F26DE5CB500DC239B /* SwitchLanguageScreen */,
+				CE48AED126207F990076B311 /* ChangeProfileScreen */,
 				CE477410261F328600A6DD5B /* SettingsScreen.storyboard */,
 				CE477416261F33AB00A6DD5B /* SettingsVC.swift */,
 			);
@@ -184,7 +204,6 @@
 			children = (
 				CE47F43C261DE33D005F1C69 /* WelcomeScreen */,
 				CE47F43A261DE222005F1C69 /* MainScreen */,
-				CE4514C6260DF1D70069CB6D /* LaunchScreen.storyboard */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -220,6 +239,10 @@
 				CE477441261F526F00A6DD5B /* Constants.swift */,
 				CE48AEC6262045EA0076B311 /* StringExtensions.swift */,
 				CED9CF2226DE142900DC239B /* SessionManager.swift */,
+				CE5BEC2B26DFBD5C00685981 /* LanguageEnum.swift */,
+				CE5BEC2D26DFC6E000685981 /* NotificationExtension.swift */,
+				CE5BEC2F26DFC72C00685981 /* LanguageNotificationHandler.swift */,
+				CE5BEC3126DFC74C00685981 /* NotificationHandler.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -238,7 +261,6 @@
 		CE47F43A261DE222005F1C69 /* MainScreen */ = {
 			isa = PBXGroup;
 			children = (
-				CE48AED126207F990076B311 /* ChangeProfileScreen */,
 				CE47741C261F341700A6DD5B /* SettingsScreen */,
 				CE47741B261F33D100A6DD5B /* ListOfAccountsScreen */,
 				CE47F446261DE3A6005F1C69 /* MainScreen.storyboard */,
@@ -276,6 +298,14 @@
 			path = ChangeProfileScreen;
 			sourceTree = "<group>";
 		};
+		CE5BEC0D26DFA05000685981 /* SwiftGen */ = {
+			isa = PBXGroup;
+			children = (
+				CE5BEC2926DFB6CC00685981 /* Strings.swift */,
+			);
+			path = SwiftGen;
+			sourceTree = "<group>";
+		};
 		CE63300F26DCF54C00E8F311 /* LogInScreen */ = {
 			isa = PBXGroup;
 			children = (
@@ -283,6 +313,15 @@
 				CE63301226DCF57E00E8F311 /* LogInScreen.storyboard */,
 			);
 			path = LogInScreen;
+			sourceTree = "<group>";
+		};
+		CED9CF2F26DE5CB500DC239B /* SwitchLanguageScreen */ = {
+			isa = PBXGroup;
+			children = (
+				CED9CF3026DE5CD500DC239B /* SwitchLanguageVC.swift */,
+				CED9CF3226DE5CE300DC239B /* SwitchLanguageScreen.storyboard */,
+			);
+			path = SwitchLanguageScreen;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -294,6 +333,7 @@
 			buildPhases = (
 				AB2AA23768C57C7181490FE8 /* [CP] Check Pods Manifest.lock */,
 				CE451534260E09C50069CB6D /* Run Script */,
+				CE5BEC0926DF9AAB00685981 /* SwiftGen */,
 				CE4514B1260DF1D40069CB6D /* Sources */,
 				CE4514B2260DF1D40069CB6D /* Frameworks */,
 				CE4514B3260DF1D40069CB6D /* Resources */,
@@ -350,6 +390,7 @@
 				CE47F44A261DE3B0005F1C69 /* Main.storyboard in Resources */,
 				CE477411261F328600A6DD5B /* SettingsScreen.storyboard in Resources */,
 				CE63301326DCF57E00E8F311 /* LogInScreen.storyboard in Resources */,
+				CED9CF3326DE5CE300DC239B /* SwitchLanguageScreen.storyboard in Resources */,
 				CE47F435261DE19B005F1C69 /* .swiftlint.yml in Resources */,
 				CE4514C8260DF1D70069CB6D /* LaunchScreen.storyboard in Resources */,
 				CE477432261F387D00A6DD5B /* CustomViewForEditCredentialsCell.xib in Resources */,
@@ -422,6 +463,24 @@
 			shellPath = /bin/sh;
 			shellScript = "${PODS_ROOT}/SwiftLint/swiftlint\n";
 		};
+		CE5BEC0926DF9AAB00685981 /* SwiftGen */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftGen;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "$PODS_ROOT/SwiftGen/bin/swiftgen\n";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -432,17 +491,23 @@
 				CE48AED626207FEF0076B311 /* ChangeProfileVC.swift in Sources */,
 				CE48AEC7262045EA0076B311 /* StringExtensions.swift in Sources */,
 				CE47F472261DF129005F1C69 /* RegistrationVC.swift in Sources */,
+				CE5BEC3226DFC74C00685981 /* NotificationHandler.swift in Sources */,
 				CE477442261F526F00A6DD5B /* Constants.swift in Sources */,
 				CE63301526DCFD7200E8F311 /* CoreDataDB.swift in Sources */,
+				CE5BEC2A26DFB6CC00685981 /* Strings.swift in Sources */,
 				CE477431261F387D00A6DD5B /* CustomViewForEditCredentialsCell.swift in Sources */,
 				CE4514BD260DF1D40069CB6D /* MainVC.swift in Sources */,
 				CE4514C3260DF1D40069CB6D /* AccountApp.xcdatamodeld in Sources */,
 				CE477414261F337200A6DD5B /* ListOfAccountsVC.swift in Sources */,
 				CE47F43E261DE374005F1C69 /* WelcomeScreenVC.swift in Sources */,
 				CE4514B9260DF1D40069CB6D /* AppDelegate.swift in Sources */,
+				CE5BEC2E26DFC6E000685981 /* NotificationExtension.swift in Sources */,
 				CE63301126DCF56C00E8F311 /* LogInVC.swift in Sources */,
 				CE47F44D261DE47F005F1C69 /* UserModel.swift in Sources */,
+				CE5BEC2C26DFBD5C00685981 /* LanguageEnum.swift in Sources */,
 				CE4514BB260DF1D40069CB6D /* SceneDelegate.swift in Sources */,
+				CE5BEC3026DFC72C00685981 /* LanguageNotificationHandler.swift in Sources */,
+				CED9CF3126DE5CD500DC239B /* SwitchLanguageVC.swift in Sources */,
 				CED9CF2526DE265D00DC239B /* LogOutViewCell.swift in Sources */,
 				CED9CF2326DE142900DC239B /* SessionManager.swift in Sources */,
 				CE477417261F33AB00A6DD5B /* SettingsVC.swift in Sources */,

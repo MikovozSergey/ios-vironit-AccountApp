@@ -2,6 +2,7 @@
 
 "Enter" = "Войти";
 "Save" = "Сохранить";
+"Edit" = "Изменить";
 
 // MARK: WelcomVC
 
@@ -37,6 +38,10 @@
 "ChangeProfileVCNewPasswordTitle" = "Ваш старый Пароль";
 "ChangeProfileVCNewPasswordPlaceholder" = "Введите новый пароль";
 
+// MARK: SwitchLanguageVC
+
+"SwitchLanguageVCTitle" = "Хотите изменить язык приложения на English?";
+
 // MARK: Alert
 
 "AlertDoneTitle" = "Ок";
@@ -45,3 +50,10 @@
 "AlertErrorTitle" = "Ошибка";
 "AlertErrorPasswordMessage" = "Неправильный логин или пароль";
 "AlertErrorEmptyFieldsMessage" = "Заполните поля для регистрации";
+"AlertFinishSessionTitle" = "Сессия";
+"AlertFinishSessionMessage" = "Ваша сессия закончена. Пожалуйста войдите снова.";
+
+// MARK: PopTip
+
+"SettingsVCChangeLoginAndPassowrdPopTipSentenses" = "Здесь вы можете изменить входные данные для вашего аккаунта.";
+"SettingsVCLogOutPopTipSentenses" = "При нажатии на кнопку, ваша сессия заврешится, необходим будет повторный ввод данных.";

@@ -20,7 +20,7 @@ class LogInViewController: UIViewController {
 
     @IBAction private func tappedLoginTextField(_ sender: Any) {
         if loginTextField.text?.isEmpty != nil {
-            loginTextField.title = "LogInVCLoginTitle".localized()
+          //  loginTextField.title = L10n.
         }
     }
     @IBAction private func tappedPasswordTextField(_ sender: Any) {
@@ -46,7 +46,7 @@ class LogInViewController: UIViewController {
         
         loginTextField.delegate = self
         passwordTextField.delegate = self
-        loginTextField.text = "TestUser1"
+        loginTextField.text = "TestUser3"
         passwordTextField.text = "Qwerty1234!"
         setupUI()
     }

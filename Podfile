@@ -12,5 +12,7 @@ target 'AccountApp' do
   pod 'RxCocoa', '6.1.0'
   pod 'SwiftLint', '0.42.0'
   pod 'SkyFloatingLabelTextField', '4.0'
+  pod 'AMPopTip', '4.5.3'
+  pod 'SwiftGen', '6.0'
 
 end

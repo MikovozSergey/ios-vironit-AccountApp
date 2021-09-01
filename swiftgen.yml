@@ -1,0 +1,6 @@
+strings:
+    inputs: AccountApp/Resources/en.lproj/Localizable.strings
+    outputs:
+    - templatePath: AccountApp/structured-swift4-localizable.stencil
+      output: AccountApp/SwiftGen/Strings.swift
+

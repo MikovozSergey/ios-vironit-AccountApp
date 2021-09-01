@@ -18,23 +18,40 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jPc-wo-oUy">
-                                <rect key="frame" x="0.0" y="282.5" width="414" height="331"/>
+                                <rect key="frame" x="0.0" y="298" width="414" height="300"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="1UO-K0-Dqd"/>
                                     <constraint firstAttribute="width" constant="414" id="iHP-Tx-lr3"/>
-                                    <constraint firstAttribute="height" constant="331" id="yN3-W8-1JN"/>
                                 </constraints>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VOT-ev-A7T">
+                                <rect key="frame" x="7" y="208" width="400" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="1Q6-nf-FUd"/>
+                                    <constraint firstAttribute="width" constant="400" id="KA9-Jn-IOi"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="KohinoorBangla-Regular" family="Kohinoor Bangla" pointSize="14"/>
+                                <state key="normal">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="tappedChangeLanguageButton:" destination="AFk-Tf-PIU" eventType="touchUpInside" id="Bgh-Bq-ZXr"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="iPq-58-Kwx"/>
                         <color key="backgroundColor" systemColor="labelColor"/>
                         <constraints>
                             <constraint firstItem="jPc-wo-oUy" firstAttribute="centerY" secondItem="gaK-kc-XIf" secondAttribute="centerY" id="M0M-42-Cww"/>
                             <constraint firstItem="jPc-wo-oUy" firstAttribute="centerX" secondItem="gaK-kc-XIf" secondAttribute="centerX" id="PCE-Tg-UO7"/>
+                            <constraint firstItem="jPc-wo-oUy" firstAttribute="top" secondItem="VOT-ev-A7T" secondAttribute="bottom" constant="40" id="gtg-K5-5JX"/>
+                            <constraint firstItem="VOT-ev-A7T" firstAttribute="centerX" secondItem="gaK-kc-XIf" secondAttribute="centerX" id="kAF-OD-sN0"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Настройки" id="i7y-y0-DKv"/>
                     <connections>
+                        <outlet property="changeLanguageButton" destination="VOT-ev-A7T" id="NrY-kb-wCE"/>
                         <outlet property="tableView" destination="jPc-wo-oUy" id="XjR-e6-U9p"/>
                     </connections>
                 </viewController>
