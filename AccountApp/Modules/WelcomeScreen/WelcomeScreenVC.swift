@@ -11,12 +11,19 @@ class WelcomeViewController: UIViewController {
     
     // MARK: - Variables
     
+    private let languageHandler = LanguageNotificationHandler()
+    
     // MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        handleLanguage()
         setupUI()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setupTheme()
     }
     
     // MARK: - IBActions
@@ -34,14 +41,28 @@ class WelcomeViewController: UIViewController {
     
     // MARK: - Setup
     
+    private func setupTheme() {
+        self.navigationController!.navigationBar.isTranslucent = false
+        self.navigationController?.navigationBar.barTintColor = Theme.currentTheme.backgroundColor
+        self.view.backgroundColor = Theme.currentTheme.backgroundColor
+        logInButton.setTitleColor(Theme.currentTheme.textColor, for: .normal)
+        registrationButton.setTitleColor(Theme.currentTheme.textColor, for: .normal)
+    }
+    
     private func setupUI() {
-        
-        // logIn button
-        logInButton.setTitle("Enter".localized(), for: .normal)
+        setupStrings()
         logInButton.layer.borderWidth = 1.5
         logInButton.layer.borderColor = CGColor(red: 255/255, green: 215/255, blue: 0/255, alpha: 1)
-        
-        // registration button
-        registrationButton.setTitle("WelcomeVCSignUpButton".localized(), for: .normal)
+    }
+    
+    private func setupStrings() {
+        logInButton.setTitle(L10n.enter, for: .normal)
+        registrationButton.setTitle(L10n.welcomeVCSignUpButton, for: .normal)
+    }
+    
+    private func handleLanguage() {
+        languageHandler.startListening { [weak self] in
+            self?.setupStrings()
+        }
     }
 }

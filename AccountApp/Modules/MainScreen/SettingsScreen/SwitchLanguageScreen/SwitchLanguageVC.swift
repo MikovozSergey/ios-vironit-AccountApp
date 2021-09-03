@@ -44,11 +44,8 @@ class SwitchLanguageViewController: UIViewController {
     // MARK: - Logic
     
     private func setupUI() {
-        // navigation bar
-        navigationController?.view.tintColor = UIColor(red: 255/255, green: 215/255, blue: 0/255, alpha: 1)
-        
-        // switchLanguageButton
         setupStrings()
+        navigationController?.view.tintColor = UIColor(red: 255/255, green: 215/255, blue: 0/255, alpha: 1)
         switchLanguageButton.layer.borderWidth = 1.5
         switchLanguageButton.layer.borderColor = CGColor(red: 255/255, green: 215/255, blue: 0/255, alpha: 1)
     }
@@ -62,13 +59,5 @@ class SwitchLanguageViewController: UIViewController {
         languageHandler.startListening { [weak self] in
             self?.setupStrings()
         }
-    }
-    
-    private func showAlert(title: String, message: String) {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let doneButton = UIAlertAction(title: "AlertDoneTitle".localized(), style: .default, handler: nil)
-        alert.addAction(doneButton)
-        
-        present(alert, animated: true)
     }
 }

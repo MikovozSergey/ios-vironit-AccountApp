@@ -16,6 +16,7 @@ class ChangeProfileViewController: UIViewController {
     
     private let dataBase = DataBase()
     private let keychain = KeychainSwift()
+    private let languageHandler = LanguageNotificationHandler()
     
     // MARK: - IBActions
     
@@ -33,22 +34,22 @@ class ChangeProfileViewController: UIViewController {
                 isValidLogin(login: newLogin) &&
                 isValidPassword(password: newPassword) {
                 if dataBase.arrayOfLogins.contains(oldLogin) && oldPassword == keychain.get(oldLogin) {
-                    setupStyleForTestFields(title: "AlertDoneTitle".localized() , titleColor: .green)
+                    setupStyleForTestFields(title: L10n.alertDoneTitle, titleColor: .green)
                     keychain.delete(oldLogin)
                     keychain.set(newPassword, forKey: newLogin)
                     dataBase.deleteObject(logIn: oldLogin)
                     dataBase.openDatabse(login: newLogin)
                     navigationController?.popToRootViewController(animated: true)
                 } else {
-                    showAlert(title: "AlertErrorTitle".localized(), message: "AlertErrorPasswordMessage".localized())
+                    showAlert(title: L10n.alertErrorTitle, message: L10n.alertErrorPasswordMessage)
                 }
             } else {
-                setupStyleForTestFields(title: "AlertWrongTitle".localized(), titleColor: .red)
-                showAlert(title: "AlertErrorTitle".localized(), message: "AlertRecommendationForFieldsMessage".localized())
+                setupStyleForTestFields(title: L10n.alertWrongTitle, titleColor: .red)
+                showAlert(title: L10n.alertErrorTitle, message: L10n.alertRecommendationForFieldsMessage)
             }
         } else {
-            setupStyleForTestFields(title: "AlertErrorTitle".localized(), titleColor: .red)
-            showAlert(title: "AlertErrorTitle".localized(), message: "AlertErrorEmptyFieldsMessage".localized())
+            setupStyleForTestFields(title: L10n.alertErrorTitle, titleColor: .red)
+            showAlert(title: L10n.alertErrorTitle, message: L10n.alertErrorEmptyFieldsMessage)
         }
     }
     
@@ -57,6 +58,7 @@ class ChangeProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        handleLanguage()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -67,23 +69,12 @@ class ChangeProfileViewController: UIViewController {
     // MARK: - Logic
     
     private func setupUI() {
-        // navigation bar
+        setupStrings()
         navigationController?.view.tintColor = UIColor(red: 255/255, green: 215/255, blue: 0/255, alpha: 1)
-        
-        // logins textfield
         loginTextField.textAlignment = .center
-        loginTextField.placeholder = "ChangeProfileVCLoginPlaceholder".localized()
         passwordTextField.textAlignment = .center
-        passwordTextField.placeholder = "ChangeProfileVCPasswordPlaceholder".localized()
-        
-        // passwords textfield
         newLoginTextField.textAlignment = .center
-        newLoginTextField.placeholder = "ChangeProfileVCNewLoginPlaceholder".localized()
         newPasswordTextField.textAlignment = .center
-        newPasswordTextField.placeholder = "ChangeProfileVCNewPasswordPlaceholder".localized()
-        
-        // save button
-        saveButton.setTitle("Save".localized(), for: .normal)
         saveButton.layer.borderWidth = 1.5
         saveButton.layer.borderColor = CGColor(red: 255/255, green: 215/255, blue: 0/255, alpha: 1)
     }
@@ -102,9 +93,23 @@ class ChangeProfileViewController: UIViewController {
         newPasswordTextField.delegate = self
     }
     
+    private func setupStrings() {
+        loginTextField.placeholder = L10n.changeProfileVCLoginPlaceholder
+        passwordTextField.placeholder = L10n.changeProfileVCPasswordPlaceholder
+        newPasswordTextField.placeholder = L10n.changeProfileVCNewPasswordPlaceholder
+        newLoginTextField.placeholder = L10n.changeProfileVCNewLoginPlaceholder
+        saveButton.setTitle(L10n.save, for: .normal)
+    }
+    
+    private func handleLanguage() {
+        languageHandler.startListening { [weak self] in
+            self?.setupStrings()
+        }
+    }
+    
     private func showAlert(title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let doneButton = UIAlertAction(title: "AlertDoneTitle".localized(), style: .default, handler: nil)
+        let doneButton = UIAlertAction(title: L10n.alertDoneTitle, style: .default, handler: nil)
         alert.addAction(doneButton)
         
         present(alert, animated: true)

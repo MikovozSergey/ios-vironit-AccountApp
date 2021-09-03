@@ -7,6 +7,7 @@ final class LogOutViewCell: UITableViewCell {
     
     @IBOutlet private weak var logOutButton: UIButton!
     @IBOutlet private weak var viewForPopTip: UIView!
+    @IBOutlet private weak var informationButton: UIButton!
     
     // MARK: - IBActions
     
@@ -55,6 +56,10 @@ final class LogOutViewCell: UITableViewCell {
         popTip.edgeInsets = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
         popTip.borderWidth = 1
         popTip.borderColor = UIColor(red: 255/255, green: 215/255, blue: 0/255, alpha: 1)
+        informationButton.setImage(Theme.currentTheme.questionImage, for: .normal)
+        viewForPopTip.backgroundColor = Theme.currentTheme.backgroundColor
+        logOutButton.setTitleColor(Theme.currentTheme.textColor, for: .normal)
+        contentView.backgroundColor = Theme.currentTheme.backgroundColor
     }
     
     private func configurePopTip(sender: UIButton) {
@@ -62,7 +67,8 @@ final class LogOutViewCell: UITableViewCell {
         popTip.show(attributedText: setupAtributedText(), direction: direction, maxWidth: 200, in: viewForPopTip, from: sender.frame)
     }
     
-    func configureNavigation(navigator: UINavigationController) {
+    func configure(navigator: UINavigationController) {
+        setup()
         self.navigator = navigator
     }
     
@@ -71,7 +77,7 @@ final class LogOutViewCell: UITableViewCell {
     }
     
     private func setupAtributedText() -> NSMutableAttributedString {
-        let attributes: [NSAttributedString.Key: Any] = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14), NSAttributedString.Key.foregroundColor: UIColor.white]
+        let attributes: [NSAttributedString.Key: Any] = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14), NSAttributedString.Key.foregroundColor: Theme.currentTheme.textColor]
         return NSMutableAttributedString(string: L10n.settingsVCLogOutPopTipSentenses, attributes: attributes)
     }
     

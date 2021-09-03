@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		6F6FEBF953F2DB26B02037D5 /* Pods_AccountApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0502EE744CB9E9E26590DBA4 /* Pods_AccountApp.framework */; };
+		CE1B99B326E100000004280D /* SwitchThemeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1B99B226E100000004280D /* SwitchThemeVC.swift */; };
+		CE1B99B526E1002F0004280D /* SwitchThemeScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE1B99B426E1002F0004280D /* SwitchThemeScreen.storyboard */; };
+		CE1B99B826E10C850004280D /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE1B99B726E10C850004280D /* Colors.xcassets */; };
+		CE1B99BB26E10E5F0004280D /* LightTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1B99BA26E10E5F0004280D /* LightTheme.swift */; };
+		CE1B99BD26E10E670004280D /* DarkTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1B99BC26E10E670004280D /* DarkTheme.swift */; };
+		CE1B99BF26E10EBC0004280D /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1B99BE26E10EBC0004280D /* Theme.swift */; };
 		CE4514B9260DF1D40069CB6D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4514B8260DF1D40069CB6D /* AppDelegate.swift */; };
 		CE4514BB260DF1D40069CB6D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4514BA260DF1D40069CB6D /* SceneDelegate.swift */; };
 		CE4514BD260DF1D40069CB6D /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4514BC260DF1D40069CB6D /* MainVC.swift */; };
@@ -39,6 +45,9 @@
 		CE63301126DCF56C00E8F311 /* LogInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE63301026DCF56C00E8F311 /* LogInVC.swift */; };
 		CE63301326DCF57E00E8F311 /* LogInScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE63301226DCF57E00E8F311 /* LogInScreen.storyboard */; };
 		CE63301526DCFD7200E8F311 /* CoreDataDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE63301426DCFD7200E8F311 /* CoreDataDB.swift */; };
+		CE649D4B26E21E0B0043730C /* FirstVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE649D4A26E21E0B0043730C /* FirstVC.swift */; };
+		CE649D4F26E221610043730C /* FirstScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE649D4E26E221610043730C /* FirstScreen.storyboard */; };
+		CE649D5126E222CC0043730C /* WelcomeScreenVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE649D5026E222CC0043730C /* WelcomeScreenVM.swift */; };
 		CED9CF2326DE142900DC239B /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9CF2226DE142900DC239B /* SessionManager.swift */; };
 		CED9CF2526DE265D00DC239B /* LogOutViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9CF2426DE265D00DC239B /* LogOutViewCell.swift */; };
 		CED9CF2726DE266C00DC239B /* LogOutViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CED9CF2626DE266C00DC239B /* LogOutViewCell.xib */; };
@@ -51,6 +60,12 @@
 		0502EE744CB9E9E26590DBA4 /* Pods_AccountApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AccountApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B337A2260642194A181D366 /* Pods-AccountApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AccountApp.debug.xcconfig"; path = "Target Support Files/Pods-AccountApp/Pods-AccountApp.debug.xcconfig"; sourceTree = "<group>"; };
 		581C8B406315EA81E6D31390 /* Pods-AccountApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AccountApp.release.xcconfig"; path = "Target Support Files/Pods-AccountApp/Pods-AccountApp.release.xcconfig"; sourceTree = "<group>"; };
+		CE1B99B226E100000004280D /* SwitchThemeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchThemeVC.swift; sourceTree = "<group>"; };
+		CE1B99B426E1002F0004280D /* SwitchThemeScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SwitchThemeScreen.storyboard; sourceTree = "<group>"; };
+		CE1B99B726E10C850004280D /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		CE1B99BA26E10E5F0004280D /* LightTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightTheme.swift; sourceTree = "<group>"; };
+		CE1B99BC26E10E670004280D /* DarkTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkTheme.swift; sourceTree = "<group>"; };
+		CE1B99BE26E10EBC0004280D /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		CE4514B5260DF1D40069CB6D /* AccountApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AccountApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE4514B8260DF1D40069CB6D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE4514BA260DF1D40069CB6D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -85,6 +100,9 @@
 		CE63301026DCF56C00E8F311 /* LogInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInVC.swift; sourceTree = "<group>"; };
 		CE63301226DCF57E00E8F311 /* LogInScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LogInScreen.storyboard; sourceTree = "<group>"; };
 		CE63301426DCFD7200E8F311 /* CoreDataDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataDB.swift; sourceTree = "<group>"; };
+		CE649D4A26E21E0B0043730C /* FirstVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstVC.swift; sourceTree = "<group>"; };
+		CE649D4E26E221610043730C /* FirstScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = FirstScreen.storyboard; sourceTree = "<group>"; };
+		CE649D5026E222CC0043730C /* WelcomeScreenVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeScreenVM.swift; sourceTree = "<group>"; };
 		CED9CF2226DE142900DC239B /* SessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
 		CED9CF2426DE265D00DC239B /* LogOutViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogOutViewCell.swift; sourceTree = "<group>"; };
 		CED9CF2626DE266C00DC239B /* LogOutViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LogOutViewCell.xib; sourceTree = "<group>"; };
@@ -124,6 +142,25 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		CE1B99B126E0FFE30004280D /* SwitchThemeScreen */ = {
+			isa = PBXGroup;
+			children = (
+				CE1B99B226E100000004280D /* SwitchThemeVC.swift */,
+				CE1B99B426E1002F0004280D /* SwitchThemeScreen.storyboard */,
+			);
+			path = SwitchThemeScreen;
+			sourceTree = "<group>";
+		};
+		CE1B99B926E10E490004280D /* Themes */ = {
+			isa = PBXGroup;
+			children = (
+				CE1B99BA26E10E5F0004280D /* LightTheme.swift */,
+				CE1B99BC26E10E670004280D /* DarkTheme.swift */,
+				CE1B99BE26E10EBC0004280D /* Theme.swift */,
+			);
+			path = Themes;
+			sourceTree = "<group>";
+		};
 		CE4514AC260DF1D40069CB6D = {
 			isa = PBXGroup;
 			children = (
@@ -147,6 +184,7 @@
 		CE4514B7260DF1D40069CB6D /* AccountApp */ = {
 			isa = PBXGroup;
 			children = (
+				CE1B99B926E10E490004280D /* Themes */,
 				CE5BEC0D26DFA05000685981 /* SwiftGen */,
 				CE45154E260E11F90069CB6D /* Application */,
 				CE47F432261DE0A2005F1C69 /* CoreData */,
@@ -183,6 +221,7 @@
 		CE47741C261F341700A6DD5B /* SettingsScreen */ = {
 			isa = PBXGroup;
 			children = (
+				CE1B99B126E0FFE30004280D /* SwitchThemeScreen */,
 				CED9CF2F26DE5CB500DC239B /* SwitchLanguageScreen */,
 				CE48AED126207F990076B311 /* ChangeProfileScreen */,
 				CE477410261F328600A6DD5B /* SettingsScreen.storyboard */,
@@ -220,6 +259,7 @@
 			children = (
 				CED9CF2D26DE513700DC239B /* Localizable.strings */,
 				CE4514C4260DF1D70069CB6D /* Assets.xcassets */,
+				CE1B99B726E10C850004280D /* Colors.xcassets */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -261,6 +301,7 @@
 		CE47F43A261DE222005F1C69 /* MainScreen */ = {
 			isa = PBXGroup;
 			children = (
+				CE649D4926E21DEE0043730C /* FirstScreen */,
 				CE47741C261F341700A6DD5B /* SettingsScreen */,
 				CE47741B261F33D100A6DD5B /* ListOfAccountsScreen */,
 				CE47F446261DE3A6005F1C69 /* MainScreen.storyboard */,
@@ -276,6 +317,7 @@
 				CE47F46B261DF0DD005F1C69 /* RegistrationScreen */,
 				CE47F43D261DE374005F1C69 /* WelcomeScreenVC.swift */,
 				CE47F449261DE3B0005F1C69 /* Main.storyboard */,
+				CE649D5026E222CC0043730C /* WelcomeScreenVM.swift */,
 			);
 			path = WelcomeScreen;
 			sourceTree = "<group>";
@@ -313,6 +355,15 @@
 				CE63301226DCF57E00E8F311 /* LogInScreen.storyboard */,
 			);
 			path = LogInScreen;
+			sourceTree = "<group>";
+		};
+		CE649D4926E21DEE0043730C /* FirstScreen */ = {
+			isa = PBXGroup;
+			children = (
+				CE649D4A26E21E0B0043730C /* FirstVC.swift */,
+				CE649D4E26E221610043730C /* FirstScreen.storyboard */,
+			);
+			path = FirstScreen;
 			sourceTree = "<group>";
 		};
 		CED9CF2F26DE5CB500DC239B /* SwitchLanguageScreen */ = {
@@ -388,6 +439,7 @@
 			files = (
 				CED9CF2726DE266C00DC239B /* LogOutViewCell.xib in Resources */,
 				CE47F44A261DE3B0005F1C69 /* Main.storyboard in Resources */,
+				CE1B99B526E1002F0004280D /* SwitchThemeScreen.storyboard in Resources */,
 				CE477411261F328600A6DD5B /* SettingsScreen.storyboard in Resources */,
 				CE63301326DCF57E00E8F311 /* LogInScreen.storyboard in Resources */,
 				CED9CF3326DE5CE300DC239B /* SwitchLanguageScreen.storyboard in Resources */,
@@ -398,7 +450,9 @@
 				CE4514C5260DF1D70069CB6D /* Assets.xcassets in Resources */,
 				CED9CF2B26DE513700DC239B /* Localizable.strings in Resources */,
 				CE47740E261F31CF00A6DD5B /* ListOfAccountsScreen.storyboard in Resources */,
+				CE1B99B826E10C850004280D /* Colors.xcassets in Resources */,
 				CE48AED326207FC60076B311 /* ChangeProfileScreen.storyboard in Resources */,
+				CE649D4F26E221610043730C /* FirstScreen.storyboard in Resources */,
 				CE47F447261DE3A6005F1C69 /* MainScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -488,10 +542,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE1B99BF26E10EBC0004280D /* Theme.swift in Sources */,
 				CE48AED626207FEF0076B311 /* ChangeProfileVC.swift in Sources */,
 				CE48AEC7262045EA0076B311 /* StringExtensions.swift in Sources */,
 				CE47F472261DF129005F1C69 /* RegistrationVC.swift in Sources */,
 				CE5BEC3226DFC74C00685981 /* NotificationHandler.swift in Sources */,
+				CE1B99BB26E10E5F0004280D /* LightTheme.swift in Sources */,
+				CE1B99BD26E10E670004280D /* DarkTheme.swift in Sources */,
 				CE477442261F526F00A6DD5B /* Constants.swift in Sources */,
 				CE63301526DCFD7200E8F311 /* CoreDataDB.swift in Sources */,
 				CE5BEC2A26DFB6CC00685981 /* Strings.swift in Sources */,
@@ -500,14 +557,17 @@
 				CE4514C3260DF1D40069CB6D /* AccountApp.xcdatamodeld in Sources */,
 				CE477414261F337200A6DD5B /* ListOfAccountsVC.swift in Sources */,
 				CE47F43E261DE374005F1C69 /* WelcomeScreenVC.swift in Sources */,
+				CE649D5126E222CC0043730C /* WelcomeScreenVM.swift in Sources */,
 				CE4514B9260DF1D40069CB6D /* AppDelegate.swift in Sources */,
 				CE5BEC2E26DFC6E000685981 /* NotificationExtension.swift in Sources */,
+				CE649D4B26E21E0B0043730C /* FirstVC.swift in Sources */,
 				CE63301126DCF56C00E8F311 /* LogInVC.swift in Sources */,
 				CE47F44D261DE47F005F1C69 /* UserModel.swift in Sources */,
 				CE5BEC2C26DFBD5C00685981 /* LanguageEnum.swift in Sources */,
 				CE4514BB260DF1D40069CB6D /* SceneDelegate.swift in Sources */,
 				CE5BEC3026DFC72C00685981 /* LanguageNotificationHandler.swift in Sources */,
 				CED9CF3126DE5CD500DC239B /* SwitchLanguageVC.swift in Sources */,
+				CE1B99B326E100000004280D /* SwitchThemeVC.swift in Sources */,
 				CED9CF2526DE265D00DC239B /* LogOutViewCell.swift in Sources */,
 				CED9CF2326DE142900DC239B /* SessionManager.swift in Sources */,
 				CE477417261F33AB00A6DD5B /* SettingsVC.swift in Sources */,

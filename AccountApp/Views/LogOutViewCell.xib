@@ -26,7 +26,6 @@
                                     <constraint firstAttribute="height" constant="20" id="fzl-D3-TOc"/>
                                     <constraint firstAttribute="width" constant="20" id="i1u-hb-EWC"/>
                                 </constraints>
-                                <state key="normal" image="iconQuestion"/>
                                 <connections>
                                     <action selector="tappedInformationButton:" destination="YJA-9L-ct7" eventType="touchUpInside" id="CeE-H4-yb3"/>
                                 </connections>
@@ -38,9 +37,6 @@
                                     <constraint firstAttribute="width" constant="250" id="xKL-Ls-lv4"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="KohinoorBangla-Regular" family="Kohinoor Bangla" pointSize="16"/>
-                                <state key="normal" title="Выйти">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
                                 <connections>
                                     <action selector="tappedLogOutButton:" destination="YJA-9L-ct7" eventType="touchUpInside" id="1hj-OQ-5Cp"/>
                                 </connections>
@@ -56,7 +52,6 @@
                         </constraints>
                     </view>
                 </subviews>
-                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
                     <constraint firstItem="emN-eJ-ZBg" firstAttribute="centerY" secondItem="ccx-vm-b60" secondAttribute="centerY" id="GUM-Da-DkO"/>
                     <constraint firstItem="emN-eJ-ZBg" firstAttribute="top" secondItem="ccx-vm-b60" secondAttribute="top" constant="5" id="kVn-ZT-MV2"/>
@@ -65,13 +60,11 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="p82-Ws-qdf"/>
             <connections>
+                <outlet property="informationButton" destination="lFo-HB-3BH" id="feB-oP-hRJ"/>
                 <outlet property="logOutButton" destination="3DG-v7-uHk" id="F2K-sD-9yV"/>
                 <outlet property="viewForPopTip" destination="emN-eJ-ZBg" id="Yvm-Dy-d5T"/>
             </connections>
             <point key="canvasLocation" x="153.62318840579712" y="131.25"/>
         </tableViewCell>
     </objects>
-    <resources>
-        <image name="iconQuestion" width="25" height="25"/>
-    </resources>
 </document>

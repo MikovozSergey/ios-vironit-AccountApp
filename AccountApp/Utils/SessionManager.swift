@@ -15,7 +15,7 @@ final public class SessionManager {
         return date
     }
     
-    func saveStartOfSession() {
+    private func saveStartOfSession() {
         let defaults = UserDefaults.standard
         defaults.set(currentTime(), forKey: "timeOfStartSession")
     }
@@ -41,7 +41,7 @@ final public class SessionManager {
 
     func startTimer() {
         timer?.invalidate()
-
+        saveStartOfSession()
         let seconds = 600.0
         timer = Timer.scheduledTimer(timeInterval: seconds, target: self, selector: #selector(timerHandler(_:)), userInfo: nil, repeats: true)
     }

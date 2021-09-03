@@ -4,27 +4,10 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item 1-->
-        <scene sceneID="feT-Xf-4jz">
-            <objects>
-                <viewController id="PBE-xa-eOT" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="A08-g2-84d">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="o91-hd-gje"/>
-                        <color key="backgroundColor" systemColor="labelColor"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="iyu-Vv-PbM"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="6ii-vu-L11" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1129" y="1047"/>
-        </scene>
         <!--Main View Controller-->
         <scene sceneID="DGL-We-mcz">
             <objects>
@@ -36,7 +19,7 @@
                         <color key="barTintColor" systemColor="labelColor"/>
                     </tabBar>
                     <connections>
-                        <segue destination="PBE-xa-eOT" kind="relationship" relationship="viewControllers" id="wZE-jT-89S"/>
+                        <segue destination="cBk-Fp-C9h" kind="relationship" relationship="viewControllers" id="wZE-jT-89S"/>
                         <segue destination="tVT-yd-fqw" kind="relationship" relationship="viewControllers" id="Jen-xk-ihz"/>
                         <segue destination="z6q-Hp-b4F" kind="relationship" relationship="viewControllers" id="j2K-LB-jGN"/>
                     </connections>
@@ -64,6 +47,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="On9-xi-HKX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-238" y="728"/>
+        </scene>
+        <!--FirstScreen-->
+        <scene sceneID="Ocb-0z-sCU">
+            <objects>
+                <viewControllerPlaceholder storyboardName="FirstScreen" id="cBk-Fp-C9h" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="UYh-6k-3GS"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wM1-bQ-dMh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-970" y="728"/>
         </scene>
     </scenes>
     <resources>

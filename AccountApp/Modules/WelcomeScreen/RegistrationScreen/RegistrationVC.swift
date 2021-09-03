@@ -15,18 +15,19 @@ class RegistrationViewController: UIViewController {
     
     private let dataBase = DataBase()
     private let keychain = KeychainSwift()
+    private let languageHandler = LanguageNotificationHandler()
     
     // MARK: - IBActions
     
     @IBAction private func tappedLoginTextField(_ sender: Any) {
         if loginTextField.text?.isEmpty != nil {
-            loginTextField.title = "RegistrationVCLoginTitle".localized()
+            setupFieldsTitle(isLogin: true)
         }
     }
     
     @IBAction private func tappedPasswordTextField(_ sender: Any) {
         if passwordTextField.text?.isEmpty != nil {
-            passwordTextField.title = "RegistrationVCPasswordTitle".localized()
+            setupFieldsTitle(isLogin: false)
         }
     }
   
@@ -34,19 +35,19 @@ class RegistrationViewController: UIViewController {
         guard let login = loginTextField.text, let password = passwordTextField.text else { return }
         if !login.isEmpty && !password.isEmpty {
             if isValidLogin(login: login) && isValidPassword(password: password) {
-                setupStyleForTestFields(title: "AlertDoneTitle".localized() , titleColor: .green)
+                setupStyleForTestFields(title: L10n.alertDoneTitle , titleColor: .green)
                 keychain.set(password, forKey: login)
                 dataBase.openDatabse(login: login)
                 let storyboard = UIStoryboard(name: "MainScreen", bundle: nil)
                 guard let vc = storyboard.instantiateViewController(identifier: "MainViewController") as? MainViewController else { return }
                 navigationController?.pushViewController(vc, animated: true)
             } else {
-                setupStyleForTestFields(title: "AlertWrongTitle".localized(), titleColor: .red)
-                showAlert(title: "AlertErrorTitle".localized(), message: "AlertRecommendationForFieldsMessage".localized())
+                setupStyleForTestFields(title: L10n.alertWrongTitle, titleColor: .red)
+                showAlert(title: L10n.alertErrorTitle, message: L10n.alertRecommendationForFieldsMessage)
             }
         } else {
-            setupStyleForTestFields(title: "AlertErrorTitle".localized(), titleColor: .red)
-            showAlert(title: "AlertErrorTitle".localized(), message: "AlertErrorEmptyFieldsMessage".localized())
+            setupStyleForTestFields(title: L10n.alertErrorTitle, titleColor: .red)
+            showAlert(title: L10n.alertErrorTitle, message: L10n.alertErrorEmptyFieldsMessage)
         }
     }
     
@@ -54,36 +55,44 @@ class RegistrationViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        loginTextField.delegate = self
-        passwordTextField.delegate = self
-        
+        setupDelegate()
         setupUI()
+        handleLanguage()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setupTheme()
     }
     
     // MARK: - Logic
 
+    private func setupTheme() {
+        self.navigationController!.navigationBar.isTranslucent = false
+        self.navigationController?.navigationBar.barTintColor = Theme.currentTheme.backgroundColor
+        self.view.backgroundColor = Theme.currentTheme.backgroundColor
+        loginTextField.textColor = Theme.currentTheme.textColor
+        passwordTextField.textColor = Theme.currentTheme.textColor
+        saveButton.setTitleColor(Theme.currentTheme.textColor, for: .normal)
+    }
+    
     private func setupUI() {
-        // navigation bar
+        setupStrings()
         navigationController?.view.tintColor = UIColor(red: 255/255, green: 215/255, blue: 0/255, alpha: 1)
-        
-        // login label
         loginTextField.textAlignment = .center
-        loginTextField.placeholder = "RegistrationVCLoginPlaceholder".localized()
-        
-        // password label
         passwordTextField.textAlignment = .center
-        passwordTextField.placeholder = "RegistrationVCPasswordPlaceholder".localized()
-        
-        // save button
-        saveButton.setTitle("Save".localized(), for: .normal)
         saveButton.layer.borderWidth = 1.5
         saveButton.layer.borderColor = CGColor(red: 255/255, green: 215/255, blue: 0/255, alpha: 1)
     }
     
+    private func setupDelegate() {
+        loginTextField.delegate = self
+        passwordTextField.delegate = self
+    }
+    
     private func showAlert(title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let doneButton = UIAlertAction(title: "AlertDoneTitle".localized(), style: .default, handler: nil)
+        let doneButton = UIAlertAction(title: L10n.alertDoneTitle, style: .default, handler: nil)
         alert.addAction(doneButton)
         
         present(alert, animated: true)
@@ -94,6 +103,26 @@ class RegistrationViewController: UIViewController {
         loginTextField.titleColor = titleColor
         passwordTextField.title = title
         passwordTextField.titleColor = titleColor
+    }
+    
+    private func setupFieldsTitle(isLogin: Bool) {
+        if isLogin {
+            loginTextField.title = L10n.registrationVCLoginTitle
+        } else {
+            passwordTextField.title = L10n.registrationVCPasswordTitle
+        }
+    }
+    
+    private func setupStrings() {
+        loginTextField.placeholder = L10n.registrationVCLoginPlaceholder
+        passwordTextField.placeholder = L10n.registrationVCPasswordPlaceholder
+        saveButton.setTitle(L10n.save, for: .normal)
+    }
+    
+    private func handleLanguage() {
+        languageHandler.startListening { [weak self] in
+            self?.setupStrings()
+        }
     }
 }
 

@@ -7,13 +7,24 @@ class MainViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupSession()
+        setupUI()
+        setupTapBarTitle()
+    }
+    
+    private func setupUI() {
         navigationController?.view.tintColor = Colors.gold
     }
 
     private func setupSession() {
         sessionManager = SessionManager(navigation: self.navigationController!)
         sessionManager!.startTimer()
-        sessionManager!.saveStartOfSession()
-        print(sessionManager!.getStartOfSession())
+    }
+    
+    private func setupTapBarTitle() {
+        let tabBarItemEmpty = tabBar.items![0]
+        let tabBarItemSettings = tabBar.items![2]
+        self.tabBarController?.tabBar.items?[1].title = "tab title"
+        tabBarItemEmpty.title = L10n.empty
+        tabBarItemSettings.title = L10n.settings
     }
 }

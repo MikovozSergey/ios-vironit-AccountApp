@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hV4-QU-Y5n">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -14,19 +13,16 @@
             <objects>
                 <viewController storyboardIdentifier="WelcomeViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="M9I-rJ-elg" customClass="WelcomeViewController" customModule="AccountApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BhI-kk-WXW">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I1c-Kj-REX">
-                                <rect key="frame" x="107" y="379" width="200" height="50"/>
+                                <rect key="frame" x="107" y="423" width="200" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="XpV-38-wKM"/>
                                     <constraint firstAttribute="height" constant="50" id="b3O-QQ-DJP"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="KohinoorBangla-Semibold" family="Kohinoor Bangla" pointSize="17"/>
-                                <state key="normal" title="Войти">
-                                    <color key="titleColor" systemColor="systemBackgroundColor"/>
-                                </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                         <integer key="value" value="10"/>
@@ -37,22 +33,18 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8bG-PP-LDQ">
-                                <rect key="frame" x="101" y="437" width="212" height="32"/>
+                                <rect key="frame" x="101" y="481" width="212" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="32" id="Rnu-ra-msI"/>
                                     <constraint firstAttribute="width" constant="212" id="fFP-k3-eHm"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="KohinoorBangla-Regular" family="Kohinoor Bangla" pointSize="14"/>
-                                <state key="normal" title="Вы хотите зарегистрироваться?">
-                                    <color key="titleColor" systemColor="secondarySystemGroupedBackgroundColor"/>
-                                </state>
                                 <connections>
                                     <action selector="pressedRegistrationButton:" destination="M9I-rJ-elg" eventType="touchUpInside" id="CgS-uA-8Mn"/>
                                 </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="tKc-Gx-h4L"/>
-                        <color key="backgroundColor" systemColor="labelColor"/>
                         <constraints>
                             <constraint firstItem="I1c-Kj-REX" firstAttribute="centerX" secondItem="BhI-kk-WXW" secondAttribute="centerX" id="1Cf-xS-Thl"/>
                             <constraint firstItem="8bG-PP-LDQ" firstAttribute="top" secondItem="I1c-Kj-REX" secondAttribute="bottom" constant="8" symbolic="YES" id="BSi-Mk-aNN"/>
@@ -70,38 +62,5 @@
             </objects>
             <point key="canvasLocation" x="760.86956521739137" y="111.83035714285714"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="Xgw-i5-is7">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hV4-QU-Y5n" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="WO6-8k-Him">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" systemColor="labelColor"/>
-                        <textAttributes key="titleTextAttributes">
-                            <fontDescription key="fontDescription" name="KohinoorBangla-Semibold" family="Kohinoor Bangla" pointSize="17"/>
-                        </textAttributes>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="M9I-rJ-elg" kind="relationship" relationship="rootViewController" id="RGy-gE-UR8"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="raL-7Z-Ylu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-149.27536231884059" y="111.83035714285714"/>
-        </scene>
     </scenes>
-    <resources>
-        <systemColor name="labelColor">
-            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="secondarySystemGroupedBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-    </resources>
 </document>

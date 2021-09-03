@@ -7,6 +7,7 @@ final class CustomViewForEditCredentialsCell: UITableViewCell {
     
     @IBOutlet private weak var viewForPopTip: UIView!
     @IBOutlet private weak var changeLoginAndPasswordButton: UIButton!
+    @IBOutlet private weak var informationButton: UIButton!
     
     // MARK: - IBActions
     
@@ -39,14 +40,14 @@ final class CustomViewForEditCredentialsCell: UITableViewCell {
         handleLanguage()
     }
     
-    // MARK: - Open methods
-    func setup() {
+    // MARK: - Methods
+    
+     private func setup() {
         setupStrings()
         changeLoginAndPasswordButton.layer.cornerRadius = 10
         changeLoginAndPasswordButton.layer.borderWidth = 1.5
         changeLoginAndPasswordButton.layer.borderColor = CGColor(red: 255/255, green: 215/255, blue: 0/255, alpha: 1)
         self.selectionStyle = .none
-    
         popTip.shouldDismissOnTap = true
         popTip.shouldDismissOnTapOutside = true
         popTip.shouldDismissOnSwipeOutside = true
@@ -56,6 +57,10 @@ final class CustomViewForEditCredentialsCell: UITableViewCell {
         popTip.edgeInsets = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
         popTip.borderWidth = 1
         popTip.borderColor = UIColor(red: 255/255, green: 215/255, blue: 0/255, alpha: 1)
+        viewForPopTip.backgroundColor = Theme.currentTheme.backgroundColor
+        changeLoginAndPasswordButton.setTitleColor(Theme.currentTheme.textColor, for: .normal)
+        informationButton.setImage(Theme.currentTheme.questionImage, for: .normal)
+        contentView.backgroundColor = Theme.currentTheme.backgroundColor
     }
     
     private func configurePopTip(sender: UIButton) {
@@ -63,7 +68,8 @@ final class CustomViewForEditCredentialsCell: UITableViewCell {
         popTip.show(attributedText: setupAtributedText(), direction: direction, maxWidth: 200, in: viewForPopTip, from: sender.frame)
     }
     
-    func configureNavigation(navigator: UINavigationController) {
+    func configure(navigator: UINavigationController) {
+        setup()
         self.navigator = navigator
     }
     
@@ -72,7 +78,7 @@ final class CustomViewForEditCredentialsCell: UITableViewCell {
     }
     
     private func setupAtributedText() -> NSMutableAttributedString {
-        let attributes: [NSAttributedString.Key: Any] = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14), NSAttributedString.Key.foregroundColor: UIColor.white]
+        let attributes: [NSAttributedString.Key: Any] = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14), NSAttributedString.Key.foregroundColor: Theme.currentTheme.textColor]
         return NSMutableAttributedString(string: L10n.settingsVCChangeLoginAndPassowrdPopTipSentenses, attributes: attributes)
     }
     

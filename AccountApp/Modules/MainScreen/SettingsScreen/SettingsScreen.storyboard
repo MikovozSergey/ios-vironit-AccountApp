@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Настройки-->
+        <!--Settings View Controller-->
         <scene sceneID="km8-5a-qjg">
             <objects>
                 <viewController storyboardIdentifier="SettingsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="AFk-Tf-PIU" customClass="SettingsViewController" customModule="AccountApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -32,26 +32,39 @@
                                     <constraint firstAttribute="width" constant="400" id="KA9-Jn-IOi"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="KohinoorBangla-Regular" family="Kohinoor Bangla" pointSize="14"/>
-                                <state key="normal">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
                                 <connections>
                                     <action selector="tappedChangeLanguageButton:" destination="AFk-Tf-PIU" eventType="touchUpInside" id="Bgh-Bq-ZXr"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Qs-YC-Nt8">
+                                <rect key="frame" x="57" y="641" width="300" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="Dmm-GF-H2o"/>
+                                    <constraint firstAttribute="height" constant="50" id="PEe-fE-ldN"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="KohinoorBangla-Regular" family="Kohinoor Bangla" pointSize="14"/>
+                                <state key="normal">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="tappedChangeThemeButton:" destination="AFk-Tf-PIU" eventType="touchUpInside" id="wsY-qO-19R"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="iPq-58-Kwx"/>
-                        <color key="backgroundColor" systemColor="labelColor"/>
                         <constraints>
+                            <constraint firstItem="3Qs-YC-Nt8" firstAttribute="top" secondItem="jPc-wo-oUy" secondAttribute="bottom" constant="43" id="4uf-QD-cdj"/>
                             <constraint firstItem="jPc-wo-oUy" firstAttribute="centerY" secondItem="gaK-kc-XIf" secondAttribute="centerY" id="M0M-42-Cww"/>
                             <constraint firstItem="jPc-wo-oUy" firstAttribute="centerX" secondItem="gaK-kc-XIf" secondAttribute="centerX" id="PCE-Tg-UO7"/>
+                            <constraint firstItem="3Qs-YC-Nt8" firstAttribute="centerX" secondItem="gaK-kc-XIf" secondAttribute="centerX" id="Tud-uc-fj8"/>
                             <constraint firstItem="jPc-wo-oUy" firstAttribute="top" secondItem="VOT-ev-A7T" secondAttribute="bottom" constant="40" id="gtg-K5-5JX"/>
                             <constraint firstItem="VOT-ev-A7T" firstAttribute="centerX" secondItem="gaK-kc-XIf" secondAttribute="centerX" id="kAF-OD-sN0"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Настройки" id="i7y-y0-DKv"/>
+                    <tabBarItem key="tabBarItem" title="" id="i7y-y0-DKv"/>
                     <connections>
                         <outlet property="changeLanguageButton" destination="VOT-ev-A7T" id="NrY-kb-wCE"/>
+                        <outlet property="changeThemeButton" destination="3Qs-YC-Nt8" id="aSU-yv-MP4"/>
                         <outlet property="tableView" destination="jPc-wo-oUy" id="XjR-e6-U9p"/>
                     </connections>
                 </viewController>
@@ -61,9 +74,6 @@
         </scene>
     </scenes>
     <resources>
-        <systemColor name="labelColor">
-            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

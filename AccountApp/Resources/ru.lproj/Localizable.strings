@@ -4,6 +4,12 @@
 "Save" = "Сохранить";
 "Edit" = "Изменить";
 
+// MARK: TabBarItem
+
+"Empty" = "Пусто";
+"Settings" = "Настройки";
+"List" = "Список";
+
 // MARK: WelcomVC
 
 "WelcomeVCSignUpButton" = "Вы хотите зарегистрироваться?";
@@ -41,6 +47,10 @@
 // MARK: SwitchLanguageVC
 
 "SwitchLanguageVCTitle" = "Хотите изменить язык приложения на English?";
+
+// MARK: SwitchThemeVC
+
+"SwitchThemeVCTitle" = "Вы хотите изменить тему приложения?";
 
 // MARK: Alert
 
