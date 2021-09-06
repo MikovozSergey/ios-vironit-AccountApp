@@ -43,7 +43,6 @@ class ListOfAccountsViewController: UIViewController {
     }
     
     private func setupUI() {
-        setupStrings()
         tableView.tableFooterView = UIView()
     }
     

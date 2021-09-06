@@ -37,6 +37,7 @@
 		CE48AEC7262045EA0076B311 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE48AEC6262045EA0076B311 /* StringExtensions.swift */; };
 		CE48AED326207FC60076B311 /* ChangeProfileScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE48AED226207FC60076B311 /* ChangeProfileScreen.storyboard */; };
 		CE48AED626207FEF0076B311 /* ChangeProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE48AED526207FEF0076B311 /* ChangeProfileVC.swift */; };
+		CE59069626E5FCC30059C84C /* RegistrationVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE59069526E5FCC30059C84C /* RegistrationVM.swift */; };
 		CE5BEC2A26DFB6CC00685981 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5BEC2926DFB6CC00685981 /* Strings.swift */; };
 		CE5BEC2C26DFBD5C00685981 /* LanguageEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5BEC2B26DFBD5C00685981 /* LanguageEnum.swift */; };
 		CE5BEC2E26DFC6E000685981 /* NotificationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5BEC2D26DFC6E000685981 /* NotificationExtension.swift */; };
@@ -91,6 +92,7 @@
 		CE48AEC6262045EA0076B311 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		CE48AED226207FC60076B311 /* ChangeProfileScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChangeProfileScreen.storyboard; sourceTree = "<group>"; };
 		CE48AED526207FEF0076B311 /* ChangeProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeProfileVC.swift; sourceTree = "<group>"; };
+		CE59069526E5FCC30059C84C /* RegistrationVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationVM.swift; sourceTree = "<group>"; };
 		CE5BEC2826DFB21800685981 /* swiftgen.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = swiftgen.yml; sourceTree = "<group>"; };
 		CE5BEC2926DFB6CC00685981 /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		CE5BEC2B26DFBD5C00685981 /* LanguageEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageEnum.swift; sourceTree = "<group>"; };
@@ -190,7 +192,6 @@
 				CE47F432261DE0A2005F1C69 /* CoreData */,
 				CE47F42C261DDFAC005F1C69 /* Models */,
 				CE47F42D261DDFC2005F1C69 /* Modules */,
-				CE4514C6260DF1D70069CB6D /* LaunchScreen.storyboard */,
 				CE47F42E261DE007005F1C69 /* Network */,
 				CE47F42F261DE015005F1C69 /* Resources */,
 				CE47F433261DE0B9005F1C69 /* Utils */,
@@ -241,6 +242,7 @@
 		CE47F42D261DDFC2005F1C69 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				CE4514C6260DF1D70069CB6D /* LaunchScreen.storyboard */,
 				CE47F43C261DE33D005F1C69 /* WelcomeScreen */,
 				CE47F43A261DE222005F1C69 /* MainScreen */,
 			);
@@ -327,6 +329,7 @@
 			children = (
 				CE47F471261DF129005F1C69 /* RegistrationVC.swift */,
 				CE47F474261DF19C005F1C69 /* RegistrationScreen.storyboard */,
+				CE59069526E5FCC30059C84C /* RegistrationVM.swift */,
 			);
 			path = RegistrationScreen;
 			sourceTree = "<group>";
@@ -553,6 +556,7 @@
 				CE63301526DCFD7200E8F311 /* CoreDataDB.swift in Sources */,
 				CE5BEC2A26DFB6CC00685981 /* Strings.swift in Sources */,
 				CE477431261F387D00A6DD5B /* CustomViewForEditCredentialsCell.swift in Sources */,
+				CE59069626E5FCC30059C84C /* RegistrationVM.swift in Sources */,
 				CE4514BD260DF1D40069CB6D /* MainVC.swift in Sources */,
 				CE4514C3260DF1D40069CB6D /* AccountApp.xcdatamodeld in Sources */,
 				CE477414261F337200A6DD5B /* ListOfAccountsVC.swift in Sources */,

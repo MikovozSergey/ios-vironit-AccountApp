@@ -14,7 +14,7 @@ class SwitchThemeViewController: UIViewController {
     // MARK: - IBActions
     
     @IBAction private func switchTheme(_ sender: UISwitch) {
-        Theme.currentTheme = themeSwitch.isOn ? LightTheme() : DarkTheme()
+        Theme.currentTheme = themeSwitch.isOn ? DarkTheme() : LightTheme()
         setupTheme()
         UserDefaults.standard.set(sender.isOn, forKey: "DarkTheme")
     }
@@ -32,14 +32,16 @@ class SwitchThemeViewController: UIViewController {
     // MARK: - Logic
     
     private func setupUI() {
+        self.navigationController!.navigationBar.topItem!.title = ""
         setupStrings()
     }
     
     private func setupStrings() {
-        changeThemeLabel.text = L10n.switchThemeVCTitle
+        changeThemeLabel.text = L10n.switchThemeVCLabel
     }
     
     private func setupTheme() {
+        themeSwitch.tintColor = Theme.currentTheme.accentColor
         themeSwitch.onTintColor = Theme.currentTheme.accentColor
         self.navigationController?.navigationBar.barTintColor = Theme.currentTheme.backgroundColor
         self.view.backgroundColor = Theme.currentTheme.backgroundColor

@@ -50,7 +50,8 @@
 
 // MARK: SwitchThemeVC
 
-"SwitchThemeVCTitle" = "Do you want to change theme of app?";
+"SwitchThemeVCTitle" = "Change theme?";
+"SwitchThemeVCLabel" = "Change theme on Dark?";
 
 // MARK: Alert
 

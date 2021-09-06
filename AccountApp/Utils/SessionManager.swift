@@ -10,9 +10,9 @@ final public class SessionManager {
     }
     
     private func currentTime() -> Date {
-        let date = Date()
-        _ = date.timeIntervalSince1970
-        return date
+        let timezone = TimeZone.current
+        let seconds = TimeInterval(timezone.secondsFromGMT(for: Date()))
+        return Date(timeInterval: seconds, since: Date())
     }
     
     private func saveStartOfSession() {
@@ -47,7 +47,6 @@ final public class SessionManager {
     }
 
     func stopTimer() {
-        saveStartOfSession()
         timer?.invalidate()
     }
 }

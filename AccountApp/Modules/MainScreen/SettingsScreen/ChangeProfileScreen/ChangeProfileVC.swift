@@ -64,11 +64,22 @@ class ChangeProfileViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         dataBase.fetchData()
+        setupTheme()
     }
 
     // MARK: - Logic
     
+    private func setupTheme() {
+        self.view.backgroundColor = Theme.currentTheme.backgroundColor
+        loginTextField.textColor = Theme.currentTheme.textColor
+        newLoginTextField.textColor = Theme.currentTheme.textColor
+        passwordTextField.textColor = Theme.currentTheme.textColor
+        newPasswordTextField.textColor = Theme.currentTheme.textColor
+        saveButton.setTitleColor(Theme.currentTheme.textColor, for: .normal)
+    }
+    
     private func setupUI() {
+        navigationController?.navigationBar.isHidden = false
         setupStrings()
         navigationController?.view.tintColor = UIColor(red: 255/255, green: 215/255, blue: 0/255, alpha: 1)
         loginTextField.textAlignment = .center

@@ -1,5 +1,7 @@
 import CoreData
 import SkyFloatingLabelTextField
+import RxSwift
+import RxCocoa
 import KeychainSwift
 import UIKit
 
@@ -16,6 +18,8 @@ class RegistrationViewController: UIViewController {
     private let dataBase = DataBase()
     private let keychain = KeychainSwift()
     private let languageHandler = LanguageNotificationHandler()
+    private var viewModel = RegistrationViewModel()
+    private let disposeBag = DisposeBag()
     
     // MARK: - IBActions
     
@@ -30,34 +34,35 @@ class RegistrationViewController: UIViewController {
             setupFieldsTitle(isLogin: false)
         }
     }
-  
-    @IBAction private func tappedSaveButton(_ sender: Any) {
-        guard let login = loginTextField.text, let password = passwordTextField.text else { return }
-        if !login.isEmpty && !password.isEmpty {
-            if isValidLogin(login: login) && isValidPassword(password: password) {
-                setupStyleForTestFields(title: L10n.alertDoneTitle , titleColor: .green)
-                keychain.set(password, forKey: login)
-                dataBase.openDatabse(login: login)
-                let storyboard = UIStoryboard(name: "MainScreen", bundle: nil)
-                guard let vc = storyboard.instantiateViewController(identifier: "MainViewController") as? MainViewController else { return }
-                navigationController?.pushViewController(vc, animated: true)
-            } else {
-                setupStyleForTestFields(title: L10n.alertWrongTitle, titleColor: .red)
-                showAlert(title: L10n.alertErrorTitle, message: L10n.alertRecommendationForFieldsMessage)
-            }
-        } else {
-            setupStyleForTestFields(title: L10n.alertErrorTitle, titleColor: .red)
-            showAlert(title: L10n.alertErrorTitle, message: L10n.alertErrorEmptyFieldsMessage)
-        }
-    }
+    
+    //    @IBAction private func tappedSaveButton(_ sender: Any) {
+    //        guard let login = loginTextField.text, let password = passwordTextField.text else { return }
+    //        if !login.isEmpty && !password.isEmpty {
+    //            if isValidLogin(login: login) && isValidPassword(password: password) {
+    //                setupStyleForTestFields(title: L10n.alertDoneTitle , titleColor: .green)
+    //                keychain.set(password, forKey: login)
+    //                dataBase.openDatabse(login: login)
+    //                let storyboard = UIStoryboard(name: "MainScreen", bundle: nil)
+    //                guard let vc = storyboard.instantiateViewController(identifier: "MainViewController") as? MainViewController else { return }
+    //                navigationController?.pushViewController(vc, animated: true)
+    //            } else {
+    //                setupStyleForTestFields(title: L10n.alertWrongTitle, titleColor: .red)
+    //                showAlert(title: L10n.alertErrorTitle, message: L10n.alertRecommendationForFieldsMessage)
+    //            }
+    //        } else {
+    //            setupStyleForTestFields(title: L10n.alertErrorTitle, titleColor: .red)
+    //            showAlert(title: L10n.alertErrorTitle, message: L10n.alertErrorEmptyFieldsMessage)
+    //        }
+    //    }
     
     // MARK: - Lifecycle
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupDelegate()
         setupUI()
         handleLanguage()
+        bind()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -66,8 +71,9 @@ class RegistrationViewController: UIViewController {
     }
     
     // MARK: - Logic
-
+    
     private func setupTheme() {
+        self.navigationController!.navigationBar.topItem!.title = ""
         self.navigationController!.navigationBar.isTranslucent = false
         self.navigationController?.navigationBar.barTintColor = Theme.currentTheme.backgroundColor
         self.view.backgroundColor = Theme.currentTheme.backgroundColor
@@ -132,10 +138,43 @@ extension RegistrationViewController: UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         return true
     }
-
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
     }
     
+}
+
+private extension RegistrationViewController {
+    
+    func bind() {
+        let output = viewModel.bind(input: RegistrationInput(
+            saveEvent: saveButton.rx.tap,
+            loginText: loginTextField.rx.text.asDriver(),
+            passwordText: passwordTextField.rx.text.asDriver()
+        )
+        )
+        let registrationStateDisposable = output.registrationState.skip(1).drive(onNext: { [weak self] state in
+            guard let self = self else { return }
+            switch state {
+            case .allIsGood(let user):
+                self.setupStyleForTestFields(title: L10n.alertDoneTitle , titleColor: .green)
+                self.keychain.set(user.password, forKey: user.login)
+                self.dataBase.openDatabse(login: user.login)
+                let storyboard = UIStoryboard(name: "MainScreen", bundle: nil)
+                guard let vc = storyboard.instantiateViewController(identifier: "MainViewController") as? MainViewController else { return }
+                self.navigationController?.pushViewController(vc, animated: true)
+            case .emptyFields:
+                self.setupStyleForTestFields(title: L10n.alertErrorTitle, titleColor: .red)
+                self.showAlert(title: L10n.alertErrorTitle, message: L10n.alertErrorEmptyFieldsMessage)
+            case .invalidValidation:
+                self.setupStyleForTestFields(title: L10n.alertWrongTitle, titleColor: .red)
+                self.showAlert(title: L10n.alertErrorTitle, message: L10n.alertRecommendationForFieldsMessage)
+                }
+            }
+        )
+        disposeBag.insert(registrationStateDisposable,
+                          output.disposable)
+    }
 }

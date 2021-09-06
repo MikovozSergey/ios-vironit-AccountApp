@@ -39,7 +39,6 @@
                             </switch>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="gwe-Kn-T80"/>
-                        <color key="backgroundColor" systemColor="labelColor"/>
                         <constraints>
                             <constraint firstItem="rTp-zf-Qda" firstAttribute="centerY" secondItem="PE0-u6-22z" secondAttribute="centerY" id="2PK-kq-L99"/>
                             <constraint firstItem="8WQ-YJ-uLI" firstAttribute="top" secondItem="rTp-zf-Qda" secondAttribute="bottom" constant="41.5" id="WJq-DY-Fb5"/>
@@ -58,9 +57,6 @@
         </scene>
     </scenes>
     <resources>
-        <systemColor name="labelColor">
-            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
         <systemColor name="secondarySystemGroupedBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -28,6 +28,7 @@ class FirstViewController: UIViewController {
     }
     
     private func setupTheme() {
+        self.navigationController!.navigationBar.topItem!.title = ""
         view.backgroundColor = Theme.currentTheme.backgroundColor
     }
     

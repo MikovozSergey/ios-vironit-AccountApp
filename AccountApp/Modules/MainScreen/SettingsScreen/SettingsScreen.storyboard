@@ -26,7 +26,7 @@
                                 </constraints>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VOT-ev-A7T">
-                                <rect key="frame" x="7" y="208" width="400" height="50"/>
+                                <rect key="frame" x="7" y="238" width="400" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="1Q6-nf-FUd"/>
                                     <constraint firstAttribute="width" constant="400" id="KA9-Jn-IOi"/>
@@ -37,9 +37,9 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Qs-YC-Nt8">
-                                <rect key="frame" x="57" y="641" width="300" height="50"/>
+                                <rect key="frame" x="107" y="608" width="200" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="300" id="Dmm-GF-H2o"/>
+                                    <constraint firstAttribute="width" constant="200" id="Dmm-GF-H2o"/>
                                     <constraint firstAttribute="height" constant="50" id="PEe-fE-ldN"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="KohinoorBangla-Regular" family="Kohinoor Bangla" pointSize="14"/>
@@ -53,11 +53,11 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="iPq-58-Kwx"/>
                         <constraints>
-                            <constraint firstItem="3Qs-YC-Nt8" firstAttribute="top" secondItem="jPc-wo-oUy" secondAttribute="bottom" constant="43" id="4uf-QD-cdj"/>
+                            <constraint firstItem="3Qs-YC-Nt8" firstAttribute="top" secondItem="jPc-wo-oUy" secondAttribute="bottom" constant="10" id="4uf-QD-cdj"/>
                             <constraint firstItem="jPc-wo-oUy" firstAttribute="centerY" secondItem="gaK-kc-XIf" secondAttribute="centerY" id="M0M-42-Cww"/>
                             <constraint firstItem="jPc-wo-oUy" firstAttribute="centerX" secondItem="gaK-kc-XIf" secondAttribute="centerX" id="PCE-Tg-UO7"/>
                             <constraint firstItem="3Qs-YC-Nt8" firstAttribute="centerX" secondItem="gaK-kc-XIf" secondAttribute="centerX" id="Tud-uc-fj8"/>
-                            <constraint firstItem="jPc-wo-oUy" firstAttribute="top" secondItem="VOT-ev-A7T" secondAttribute="bottom" constant="40" id="gtg-K5-5JX"/>
+                            <constraint firstItem="jPc-wo-oUy" firstAttribute="top" secondItem="VOT-ev-A7T" secondAttribute="bottom" constant="10" id="gtg-K5-5JX"/>
                             <constraint firstItem="VOT-ev-A7T" firstAttribute="centerX" secondItem="gaK-kc-XIf" secondAttribute="centerX" id="kAF-OD-sN0"/>
                         </constraints>
                     </view>

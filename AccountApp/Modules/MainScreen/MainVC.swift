@@ -11,6 +11,11 @@ class MainViewController: UITabBarController {
         setupTapBarTitle()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tabBar.barTintColor = Theme.currentTheme.backgroundColor
+    }
+    
     private func setupUI() {
         navigationController?.view.tintColor = Colors.gold
     }

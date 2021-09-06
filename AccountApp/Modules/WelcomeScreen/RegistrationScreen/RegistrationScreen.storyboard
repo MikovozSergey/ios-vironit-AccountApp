@@ -99,9 +99,6 @@
                                         <integer key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="tappedSaveButton:" destination="3AP-fU-exR" eventType="touchUpInside" id="p4z-kW-ZMq"/>
-                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Syh-Gi-ugC"/>

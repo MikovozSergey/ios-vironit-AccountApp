@@ -58,6 +58,7 @@ class LogInViewController: UIViewController {
     // MARK: - Logic
     
     private func setupTheme() {
+        self.navigationController!.navigationBar.topItem!.title = ""
         self.navigationController!.navigationBar.isTranslucent = false
         self.navigationController?.navigationBar.barTintColor = Theme.currentTheme.backgroundColor
         self.view.backgroundColor = Theme.currentTheme.backgroundColor

@@ -10,6 +10,7 @@ target 'AccountApp' do
   pod 'KeychainSwift', '19.0'
   pod 'RxSwift', '6.1.0'
   pod 'RxCocoa', '6.1.0'
+  pod 'RxFlow', '2.12.4'
   pod 'SwiftLint', '0.42.0'
   pod 'SkyFloatingLabelTextField', '4.0'
   pod 'AMPopTip', '4.5.3'

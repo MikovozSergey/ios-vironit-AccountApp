@@ -28,9 +28,6 @@
                                         <integer key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="pressedLogInButton:" destination="M9I-rJ-elg" eventType="touchUpInside" id="aiy-h2-uU8"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8bG-PP-LDQ">
                                 <rect key="frame" x="101" y="437" width="212" height="32"/>
@@ -39,9 +36,6 @@
                                     <constraint firstAttribute="width" constant="212" id="fFP-k3-eHm"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="KohinoorBangla-Regular" family="Kohinoor Bangla" pointSize="14"/>
-                                <connections>
-                                    <action selector="pressedRegistrationButton:" destination="M9I-rJ-elg" eventType="touchUpInside" id="CgS-uA-8Mn"/>
-                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="tKc-Gx-h4L"/>
@@ -65,7 +59,6 @@
         <!--Navigation Controller-->
         <scene sceneID="Xgw-i5-is7">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="raL-7Z-Ylu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hV4-QU-Y5n" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="WO6-8k-Him">
@@ -80,6 +73,7 @@
                         <segue destination="M9I-rJ-elg" kind="relationship" relationship="rootViewController" id="RGy-gE-UR8"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="raL-7Z-Ylu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-112" y="112"/>
         </scene>

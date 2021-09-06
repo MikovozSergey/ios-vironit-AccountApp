@@ -13,10 +13,6 @@ enum Language: String {
         }
     }
     
-//    var languageFull: String {
-//        return L10n.Setting.Language.title
-//    }
-    
     var reverseLanguage: String {
         switch self {
         case .english:
