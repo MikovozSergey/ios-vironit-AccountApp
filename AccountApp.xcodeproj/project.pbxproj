@@ -38,6 +38,9 @@
 		CE48AED326207FC60076B311 /* ChangeProfileScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE48AED226207FC60076B311 /* ChangeProfileScreen.storyboard */; };
 		CE48AED626207FEF0076B311 /* ChangeProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE48AED526207FEF0076B311 /* ChangeProfileVC.swift */; };
 		CE59069626E5FCC30059C84C /* RegistrationVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE59069526E5FCC30059C84C /* RegistrationVM.swift */; };
+		CE59069826E650710059C84C /* LoginVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE59069726E650710059C84C /* LoginVM.swift */; };
+		CE59069A26E655470059C84C /* ChangeProfileVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE59069926E655470059C84C /* ChangeProfileVM.swift */; };
+		CE59069C26E660360059C84C /* SettingsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE59069B26E660360059C84C /* SettingsVM.swift */; };
 		CE5BEC2A26DFB6CC00685981 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5BEC2926DFB6CC00685981 /* Strings.swift */; };
 		CE5BEC2C26DFBD5C00685981 /* LanguageEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5BEC2B26DFBD5C00685981 /* LanguageEnum.swift */; };
 		CE5BEC2E26DFC6E000685981 /* NotificationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5BEC2D26DFC6E000685981 /* NotificationExtension.swift */; };
@@ -49,6 +52,7 @@
 		CE649D4B26E21E0B0043730C /* FirstVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE649D4A26E21E0B0043730C /* FirstVC.swift */; };
 		CE649D4F26E221610043730C /* FirstScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE649D4E26E221610043730C /* FirstScreen.storyboard */; };
 		CE649D5126E222CC0043730C /* WelcomeScreenVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE649D5026E222CC0043730C /* WelcomeScreenVM.swift */; };
+		CE6EAF4926E74CB5002785F0 /* SwitchLanguageVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6EAF4826E74CB5002785F0 /* SwitchLanguageVM.swift */; };
 		CED9CF2326DE142900DC239B /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9CF2226DE142900DC239B /* SessionManager.swift */; };
 		CED9CF2526DE265D00DC239B /* LogOutViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9CF2426DE265D00DC239B /* LogOutViewCell.swift */; };
 		CED9CF2726DE266C00DC239B /* LogOutViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CED9CF2626DE266C00DC239B /* LogOutViewCell.xib */; };
@@ -93,6 +97,9 @@
 		CE48AED226207FC60076B311 /* ChangeProfileScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChangeProfileScreen.storyboard; sourceTree = "<group>"; };
 		CE48AED526207FEF0076B311 /* ChangeProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeProfileVC.swift; sourceTree = "<group>"; };
 		CE59069526E5FCC30059C84C /* RegistrationVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationVM.swift; sourceTree = "<group>"; };
+		CE59069726E650710059C84C /* LoginVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVM.swift; sourceTree = "<group>"; };
+		CE59069926E655470059C84C /* ChangeProfileVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeProfileVM.swift; sourceTree = "<group>"; };
+		CE59069B26E660360059C84C /* SettingsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVM.swift; sourceTree = "<group>"; };
 		CE5BEC2826DFB21800685981 /* swiftgen.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = swiftgen.yml; sourceTree = "<group>"; };
 		CE5BEC2926DFB6CC00685981 /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		CE5BEC2B26DFBD5C00685981 /* LanguageEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageEnum.swift; sourceTree = "<group>"; };
@@ -105,6 +112,7 @@
 		CE649D4A26E21E0B0043730C /* FirstVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstVC.swift; sourceTree = "<group>"; };
 		CE649D4E26E221610043730C /* FirstScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = FirstScreen.storyboard; sourceTree = "<group>"; };
 		CE649D5026E222CC0043730C /* WelcomeScreenVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeScreenVM.swift; sourceTree = "<group>"; };
+		CE6EAF4826E74CB5002785F0 /* SwitchLanguageVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchLanguageVM.swift; sourceTree = "<group>"; };
 		CED9CF2226DE142900DC239B /* SessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
 		CED9CF2426DE265D00DC239B /* LogOutViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogOutViewCell.swift; sourceTree = "<group>"; };
 		CED9CF2626DE266C00DC239B /* LogOutViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LogOutViewCell.xib; sourceTree = "<group>"; };
@@ -227,6 +235,7 @@
 				CE48AED126207F990076B311 /* ChangeProfileScreen */,
 				CE477410261F328600A6DD5B /* SettingsScreen.storyboard */,
 				CE477416261F33AB00A6DD5B /* SettingsVC.swift */,
+				CE59069B26E660360059C84C /* SettingsVM.swift */,
 			);
 			path = SettingsScreen;
 			sourceTree = "<group>";
@@ -339,6 +348,7 @@
 			children = (
 				CE48AED226207FC60076B311 /* ChangeProfileScreen.storyboard */,
 				CE48AED526207FEF0076B311 /* ChangeProfileVC.swift */,
+				CE59069926E655470059C84C /* ChangeProfileVM.swift */,
 			);
 			path = ChangeProfileScreen;
 			sourceTree = "<group>";
@@ -356,6 +366,7 @@
 			children = (
 				CE63301026DCF56C00E8F311 /* LogInVC.swift */,
 				CE63301226DCF57E00E8F311 /* LogInScreen.storyboard */,
+				CE59069726E650710059C84C /* LoginVM.swift */,
 			);
 			path = LogInScreen;
 			sourceTree = "<group>";
@@ -374,6 +385,7 @@
 			children = (
 				CED9CF3026DE5CD500DC239B /* SwitchLanguageVC.swift */,
 				CED9CF3226DE5CE300DC239B /* SwitchLanguageScreen.storyboard */,
+				CE6EAF4826E74CB5002785F0 /* SwitchLanguageVM.swift */,
 			);
 			path = SwitchLanguageScreen;
 			sourceTree = "<group>";
@@ -555,14 +567,18 @@
 				CE477442261F526F00A6DD5B /* Constants.swift in Sources */,
 				CE63301526DCFD7200E8F311 /* CoreDataDB.swift in Sources */,
 				CE5BEC2A26DFB6CC00685981 /* Strings.swift in Sources */,
+				CE6EAF4926E74CB5002785F0 /* SwitchLanguageVM.swift in Sources */,
+				CE59069A26E655470059C84C /* ChangeProfileVM.swift in Sources */,
 				CE477431261F387D00A6DD5B /* CustomViewForEditCredentialsCell.swift in Sources */,
 				CE59069626E5FCC30059C84C /* RegistrationVM.swift in Sources */,
 				CE4514BD260DF1D40069CB6D /* MainVC.swift in Sources */,
 				CE4514C3260DF1D40069CB6D /* AccountApp.xcdatamodeld in Sources */,
 				CE477414261F337200A6DD5B /* ListOfAccountsVC.swift in Sources */,
 				CE47F43E261DE374005F1C69 /* WelcomeScreenVC.swift in Sources */,
+				CE59069C26E660360059C84C /* SettingsVM.swift in Sources */,
 				CE649D5126E222CC0043730C /* WelcomeScreenVM.swift in Sources */,
 				CE4514B9260DF1D40069CB6D /* AppDelegate.swift in Sources */,
+				CE59069826E650710059C84C /* LoginVM.swift in Sources */,
 				CE5BEC2E26DFC6E000685981 /* NotificationExtension.swift in Sources */,
 				CE649D4B26E21E0B0043730C /* FirstVC.swift in Sources */,
 				CE63301126DCF56C00E8F311 /* LogInVC.swift in Sources */,

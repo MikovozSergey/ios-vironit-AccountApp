@@ -26,7 +26,6 @@ final class NotificationHandler {
         tokens.forEach { NotificationCenter.default.removeObserver($0) }
         tokens.removeAll()
     }
-    
 }
 
 extension NotificationHandler {

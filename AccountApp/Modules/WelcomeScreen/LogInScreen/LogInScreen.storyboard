@@ -99,9 +99,6 @@
                                         <integer key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="tappedLogInButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="iBt-oy-H42"/>
-                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="K0Y-S8-W2k"/>

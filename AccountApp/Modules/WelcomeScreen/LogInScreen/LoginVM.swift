@@ -2,52 +2,51 @@ import RxCocoa
 import RxSwift
 import UIKit
 
-struct RegistrationInput {
-    let saveEvent: ControlEvent<Void>
+struct LoginInput {
+    let logInEvent: ControlEvent<Void>
     let loginText: Driver<String?>
     let passwordText: Driver<String?>
 }
 
-struct RegistrationOutput {
-    let registrationState: Driver<RegistrationState>
+struct LoginOutput {
+    let loginState: Driver<LoginState>
     let disposable: Disposable
 }
 
-public enum RegistrationState {
+public enum LoginState {
     case allIsGood(user: User)
     case emptyFields
     case invalidValidation
 }
 
-
-class RegistrationViewModel {
+class LoginViewModel {
     
     private let loginValue = BehaviorRelay<String?>(value: "")
     private let passwordValue = BehaviorRelay<String?>(value: "")
-    private let registrationState = BehaviorRelay<RegistrationState>(value: .emptyFields)
+    private let loginState = BehaviorRelay<LoginState>(value: .emptyFields)
     private let disposeBag = DisposeBag()
-    private var state: RegistrationState {
+    private var state: LoginState {
         let loginValue = self.loginValue.value ?? ""
         let passwordValue = self.passwordValue.value ?? ""
         switch (isValidLogin(), isValidPassword()) {
         case (true, true):
             return .allIsGood(user: User(login: loginValue, password: passwordValue))
         default:
-            return loginValue.isEmpty && passwordValue.isEmpty ? .emptyFields : .invalidValidation
+            return loginValue.isEmpty || passwordValue.isEmpty ? .emptyFields : .invalidValidation
         }
     }
     
-    public func bind(input: RegistrationInput) -> RegistrationOutput {
+    public func bind(input: LoginInput) -> LoginOutput {
         let disposable = Disposables.create(
             input.loginText.drive(self.loginValue),
             input.passwordText.drive(self.passwordValue),
-            input.saveEvent.subscribe(onNext: { [weak self] in
+            input.logInEvent.subscribe(onNext: { [weak self] in
                 guard let self = self else { return }
-                self.registrationState.accept(self.state)
+                self.loginState.accept(self.state)
                 }
             )
         )
-        return RegistrationOutput(registrationState: registrationState.asDriver(), disposable: disposable)
+        return LoginOutput(loginState: loginState.asDriver(), disposable: disposable)
     }
     
     func isValidLogin() -> Bool {

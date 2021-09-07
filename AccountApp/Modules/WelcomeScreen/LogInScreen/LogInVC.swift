@@ -1,4 +1,6 @@
 import CoreData
+import RxCocoa
+import RxSwift
 import SkyFloatingLabelTextField
 import KeychainSwift
 import UIKit
@@ -16,6 +18,8 @@ class LogInViewController: UIViewController {
     private let keychain = KeychainSwift()
     private let dataBase = DataBase()
     private let languageHandler = LanguageNotificationHandler()
+    private var viewModel = LoginViewModel()
+    private let disposeBag = DisposeBag()
     
     // MARK: - IBActions
 
@@ -29,16 +33,6 @@ class LogInViewController: UIViewController {
             setupFieldsTitle(isLogin: false)
         }
     }
-    @IBAction private func tappedLogInButton(_ sender: Any) {
-        guard let login = loginTextField.text, let password = passwordTextField.text else { return }
-        if dataBase.arrayOfLogins.contains(login) && password == keychain.get(login) {
-            let storyboard = UIStoryboard(name: "MainScreen", bundle: nil)
-            guard let viewController = storyboard.instantiateViewController(identifier: "MainViewController") as? MainViewController else { return }
-            navigationController?.pushViewController(viewController, animated: true)
-        } else {
-            showAlert(title: L10n.alertErrorTitle, message: L10n.alertErrorPasswordMessage)
-        }
-    }
     
     // MARK: - Lifecycle
 
@@ -47,6 +41,7 @@ class LogInViewController: UIViewController {
         setupDelegate()
         setupUI()
         handleLanguage()
+        bind()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -131,4 +126,39 @@ extension LogInViewController: UITextFieldDelegate {
         return true
     }
     
+}
+
+private extension LogInViewController {
+    
+    func bind() {
+        let output = viewModel.bind(
+            input: LoginInput(
+                logInEvent: logInButton.rx.tap,
+                loginText: loginTextField.rx.text.asDriver(),
+                passwordText: passwordTextField.rx.text.asDriver()
+            )
+        )
+        let loginStateDisposable = output.loginState.skip(1).drive(onNext: { [weak self] state in
+            guard let self = self else { return }
+            switch state {
+            case .allIsGood(let user):
+                if self.dataBase.arrayOfLogins.contains(user.login) && user.password == self.keychain.get(user.login) {
+                    let storyboard = UIStoryboard(name: "MainScreen", bundle: nil)
+                    guard let viewController = storyboard.instantiateViewController(identifier: "MainViewController") as? MainViewController else { return }
+                    self.navigationController?.pushViewController(viewController, animated: true)
+                } else {
+                    self.showAlert(title: L10n.alertErrorTitle, message: L10n.alertErrorPasswordMessage)
+                }
+            case .emptyFields:
+                self.setupStyleForTestFields(title: L10n.alertErrorTitle, titleColor: .red)
+                self.showAlert(title: L10n.alertErrorTitle, message: L10n.alertErrorEmptyFieldsMessage)
+            case .invalidValidation:
+                self.setupStyleForTestFields(title: L10n.alertWrongTitle, titleColor: .red)
+                self.showAlert(title: L10n.alertErrorTitle, message: L10n.alertRecommendationForFieldsMessage)
+                }
+            }
+        )
+        disposeBag.insert(loginStateDisposable,
+                          output.disposable)
+    }
 }

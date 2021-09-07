@@ -1,9 +1,11 @@
 import KeychainSwift
+import RxCocoa
+import RxSwift
 import SkyFloatingLabelTextField
 import UIKit
 
 class ChangeProfileViewController: UIViewController {
-
+    
     // MARK: - IBOutlets
     
     @IBOutlet private weak var loginTextField: SkyFloatingLabelTextField!
@@ -17,41 +19,43 @@ class ChangeProfileViewController: UIViewController {
     private let dataBase = DataBase()
     private let keychain = KeychainSwift()
     private let languageHandler = LanguageNotificationHandler()
+    private var viewModel = ChangeProfileViewModel()
+    private let disposeBag = DisposeBag()
     
     // MARK: - IBActions
     
-    @IBAction private func tappedSaveButton(_ sender: Any) {
-        guard let oldLogin = loginTextField.text,
-              let oldPassword = passwordTextField.text,
-              let newLogin = newLoginTextField.text,
-              let newPassword = newPasswordTextField.text else { return }
-        if !oldLogin.isEmpty &&
-           !oldPassword.isEmpty &&
-           !newLogin.isEmpty &&
-           !newPassword.isEmpty {
-            if isValidLogin(login: oldLogin) &&
-                isValidPassword(password: oldPassword) &&
-                isValidLogin(login: newLogin) &&
-                isValidPassword(password: newPassword) {
-                if dataBase.arrayOfLogins.contains(oldLogin) && oldPassword == keychain.get(oldLogin) {
-                    setupStyleForTestFields(title: L10n.alertDoneTitle, titleColor: .green)
-                    keychain.delete(oldLogin)
-                    keychain.set(newPassword, forKey: newLogin)
-                    dataBase.deleteObject(logIn: oldLogin)
-                    dataBase.openDatabse(login: newLogin)
-                    navigationController?.popToRootViewController(animated: true)
-                } else {
-                    showAlert(title: L10n.alertErrorTitle, message: L10n.alertErrorPasswordMessage)
-                }
-            } else {
-                setupStyleForTestFields(title: L10n.alertWrongTitle, titleColor: .red)
-                showAlert(title: L10n.alertErrorTitle, message: L10n.alertRecommendationForFieldsMessage)
-            }
-        } else {
-            setupStyleForTestFields(title: L10n.alertErrorTitle, titleColor: .red)
-            showAlert(title: L10n.alertErrorTitle, message: L10n.alertErrorEmptyFieldsMessage)
-        }
-    }
+//    @IBAction private func tappedSaveButton(_ sender: Any) {
+//        guard let oldLogin = loginTextField.text,
+//              let oldPassword = passwordTextField.text,
+//              let newLogin = newLoginTextField.text,
+//              let newPassword = newPasswordTextField.text else { return }
+//        if !oldLogin.isEmpty &&
+//            !oldPassword.isEmpty &&
+//            !newLogin.isEmpty &&
+//            !newPassword.isEmpty {
+//            if isValidLogin(login: oldLogin) &&
+//                isValidPassword(password: oldPassword) &&
+//                isValidLogin(login: newLogin) &&
+//                isValidPassword(password: newPassword) {
+//                if dataBase.arrayOfLogins.contains(oldLogin) && oldPassword == keychain.get(oldLogin) {
+//                    setupStyleForTestFields(title: L10n.alertDoneTitle, titleColor: .green)
+//                    keychain.delete(oldLogin)
+//                    keychain.set(newPassword, forKey: newLogin)
+//                    dataBase.deleteObject(logIn: oldLogin)
+//                    dataBase.openDatabse(login: newLogin)
+//                    navigationController?.popToRootViewController(animated: true)
+//                } else {
+//                    showAlert(title: L10n.alertErrorTitle, message: L10n.alertErrorPasswordMessage)
+//                }
+//            } else {
+//                setupStyleForTestFields(title: L10n.alertWrongTitle, titleColor: .red)
+//                showAlert(title: L10n.alertErrorTitle, message: L10n.alertRecommendationForFieldsMessage)
+//            }
+//        } else {
+//            setupStyleForTestFields(title: L10n.alertErrorTitle, titleColor: .red)
+//            showAlert(title: L10n.alertErrorTitle, message: L10n.alertErrorEmptyFieldsMessage)
+//        }
+//    }
     
     // MARK: - Lifecycle
     
@@ -59,6 +63,7 @@ class ChangeProfileViewController: UIViewController {
         super.viewDidLoad()
         setupUI()
         handleLanguage()
+        bind()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -66,7 +71,7 @@ class ChangeProfileViewController: UIViewController {
         dataBase.fetchData()
         setupTheme()
     }
-
+    
     // MARK: - Logic
     
     private func setupTheme() {
@@ -93,8 +98,12 @@ class ChangeProfileViewController: UIViewController {
     private func setupStyleForTestFields(title: String, titleColor: UIColor) {
         loginTextField.title = title
         loginTextField.titleColor = titleColor
+        newLoginTextField.title = title
+        newLoginTextField.titleColor = titleColor
         passwordTextField.title = title
         passwordTextField.titleColor = titleColor
+        newPasswordTextField.title = title
+        newPasswordTextField.titleColor = titleColor
     }
     
     private func setupDelegate() {
@@ -131,10 +140,49 @@ extension ChangeProfileViewController: UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         return true
     }
-
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
     }
+}
+
+private extension ChangeProfileViewController {
     
+    func bind() {
+        let output = viewModel.bind(
+            input: ChangeProfileInput(
+                saveEvent: saveButton.rx.tap,
+                loginText: loginTextField.rx.text.asDriver(),
+                newLoginText: newLoginTextField.rx.text.asDriver(),
+                passwordText: passwordTextField.rx.text.asDriver(),
+                newPasswordText: newPasswordTextField.rx.text.asDriver()
+            )
+        )
+        let changeProfileStateDisposable = output.changeProfileState.skip(1).drive(onNext: { [weak self] state in
+            guard let self = self else { return }
+            guard let newLogin = self.newLoginTextField.text, let newPassword = self.newPasswordTextField.text else { return }
+            switch state {
+            case .allIsGood(let user):
+                if self.dataBase.arrayOfLogins.contains(user.login) && user.password == self.keychain.get(user.login) {
+                    self.setupStyleForTestFields(title: L10n.alertDoneTitle, titleColor: .green)
+                    self.keychain.delete(user.login)
+                    self.keychain.set(newPassword, forKey: newLogin)
+                    self.dataBase.deleteObject(logIn: user.login)
+                    self.dataBase.openDatabse(login: newLogin)
+                    self.navigationController?.popToRootViewController(animated: true)
+                } else {
+                    self.showAlert(title: L10n.alertErrorTitle, message: L10n.alertErrorPasswordMessage)
+                }
+            case .emptyFields:
+                self.setupStyleForTestFields(title: L10n.alertErrorTitle, titleColor: .red)
+                self.showAlert(title: L10n.alertErrorTitle, message: L10n.alertErrorEmptyFieldsMessage)
+            case .invalidValidation:
+                self.setupStyleForTestFields(title: L10n.alertWrongTitle, titleColor: .red)
+                self.showAlert(title: L10n.alertErrorTitle, message: L10n.alertRecommendationForFieldsMessage)
+            }
+        })
+        disposeBag.insert(changeProfileStateDisposable,
+                          output.disposable)
+    }
 }

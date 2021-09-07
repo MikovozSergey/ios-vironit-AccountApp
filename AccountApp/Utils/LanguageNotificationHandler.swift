@@ -11,12 +11,11 @@ final class LanguageNotificationHandler {
     }
     
     func startListening(with handler: @escaping Handler) {
-         stopListening()
-         notificationHandler.startListening(with: { _ in handler() })
-     }
-
-     func stopListening() {
-         notificationHandler.stopListening()
-     }
+        stopListening()
+        notificationHandler.startListening(with: { _ in handler() })
+    }
     
+    func stopListening() {
+        notificationHandler.stopListening()
+    }
 }

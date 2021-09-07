@@ -35,26 +35,6 @@ class RegistrationViewController: UIViewController {
         }
     }
     
-    //    @IBAction private func tappedSaveButton(_ sender: Any) {
-    //        guard let login = loginTextField.text, let password = passwordTextField.text else { return }
-    //        if !login.isEmpty && !password.isEmpty {
-    //            if isValidLogin(login: login) && isValidPassword(password: password) {
-    //                setupStyleForTestFields(title: L10n.alertDoneTitle , titleColor: .green)
-    //                keychain.set(password, forKey: login)
-    //                dataBase.openDatabse(login: login)
-    //                let storyboard = UIStoryboard(name: "MainScreen", bundle: nil)
-    //                guard let vc = storyboard.instantiateViewController(identifier: "MainViewController") as? MainViewController else { return }
-    //                navigationController?.pushViewController(vc, animated: true)
-    //            } else {
-    //                setupStyleForTestFields(title: L10n.alertWrongTitle, titleColor: .red)
-    //                showAlert(title: L10n.alertErrorTitle, message: L10n.alertRecommendationForFieldsMessage)
-    //            }
-    //        } else {
-    //            setupStyleForTestFields(title: L10n.alertErrorTitle, titleColor: .red)
-    //            showAlert(title: L10n.alertErrorTitle, message: L10n.alertErrorEmptyFieldsMessage)
-    //        }
-    //    }
-    
     // MARK: - Lifecycle
     
     override func viewDidLoad() {
@@ -149,11 +129,12 @@ extension RegistrationViewController: UITextFieldDelegate {
 private extension RegistrationViewController {
     
     func bind() {
-        let output = viewModel.bind(input: RegistrationInput(
-            saveEvent: saveButton.rx.tap,
-            loginText: loginTextField.rx.text.asDriver(),
-            passwordText: passwordTextField.rx.text.asDriver()
-        )
+        let output = viewModel.bind(
+            input: RegistrationInput(
+                saveEvent: saveButton.rx.tap,
+                loginText: loginTextField.rx.text.asDriver(),
+                passwordText: passwordTextField.rx.text.asDriver()
+            )
         )
         let registrationStateDisposable = output.registrationState.skip(1).drive(onNext: { [weak self] state in
             guard let self = self else { return }

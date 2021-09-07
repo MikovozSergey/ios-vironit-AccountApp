@@ -42,9 +42,6 @@
                                         <integer key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="tappedSwitchLanguageButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="mvD-zb-Wjd"/>
-                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="tAK-Op-LoJ"/>
