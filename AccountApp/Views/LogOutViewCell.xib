@@ -26,9 +26,6 @@
                                     <constraint firstAttribute="height" constant="20" id="fzl-D3-TOc"/>
                                     <constraint firstAttribute="width" constant="20" id="i1u-hb-EWC"/>
                                 </constraints>
-                                <connections>
-                                    <action selector="tappedInformationButton:" destination="YJA-9L-ct7" eventType="touchUpInside" id="CeE-H4-yb3"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3DG-v7-uHk">
                                 <rect key="frame" x="25" y="0.0" width="250" height="30"/>
@@ -37,9 +34,6 @@
                                     <constraint firstAttribute="width" constant="250" id="xKL-Ls-lv4"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="KohinoorBangla-Regular" family="Kohinoor Bangla" pointSize="16"/>
-                                <connections>
-                                    <action selector="tappedLogOutButton:" destination="YJA-9L-ct7" eventType="touchUpInside" id="1hj-OQ-5Cp"/>
-                                </connections>
                             </button>
                         </subviews>
                         <constraints>

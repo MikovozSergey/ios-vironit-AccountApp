@@ -22,41 +22,6 @@ class ChangeProfileViewController: UIViewController {
     private var viewModel = ChangeProfileViewModel()
     private let disposeBag = DisposeBag()
     
-    // MARK: - IBActions
-    
-//    @IBAction private func tappedSaveButton(_ sender: Any) {
-//        guard let oldLogin = loginTextField.text,
-//              let oldPassword = passwordTextField.text,
-//              let newLogin = newLoginTextField.text,
-//              let newPassword = newPasswordTextField.text else { return }
-//        if !oldLogin.isEmpty &&
-//            !oldPassword.isEmpty &&
-//            !newLogin.isEmpty &&
-//            !newPassword.isEmpty {
-//            if isValidLogin(login: oldLogin) &&
-//                isValidPassword(password: oldPassword) &&
-//                isValidLogin(login: newLogin) &&
-//                isValidPassword(password: newPassword) {
-//                if dataBase.arrayOfLogins.contains(oldLogin) && oldPassword == keychain.get(oldLogin) {
-//                    setupStyleForTestFields(title: L10n.alertDoneTitle, titleColor: .green)
-//                    keychain.delete(oldLogin)
-//                    keychain.set(newPassword, forKey: newLogin)
-//                    dataBase.deleteObject(logIn: oldLogin)
-//                    dataBase.openDatabse(login: newLogin)
-//                    navigationController?.popToRootViewController(animated: true)
-//                } else {
-//                    showAlert(title: L10n.alertErrorTitle, message: L10n.alertErrorPasswordMessage)
-//                }
-//            } else {
-//                setupStyleForTestFields(title: L10n.alertWrongTitle, titleColor: .red)
-//                showAlert(title: L10n.alertErrorTitle, message: L10n.alertRecommendationForFieldsMessage)
-//            }
-//        } else {
-//            setupStyleForTestFields(title: L10n.alertErrorTitle, titleColor: .red)
-//            showAlert(title: L10n.alertErrorTitle, message: L10n.alertErrorEmptyFieldsMessage)
-//        }
-//    }
-    
     // MARK: - Lifecycle
     
     override func viewDidLoad() {

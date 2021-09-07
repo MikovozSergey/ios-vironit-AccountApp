@@ -22,19 +22,7 @@ class WelcomeViewController: UIViewController {
         super.viewDidLoad()
         handleLanguage()
         setupUI()
-        
-        logInButton.rx.tap.subscribe(onNext:  { [weak self] in
-            let storyboard = UIStoryboard(name: "LogInScreen", bundle: nil)
-            guard let vc = storyboard.instantiateViewController(identifier: "LogInViewController") as? LogInViewController else { return }
-            self?.navigationController?.pushViewController(vc, animated: true)
-        }).disposed(by: bag)
-        registrationButton.rx.tap.subscribe(onNext:  { [weak self] in
-            
-            let storyboard = UIStoryboard(name: "RegistrationScreen", bundle: nil)
-            guard let viewController = storyboard.instantiateViewController(identifier: "RegistrationViewController") as? RegistrationViewController else { return }
-            self?.navigationController?.pushViewController(viewController, animated: true)
-        }).disposed(by: bag)
-       // dispo
+        setupBinding()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -42,20 +30,21 @@ class WelcomeViewController: UIViewController {
         setupTheme()
     }
     
-    // MARK: - IBActions
-    
-//    @IBAction private func pressedLogInButton(_ sender: Any) {
-//        let storyboard = UIStoryboard(name: "LogInScreen", bundle: nil)
-//        guard let vc = storyboard.instantiateViewController(identifier: "LogInViewController") as? LogInViewController else { return }
-//        navigationController?.pushViewController(vc, animated: true)
-//    }
-//    @IBAction private func pressedRegistrationButton(_ sender: Any) {
-//        let storyboard = UIStoryboard(name: "RegistrationScreen", bundle: nil)
-//        guard let viewController = storyboard.instantiateViewController(identifier: "RegistrationViewController") as? RegistrationViewController else { return }
-//        navigationController?.pushViewController(viewController, animated: true)
-//    }
-    
     // MARK: - Setup
+    
+    private func setupBinding() {
+        logInButton.rx.tap.subscribe(onNext:  { [weak self] in
+            let storyboard = UIStoryboard(name: "LogInScreen", bundle: nil)
+            guard let vc = storyboard.instantiateViewController(identifier: "LogInViewController") as? LogInViewController else { return }
+            self?.navigationController?.pushViewController(vc, animated: true)
+        }).disposed(by: bag)
+        
+        registrationButton.rx.tap.subscribe(onNext:  { [weak self] in
+            let storyboard = UIStoryboard(name: "RegistrationScreen", bundle: nil)
+            guard let viewController = storyboard.instantiateViewController(identifier: "RegistrationViewController") as? RegistrationViewController else { return }
+            self?.navigationController?.pushViewController(viewController, animated: true)
+        }).disposed(by: bag)
+    }
     
     private func setupTheme() {
         self.navigationController!.navigationBar.isTranslucent = false

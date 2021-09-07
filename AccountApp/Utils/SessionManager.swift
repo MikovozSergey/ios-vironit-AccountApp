@@ -9,6 +9,17 @@ final public class SessionManager {
         self.navigation = navigation
     }
     
+    func startTimer() {
+        timer?.invalidate()
+        saveStartOfSession()
+        let seconds = 600.0
+        timer = Timer.scheduledTimer(timeInterval: seconds, target: self, selector: #selector(timerHandler(_:)), userInfo: nil, repeats: true)
+    }
+
+    func stopTimer() {
+        timer?.invalidate()
+    }
+    
     private func currentTime() -> Date {
         let timezone = TimeZone.current
         let seconds = TimeInterval(timezone.secondsFromGMT(for: Date()))
@@ -20,12 +31,12 @@ final public class SessionManager {
         defaults.set(currentTime(), forKey: "timeOfStartSession")
     }
     
-    func getStartOfSession() -> Date {
+    private func getStartOfSession() -> Date {
         guard let date = UserDefaults.standard.object(forKey: "timeOfStartSession") as? Date else { return Date() }
         return date
     }
     
-    func isEndOfSession(startOfSession: Date) -> Bool {
+    private func isEndOfSession(startOfSession: Date) -> Bool {
         let finishDate = startOfSession.addingTimeInterval(240.0 * 60.0)
         let currentTime = currentTime()
         print("Start: \(currentTime) \nFinish: \(finishDate)")
@@ -37,16 +48,5 @@ final public class SessionManager {
             stopTimer()
             navigation.popToRootViewController(animated: true)
         }
-    }
-
-    func startTimer() {
-        timer?.invalidate()
-        saveStartOfSession()
-        let seconds = 600.0
-        timer = Timer.scheduledTimer(timeInterval: seconds, target: self, selector: #selector(timerHandler(_:)), userInfo: nil, repeats: true)
-    }
-
-    func stopTimer() {
-        timer?.invalidate()
     }
 }

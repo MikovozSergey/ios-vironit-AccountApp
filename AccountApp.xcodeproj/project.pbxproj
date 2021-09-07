@@ -53,6 +53,9 @@
 		CE649D4F26E221610043730C /* FirstScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE649D4E26E221610043730C /* FirstScreen.storyboard */; };
 		CE649D5126E222CC0043730C /* WelcomeScreenVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE649D5026E222CC0043730C /* WelcomeScreenVM.swift */; };
 		CE6EAF4926E74CB5002785F0 /* SwitchLanguageVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6EAF4826E74CB5002785F0 /* SwitchLanguageVM.swift */; };
+		CE6EAF4B26E75D0F002785F0 /* SwitchThemeVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6EAF4A26E75D0F002785F0 /* SwitchThemeVM.swift */; };
+		CE6EAF4D26E78C10002785F0 /* XibExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6EAF4C26E78C10002785F0 /* XibExtensions.swift */; };
+		CE6EAF4F26E78DFF002785F0 /* ValidationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6EAF4E26E78DFF002785F0 /* ValidationManager.swift */; };
 		CED9CF2326DE142900DC239B /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9CF2226DE142900DC239B /* SessionManager.swift */; };
 		CED9CF2526DE265D00DC239B /* LogOutViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9CF2426DE265D00DC239B /* LogOutViewCell.swift */; };
 		CED9CF2726DE266C00DC239B /* LogOutViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CED9CF2626DE266C00DC239B /* LogOutViewCell.xib */; };
@@ -113,6 +116,9 @@
 		CE649D4E26E221610043730C /* FirstScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = FirstScreen.storyboard; sourceTree = "<group>"; };
 		CE649D5026E222CC0043730C /* WelcomeScreenVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeScreenVM.swift; sourceTree = "<group>"; };
 		CE6EAF4826E74CB5002785F0 /* SwitchLanguageVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchLanguageVM.swift; sourceTree = "<group>"; };
+		CE6EAF4A26E75D0F002785F0 /* SwitchThemeVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchThemeVM.swift; sourceTree = "<group>"; };
+		CE6EAF4C26E78C10002785F0 /* XibExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XibExtensions.swift; sourceTree = "<group>"; };
+		CE6EAF4E26E78DFF002785F0 /* ValidationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationManager.swift; sourceTree = "<group>"; };
 		CED9CF2226DE142900DC239B /* SessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
 		CED9CF2426DE265D00DC239B /* LogOutViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogOutViewCell.swift; sourceTree = "<group>"; };
 		CED9CF2626DE266C00DC239B /* LogOutViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LogOutViewCell.xib; sourceTree = "<group>"; };
@@ -157,6 +163,7 @@
 			children = (
 				CE1B99B226E100000004280D /* SwitchThemeVC.swift */,
 				CE1B99B426E1002F0004280D /* SwitchThemeScreen.storyboard */,
+				CE6EAF4A26E75D0F002785F0 /* SwitchThemeVM.swift */,
 			);
 			path = SwitchThemeScreen;
 			sourceTree = "<group>";
@@ -294,6 +301,8 @@
 				CE5BEC2D26DFC6E000685981 /* NotificationExtension.swift */,
 				CE5BEC2F26DFC72C00685981 /* LanguageNotificationHandler.swift */,
 				CE5BEC3126DFC74C00685981 /* NotificationHandler.swift */,
+				CE6EAF4C26E78C10002785F0 /* XibExtensions.swift */,
+				CE6EAF4E26E78DFF002785F0 /* ValidationManager.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -573,6 +582,7 @@
 				CE59069626E5FCC30059C84C /* RegistrationVM.swift in Sources */,
 				CE4514BD260DF1D40069CB6D /* MainVC.swift in Sources */,
 				CE4514C3260DF1D40069CB6D /* AccountApp.xcdatamodeld in Sources */,
+				CE6EAF4B26E75D0F002785F0 /* SwitchThemeVM.swift in Sources */,
 				CE477414261F337200A6DD5B /* ListOfAccountsVC.swift in Sources */,
 				CE47F43E261DE374005F1C69 /* WelcomeScreenVC.swift in Sources */,
 				CE59069C26E660360059C84C /* SettingsVM.swift in Sources */,
@@ -581,8 +591,10 @@
 				CE59069826E650710059C84C /* LoginVM.swift in Sources */,
 				CE5BEC2E26DFC6E000685981 /* NotificationExtension.swift in Sources */,
 				CE649D4B26E21E0B0043730C /* FirstVC.swift in Sources */,
+				CE6EAF4D26E78C10002785F0 /* XibExtensions.swift in Sources */,
 				CE63301126DCF56C00E8F311 /* LogInVC.swift in Sources */,
 				CE47F44D261DE47F005F1C69 /* UserModel.swift in Sources */,
+				CE6EAF4F26E78DFF002785F0 /* ValidationManager.swift in Sources */,
 				CE5BEC2C26DFBD5C00685981 /* LanguageEnum.swift in Sources */,
 				CE4514BB260DF1D40069CB6D /* SceneDelegate.swift in Sources */,
 				CE5BEC3026DFC72C00685981 /* LanguageNotificationHandler.swift in Sources */,

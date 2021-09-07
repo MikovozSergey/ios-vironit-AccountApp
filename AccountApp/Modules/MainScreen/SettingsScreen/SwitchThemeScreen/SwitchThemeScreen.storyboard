@@ -33,9 +33,6 @@
                                     <constraint firstAttribute="width" constant="47" id="1N3-fY-JPC"/>
                                     <constraint firstAttribute="height" constant="31" id="PPC-ZP-V2O"/>
                                 </constraints>
-                                <connections>
-                                    <action selector="switchTheme:" destination="Y6W-OH-hqX" eventType="valueChanged" id="JYM-AQ-6Uq"/>
-                                </connections>
                             </switch>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="gwe-Kn-T80"/>

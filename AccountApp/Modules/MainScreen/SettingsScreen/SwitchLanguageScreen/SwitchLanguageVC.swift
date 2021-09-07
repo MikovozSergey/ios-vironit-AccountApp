@@ -15,24 +15,6 @@ class SwitchLanguageViewController: UIViewController {
     private var viewModel = SwitchLanguageViewModel()
     private let disposeBag = DisposeBag()
     
-    // MARK: - IBActions
-    
-//    @IBAction private func tappedSwitchLanguageButton(_ sender: Any) {
-//        
-//        let language = UserDefaults.standard.string(forKey: kLanguageApplication)
-//        
-//        if language ==  Language.english.languageShort {
-//            UserDefaults.standard.set(Language.russian.languageShort, forKey: kLanguageApplication)
-//            L10n.bundle = Bundle(path: Bundle.main.path(forResource: "ru", ofType: "lproj")!)
-//        } else {
-//            UserDefaults.standard.set(Language.english.languageShort, forKey: kLanguageApplication)
-//            L10n.bundle = Bundle(path: Bundle.main.path(forResource: "en", ofType: "lproj")!)
-//        }
-//        DispatchQueue.main.async {
-//            NotificationCenter.default.post(name: Notification.Name.changeLanguage, object: nil)
-//        }
-//    }
-    
     // MARK: - Lifecycle
     
     override func viewDidLoad() {
@@ -83,25 +65,6 @@ private extension SwitchLanguageViewController {
                 switchEvent: switchLanguageButton.rx.tap
             )
         )
-        let switchStateDisposable = output.switchState.skip(1).drive(onNext: { [weak self] state in
-            switch state {
-            case .allIsGood:
-                let language = UserDefaults.standard.string(forKey: kLanguageApplication)
-                
-                if language ==  Language.english.languageShort {
-                    UserDefaults.standard.set(Language.russian.languageShort, forKey: kLanguageApplication)
-                    L10n.bundle = Bundle(path: Bundle.main.path(forResource: "ru", ofType: "lproj")!)
-                } else {
-                    UserDefaults.standard.set(Language.english.languageShort, forKey: kLanguageApplication)
-                    L10n.bundle = Bundle(path: Bundle.main.path(forResource: "en", ofType: "lproj")!)
-                }
-                DispatchQueue.main.async {
-                    NotificationCenter.default.post(name: Notification.Name.changeLanguage, object: nil)
-                }
-            }
-        }
-        )
-        disposeBag.insert(switchStateDisposable,
-                          output.disposable)
+        disposeBag.insert(output.disposable)
     }
 }

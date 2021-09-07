@@ -27,9 +27,3 @@ final class NotificationHandler {
         tokens.removeAll()
     }
 }
-
-extension NotificationHandler {
-    convenience init(_ name: Notification.Name) {
-        self.init([name])
-    }
-}

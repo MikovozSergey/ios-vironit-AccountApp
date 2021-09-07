@@ -1,4 +1,6 @@
 import AMPopTip
+import RxCocoa
+import RxSwift
 import UIKit
 
 final class CustomViewForEditCredentialsCell: UITableViewCell {
@@ -9,40 +11,43 @@ final class CustomViewForEditCredentialsCell: UITableViewCell {
     @IBOutlet private weak var changeLoginAndPasswordButton: UIButton!
     @IBOutlet private weak var informationButton: UIButton!
     
-    // MARK: - IBActions
-    
-    @IBAction private func tappedChangeLoginAndPasswordButton(_ sender: Any) {
-        let storyboard = UIStoryboard(name: "ChangeProfileScreen", bundle: nil)
-        guard let viewController = storyboard.instantiateViewController(identifier: "ChangeProfileViewController") as? ChangeProfileViewController else { return }
-        guard let navigator = self.navigator else { return }
-        navigator.pushViewController(viewController, animated: true)
-    }
-    
-    @IBAction private func tappedInformationButton(_ sender: UIButton) {
-        if popTip.isVisible {
-            popTip.hide()
-        } else {
-            configurePopTip(sender: sender)
-        }
-    }
-    
     // MARK: Variables
     
     private let popTip = PopTip()
     private let direction = PopTipDirection.up
     private var navigator: UINavigationController?
     private let languageHandler = LanguageNotificationHandler()
+    private let disposeBag = DisposeBag()
     
     // MARK: - Init
     override func awakeFromNib() {
         super.awakeFromNib()
         setup()
         handleLanguage()
+        setupBinding()
     }
     
     // MARK: - Methods
     
-     private func setup() {
+    private func setupBinding() {
+        changeLoginAndPasswordButton.rx.tap.subscribe(onNext:  { [weak self] in
+            let storyboard = UIStoryboard(name: "ChangeProfileScreen", bundle: nil)
+            guard let viewController = storyboard.instantiateViewController(identifier: "ChangeProfileViewController") as? ChangeProfileViewController else { return }
+            guard let navigator = self?.navigator else { return }
+            navigator.pushViewController(viewController, animated: true)
+        }).disposed(by: disposeBag)
+        
+        informationButton.rx.tap.subscribe(onNext:  { [weak self] in
+            guard let self = self else { return }
+            if self.popTip.isVisible {
+                self.popTip.hide()
+            } else {
+                self.configurePopTip(sender: self.informationButton)
+            }
+        }).disposed(by: disposeBag)
+    }
+    
+    private func setup() {
         setupStrings()
         changeLoginAndPasswordButton.layer.cornerRadius = 10
         changeLoginAndPasswordButton.layer.borderWidth = 1.5

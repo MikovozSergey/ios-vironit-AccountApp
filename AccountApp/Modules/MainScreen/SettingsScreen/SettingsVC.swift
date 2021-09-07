@@ -1,3 +1,5 @@
+import RxCocoa
+import RxSwift
 import UIKit
 
 public enum Xib: String {
@@ -13,23 +15,10 @@ class SettingsViewController: UIViewController {
     @IBOutlet private weak var changeLanguageButton: UIButton!
     @IBOutlet private weak var changeThemeButton: UIButton!
     
-    // MARK: - IBActions
-    
-    @IBAction private func tappedChangeLanguageButton(_ sender: Any) {
-        let storyboard = UIStoryboard(name: "SwitchLanguageScreen", bundle: nil)
-        guard let viewController = storyboard.instantiateViewController(identifier: "SwitchLanguageViewController") as? SwitchLanguageViewController else { return }
-        navigationController?.pushViewController(viewController, animated: true)
-    }
-    
-    @IBAction private func tappedChangeThemeButton(_ sender: Any) {
-        let storyboard = UIStoryboard(name: "SwitchThemeScreen", bundle: nil)
-        guard let viewController = storyboard.instantiateViewController(identifier: "SwitchThemeViewController") as? SwitchThemeViewController else { return }
-        navigationController?.pushViewController(viewController, animated: true)
-    }
-    
     // MARK: - Variables
     
     private let languageHandler = LanguageNotificationHandler()
+    private let disposeBag = DisposeBag()
     
     // MARK: - Lifecycle
     
@@ -37,19 +26,36 @@ class SettingsViewController: UIViewController {
         super.awakeFromNib()
         setupTabBarTitle()
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupDelegate()
         setupUI()
         registerNib()
         handleLanguage()
+        setupBinding()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setupTheme()
         tableView.reloadData()
+    }
+    
+    // MARK: - Setup
+    
+    private func setupBinding() {
+        changeLanguageButton.rx.tap.subscribe(onNext:  { [weak self] in
+            let storyboard = UIStoryboard(name: "SwitchLanguageScreen", bundle: nil)
+            guard let viewController = storyboard.instantiateViewController(identifier: "SwitchLanguageViewController") as? SwitchLanguageViewController else { return }
+            self?.navigationController?.pushViewController(viewController, animated: true)
+        }).disposed(by: disposeBag)
+        
+        changeThemeButton.rx.tap.subscribe(onNext:  { [weak self] in
+            let storyboard = UIStoryboard(name: "SwitchThemeScreen", bundle: nil)
+            guard let viewController = storyboard.instantiateViewController(identifier: "SwitchThemeViewController") as? SwitchThemeViewController else { return }
+            self?.navigationController?.pushViewController(viewController, animated: true)
+        }).disposed(by: disposeBag)
     }
     
     private func setupDelegate() {
@@ -111,24 +117,8 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
-
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 2
-    }
-}
-
-extension UITableView {
-    func register(xib: Xib) {
-        self.register(xib.nib(), forCellReuseIdentifier: xib.rawValue)
-    }
-}
-
-extension Xib {
-    func nib() -> UINib {
-        return UINib(nibName: self.rawValue, bundle: Bundle.main)
-    }
-    
-    func firstView() -> UIView {
-        return nib().instantiate(withOwner: nil, options: nil).first as! UIView
     }
 }

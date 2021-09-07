@@ -35,7 +35,7 @@ class ChangeProfileViewModel {
         let newLoginValue = self.newLoginValue.value ?? ""
         let passwordValue = self.passwordValue.value ?? ""
         let newPasswordValue = self.newPasswordValue.value ?? ""
-        switch (isValidLogin(), isValidPassword(), isValidNewLogin(), isValidNewPassword()) {
+        switch (ValidationManager.isValidLogin(login: self.loginValue), ValidationManager.isValidPassword(password: self.loginValue), ValidationManager.isValidLogin(login: self.newLoginValue), ValidationManager.isValidPassword(password: self.newPasswordValue)) {
         case (true, true, true, true):
             return .allIsGood(user: User(login: loginValue, password: passwordValue))
         default:
@@ -56,25 +56,5 @@ class ChangeProfileViewModel {
             )
         )
         return ChangeProfileOutput(changeProfileState: changeProfileState.asDriver(), disposable: disposable)
-    }
-    
-    private func isValidLogin() -> Bool {
-        guard let login = loginValue.value, login.count >= 3 else { return false }
-        return PredicateText.login.evaluate(with: login)
-    }
-    
-    private func isValidNewLogin() -> Bool {
-        guard let login = newLoginValue.value, login.count >= 3 else { return false }
-        return PredicateText.login.evaluate(with: login)
-    }
-    
-    private func isValidPassword() -> Bool {
-        guard let password = passwordValue.value, password.count >= 8 else { return false }
-        return PredicateText.password.evaluate(with: password)
-    }
-    
-    private func isValidNewPassword() -> Bool {
-        guard let password = newPasswordValue.value, password.count >= 8 else { return false }
-        return PredicateText.password.evaluate(with: password)
     }
 }

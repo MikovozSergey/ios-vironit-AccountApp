@@ -1,7 +1,9 @@
+import RxCocoa
+import RxSwift
 import UIKit
 
 class SwitchThemeViewController: UIViewController {
-
+    
     // MARK: - IBOutlets
     
     @IBOutlet private weak var themeSwitch: UISwitch!
@@ -10,14 +12,8 @@ class SwitchThemeViewController: UIViewController {
     // MARK: - Variables
     
     private let languageHandler = LanguageNotificationHandler()
-    
-    // MARK: - IBActions
-    
-    @IBAction private func switchTheme(_ sender: UISwitch) {
-        Theme.currentTheme = themeSwitch.isOn ? DarkTheme() : LightTheme()
-        setupTheme()
-        UserDefaults.standard.set(sender.isOn, forKey: "DarkTheme")
-    }
+    private var viewModel = SwitchThemeViewModel()
+    private let disposeBag = DisposeBag()
     
     // MARK: - Lifecycle
     
@@ -26,9 +22,9 @@ class SwitchThemeViewController: UIViewController {
         setupUI()
         handleLanguage()
         setupTheme()
-        themeSwitch.isOn = UserDefaults.standard.bool(forKey: "DarkTheme")
+        bind()
     }
-
+    
     // MARK: - Logic
     
     private func setupUI() {
@@ -52,5 +48,24 @@ class SwitchThemeViewController: UIViewController {
         languageHandler.startListening { [weak self] in
             self?.setupStrings()
         }
+    }
+}
+
+private extension SwitchThemeViewController {
+    
+    func bind() {
+        let output = viewModel.bind(
+            input: SwitchThemeInput(
+                switchEvent: themeSwitch.rx.isOn.changed
+            )
+        )
+        
+        let switchDisposable = output.switchThemeState.subscribe { changedState in
+            guard let value = changedState.element else { return }
+            Theme.currentTheme = value ? DarkTheme() : LightTheme()
+            self.setupTheme()
+            self.themeSwitch.isOn = value
+        }
+        disposeBag.insert(switchDisposable, output.disposable)
     }
 }

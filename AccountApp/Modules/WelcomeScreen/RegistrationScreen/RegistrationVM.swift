@@ -29,7 +29,7 @@ class RegistrationViewModel {
     private var state: RegistrationState {
         let loginValue = self.loginValue.value ?? ""
         let passwordValue = self.passwordValue.value ?? ""
-        switch (isValidLogin(), isValidPassword()) {
+        switch (ValidationManager.isValidLogin(login: self.loginValue), ValidationManager.isValidPassword(password: self.passwordValue)) {
         case (true, true):
             return .allIsGood(user: User(login: loginValue, password: passwordValue))
         default:
@@ -48,15 +48,5 @@ class RegistrationViewModel {
             )
         )
         return RegistrationOutput(registrationState: registrationState.asDriver(), disposable: disposable)
-    }
-    
-    func isValidLogin() -> Bool {
-        guard let login = loginValue.value, login.count >= 3 else { return false }
-        return PredicateText.login.evaluate(with: login)
-    }
-    
-    func isValidPassword() -> Bool {
-        guard let password = passwordValue.value, password.count >= 8 else { return false }
-        return PredicateText.password.evaluate(with: password)
     }
 }

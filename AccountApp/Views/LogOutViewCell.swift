@@ -1,4 +1,6 @@
 import AMPopTip
+import RxCocoa
+import RxSwift
 import UIKit
 
 final class LogOutViewCell: UITableViewCell {
@@ -9,38 +11,42 @@ final class LogOutViewCell: UITableViewCell {
     @IBOutlet private weak var viewForPopTip: UIView!
     @IBOutlet private weak var informationButton: UIButton!
     
-    // MARK: - IBActions
-    
-    @IBAction private func tappedLogOutButton(_ sender: Any) {
-        guard let navigator = self.navigator else { return }
-        navigator.popToRootViewController(animated: true)
-    }
-    
-    @IBAction private func tappedInformationButton(_ sender: UIButton) {
-        if popTip.isVisible {
-            popTip.hide()
-        } else {
-            configurePopTip(sender: sender)
-        }
-    }
-    
     // MARK: - Variables
     
     private let popTip = PopTip()
     private let direction = PopTipDirection.down
     private var navigator: UINavigationController?
     private let languageHandler = LanguageNotificationHandler()
+    private let disposeBag = DisposeBag()
     
     // MARK: - Init
     override func awakeFromNib() {
         super.awakeFromNib()
         setup()
         handleLanguage()
+        setupBinding()
     }
     
-    // MARK: - Open methods
+    // MARK: - Methods
     
-    func setup() {
+    private func setupBinding() {
+        logOutButton.rx.tap.subscribe(onNext:  { [weak self] in
+            guard let self = self else { return }
+            guard let navigator = self.navigator else { return }
+            navigator.popToRootViewController(animated: true)
+        }).disposed(by: disposeBag)
+        
+        informationButton.rx.tap.subscribe(onNext:  { [weak self] in
+            guard let self = self else { return }
+            if self.popTip.isVisible {
+                self.popTip.hide()
+            } else {
+                self.configurePopTip(sender: self.informationButton)
+            }
+        }).disposed(by: disposeBag)
+    }
+    
+    private func setup() {
         setupStrings()
         logOutButton.layer.cornerRadius = 10
         logOutButton.layer.borderWidth = 1.5
@@ -87,5 +93,5 @@ final class LogOutViewCell: UITableViewCell {
             self?.setupAtributedText()
         }
     }
-
+    
 }

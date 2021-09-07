@@ -7,30 +7,28 @@ struct SwitchLanguageInput {
 }
 
 struct SwitchLanguageOutput {
-    let switchState: Driver<SwitchLanguageState>
     let disposable: Disposable
-}
-
-public enum SwitchLanguageState {
-    case allIsGood
 }
 
 class SwitchLanguageViewModel {
     
-    private let switchLanguageState = BehaviorRelay<SwitchLanguageState>(value: .allIsGood)
     private let disposeBag = DisposeBag()
-    private var state: SwitchLanguageState {
-        return .allIsGood
-    }
     
     public func bind(input: SwitchLanguageInput) -> SwitchLanguageOutput {
-        let disposable = Disposables.create {
-            input.switchEvent.subscribe(onNext: { [weak self] in
-                guard let self = self else { return }
-                self.switchLanguageState.accept(self.state)
-                }
-            )
+        let switchDisposable = input.switchEvent.subscribe(onNext: { _ in
+            let language = UserDefaults.standard.string(forKey: kLanguageApplication)
+            if language ==  Language.english.languageShort {
+                UserDefaults.standard.set(Language.russian.languageShort, forKey: kLanguageApplication)
+                L10n.bundle = Bundle(path: Bundle.main.path(forResource: "ru", ofType: "lproj")!)
+            } else {
+                UserDefaults.standard.set(Language.english.languageShort, forKey: kLanguageApplication)
+                L10n.bundle = Bundle(path: Bundle.main.path(forResource: "en", ofType: "lproj")!)
+            }
+            DispatchQueue.main.async {
+                NotificationCenter.default.post(name: Notification.Name.changeLanguage, object: nil)
+            }
         }
-        return SwitchLanguageOutput(switchState: switchLanguageState.asDriver(), disposable: disposable)
+        )
+        return SwitchLanguageOutput(disposable: switchDisposable)
     }
 }
