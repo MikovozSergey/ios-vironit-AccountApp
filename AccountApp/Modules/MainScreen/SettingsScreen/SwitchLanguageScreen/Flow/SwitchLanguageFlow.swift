@@ -30,7 +30,7 @@ class SwitchLanguageFlow: Flow {
     private func navigateToChangeLanguageScreen() -> FlowContributors {
         let storyboard = UIStoryboard(name: "SwitchLanguageScreen", bundle: nil)
         guard let vc = storyboard.instantiateViewController(identifier: "SwitchLanguageViewController") as? SwitchLanguageViewController else { return .none }
-        let backButton: UIBarButtonItem = UIBarButtonItem(title: L10n.back, style: UIBarButtonItem.Style.done, target: self, action: #selector(backAction))
+        let backButton: UIBarButtonItem = UIBarButtonItem(title: viewModel.titleForNavigation, style: UIBarButtonItem.Style.done, target: self, action: #selector(backAction))
         vc.navigationItem.leftBarButtonItem = backButton
         vc.configure(viewModel: viewModel)
         self.rootViewController.pushViewController(vc, animated: false)
