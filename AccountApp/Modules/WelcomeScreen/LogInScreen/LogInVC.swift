@@ -18,7 +18,7 @@ class LogInViewController: UIViewController {
     private let keychain = KeychainSwift()
     private let dataBase = DataBase()
     private let languageHandler = LanguageNotificationHandler()
-    private var viewModel = LoginViewModel()
+    private var viewModel: LoginViewModel!
     private let disposeBag = DisposeBag()
     
     // MARK: - IBActions
@@ -48,6 +48,10 @@ class LogInViewController: UIViewController {
         super.viewWillAppear(true)
         dataBase.fetchData()
         setupTheme()
+    }
+    
+    public func configure(viewModel: LoginViewModel) {
+        self.viewModel = viewModel
     }
     
     // MARK: - Logic

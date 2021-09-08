@@ -46,6 +46,15 @@
 		CE5BEC2E26DFC6E000685981 /* NotificationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5BEC2D26DFC6E000685981 /* NotificationExtension.swift */; };
 		CE5BEC3026DFC72C00685981 /* LanguageNotificationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5BEC2F26DFC72C00685981 /* LanguageNotificationHandler.swift */; };
 		CE5BEC3226DFC74C00685981 /* NotificationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5BEC3126DFC74C00685981 /* NotificationHandler.swift */; };
+		CE5ED1FF26E89D46007FCADF /* MainStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5ED1FE26E89D46007FCADF /* MainStep.swift */; };
+		CE5ED20126E8A53C007FCADF /* UIWindowExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5ED20026E8A53C007FCADF /* UIWindowExtension.swift */; };
+		CE5ED20426E8AF90007FCADF /* AuthFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5ED20326E8AF90007FCADF /* AuthFlow.swift */; };
+		CE5ED20626E8AF99007FCADF /* AuthStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5ED20526E8AF99007FCADF /* AuthStep.swift */; };
+		CE5ED20826E8B607007FCADF /* LoginFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5ED20726E8B607007FCADF /* LoginFlow.swift */; };
+		CE5ED20A26E8C04C007FCADF /* LoginStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5ED20926E8C04C007FCADF /* LoginStep.swift */; };
+		CE5ED20C26E8C500007FCADF /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5ED20B26E8C500007FCADF /* UIViewControllerExtension.swift */; };
+		CE5ED20F26E8D101007FCADF /* RegistrationFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5ED20E26E8D101007FCADF /* RegistrationFlow.swift */; };
+		CE5ED21126E8D10C007FCADF /* RegistrationStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5ED21026E8D10C007FCADF /* RegistrationStep.swift */; };
 		CE63301126DCF56C00E8F311 /* LogInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE63301026DCF56C00E8F311 /* LogInVC.swift */; };
 		CE63301326DCF57E00E8F311 /* LogInScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE63301226DCF57E00E8F311 /* LogInScreen.storyboard */; };
 		CE63301526DCFD7200E8F311 /* CoreDataDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE63301426DCFD7200E8F311 /* CoreDataDB.swift */; };
@@ -56,6 +65,22 @@
 		CE6EAF4B26E75D0F002785F0 /* SwitchThemeVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6EAF4A26E75D0F002785F0 /* SwitchThemeVM.swift */; };
 		CE6EAF4D26E78C10002785F0 /* XibExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6EAF4C26E78C10002785F0 /* XibExtensions.swift */; };
 		CE6EAF4F26E78DFF002785F0 /* ValidationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6EAF4E26E78DFF002785F0 /* ValidationManager.swift */; };
+		CE7821A226E7A171006FF957 /* AppFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7821A126E7A171006FF957 /* AppFlow.swift */; };
+		CE7821A426E7A1F2006FF957 /* AppStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7821A326E7A1F2006FF957 /* AppStepper.swift */; };
+		CE7821A626E7A249006FF957 /* AppStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7821A526E7A249006FF957 /* AppStep.swift */; };
+		CE7821A926E7A41A006FF957 /* MainFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7821A826E7A41A006FF957 /* MainFlow.swift */; };
+		CE7821AE26E7A567006FF957 /* FirstFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7821AD26E7A567006FF957 /* FirstFlow.swift */; };
+		CE7821B026E7A575006FF957 /* FirstStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7821AF26E7A575006FF957 /* FirstStep.swift */; };
+		CE7821B226E7A583006FF957 /* SettingsFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7821B126E7A583006FF957 /* SettingsFlow.swift */; };
+		CE7821B426E7A58C006FF957 /* SettingsStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7821B326E7A58C006FF957 /* SettingsStep.swift */; };
+		CE7821B626E7A59D006FF957 /* ListOfAccountsFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7821B526E7A59D006FF957 /* ListOfAccountsFlow.swift */; };
+		CE7821B826E7A5AB006FF957 /* ListOfAccountsStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7821B726E7A5AB006FF957 /* ListOfAccountsStep.swift */; };
+		CE7821BB26E7B649006FF957 /* SwitchThemeFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7821BA26E7B649006FF957 /* SwitchThemeFlow.swift */; };
+		CE7821BD26E7B653006FF957 /* SwitchThemeStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7821BC26E7B653006FF957 /* SwitchThemeStep.swift */; };
+		CE7821C026E7B6EE006FF957 /* SwitchLanguageFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7821BF26E7B6EE006FF957 /* SwitchLanguageFlow.swift */; };
+		CE7821C226E7B6F8006FF957 /* SwitchLanguageStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7821C126E7B6F8006FF957 /* SwitchLanguageStep.swift */; };
+		CE7821C526E7B796006FF957 /* ChangeProfileFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7821C426E7B796006FF957 /* ChangeProfileFlow.swift */; };
+		CE7821C726E7B7A5006FF957 /* ChangeProfileStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7821C626E7B7A5006FF957 /* ChangeProfileStep.swift */; };
 		CED9CF2326DE142900DC239B /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9CF2226DE142900DC239B /* SessionManager.swift */; };
 		CED9CF2526DE265D00DC239B /* LogOutViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9CF2426DE265D00DC239B /* LogOutViewCell.swift */; };
 		CED9CF2726DE266C00DC239B /* LogOutViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CED9CF2626DE266C00DC239B /* LogOutViewCell.xib */; };
@@ -109,6 +134,15 @@
 		CE5BEC2D26DFC6E000685981 /* NotificationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationExtension.swift; sourceTree = "<group>"; };
 		CE5BEC2F26DFC72C00685981 /* LanguageNotificationHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageNotificationHandler.swift; sourceTree = "<group>"; };
 		CE5BEC3126DFC74C00685981 /* NotificationHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationHandler.swift; sourceTree = "<group>"; };
+		CE5ED1FE26E89D46007FCADF /* MainStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainStep.swift; sourceTree = "<group>"; };
+		CE5ED20026E8A53C007FCADF /* UIWindowExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIWindowExtension.swift; sourceTree = "<group>"; };
+		CE5ED20326E8AF90007FCADF /* AuthFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthFlow.swift; sourceTree = "<group>"; };
+		CE5ED20526E8AF99007FCADF /* AuthStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthStep.swift; sourceTree = "<group>"; };
+		CE5ED20726E8B607007FCADF /* LoginFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFlow.swift; sourceTree = "<group>"; };
+		CE5ED20926E8C04C007FCADF /* LoginStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginStep.swift; sourceTree = "<group>"; };
+		CE5ED20B26E8C500007FCADF /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
+		CE5ED20E26E8D101007FCADF /* RegistrationFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationFlow.swift; sourceTree = "<group>"; };
+		CE5ED21026E8D10C007FCADF /* RegistrationStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationStep.swift; sourceTree = "<group>"; };
 		CE63301026DCF56C00E8F311 /* LogInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInVC.swift; sourceTree = "<group>"; };
 		CE63301226DCF57E00E8F311 /* LogInScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LogInScreen.storyboard; sourceTree = "<group>"; };
 		CE63301426DCFD7200E8F311 /* CoreDataDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataDB.swift; sourceTree = "<group>"; };
@@ -119,6 +153,22 @@
 		CE6EAF4A26E75D0F002785F0 /* SwitchThemeVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchThemeVM.swift; sourceTree = "<group>"; };
 		CE6EAF4C26E78C10002785F0 /* XibExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XibExtensions.swift; sourceTree = "<group>"; };
 		CE6EAF4E26E78DFF002785F0 /* ValidationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationManager.swift; sourceTree = "<group>"; };
+		CE7821A126E7A171006FF957 /* AppFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFlow.swift; sourceTree = "<group>"; };
+		CE7821A326E7A1F2006FF957 /* AppStepper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStepper.swift; sourceTree = "<group>"; };
+		CE7821A526E7A249006FF957 /* AppStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStep.swift; sourceTree = "<group>"; };
+		CE7821A826E7A41A006FF957 /* MainFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFlow.swift; sourceTree = "<group>"; };
+		CE7821AD26E7A567006FF957 /* FirstFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstFlow.swift; sourceTree = "<group>"; };
+		CE7821AF26E7A575006FF957 /* FirstStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstStep.swift; sourceTree = "<group>"; };
+		CE7821B126E7A583006FF957 /* SettingsFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsFlow.swift; sourceTree = "<group>"; };
+		CE7821B326E7A58C006FF957 /* SettingsStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsStep.swift; sourceTree = "<group>"; };
+		CE7821B526E7A59D006FF957 /* ListOfAccountsFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOfAccountsFlow.swift; sourceTree = "<group>"; };
+		CE7821B726E7A5AB006FF957 /* ListOfAccountsStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOfAccountsStep.swift; sourceTree = "<group>"; };
+		CE7821BA26E7B649006FF957 /* SwitchThemeFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchThemeFlow.swift; sourceTree = "<group>"; };
+		CE7821BC26E7B653006FF957 /* SwitchThemeStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchThemeStep.swift; sourceTree = "<group>"; };
+		CE7821BF26E7B6EE006FF957 /* SwitchLanguageFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchLanguageFlow.swift; sourceTree = "<group>"; };
+		CE7821C126E7B6F8006FF957 /* SwitchLanguageStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchLanguageStep.swift; sourceTree = "<group>"; };
+		CE7821C426E7B796006FF957 /* ChangeProfileFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeProfileFlow.swift; sourceTree = "<group>"; };
+		CE7821C626E7B7A5006FF957 /* ChangeProfileStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeProfileStep.swift; sourceTree = "<group>"; };
 		CED9CF2226DE142900DC239B /* SessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
 		CED9CF2426DE265D00DC239B /* LogOutViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogOutViewCell.swift; sourceTree = "<group>"; };
 		CED9CF2626DE266C00DC239B /* LogOutViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LogOutViewCell.xib; sourceTree = "<group>"; };
@@ -161,6 +211,7 @@
 		CE1B99B126E0FFE30004280D /* SwitchThemeScreen */ = {
 			isa = PBXGroup;
 			children = (
+				CE7821B926E7B5A9006FF957 /* Flow */,
 				CE1B99B226E100000004280D /* SwitchThemeVC.swift */,
 				CE1B99B426E1002F0004280D /* SwitchThemeScreen.storyboard */,
 				CE6EAF4A26E75D0F002785F0 /* SwitchThemeVM.swift */,
@@ -228,6 +279,7 @@
 		CE47741B261F33D100A6DD5B /* ListOfAccountsScreen */ = {
 			isa = PBXGroup;
 			children = (
+				CE7821AC26E7A550006FF957 /* Flow */,
 				CE47740D261F31CF00A6DD5B /* ListOfAccountsScreen.storyboard */,
 				CE477413261F337200A6DD5B /* ListOfAccountsVC.swift */,
 			);
@@ -237,6 +289,7 @@
 		CE47741C261F341700A6DD5B /* SettingsScreen */ = {
 			isa = PBXGroup;
 			children = (
+				CE7821AB26E7A547006FF957 /* Flow */,
 				CE1B99B126E0FFE30004280D /* SwitchThemeScreen */,
 				CED9CF2F26DE5CB500DC239B /* SwitchLanguageScreen */,
 				CE48AED126207F990076B311 /* ChangeProfileScreen */,
@@ -258,6 +311,7 @@
 		CE47F42D261DDFC2005F1C69 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				CE7821A026E7A161006FF957 /* Flow */,
 				CE4514C6260DF1D70069CB6D /* LaunchScreen.storyboard */,
 				CE47F43C261DE33D005F1C69 /* WelcomeScreen */,
 				CE47F43A261DE222005F1C69 /* MainScreen */,
@@ -303,6 +357,8 @@
 				CE5BEC3126DFC74C00685981 /* NotificationHandler.swift */,
 				CE6EAF4C26E78C10002785F0 /* XibExtensions.swift */,
 				CE6EAF4E26E78DFF002785F0 /* ValidationManager.swift */,
+				CE5ED20026E8A53C007FCADF /* UIWindowExtension.swift */,
+				CE5ED20B26E8C500007FCADF /* UIViewControllerExtension.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -321,6 +377,7 @@
 		CE47F43A261DE222005F1C69 /* MainScreen */ = {
 			isa = PBXGroup;
 			children = (
+				CE7821A726E7A40E006FF957 /* Flow */,
 				CE649D4926E21DEE0043730C /* FirstScreen */,
 				CE47741C261F341700A6DD5B /* SettingsScreen */,
 				CE47741B261F33D100A6DD5B /* ListOfAccountsScreen */,
@@ -333,6 +390,7 @@
 		CE47F43C261DE33D005F1C69 /* WelcomeScreen */ = {
 			isa = PBXGroup;
 			children = (
+				CE5ED20226E8AF84007FCADF /* Flow */,
 				CE63300F26DCF54C00E8F311 /* LogInScreen */,
 				CE47F46B261DF0DD005F1C69 /* RegistrationScreen */,
 				CE47F43D261DE374005F1C69 /* WelcomeScreenVC.swift */,
@@ -345,6 +403,7 @@
 		CE47F46B261DF0DD005F1C69 /* RegistrationScreen */ = {
 			isa = PBXGroup;
 			children = (
+				CE5ED20D26E8D0EE007FCADF /* Flow */,
 				CE47F471261DF129005F1C69 /* RegistrationVC.swift */,
 				CE47F474261DF19C005F1C69 /* RegistrationScreen.storyboard */,
 				CE59069526E5FCC30059C84C /* RegistrationVM.swift */,
@@ -355,6 +414,7 @@
 		CE48AED126207F990076B311 /* ChangeProfileScreen */ = {
 			isa = PBXGroup;
 			children = (
+				CE7821C326E7B78B006FF957 /* Flow */,
 				CE48AED226207FC60076B311 /* ChangeProfileScreen.storyboard */,
 				CE48AED526207FEF0076B311 /* ChangeProfileVC.swift */,
 				CE59069926E655470059C84C /* ChangeProfileVM.swift */,
@@ -370,9 +430,28 @@
 			path = SwiftGen;
 			sourceTree = "<group>";
 		};
+		CE5ED20226E8AF84007FCADF /* Flow */ = {
+			isa = PBXGroup;
+			children = (
+				CE5ED20326E8AF90007FCADF /* AuthFlow.swift */,
+				CE5ED20526E8AF99007FCADF /* AuthStep.swift */,
+			);
+			path = Flow;
+			sourceTree = "<group>";
+		};
+		CE5ED20D26E8D0EE007FCADF /* Flow */ = {
+			isa = PBXGroup;
+			children = (
+				CE5ED20E26E8D101007FCADF /* RegistrationFlow.swift */,
+				CE5ED21026E8D10C007FCADF /* RegistrationStep.swift */,
+			);
+			path = Flow;
+			sourceTree = "<group>";
+		};
 		CE63300F26DCF54C00E8F311 /* LogInScreen */ = {
 			isa = PBXGroup;
 			children = (
+				CE78219F26E7A152006FF957 /* Flow */,
 				CE63301026DCF56C00E8F311 /* LogInVC.swift */,
 				CE63301226DCF57E00E8F311 /* LogInScreen.storyboard */,
 				CE59069726E650710059C84C /* LoginVM.swift */,
@@ -383,15 +462,99 @@
 		CE649D4926E21DEE0043730C /* FirstScreen */ = {
 			isa = PBXGroup;
 			children = (
+				CE7821AA26E7A542006FF957 /* Flow */,
 				CE649D4A26E21E0B0043730C /* FirstVC.swift */,
 				CE649D4E26E221610043730C /* FirstScreen.storyboard */,
 			);
 			path = FirstScreen;
 			sourceTree = "<group>";
 		};
+		CE78219F26E7A152006FF957 /* Flow */ = {
+			isa = PBXGroup;
+			children = (
+				CE5ED20726E8B607007FCADF /* LoginFlow.swift */,
+				CE5ED20926E8C04C007FCADF /* LoginStep.swift */,
+			);
+			path = Flow;
+			sourceTree = "<group>";
+		};
+		CE7821A026E7A161006FF957 /* Flow */ = {
+			isa = PBXGroup;
+			children = (
+				CE7821A126E7A171006FF957 /* AppFlow.swift */,
+				CE7821A326E7A1F2006FF957 /* AppStepper.swift */,
+				CE7821A526E7A249006FF957 /* AppStep.swift */,
+			);
+			path = Flow;
+			sourceTree = "<group>";
+		};
+		CE7821A726E7A40E006FF957 /* Flow */ = {
+			isa = PBXGroup;
+			children = (
+				CE7821A826E7A41A006FF957 /* MainFlow.swift */,
+				CE5ED1FE26E89D46007FCADF /* MainStep.swift */,
+			);
+			path = Flow;
+			sourceTree = "<group>";
+		};
+		CE7821AA26E7A542006FF957 /* Flow */ = {
+			isa = PBXGroup;
+			children = (
+				CE7821AD26E7A567006FF957 /* FirstFlow.swift */,
+				CE7821AF26E7A575006FF957 /* FirstStep.swift */,
+			);
+			path = Flow;
+			sourceTree = "<group>";
+		};
+		CE7821AB26E7A547006FF957 /* Flow */ = {
+			isa = PBXGroup;
+			children = (
+				CE7821B126E7A583006FF957 /* SettingsFlow.swift */,
+				CE7821B326E7A58C006FF957 /* SettingsStep.swift */,
+			);
+			path = Flow;
+			sourceTree = "<group>";
+		};
+		CE7821AC26E7A550006FF957 /* Flow */ = {
+			isa = PBXGroup;
+			children = (
+				CE7821B526E7A59D006FF957 /* ListOfAccountsFlow.swift */,
+				CE7821B726E7A5AB006FF957 /* ListOfAccountsStep.swift */,
+			);
+			path = Flow;
+			sourceTree = "<group>";
+		};
+		CE7821B926E7B5A9006FF957 /* Flow */ = {
+			isa = PBXGroup;
+			children = (
+				CE7821BA26E7B649006FF957 /* SwitchThemeFlow.swift */,
+				CE7821BC26E7B653006FF957 /* SwitchThemeStep.swift */,
+			);
+			path = Flow;
+			sourceTree = "<group>";
+		};
+		CE7821BE26E7B6E0006FF957 /* Flow */ = {
+			isa = PBXGroup;
+			children = (
+				CE7821BF26E7B6EE006FF957 /* SwitchLanguageFlow.swift */,
+				CE7821C126E7B6F8006FF957 /* SwitchLanguageStep.swift */,
+			);
+			path = Flow;
+			sourceTree = "<group>";
+		};
+		CE7821C326E7B78B006FF957 /* Flow */ = {
+			isa = PBXGroup;
+			children = (
+				CE7821C426E7B796006FF957 /* ChangeProfileFlow.swift */,
+				CE7821C626E7B7A5006FF957 /* ChangeProfileStep.swift */,
+			);
+			path = Flow;
+			sourceTree = "<group>";
+		};
 		CED9CF2F26DE5CB500DC239B /* SwitchLanguageScreen */ = {
 			isa = PBXGroup;
 			children = (
+				CE7821BE26E7B6E0006FF957 /* Flow */,
 				CED9CF3026DE5CD500DC239B /* SwitchLanguageVC.swift */,
 				CED9CF3226DE5CE300DC239B /* SwitchLanguageScreen.storyboard */,
 				CE6EAF4826E74CB5002785F0 /* SwitchLanguageVM.swift */,
@@ -567,30 +730,51 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE1B99BF26E10EBC0004280D /* Theme.swift in Sources */,
+				CE5ED20626E8AF99007FCADF /* AuthStep.swift in Sources */,
+				CE7821B826E7A5AB006FF957 /* ListOfAccountsStep.swift in Sources */,
+				CE5ED20F26E8D101007FCADF /* RegistrationFlow.swift in Sources */,
 				CE48AED626207FEF0076B311 /* ChangeProfileVC.swift in Sources */,
+				CE7821AE26E7A567006FF957 /* FirstFlow.swift in Sources */,
+				CE5ED21126E8D10C007FCADF /* RegistrationStep.swift in Sources */,
 				CE48AEC7262045EA0076B311 /* StringExtensions.swift in Sources */,
+				CE7821C026E7B6EE006FF957 /* SwitchLanguageFlow.swift in Sources */,
 				CE47F472261DF129005F1C69 /* RegistrationVC.swift in Sources */,
 				CE5BEC3226DFC74C00685981 /* NotificationHandler.swift in Sources */,
+				CE7821B626E7A59D006FF957 /* ListOfAccountsFlow.swift in Sources */,
+				CE7821A626E7A249006FF957 /* AppStep.swift in Sources */,
+				CE5ED20826E8B607007FCADF /* LoginFlow.swift in Sources */,
+				CE5ED20A26E8C04C007FCADF /* LoginStep.swift in Sources */,
 				CE1B99BB26E10E5F0004280D /* LightTheme.swift in Sources */,
 				CE1B99BD26E10E670004280D /* DarkTheme.swift in Sources */,
+				CE5ED1FF26E89D46007FCADF /* MainStep.swift in Sources */,
 				CE477442261F526F00A6DD5B /* Constants.swift in Sources */,
 				CE63301526DCFD7200E8F311 /* CoreDataDB.swift in Sources */,
 				CE5BEC2A26DFB6CC00685981 /* Strings.swift in Sources */,
+				CE5ED20126E8A53C007FCADF /* UIWindowExtension.swift in Sources */,
 				CE6EAF4926E74CB5002785F0 /* SwitchLanguageVM.swift in Sources */,
 				CE59069A26E655470059C84C /* ChangeProfileVM.swift in Sources */,
+				CE7821C726E7B7A5006FF957 /* ChangeProfileStep.swift in Sources */,
 				CE477431261F387D00A6DD5B /* CustomViewForEditCredentialsCell.swift in Sources */,
 				CE59069626E5FCC30059C84C /* RegistrationVM.swift in Sources */,
 				CE4514BD260DF1D40069CB6D /* MainVC.swift in Sources */,
 				CE4514C3260DF1D40069CB6D /* AccountApp.xcdatamodeld in Sources */,
+				CE7821C526E7B796006FF957 /* ChangeProfileFlow.swift in Sources */,
 				CE6EAF4B26E75D0F002785F0 /* SwitchThemeVM.swift in Sources */,
+				CE7821A226E7A171006FF957 /* AppFlow.swift in Sources */,
+				CE5ED20426E8AF90007FCADF /* AuthFlow.swift in Sources */,
 				CE477414261F337200A6DD5B /* ListOfAccountsVC.swift in Sources */,
+				CE5ED20C26E8C500007FCADF /* UIViewControllerExtension.swift in Sources */,
 				CE47F43E261DE374005F1C69 /* WelcomeScreenVC.swift in Sources */,
+				CE7821B226E7A583006FF957 /* SettingsFlow.swift in Sources */,
+				CE7821B426E7A58C006FF957 /* SettingsStep.swift in Sources */,
 				CE59069C26E660360059C84C /* SettingsVM.swift in Sources */,
 				CE649D5126E222CC0043730C /* WelcomeScreenVM.swift in Sources */,
 				CE4514B9260DF1D40069CB6D /* AppDelegate.swift in Sources */,
+				CE7821BB26E7B649006FF957 /* SwitchThemeFlow.swift in Sources */,
 				CE59069826E650710059C84C /* LoginVM.swift in Sources */,
 				CE5BEC2E26DFC6E000685981 /* NotificationExtension.swift in Sources */,
 				CE649D4B26E21E0B0043730C /* FirstVC.swift in Sources */,
+				CE7821B026E7A575006FF957 /* FirstStep.swift in Sources */,
 				CE6EAF4D26E78C10002785F0 /* XibExtensions.swift in Sources */,
 				CE63301126DCF56C00E8F311 /* LogInVC.swift in Sources */,
 				CE47F44D261DE47F005F1C69 /* UserModel.swift in Sources */,
@@ -600,9 +784,13 @@
 				CE5BEC3026DFC72C00685981 /* LanguageNotificationHandler.swift in Sources */,
 				CED9CF3126DE5CD500DC239B /* SwitchLanguageVC.swift in Sources */,
 				CE1B99B326E100000004280D /* SwitchThemeVC.swift in Sources */,
+				CE7821C226E7B6F8006FF957 /* SwitchLanguageStep.swift in Sources */,
+				CE7821A426E7A1F2006FF957 /* AppStepper.swift in Sources */,
+				CE7821BD26E7B653006FF957 /* SwitchThemeStep.swift in Sources */,
 				CED9CF2526DE265D00DC239B /* LogOutViewCell.swift in Sources */,
 				CED9CF2326DE142900DC239B /* SessionManager.swift in Sources */,
 				CE477417261F33AB00A6DD5B /* SettingsVC.swift in Sources */,
+				CE7821A926E7A41A006FF957 /* MainFlow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

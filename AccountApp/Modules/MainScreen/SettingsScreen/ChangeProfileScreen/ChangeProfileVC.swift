@@ -19,7 +19,7 @@ class ChangeProfileViewController: UIViewController {
     private let dataBase = DataBase()
     private let keychain = KeychainSwift()
     private let languageHandler = LanguageNotificationHandler()
-    private var viewModel = ChangeProfileViewModel()
+    private var viewModel: ChangeProfileViewModel!
     private let disposeBag = DisposeBag()
     
     // MARK: - Lifecycle
@@ -35,6 +35,10 @@ class ChangeProfileViewController: UIViewController {
         super.viewWillAppear(true)
         dataBase.fetchData()
         setupTheme()
+    }
+    
+    public func configure(viewModel: ChangeProfileViewModel) {
+        self.viewModel = viewModel
     }
     
     // MARK: - Logic

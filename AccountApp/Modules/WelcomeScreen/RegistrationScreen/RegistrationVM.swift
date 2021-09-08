@@ -1,3 +1,4 @@
+import KeychainSwift
 import RxCocoa
 import RxSwift
 import UIKit
@@ -19,9 +20,10 @@ public enum RegistrationState {
     case invalidValidation
 }
 
-
-class RegistrationViewModel {
+class RegistrationViewModel: AppStepper {
     
+    private let dataBase = DataBase()
+    private let keychain = KeychainSwift()
     private let loginValue = BehaviorRelay<String?>(value: "")
     private let passwordValue = BehaviorRelay<String?>(value: "")
     private let registrationState = BehaviorRelay<RegistrationState>(value: .emptyFields)
@@ -43,7 +45,22 @@ class RegistrationViewModel {
             input.passwordText.drive(self.passwordValue),
             input.saveEvent.subscribe(onNext: { [weak self] in
                 guard let self = self else { return }
-                self.registrationState.accept(self.state)
+//                self.registrationState.accept(self.state)
+                switch self.state {
+                case .allIsGood(let user):
+                    self.keychain.set(user.password, forKey: user.login)
+                    self.dataBase.openDatabse(login: user.login)
+                    self.steps.accept(RegistrationStep.completeStep)
+//                    self.setupStyleForTestFields(title: L10n.alertDoneTitle , titleColor: .green)
+                case .emptyFields:
+                    break
+//                    self.setupStyleForTestFields(title: L10n.alertErrorTitle, titleColor: .red)
+//                    self.showAlert(title: L10n.alertErrorTitle, message: L10n.alertErrorEmptyFieldsMessage)
+                case .invalidValidation:
+                    break
+//                    self.setupStyleForTestFields(title: L10n.alertWrongTitle, titleColor: .red)
+//                    self.showAlert(title: L10n.alertErrorTitle, message: L10n.alertRecommendationForFieldsMessage)
+                    }
                 }
             )
         )

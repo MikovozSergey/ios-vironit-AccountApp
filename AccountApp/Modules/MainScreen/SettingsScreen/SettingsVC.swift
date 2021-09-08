@@ -19,6 +19,7 @@ class SettingsViewController: UIViewController {
     
     private let languageHandler = LanguageNotificationHandler()
     private let disposeBag = DisposeBag()
+    private var viewModel: SettingsViewModel!
     
     // MARK: - Lifecycle
     
@@ -33,7 +34,7 @@ class SettingsViewController: UIViewController {
         setupUI()
         registerNib()
         handleLanguage()
-        setupBinding()
+        bind()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -42,21 +43,11 @@ class SettingsViewController: UIViewController {
         tableView.reloadData()
     }
     
-    // MARK: - Setup
-    
-    private func setupBinding() {
-        changeLanguageButton.rx.tap.subscribe(onNext:  { [weak self] in
-            let storyboard = UIStoryboard(name: "SwitchLanguageScreen", bundle: nil)
-            guard let viewController = storyboard.instantiateViewController(identifier: "SwitchLanguageViewController") as? SwitchLanguageViewController else { return }
-            self?.navigationController?.pushViewController(viewController, animated: true)
-        }).disposed(by: disposeBag)
-        
-        changeThemeButton.rx.tap.subscribe(onNext:  { [weak self] in
-            let storyboard = UIStoryboard(name: "SwitchThemeScreen", bundle: nil)
-            guard let viewController = storyboard.instantiateViewController(identifier: "SwitchThemeViewController") as? SwitchThemeViewController else { return }
-            self?.navigationController?.pushViewController(viewController, animated: true)
-        }).disposed(by: disposeBag)
+    public func configure(viewModel: SettingsViewModel) {
+        self.viewModel = viewModel
     }
+    
+    // MARK: - Setup
     
     private func setupDelegate() {
         tableView.delegate = self
@@ -87,7 +78,6 @@ class SettingsViewController: UIViewController {
     }
     
     private func setupTabBarTitle() {
-        tabBarItem.title = L10n.settings
     }
     
     private func handleLanguage() {
@@ -103,13 +93,18 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
         
         if indexPath.row == 0 {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: Xib.CustomViewForEditCredentialsCell.rawValue, for: indexPath) as? CustomViewForEditCredentialsCell else { return UITableViewCell() }
-            guard let navigator = self.navigationController else { return UITableViewCell() }
-            cell.configure(navigator: navigator)
+            let output = cell.bind()
+            output.mainEvent.subscribe { [weak viewModel] _ in
+                viewModel?.steps.accept(SettingsStep.changeUserNameAndPasswordStep)
+            }
+            //   output.mainEvent.bind(to: viewModel.)
             return cell
         } else {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: Xib.LogOutViewCell.rawValue, for: indexPath) as? LogOutViewCell else { return UITableViewCell() }
-            guard let navigator = self.navigationController else { return UITableViewCell() }
-            cell.configure(navigator: navigator)
+            let output = cell.bind()
+            output.mainEvent.subscribe { [weak viewModel] _ in
+                viewModel?.steps.accept(SettingsStep.logoutStep)
+            }
             return cell
         }
     }
@@ -120,5 +115,18 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 2
+    }
+}
+
+private extension SettingsViewController {
+    
+    func bind() {
+        let output = viewModel.bind(
+            input: SettingsInput(
+                changeLanguage: changeLanguageButton.rx.tap,
+                changeTheme: changeThemeButton.rx.tap
+            )
+        )
+        disposeBag.insert(output.disposable)
     }
 }

@@ -10,7 +10,7 @@ struct SwitchLanguageOutput {
     let disposable: Disposable
 }
 
-class SwitchLanguageViewModel {
+class SwitchLanguageViewModel: AppStepper {
     
     private let disposeBag = DisposeBag()
     

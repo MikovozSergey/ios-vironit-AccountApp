@@ -78,6 +78,10 @@ final class CustomViewForEditCredentialsCell: UITableViewCell {
         self.navigator = navigator
     }
     
+    func bind() -> CellOutput {
+        return CellOutput(mainEvent: changeLoginAndPasswordButton.rx.tap)
+    }
+    
     private func setupStrings() {
         changeLoginAndPasswordButton.setTitle(L10n.settingsProfileVCEditCredentialsTitle, for: .normal)
     }

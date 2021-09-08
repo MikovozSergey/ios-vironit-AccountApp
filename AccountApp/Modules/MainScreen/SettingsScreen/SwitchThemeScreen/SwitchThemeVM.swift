@@ -11,7 +11,7 @@ struct SwitchThemeOutput {
     let disposable: Disposable
 }
 
-class SwitchThemeViewModel {
+class SwitchThemeViewModel: AppStepper {
     
     private let switchThemeState = BehaviorRelay<Bool>(value: UserDefaults.standard.bool(forKey: "DarkTheme"))
     private let disposeBag = DisposeBag()

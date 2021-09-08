@@ -78,6 +78,10 @@ final class LogOutViewCell: UITableViewCell {
         self.navigator = navigator
     }
     
+    func bind() -> CellOutput {
+        return CellOutput(mainEvent: logOutButton.rx.tap)
+    }
+    
     private func setupStrings() {
         logOutButton.setTitle(L10n.settingsProfileVCLogOutButton, for: .normal)
     }

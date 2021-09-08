@@ -22,7 +22,7 @@ public enum ChangeProfileState {
     case invalidValidation
 }
 
-class ChangeProfileViewModel {
+class ChangeProfileViewModel: AppStepper {
     
     private let loginValue = BehaviorRelay<String?>(value: "")
     private let newLoginValue = BehaviorRelay<String?>(value: "")

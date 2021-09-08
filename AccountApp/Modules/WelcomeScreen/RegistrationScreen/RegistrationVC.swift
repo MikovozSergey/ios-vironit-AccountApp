@@ -18,7 +18,7 @@ class RegistrationViewController: UIViewController {
     private let dataBase = DataBase()
     private let keychain = KeychainSwift()
     private let languageHandler = LanguageNotificationHandler()
-    private var viewModel = RegistrationViewModel()
+    private var viewModel: RegistrationViewModel!
     private let disposeBag = DisposeBag()
     
     // MARK: - IBActions
@@ -48,6 +48,10 @@ class RegistrationViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setupTheme()
+    }
+    
+    public func configure(viewModel: RegistrationViewModel) {
+        self.viewModel = viewModel
     }
     
     // MARK: - Logic
@@ -141,11 +145,6 @@ private extension RegistrationViewController {
             switch state {
             case .allIsGood(let user):
                 self.setupStyleForTestFields(title: L10n.alertDoneTitle , titleColor: .green)
-                self.keychain.set(user.password, forKey: user.login)
-                self.dataBase.openDatabse(login: user.login)
-                let storyboard = UIStoryboard(name: "MainScreen", bundle: nil)
-                guard let vc = storyboard.instantiateViewController(identifier: "MainViewController") as? MainViewController else { return }
-                self.navigationController?.pushViewController(vc, animated: true)
             case .emptyFields:
                 self.setupStyleForTestFields(title: L10n.alertErrorTitle, titleColor: .red)
                 self.showAlert(title: L10n.alertErrorTitle, message: L10n.alertErrorEmptyFieldsMessage)

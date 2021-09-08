@@ -11,6 +11,8 @@ class ListOfAccountsViewController: UIViewController {
     
     private let dataBase = DataBase()
     private let languageHandler = LanguageNotificationHandler()
+ //   private var filteredData: [String]!
+ //   private var searchController: UISearchController!
     
     // MARK: - Lifecycle
     
@@ -25,6 +27,15 @@ class ListOfAccountsViewController: UIViewController {
         setupDelegate()
         setupUI()
         handleLanguage()
+        
+ //       filteredData = dataBase.arrayOfLogins
+
+//        searchController = UISearchController(searchResultsController: nil)
+//        searchController.searchResultsUpdater = self
+//        searchController.obscuresBackgroundDuringPresentation = false
+//        searchController.searchBar.sizeToFit()
+//        tableView.tableHeaderView = searchController.searchBar
+//        definesPresentationContext = true
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -47,7 +58,6 @@ class ListOfAccountsViewController: UIViewController {
     }
     
     private func setupStrings() {
-        tabBarItem.title = L10n.list
     }
     
     private func handleLanguage() {
@@ -72,3 +82,14 @@ extension ListOfAccountsViewController: UITableViewDelegate, UITableViewDataSour
         return cell
     }
 }
+
+//extension ListOfAccountsViewController: UISearchResultsUpdating {
+//    func updateSearchResults(for searchController: UISearchController) {
+//        if let searchText = searchController.searchBar.text {
+//            filteredData = searchText.isEmpty ? dataBase.arrayOfLogins : dataBase.arrayOfLogins.filter({(dataString: String) -> Bool in
+//                return dataString.range(of: searchText, options: .caseInsensitive) != nil
+//            })
+//            tableView.reloadData()
+//        }
+//    }
+//}

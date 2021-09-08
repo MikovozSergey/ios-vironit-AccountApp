@@ -2,6 +2,7 @@ import CoreData
 import KeychainSwift
 import RxCocoa
 import RxSwift
+import RxFlow
 import UIKit
 
 class WelcomeViewController: UIViewController {
@@ -14,7 +15,8 @@ class WelcomeViewController: UIViewController {
     // MARK: - Variables
     
     private let languageHandler = LanguageNotificationHandler()
-    private var bag = DisposeBag()
+    private var disposeBag = DisposeBag()
+    private var viewModel: WelcomeViewModel!
     
     // MARK: - Lifecycle
     
@@ -22,7 +24,7 @@ class WelcomeViewController: UIViewController {
         super.viewDidLoad()
         handleLanguage()
         setupUI()
-        setupBinding()
+        bind()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -30,21 +32,11 @@ class WelcomeViewController: UIViewController {
         setupTheme()
     }
     
-    // MARK: - Setup
-    
-    private func setupBinding() {
-        logInButton.rx.tap.subscribe(onNext:  { [weak self] in
-            let storyboard = UIStoryboard(name: "LogInScreen", bundle: nil)
-            guard let vc = storyboard.instantiateViewController(identifier: "LogInViewController") as? LogInViewController else { return }
-            self?.navigationController?.pushViewController(vc, animated: true)
-        }).disposed(by: bag)
-        
-        registrationButton.rx.tap.subscribe(onNext:  { [weak self] in
-            let storyboard = UIStoryboard(name: "RegistrationScreen", bundle: nil)
-            guard let viewController = storyboard.instantiateViewController(identifier: "RegistrationViewController") as? RegistrationViewController else { return }
-            self?.navigationController?.pushViewController(viewController, animated: true)
-        }).disposed(by: bag)
+    public func configure(viewModel: WelcomeViewModel) {
+        self.viewModel = viewModel
     }
+    
+    // MARK: - Setup
     
     private func setupTheme() {
         self.navigationController!.navigationBar.isTranslucent = false
@@ -69,5 +61,18 @@ class WelcomeViewController: UIViewController {
         languageHandler.startListening { [weak self] in
             self?.setupStrings()
         }
+    }
+}
+
+private extension WelcomeViewController {
+    
+    func bind() {
+        let output = viewModel.bind(
+            input: WelcomeInput(
+                loginEvent: logInButton.rx.tap,
+                registrationEvent: registrationButton.rx.tap
+            )
+        )
+        disposeBag.insert(output.disposable)
     }
 }

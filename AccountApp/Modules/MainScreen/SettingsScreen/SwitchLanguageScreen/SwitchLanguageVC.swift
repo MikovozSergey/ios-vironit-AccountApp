@@ -12,7 +12,7 @@ class SwitchLanguageViewController: UIViewController {
     // MARK: - Variables
     
     private let languageHandler = LanguageNotificationHandler()
-    private var viewModel = SwitchLanguageViewModel()
+    private var viewModel: SwitchLanguageViewModel?
     private let disposeBag = DisposeBag()
     
     // MARK: - Lifecycle
@@ -29,6 +29,10 @@ class SwitchLanguageViewController: UIViewController {
         setupTheme()
     }
     
+    public func configure(viewModel: SwitchLanguageViewModel) {
+        self.viewModel = viewModel
+    }
+    
     // MARK: - Logic
     
     private func setupTheme() {
@@ -38,7 +42,6 @@ class SwitchLanguageViewController: UIViewController {
     }
     
     private func setupUI() {
-        self.navigationController!.navigationBar.topItem!.title = ""
         setupStrings()
         navigationController?.view.tintColor = UIColor(red: 255/255, green: 215/255, blue: 0/255, alpha: 1)
         switchLanguageButton.layer.borderWidth = 1.5
@@ -60,6 +63,7 @@ class SwitchLanguageViewController: UIViewController {
 private extension SwitchLanguageViewController {
     
     func bind() {
+        guard let viewModel = self.viewModel else { return }
         let output = viewModel.bind(
             input: SwitchLanguageInput(
                 switchEvent: switchLanguageButton.rx.tap

@@ -12,7 +12,7 @@ class SwitchThemeViewController: UIViewController {
     // MARK: - Variables
     
     private let languageHandler = LanguageNotificationHandler()
-    private var viewModel = SwitchThemeViewModel()
+    private var viewModel: SwitchThemeViewModel?
     private let disposeBag = DisposeBag()
     
     // MARK: - Lifecycle
@@ -28,7 +28,7 @@ class SwitchThemeViewController: UIViewController {
     // MARK: - Logic
     
     private func setupUI() {
-        self.navigationController!.navigationBar.topItem!.title = ""
+        navigationController?.view.tintColor = UIColor(red: 255/255, green: 215/255, blue: 0/255, alpha: 1)
         setupStrings()
     }
     
@@ -37,6 +37,7 @@ class SwitchThemeViewController: UIViewController {
     }
     
     private func setupTheme() {
+        
         themeSwitch.tintColor = Theme.currentTheme.accentColor
         themeSwitch.onTintColor = Theme.currentTheme.accentColor
         self.navigationController?.navigationBar.barTintColor = Theme.currentTheme.backgroundColor
@@ -49,11 +50,16 @@ class SwitchThemeViewController: UIViewController {
             self?.setupStrings()
         }
     }
+    
+    public func configure(viewModel: SwitchThemeViewModel) {
+        self.viewModel = viewModel
+    }
 }
 
 private extension SwitchThemeViewController {
     
     func bind() {
+        guard let viewModel = self.viewModel else { return }
         let output = viewModel.bind(
             input: SwitchThemeInput(
                 switchEvent: themeSwitch.rx.isOn.changed
