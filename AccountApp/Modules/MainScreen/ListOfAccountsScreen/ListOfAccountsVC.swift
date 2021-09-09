@@ -15,18 +15,12 @@ class ListOfAccountsViewController: UIViewController {
  //   private var searchController: UISearchController!
     
     // MARK: - Lifecycle
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        setupStrings()
-    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         dataBase.fetchData()
         setupDelegate()
         setupUI()
-        handleLanguage()
         
  //       filteredData = dataBase.arrayOfLogins
 
@@ -42,10 +36,14 @@ class ListOfAccountsViewController: UIViewController {
         super.viewWillAppear(animated)
         setupTheme()
         tableView.reloadData()
+        handleLanguage()
     }
     
     private func setupTheme() {
         tableView.backgroundColor = Theme.currentTheme.backgroundColor
+        navigationController?.navigationBar.isTranslucent = false
+        navigationController?.navigationBar.barTintColor = Theme.currentTheme.backgroundColor
+        navigationController?.navigationBar.topItem?.title = L10n.list
     }
     
     private func setupDelegate() {
@@ -58,6 +56,7 @@ class ListOfAccountsViewController: UIViewController {
     }
     
     private func setupStrings() {
+        navigationController?.navigationBar.topItem?.title = L10n.list
     }
     
     private func handleLanguage() {

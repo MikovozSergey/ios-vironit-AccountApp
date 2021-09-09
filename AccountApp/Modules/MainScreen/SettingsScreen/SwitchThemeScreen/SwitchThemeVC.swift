@@ -28,7 +28,6 @@ class SwitchThemeViewController: UIViewController {
     // MARK: - Logic
     
     private func setupUI() {
-        navigationController?.view.tintColor = UIColor(red: 255/255, green: 215/255, blue: 0/255, alpha: 1)
         setupStrings()
     }
     
@@ -37,11 +36,12 @@ class SwitchThemeViewController: UIViewController {
     }
     
     private func setupTheme() {
-        
+        navigationController?.view.tintColor = Colors.gold
+        navigationController?.navigationBar.isTranslucent = false
+        navigationController?.navigationBar.barTintColor = Theme.currentTheme.backgroundColor
         themeSwitch.tintColor = Theme.currentTheme.accentColor
         themeSwitch.onTintColor = Theme.currentTheme.accentColor
-        self.navigationController?.navigationBar.barTintColor = Theme.currentTheme.backgroundColor
-        self.view.backgroundColor = Theme.currentTheme.backgroundColor
+        view.backgroundColor = Theme.currentTheme.backgroundColor
         changeThemeLabel.textColor = Theme.currentTheme.textColor
     }
     

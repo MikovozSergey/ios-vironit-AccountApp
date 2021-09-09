@@ -20,28 +20,21 @@ class SettingsViewController: UIViewController {
     private let languageHandler = LanguageNotificationHandler()
     private let disposeBag = DisposeBag()
     private var viewModel: SettingsViewModel!
-    
+
     // MARK: - Lifecycle
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        setupTabBarTitle()
-        handleLanguage()
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupDelegate()
         setupUI()
         registerNib()
-//        handleLanguage()
         bind()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setupTheme()
-//        handleLanguage()
+        handleLanguage()
         tableView.reloadData()
     }
     
@@ -68,25 +61,24 @@ class SettingsViewController: UIViewController {
     
     private func setupTheme() {
         tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
-        self.view.backgroundColor = Theme.currentTheme.backgroundColor
+        view.backgroundColor = Theme.currentTheme.backgroundColor
         tableView.backgroundColor = Theme.currentTheme.backgroundColor
         changeLanguageButton.setTitleColor(Theme.currentTheme.textColor, for: .normal)
         changeThemeButton.setTitleColor(Theme.currentTheme.textColor, for: .normal)
+        navigationController?.navigationBar.isTranslucent = false
+        navigationController?.navigationBar.barTintColor = Theme.currentTheme.backgroundColor
+        navigationController?.navigationBar.topItem?.title = L10n.settings
     }
     
     private func setupStrings() {
         changeLanguageButton.setTitle(L10n.switchLanguageVCTitle, for: .normal)
         changeThemeButton.setTitle(L10n.switchThemeVCTitle, for: .normal)
-    }
-    
-    private func setupTabBarTitle() {
-        self.tabBarItem.title = L10n.settings
+        navigationController?.navigationBar.topItem?.title = L10n.settings
     }
     
     private func handleLanguage() {
         languageHandler.startListening { [weak self] in
             self?.setupStrings()
-            self?.setupTabBarTitle()
         }
     }
 }
@@ -100,7 +92,6 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
             output.mainEvent.subscribe { [weak viewModel] _ in
                 viewModel?.steps.accept(SettingsStep.changeUserNameAndPasswordStep)
             }
-            //   output.mainEvent.bind(to: viewModel.)
             return cell
         } else {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: Xib.LogOutViewCell.rawValue, for: indexPath) as? LogOutViewCell else { return UITableViewCell() }

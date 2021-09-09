@@ -27,6 +27,7 @@ class FirstFlow: Flow {
     private func navigateToFirstScreen() -> FlowContributors {
         let storyboard = UIStoryboard(name: "FirstScreen", bundle: nil)
         guard let viewController = storyboard.instantiateViewController(identifier: "FirstViewController") as? FirstViewController else { return .none }
+        self.rootViewController.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: Colors.gold]
         self.rootViewController.pushViewController(viewController, animated: true)
         return .one(flowContributor: .contribute(withNextPresentable: viewController, withNextStepper: OneStepper(withSingleStep: SettingsStep.initialStep)))
     }

@@ -35,13 +35,17 @@ class MainFlow: Flow {
 
         Flows.use(firstFlow, listOfAccountsFlow, settingsFlow, when: .created) { [unowned self] (firstRoot: UINavigationController, listOfAccountsRoot: UINavigationController, settingsRoot: UINavigationController) in
             
-            let firstTabBar = UITabBarItem(title: L10n.empty, image: nil, selectedImage: nil)
-            let listOfAccountsTabBar = UITabBarItem(title: L10n.list, image: nil, selectedImage: nil)
-            let settingsTabBar = UITabBarItem(title: L10n.settings, image: nil, selectedImage: nil)
+            let firstTabBar = UITabBarItem(title: nil, image: UIImage(named: "iconEmpty"), selectedImage: nil)
+            firstTabBar.imageInsets = UIEdgeInsets(top: 9, left: 0, bottom: -9, right: 0)
+            let listOfAccountsTabBar = UITabBarItem(title: nil, image: UIImage(named: "iconList"), selectedImage: nil)
+            listOfAccountsTabBar.imageInsets = UIEdgeInsets(top: 9, left: 0, bottom: -9, right: 0)
+            let settingsTabBar = UITabBarItem(title: nil, image: UIImage(named: "iconSettings"), selectedImage: nil)
+            settingsTabBar.imageInsets = UIEdgeInsets(top: 9, left: 0, bottom: -9, right: 0)
             firstRoot.tabBarItem = firstTabBar
             listOfAccountsRoot.tabBarItem = listOfAccountsTabBar
             settingsRoot.tabBarItem = settingsTabBar
-
+           // self.rootViewController.tabBar.barTintColor = Theme.currentTheme.backgroundColor
+            self.rootViewController.tabBar.tintColor = Colors.gold
             self.rootViewController.setViewControllers([firstRoot, listOfAccountsRoot, settingsRoot], animated: false)
         }
         

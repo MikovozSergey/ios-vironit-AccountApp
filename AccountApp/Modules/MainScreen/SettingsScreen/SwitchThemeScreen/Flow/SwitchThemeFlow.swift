@@ -30,7 +30,8 @@ class SwitchThemeFlow: Flow {
     private func navigateToChangeThemeScreen() -> FlowContributors {
         let storyboard = UIStoryboard(name: "SwitchThemeScreen", bundle: nil)
         guard let vc = storyboard.instantiateViewController(identifier: "SwitchThemeViewController") as? SwitchThemeViewController else { return .none }
-        let backButton: UIBarButtonItem = UIBarButtonItem(title: L10n.back, style: UIBarButtonItem.Style.done, target: self, action: #selector(backAction))
+        let backButton: UIBarButtonItem = UIBarButtonItem(title: nil, style: UIBarButtonItem.Style.done, target: self, action: #selector(backAction))
+        backButton.image = UIImage(named: "iconBack")
         vc.navigationItem.leftBarButtonItem = backButton
         vc.configure(viewModel: viewModel)
         self.rootViewController.pushViewController(vc, animated: false)

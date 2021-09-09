@@ -40,6 +40,7 @@ class SettingsFlow: Flow {
         guard let vc = storyboard.instantiateViewController(identifier: "SettingsViewController") as? SettingsViewController else { return .none }
         let viewModel = SettingsViewModel()
         vc.configure(viewModel: viewModel)
+        self.rootViewController.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: Colors.gold]
         self.rootViewController.pushViewController(vc, animated: false)
         return .one(flowContributor: .contribute(withNextPresentable: vc,
                                                  withNextStepper: viewModel))

@@ -44,18 +44,20 @@ class ChangeProfileViewController: UIViewController {
     // MARK: - Logic
     
     private func setupTheme() {
-        self.view.backgroundColor = Theme.currentTheme.backgroundColor
+        navigationController?.view.tintColor = Colors.gold
+        navigationController?.navigationBar.isTranslucent = false
+        navigationController?.navigationBar.barTintColor = Theme.currentTheme.backgroundColor
+        view.backgroundColor = Theme.currentTheme.backgroundColor
         loginTextField.textColor = Theme.currentTheme.textColor
         newLoginTextField.textColor = Theme.currentTheme.textColor
         passwordTextField.textColor = Theme.currentTheme.textColor
         newPasswordTextField.textColor = Theme.currentTheme.textColor
         saveButton.setTitleColor(Theme.currentTheme.textColor, for: .normal)
+        
     }
     
     private func setupUI() {
-        navigationController?.navigationBar.isHidden = false
         setupStrings()
-        navigationController?.view.tintColor = UIColor(red: 255/255, green: 215/255, blue: 0/255, alpha: 1)
         loginTextField.textAlignment = .center
         passwordTextField.textAlignment = .center
         newLoginTextField.textAlignment = .center

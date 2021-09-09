@@ -27,6 +27,7 @@ class ListOfAccountsFlow: Flow {
     private func navigateToListOfAccountsScreen() -> FlowContributors {
         let storyboard = UIStoryboard(name: "ListOfAccountsScreen", bundle: nil)
         guard let viewController = storyboard.instantiateViewController(identifier: "ListOfAccountsViewController") as? ListOfAccountsViewController else { return .none }
+        self.rootViewController.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: Colors.gold]
         self.rootViewController.pushViewController(viewController, animated: true)
         return .one(flowContributor: .contribute(withNextPresentable: viewController, withNextStepper: OneStepper(withSingleStep: SettingsStep.initialStep)))
     }

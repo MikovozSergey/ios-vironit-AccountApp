@@ -91,7 +91,7 @@ enum L10n {
   static var enter: String {
     return L10n.tr("Localizable", "Enter")
   }
-  /// List
+  /// List of Accounts
   static var list: String {
     return L10n.tr("Localizable", "List")
   }

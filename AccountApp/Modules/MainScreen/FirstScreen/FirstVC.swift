@@ -10,24 +10,22 @@ class FirstViewController: UIViewController {
     private let languageHandler = LanguageNotificationHandler()
     
     // MARK: - Lifecycle
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        setupStrings()
-    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        handleLanguage()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setupTheme()
+        handleLanguage()
     }
     
     private func setupTheme() {
+        navigationController?.navigationBar.isTranslucent = false
+        navigationController?.navigationBar.barTintColor = Theme.currentTheme.backgroundColor
+        navigationController?.navigationBar.topItem?.title = L10n.empty
         view.backgroundColor = Theme.currentTheme.backgroundColor
     }
     
@@ -36,7 +34,7 @@ class FirstViewController: UIViewController {
     }
     
     private func setupStrings() {
-        tabBarItem.title = L10n.empty
+        navigationController?.navigationBar.topItem?.title = L10n.empty
     }
     
     private func handleLanguage() {
