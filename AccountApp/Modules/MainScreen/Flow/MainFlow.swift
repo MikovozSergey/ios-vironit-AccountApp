@@ -33,7 +33,7 @@ class MainFlow: Flow {
         let listOfAccountsFlow = ListOfAccountsFlow()
         let settingsFlow = SettingsFlow()
 
-        Flows.use(firstFlow, listOfAccountsFlow, settingsFlow, when: .created) { [unowned self] (firstRoot: UINavigationController, listOfAccountsRoot: UINavigationController, settingsRoot: UINavigationController) in
+        Flows.use(firstFlow, listOfAccountsFlow, settingsFlow, when: .ready) { [unowned self] (firstRoot: UINavigationController, listOfAccountsRoot: UINavigationController, settingsRoot: UINavigationController) in
             
             let firstTabBar = UITabBarItem(title: nil, image: UIImage(named: "iconEmpty"), selectedImage: nil)
             firstTabBar.imageInsets = UIEdgeInsets(top: 9, left: 0, bottom: -9, right: 0)
@@ -44,7 +44,9 @@ class MainFlow: Flow {
             firstRoot.tabBarItem = firstTabBar
             listOfAccountsRoot.tabBarItem = listOfAccountsTabBar
             settingsRoot.tabBarItem = settingsTabBar
+            self.rootViewController.tabBar.isTranslucent = false
             self.rootViewController.tabBar.tintColor = Colors.gold
+            self.rootViewController.tabBar.barTintColor = Theme.currentTheme.backgroundColor
             self.rootViewController.setViewControllers([firstRoot, listOfAccountsRoot, settingsRoot], animated: false)
         }
         
@@ -54,5 +56,9 @@ class MainFlow: Flow {
                                                         withNextStepper: OneStepper(withSingleStep: ListOfAccountsStep.initialStep)),
                                             .contribute(withNextPresentable: settingsFlow,
                                                         withNextStepper: OneStepper(withSingleStep: SettingsStep.initialStep))])
+    }
+    
+    public func returnRootViewController() -> UITabBarController {
+        return self.rootViewController
     }
 }

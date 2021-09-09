@@ -26,10 +26,12 @@ class SettingsFlow: Flow {
         case .changeUserNameAndPasswordStep:
             return navigateToChangeUserNameAndPasswordScreen()
         case .logoutStep:
+            // sessionManager.stopTimer
             return .end(forwardToParentFlowWithStep: AppStep.logoutStep)
         case .changeThemeStep:
             return navigateToChangeThemeScreen()
         case .backStep:
+            rootViewController.tabBarController?.tabBar.barTintColor = Theme.currentTheme.backgroundColor
             rootViewController.dismiss(animated: true, completion: nil)
             return .none
         }

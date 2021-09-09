@@ -12,9 +12,6 @@ struct SwitchLanguageOutput {
 
 class SwitchLanguageViewModel: AppStepper {
     
-    var titleForNavigation: String {
-        return L10n.back
-    }
     private let disposeBag = DisposeBag()
     
     public func bind(input: SwitchLanguageInput) -> SwitchLanguageOutput {
