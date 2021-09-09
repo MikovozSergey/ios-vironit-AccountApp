@@ -78,8 +78,6 @@ class LogInViewController: UIViewController {
     private func setupDelegate() {
         loginTextField.delegate = self
         passwordTextField.delegate = self
-        loginTextField.text = "TestUser3"
-        passwordTextField.text = "Qwerty1234!"
     }
     
     private func showAlert(title: String, message: String) {

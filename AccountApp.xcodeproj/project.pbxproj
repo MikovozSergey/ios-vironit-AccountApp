@@ -258,7 +258,6 @@
 				CE47F432261DE0A2005F1C69 /* CoreData */,
 				CE47F42C261DDFAC005F1C69 /* Models */,
 				CE47F42D261DDFC2005F1C69 /* Modules */,
-				CE47F42E261DE007005F1C69 /* Network */,
 				CE47F42F261DE015005F1C69 /* Resources */,
 				CE47F433261DE0B9005F1C69 /* Utils */,
 				CE47F439261DE1F4005F1C69 /* Views */,
@@ -317,13 +316,6 @@
 				CE47F43A261DE222005F1C69 /* MainScreen */,
 			);
 			path = Modules;
-			sourceTree = "<group>";
-		};
-		CE47F42E261DE007005F1C69 /* Network */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Network;
 			sourceTree = "<group>";
 		};
 		CE47F42F261DE015005F1C69 /* Resources */ = {
