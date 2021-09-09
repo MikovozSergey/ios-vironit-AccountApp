@@ -145,10 +145,9 @@ private extension LogInViewController {
             switch state {
             case .allIsGood(let user):
                 if self.dataBase.arrayOfLogins.contains(user.login) && user.password == self.keychain.get(user.login) {
-                    let storyboard = UIStoryboard(name: "MainScreen", bundle: nil)
-                    guard let viewController = storyboard.instantiateViewController(identifier: "MainViewController") as? MainViewController else { return }
-                    self.navigationController?.pushViewController(viewController, animated: true)
+                    self.viewModel.steps.accept(LoginStep.completeStep)
                 } else {
+                    self.setupStyleForTestFields(title: L10n.alertWrongTitle, titleColor: .red)
                     self.showAlert(title: L10n.alertErrorTitle, message: L10n.alertErrorPasswordMessage)
                 }
             case .emptyFields:

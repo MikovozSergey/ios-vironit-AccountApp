@@ -145,6 +145,9 @@ private extension RegistrationViewController {
             switch state {
             case .allIsGood(let user):
                 self.setupStyleForTestFields(title: L10n.alertDoneTitle , titleColor: .green)
+                self.keychain.set(user.password, forKey: user.login)
+                self.dataBase.openDatabse(login: user.login)
+                self.viewModel.steps.accept(RegistrationStep.completeStep)
             case .emptyFields:
                 self.setupStyleForTestFields(title: L10n.alertErrorTitle, titleColor: .red)
                 self.showAlert(title: L10n.alertErrorTitle, message: L10n.alertErrorEmptyFieldsMessage)

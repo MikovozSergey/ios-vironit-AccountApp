@@ -141,8 +141,9 @@ private extension ChangeProfileViewController {
                     self.keychain.set(newPassword, forKey: newLogin)
                     self.dataBase.deleteObject(logIn: user.login)
                     self.dataBase.openDatabse(login: newLogin)
-                    self.navigationController?.popToRootViewController(animated: true)
+                    self.viewModel.steps.accept(ChangeProfileStep.backStep)
                 } else {
+                    self.setupStyleForTestFields(title: L10n.alertWrongTitle, titleColor: .red)
                     self.showAlert(title: L10n.alertErrorTitle, message: L10n.alertErrorPasswordMessage)
                 }
             case .emptyFields:

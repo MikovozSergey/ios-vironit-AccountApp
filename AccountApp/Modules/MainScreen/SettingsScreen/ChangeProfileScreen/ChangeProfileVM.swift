@@ -35,7 +35,7 @@ class ChangeProfileViewModel: AppStepper {
         let newLoginValue = self.newLoginValue.value ?? ""
         let passwordValue = self.passwordValue.value ?? ""
         let newPasswordValue = self.newPasswordValue.value ?? ""
-        switch (ValidationManager.isValidLogin(login: self.loginValue), ValidationManager.isValidPassword(password: self.loginValue), ValidationManager.isValidLogin(login: self.newLoginValue), ValidationManager.isValidPassword(password: self.newPasswordValue)) {
+        switch (ValidationManager.isValidLogin(login: self.loginValue), ValidationManager.isValidPassword(password: self.passwordValue), ValidationManager.isValidLogin(login: self.newLoginValue), ValidationManager.isValidPassword(password: self.newPasswordValue)) {
         case (true, true, true, true):
             return .allIsGood(user: User(login: loginValue, password: passwordValue))
         default:
