@@ -32,6 +32,9 @@ class ListOfAccountsViewController: UIViewController {
     }
     
     private func setupTheme() {
+        searchBar.isTranslucent = true
+        searchBar.barTintColor = Theme.currentTheme.backgroundColor
+        searchBar.searchTextField.backgroundColor = .white
         tableView.backgroundColor = Theme.currentTheme.backgroundColor
         navigationController?.navigationBar.isTranslucent = false
         navigationController?.navigationBar.barTintColor = Theme.currentTheme.backgroundColor
