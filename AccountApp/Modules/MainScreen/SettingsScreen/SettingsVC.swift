@@ -26,6 +26,7 @@ class SettingsViewController: UIViewController {
     override func awakeFromNib() {
         super.awakeFromNib()
         setupTabBarTitle()
+        handleLanguage()
     }
     
     override func viewDidLoad() {
@@ -33,13 +34,14 @@ class SettingsViewController: UIViewController {
         setupDelegate()
         setupUI()
         registerNib()
-        handleLanguage()
+//        handleLanguage()
         bind()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setupTheme()
+//        handleLanguage()
         tableView.reloadData()
     }
     
@@ -78,6 +80,7 @@ class SettingsViewController: UIViewController {
     }
     
     private func setupTabBarTitle() {
+        self.tabBarItem.title = L10n.settings
     }
     
     private func handleLanguage() {

@@ -73,12 +73,8 @@ final class LogOutViewCell: UITableViewCell {
         popTip.show(attributedText: setupAtributedText(), direction: direction, maxWidth: 200, in: viewForPopTip, from: sender.frame)
     }
     
-    func configure(navigator: UINavigationController) {
-        setup()
-        self.navigator = navigator
-    }
-    
     func bind() -> CellOutput {
+        setup()
         return CellOutput(mainEvent: logOutButton.rx.tap)
     }
     

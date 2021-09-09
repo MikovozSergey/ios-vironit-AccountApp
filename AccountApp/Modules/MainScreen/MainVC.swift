@@ -3,12 +3,16 @@ import UIKit
 class MainViewController: UITabBarController {
 
     private var sessionManager: SessionManager?
+    private let languageHandler = LanguageNotificationHandler()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupSession()
         setupUI()
-        setupTapBarTitle()
+    }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -22,8 +26,5 @@ class MainViewController: UITabBarController {
     private func setupSession() {
         sessionManager = SessionManager(navigation: self.navigationController!)
         sessionManager!.startTimer()
-    }
-    
-    private func setupTapBarTitle() {
     }
 }

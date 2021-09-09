@@ -36,7 +36,6 @@ class MainFlow: Flow {
         Flows.use(firstFlow, listOfAccountsFlow, settingsFlow, when: .created) { [unowned self] (firstRoot: UINavigationController, listOfAccountsRoot: UINavigationController, settingsRoot: UINavigationController) in
             
             let firstTabBar = UITabBarItem(title: L10n.empty, image: nil, selectedImage: nil)
-        //    firstTabBar.barTintColor = Theme.currentTheme.backgroundColor
             let listOfAccountsTabBar = UITabBarItem(title: L10n.list, image: nil, selectedImage: nil)
             let settingsTabBar = UITabBarItem(title: L10n.settings, image: nil, selectedImage: nil)
             firstRoot.tabBarItem = firstTabBar
