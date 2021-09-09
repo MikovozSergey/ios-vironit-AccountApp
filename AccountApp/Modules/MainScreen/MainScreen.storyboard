@@ -4,7 +4,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -15,8 +14,6 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="KCT-wg-HZ4">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" systemColor="labelColor"/>
-                        <color key="barTintColor" systemColor="labelColor"/>
                     </tabBar>
                     <connections>
                         <segue destination="cBk-Fp-C9h" kind="relationship" relationship="viewControllers" id="wZE-jT-89S"/>
@@ -32,7 +29,7 @@
         <scene sceneID="CWh-uO-au3">
             <objects>
                 <viewControllerPlaceholder storyboardName="ListOfAccountsScreen" id="tVT-yd-fqw" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="zU2-Bj-11e"/>
+                    <tabBarItem key="tabBarItem" title="" id="zU2-Bj-11e"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RRU-7T-bFM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -42,7 +39,7 @@
         <scene sceneID="kcG-tX-9FX">
             <objects>
                 <viewControllerPlaceholder storyboardName="SettingsScreen" id="z6q-Hp-b4F" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="g99-d7-gKS"/>
+                    <tabBarItem key="tabBarItem" title="" id="g99-d7-gKS"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="On9-xi-HKX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -52,16 +49,11 @@
         <scene sceneID="Ocb-0z-sCU">
             <objects>
                 <viewControllerPlaceholder storyboardName="FirstScreen" id="cBk-Fp-C9h" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="UYh-6k-3GS"/>
+                    <tabBarItem key="tabBarItem" title="" id="UYh-6k-3GS"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wM1-bQ-dMh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-970" y="728"/>
         </scene>
     </scenes>
-    <resources>
-        <systemColor name="labelColor">
-            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-    </resources>
 </document>

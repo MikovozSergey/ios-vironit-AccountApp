@@ -44,6 +44,7 @@ class ListOfAccountsViewController: UIViewController {
         navigationController?.navigationBar.isTranslucent = false
         navigationController?.navigationBar.barTintColor = Theme.currentTheme.backgroundColor
         navigationController?.navigationBar.topItem?.title = L10n.list
+        view.backgroundColor = Theme.currentTheme.backgroundColor
     }
     
     private func setupDelegate() {

@@ -44,7 +44,6 @@ class MainFlow: Flow {
             firstRoot.tabBarItem = firstTabBar
             listOfAccountsRoot.tabBarItem = listOfAccountsTabBar
             settingsRoot.tabBarItem = settingsTabBar
-           // self.rootViewController.tabBar.barTintColor = Theme.currentTheme.backgroundColor
             self.rootViewController.tabBar.tintColor = Colors.gold
             self.rootViewController.setViewControllers([firstRoot, listOfAccountsRoot, settingsRoot], animated: false)
         }

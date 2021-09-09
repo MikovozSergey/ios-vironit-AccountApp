@@ -23,6 +23,7 @@ class FirstViewController: UIViewController {
     }
     
     private func setupTheme() {
+        tabBarItem.badgeColor = .green
         navigationController?.navigationBar.isTranslucent = false
         navigationController?.navigationBar.barTintColor = Theme.currentTheme.backgroundColor
         navigationController?.navigationBar.topItem?.title = L10n.empty
