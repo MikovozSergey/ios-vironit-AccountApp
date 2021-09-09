@@ -24,15 +24,15 @@ class RegistrationViewController: UIViewController {
     // MARK: - IBActions
     
     @IBAction private func tappedLoginTextField(_ sender: Any) {
-        if loginTextField.text?.isEmpty != nil {
-            setupFieldsTitle(isLogin: true)
-        }
+//        if loginTextField.text?.isEmpty != nil {
+//            setupFieldsTitle(isLogin: true)
+//        }
     }
     
     @IBAction private func tappedPasswordTextField(_ sender: Any) {
-        if passwordTextField.text?.isEmpty != nil {
-            setupFieldsTitle(isLogin: false)
-        }
+//        if passwordTextField.text?.isEmpty != nil {
+//            setupFieldsTitle(isLogin: false)
+//        }
     }
     
     // MARK: - Lifecycle

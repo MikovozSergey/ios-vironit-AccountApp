@@ -6,13 +6,13 @@ class ListOfAccountsViewController: UIViewController {
     // MARK: - IBOutlets
     
     @IBOutlet private weak var tableView: UITableView!
+    @IBOutlet private weak var searchBar: UISearchBar!
     
     // MARK: - Variables
     
     private let dataBase = DataBase()
     private let languageHandler = LanguageNotificationHandler()
- //   private var filteredData: [String]!
- //   private var searchController: UISearchController!
+    private var filteredListOfAccounts: [String] = []
     
     // MARK: - Lifecycle
 
@@ -21,15 +21,7 @@ class ListOfAccountsViewController: UIViewController {
         dataBase.fetchData()
         setupDelegate()
         setupUI()
-        
- //       filteredData = dataBase.arrayOfLogins
-
-//        searchController = UISearchController(searchResultsController: nil)
-//        searchController.searchResultsUpdater = self
-//        searchController.obscuresBackgroundDuringPresentation = false
-//        searchController.searchBar.sizeToFit()
-//        tableView.tableHeaderView = searchController.searchBar
-//        definesPresentationContext = true
+        filteredListOfAccounts = dataBase.arrayOfLogins
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -50,6 +42,7 @@ class ListOfAccountsViewController: UIViewController {
     private func setupDelegate() {
         tableView.delegate = self
         tableView.dataSource = self
+        searchBar.delegate = self
     }
     
     private func setupUI() {
@@ -71,25 +64,25 @@ class ListOfAccountsViewController: UIViewController {
 
 extension ListOfAccountsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dataBase.arrayOfLogins.count
+        return filteredListOfAccounts.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         cell.textLabel?.textColor = Colors.gold
         cell.contentView.backgroundColor = Theme.currentTheme.backgroundColor
-        cell.textLabel?.text = dataBase.arrayOfLogins[indexPath.row]
+        cell.textLabel?.text = filteredListOfAccounts[indexPath.row]
         return cell
     }
 }
 
-//extension ListOfAccountsViewController: UISearchResultsUpdating {
-//    func updateSearchResults(for searchController: UISearchController) {
-//        if let searchText = searchController.searchBar.text {
-//            filteredData = searchText.isEmpty ? dataBase.arrayOfLogins : dataBase.arrayOfLogins.filter({(dataString: String) -> Bool in
-//                return dataString.range(of: searchText, options: .caseInsensitive) != nil
-//            })
-//            tableView.reloadData()
-//        }
-//    }
-//}
+extension ListOfAccountsViewController: UISearchBarDelegate {
+
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        guard let searchText = searchBar.text else { return }
+        filteredListOfAccounts = searchText.isEmpty ? dataBase.arrayOfLogins : dataBase.arrayOfLogins.filter({(dataString: String) -> Bool in
+            return dataString.range(of: searchText, options: .caseInsensitive) != nil
+        })
+        tableView.reloadData()
+    }
+}
