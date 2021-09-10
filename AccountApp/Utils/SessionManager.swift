@@ -4,6 +4,7 @@ final public class SessionManager {
  
     weak var timer: Timer?
     var navigation: UINavigationController
+    weak var viewModel: SettingsViewModel?
     
     init(navigation: UINavigationController) {
         self.navigation = navigation
@@ -46,7 +47,7 @@ final public class SessionManager {
     @objc func timerHandler(_ timer: Timer) {
         if isEndOfSession(startOfSession: getStartOfSession()) {
             stopTimer()
-            navigation.popToRootViewController(animated: true)
+            viewModel?.steps.accept(SettingsStep.logoutStep)
         }
     }
 }
