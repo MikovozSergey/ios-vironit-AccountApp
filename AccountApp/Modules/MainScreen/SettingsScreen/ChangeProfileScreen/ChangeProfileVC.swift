@@ -14,7 +14,6 @@ class ChangeProfileViewController: UIViewController {
     @IBOutlet private weak var newPasswordTextField: SkyFloatingLabelTextField!
     @IBOutlet private weak var saveButton: UIButton!
     
-    
     // MARK: - Variables
     
     private let dataBase = DataBase()

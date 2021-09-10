@@ -5,4 +5,3 @@ enum AppStep: Step {
     case authStep
     case logoutStep
 }
-
