@@ -16,7 +16,6 @@
 		CE1B99BF26E10EBC0004280D /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1B99BE26E10EBC0004280D /* Theme.swift */; };
 		CE4514B9260DF1D40069CB6D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4514B8260DF1D40069CB6D /* AppDelegate.swift */; };
 		CE4514BB260DF1D40069CB6D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4514BA260DF1D40069CB6D /* SceneDelegate.swift */; };
-		CE4514BD260DF1D40069CB6D /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4514BC260DF1D40069CB6D /* MainVC.swift */; };
 		CE4514C3260DF1D40069CB6D /* AccountApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CE4514C1260DF1D40069CB6D /* AccountApp.xcdatamodeld */; };
 		CE4514C5260DF1D70069CB6D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE4514C4260DF1D70069CB6D /* Assets.xcassets */; };
 		CE4514C8260DF1D70069CB6D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE4514C6260DF1D70069CB6D /* LaunchScreen.storyboard */; };
@@ -29,7 +28,6 @@
 		CE477442261F526F00A6DD5B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE477441261F526F00A6DD5B /* Constants.swift */; };
 		CE47F435261DE19B005F1C69 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = CE47F434261DE19B005F1C69 /* .swiftlint.yml */; };
 		CE47F43E261DE374005F1C69 /* WelcomeScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE47F43D261DE374005F1C69 /* WelcomeScreenVC.swift */; };
-		CE47F447261DE3A6005F1C69 /* MainScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE47F446261DE3A6005F1C69 /* MainScreen.storyboard */; };
 		CE47F44A261DE3B0005F1C69 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE47F449261DE3B0005F1C69 /* Main.storyboard */; };
 		CE47F44D261DE47F005F1C69 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE47F44C261DE47F005F1C69 /* UserModel.swift */; };
 		CE47F472261DF129005F1C69 /* RegistrationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE47F471261DF129005F1C69 /* RegistrationVC.swift */; };
@@ -102,7 +100,6 @@
 		CE4514B5260DF1D40069CB6D /* AccountApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AccountApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE4514B8260DF1D40069CB6D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE4514BA260DF1D40069CB6D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		CE4514BC260DF1D40069CB6D /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		CE4514C2260DF1D40069CB6D /* AccountApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AccountApp.xcdatamodel; sourceTree = "<group>"; };
 		CE4514C4260DF1D70069CB6D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE4514C7260DF1D70069CB6D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -116,7 +113,6 @@
 		CE477441261F526F00A6DD5B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		CE47F434261DE19B005F1C69 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		CE47F43D261DE374005F1C69 /* WelcomeScreenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeScreenVC.swift; sourceTree = "<group>"; };
-		CE47F446261DE3A6005F1C69 /* MainScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainScreen.storyboard; sourceTree = "<group>"; };
 		CE47F449261DE3B0005F1C69 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		CE47F44C261DE47F005F1C69 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		CE47F471261DF129005F1C69 /* RegistrationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationVC.swift; sourceTree = "<group>"; };
@@ -373,8 +369,6 @@
 				CE649D4926E21DEE0043730C /* FirstScreen */,
 				CE47741C261F341700A6DD5B /* SettingsScreen */,
 				CE47741B261F33D100A6DD5B /* ListOfAccountsScreen */,
-				CE47F446261DE3A6005F1C69 /* MainScreen.storyboard */,
-				CE4514BC260DF1D40069CB6D /* MainVC.swift */,
 			);
 			path = MainScreen;
 			sourceTree = "<group>";
@@ -632,7 +626,6 @@
 				CE1B99B826E10C850004280D /* Colors.xcassets in Resources */,
 				CE48AED326207FC60076B311 /* ChangeProfileScreen.storyboard in Resources */,
 				CE649D4F26E221610043730C /* FirstScreen.storyboard in Resources */,
-				CE47F447261DE3A6005F1C69 /* MainScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -748,7 +741,6 @@
 				CE7821C726E7B7A5006FF957 /* ChangeProfileStep.swift in Sources */,
 				CE477431261F387D00A6DD5B /* CustomViewForEditCredentialsCell.swift in Sources */,
 				CE59069626E5FCC30059C84C /* RegistrationVM.swift in Sources */,
-				CE4514BD260DF1D40069CB6D /* MainVC.swift in Sources */,
 				CE4514C3260DF1D40069CB6D /* AccountApp.xcdatamodeld in Sources */,
 				CE7821C526E7B796006FF957 /* ChangeProfileFlow.swift in Sources */,
 				CE6EAF4B26E75D0F002785F0 /* SwitchThemeVM.swift in Sources */,
