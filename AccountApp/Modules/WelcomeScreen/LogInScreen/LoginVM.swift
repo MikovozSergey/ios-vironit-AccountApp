@@ -1,8 +1,6 @@
 import RxCocoa
 import RxSwift
 import UIKit
-import KeychainSwift
-
 
 struct LoginInput {
     let logInEvent: ControlEvent<Void>
@@ -22,9 +20,6 @@ public enum LoginState {
 }
 
 class LoginViewModel: AppStepper {
-    
-    private let keychain = KeychainSwift()
-    private let dataBase = DataBase()
     
     private let loginValue = BehaviorRelay<String?>(value: "")
     private let passwordValue = BehaviorRelay<String?>(value: "")

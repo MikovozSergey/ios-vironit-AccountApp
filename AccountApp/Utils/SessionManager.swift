@@ -13,6 +13,7 @@ final public class SessionManager {
     }
 
     func stopTimer() {
+        print("Stop Timer = \(currentTime())")
         timer?.invalidate()
     }
     

@@ -26,7 +26,6 @@ class SettingsFlow: Flow {
         case .changeUserNameAndPasswordStep:
             return navigateToChangeUserNameAndPasswordScreen()
         case .logoutStep:
-            // sessionManager.stopTimer
             return .end(forwardToParentFlowWithStep: AppStep.logoutStep)
         case .changeThemeStep:
             return navigateToChangeThemeScreen()

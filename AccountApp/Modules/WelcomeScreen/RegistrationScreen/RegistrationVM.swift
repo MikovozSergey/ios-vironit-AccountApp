@@ -1,4 +1,3 @@
-import KeychainSwift
 import RxCocoa
 import RxSwift
 import UIKit
@@ -24,7 +23,6 @@ public enum RegistrationState {
 class RegistrationViewModel: AppStepper {
     
     private let dataBase = DataBase()
-    private let keychain = KeychainSwift()
     private let loginValue = BehaviorRelay<String?>(value: "")
     private let passwordValue = BehaviorRelay<String?>(value: "")
     private let registrationState = BehaviorRelay<RegistrationState>(value: .emptyFields)

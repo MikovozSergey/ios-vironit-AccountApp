@@ -1,4 +1,3 @@
-import KeychainSwift
 import RxCocoa
 import RxSwift
 import UIKit

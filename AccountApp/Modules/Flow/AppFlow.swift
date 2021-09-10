@@ -43,8 +43,6 @@ class AppFlow: Flow {
             return navigationToTabBar()
         case .authStep, .logoutStep:
             return navigateToWelcomeScreen()
-        default:
-            return .none
         }
     }
     
