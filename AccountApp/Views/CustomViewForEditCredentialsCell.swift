@@ -74,6 +74,7 @@ final class CustomViewForEditCredentialsCell: UITableViewCell {
     }
     
     func bind() -> CellOutput {
+        popTip.hide()
         setup()
         return CellOutput(mainEvent: changeLoginAndPasswordButton.rx.tap)
     }

@@ -74,6 +74,7 @@ final class LogOutViewCell: UITableViewCell {
     }
     
     func bind() -> CellOutput {
+        popTip.hide()
         setup()
         return CellOutput(mainEvent: logOutButton.rx.tap)
     }

@@ -18,14 +18,14 @@ class ListOfAccountsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        dataBase.fetchData()
         setupDelegate()
         setupUI()
-        filteredListOfAccounts = dataBase.arrayOfLogins
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        dataBase.fetchData()
+        filteredListOfAccounts = dataBase.arrayOfLogins
         setupTheme()
         tableView.reloadData()
         handleLanguage()
