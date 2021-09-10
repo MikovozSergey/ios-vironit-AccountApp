@@ -69,5 +69,5 @@
 // MARK: PopTip
 
 "SettingsVCChangeLoginAndPassowrdPopTipSentenses" = "Here you can change the login details for your account.";
-"SettingsVCLogOutPopTipSentenses" = "When you press the button, your session will end, you will need to re-enter the data.";
+"SettingsVCLogOutPopTipSentenses" = "When you press this button, your session will end, you will need to re-enter the data.";
 "Test" = "Test";

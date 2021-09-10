@@ -151,7 +151,7 @@ enum L10n {
   static var settingsVCChangeLoginAndPassowrdPopTipSentenses: String {
     return L10n.tr("Localizable", "SettingsVCChangeLoginAndPassowrdPopTipSentenses")
   }
-  /// When you press the button, your session will end, you will need to re-enter the data.
+  /// When you press this button, your session will end, you will need to re-enter the data.
   static var settingsVCLogOutPopTipSentenses: String {
     return L10n.tr("Localizable", "SettingsVCLogOutPopTipSentenses")
   }
