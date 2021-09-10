@@ -51,7 +51,8 @@ class AppFlow: Flow {
     private func navigationToTabBar() -> FlowContributors {
         
         let mainFlow = MainFlow()
-    
+        let sessionManager = SessionManager()
+        sessionManager.startTimer()
         Flows.use(mainFlow, when: .ready, block: { [weak self] flowRoot in
             guard let self = self else { return }
             self.rootWindow.set(rootViewController: flowRoot, withTransition: self.transition)
@@ -73,11 +74,4 @@ class AppFlow: Flow {
         return .one(flowContributor: .contribute(withNextPresentable: authFlow,
                                                  withNextStepper: OneStepper(withSingleStep: AuthStep.initialStep)))
     }
-//
-//    private func dismissOnboarding() -> FlowContributors {
-//        if let onboardingViewController = self.rootViewController.presentedViewController {
-//            onboardingViewController.dismiss(animated: true)
-//        }
-//        return .none
-//    }
 }

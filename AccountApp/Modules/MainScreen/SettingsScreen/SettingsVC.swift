@@ -20,6 +20,7 @@ class SettingsViewController: UIViewController {
     private let languageHandler = LanguageNotificationHandler()
     private let disposeBag = DisposeBag()
     private var viewModel: SettingsViewModel!
+    private let sessionManager = SessionManager()
 
     // MARK: - Lifecycle
     
@@ -97,6 +98,7 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: Xib.LogOutViewCell.rawValue, for: indexPath) as? LogOutViewCell else { return UITableViewCell() }
             let output = cell.bind()
             output.mainEvent.subscribe { [weak viewModel] _ in
+                self.sessionManager.stopTimer()
                 viewModel?.steps.accept(SettingsStep.logoutStep)
             }
             return cell

@@ -3,12 +3,7 @@ import UIKit
 final public class SessionManager {
  
     weak var timer: Timer?
-    var navigation: UINavigationController
     weak var viewModel: SettingsViewModel?
-    
-    init(navigation: UINavigationController) {
-        self.navigation = navigation
-    }
     
     func startTimer() {
         timer?.invalidate()
@@ -24,11 +19,13 @@ final public class SessionManager {
     private func currentTime() -> Date {
         let timezone = TimeZone.current
         let seconds = TimeInterval(timezone.secondsFromGMT(for: Date()))
+        print("CurrentTime = \(Date(timeInterval: seconds, since: Date()))")
         return Date(timeInterval: seconds, since: Date())
     }
     
     private func saveStartOfSession() {
         let defaults = UserDefaults.standard
+        print("TimeOfStartSession = \(currentTime())")
         defaults.set(currentTime(), forKey: "timeOfStartSession")
     }
     
