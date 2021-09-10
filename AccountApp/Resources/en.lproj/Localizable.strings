@@ -64,6 +64,7 @@
 "AlertErrorEmptyFieldsMessage" = "Please, fill the registration fields";
 "AlertFinishSessionTitle" = "Session";
 "AlertFinishSessionMessage" = "Your session is over. Please log in again.";
+"AlertErrorLoginExistsMessage" = "Username is already exsists, pleaase enter another username";
 
 // MARK: PopTip
 

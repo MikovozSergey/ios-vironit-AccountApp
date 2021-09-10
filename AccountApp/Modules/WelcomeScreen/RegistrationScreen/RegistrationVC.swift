@@ -20,6 +20,13 @@ class RegistrationViewController: UIViewController {
     private let languageHandler = LanguageNotificationHandler()
     private var viewModel: RegistrationViewModel!
     private let disposeBag = DisposeBag()
+    private var alertWrongTitle = ""
+    private var alertErrorTitle = ""
+    private var alertErrorPasswordMessage = ""
+    private var alertErrorEmptyFieldsMessage = ""
+    private var alertRecommendationForFieldsMessage = ""
+    private var alertDoneTitle = ""
+    private var alertErrorLoginExistsMessage = ""
     
     // MARK: - IBActions
     
@@ -68,6 +75,7 @@ class RegistrationViewController: UIViewController {
     
     private func setupUI() {
         setupStrings()
+        setupStringsForAlert()
         navigationController?.view.tintColor = UIColor(red: 255/255, green: 215/255, blue: 0/255, alpha: 1)
         loginTextField.textAlignment = .center
         passwordTextField.textAlignment = .center
@@ -82,7 +90,7 @@ class RegistrationViewController: UIViewController {
     
     private func showAlert(title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let doneButton = UIAlertAction(title: L10n.alertDoneTitle, style: .default, handler: nil)
+        let doneButton = UIAlertAction(title: self.alertDoneTitle, style: .default, handler: nil)
         alert.addAction(doneButton)
         
         present(alert, animated: true)
@@ -101,6 +109,16 @@ class RegistrationViewController: UIViewController {
         } else {
             passwordTextField.title = L10n.registrationVCPasswordTitle
         }
+    }
+    
+    private func setupStringsForAlert() {
+        alertWrongTitle = L10n.alertWrongTitle
+        alertErrorTitle = L10n.alertErrorTitle
+        alertErrorPasswordMessage = L10n.alertErrorPasswordMessage
+        alertErrorEmptyFieldsMessage = L10n.alertErrorEmptyFieldsMessage
+        alertRecommendationForFieldsMessage = L10n.alertRecommendationForFieldsMessage
+        alertDoneTitle = L10n.alertDoneTitle
+        alertErrorLoginExistsMessage = L10n.alertErrorLoginExistsMessage
     }
     
     private func setupStrings() {
@@ -149,11 +167,14 @@ private extension RegistrationViewController {
                 self.dataBase.openDatabse(login: user.login)
                 self.viewModel.steps.accept(RegistrationStep.completeStep)
             case .emptyFields:
-                self.setupStyleForTestFields(title: L10n.alertErrorTitle, titleColor: .red)
-                self.showAlert(title: L10n.alertErrorTitle, message: L10n.alertErrorEmptyFieldsMessage)
+                self.setupStyleForTestFields(title: self.alertErrorTitle, titleColor: .red)
+                self.showAlert(title: self.alertErrorTitle, message: self.alertErrorEmptyFieldsMessage)
             case .invalidValidation:
-                self.setupStyleForTestFields(title: L10n.alertWrongTitle, titleColor: .red)
-                self.showAlert(title: L10n.alertErrorTitle, message: L10n.alertRecommendationForFieldsMessage)
+                self.setupStyleForTestFields(title: self.alertWrongTitle, titleColor: .red)
+                self.showAlert(title: self.alertErrorTitle, message: self.alertRecommendationForFieldsMessage)
+            case .loginAlreadyExists:
+                self.setupStyleForTestFields(title: self.alertWrongTitle, titleColor: .red)
+                self.showAlert(title: self.alertErrorTitle, message: self.alertErrorLoginExistsMessage)
                 }
             }
         )

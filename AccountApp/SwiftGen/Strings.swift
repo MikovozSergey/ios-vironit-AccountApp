@@ -19,6 +19,10 @@ enum L10n {
   static var alertErrorEmptyFieldsMessage: String {
     return L10n.tr("Localizable", "AlertErrorEmptyFieldsMessage")
   }
+  /// Username is already exsists, pleaase enter another username
+  static var alertErrorLoginExistsMessage: String {
+    return L10n.tr("Localizable", "AlertErrorLoginExistsMessage")
+  }
   /// Wrong login or password
   static var alertErrorPasswordMessage: String {
     return L10n.tr("Localizable", "AlertErrorPasswordMessage")

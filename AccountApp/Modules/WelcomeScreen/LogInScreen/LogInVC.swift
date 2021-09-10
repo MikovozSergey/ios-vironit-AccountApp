@@ -20,6 +20,12 @@ class LogInViewController: UIViewController {
     private let languageHandler = LanguageNotificationHandler()
     private var viewModel: LoginViewModel!
     private let disposeBag = DisposeBag()
+    private var alertWrongTitle = ""
+    private var alertErrorTitle = ""
+    private var alertErrorPasswordMessage = ""
+    private var alertErrorEmptyFieldsMessage = ""
+    private var alertRecommendationForFieldsMessage = ""
+    private var alertDoneTitle = ""
     
     // MARK: - IBActions
 
@@ -68,6 +74,7 @@ class LogInViewController: UIViewController {
 
     private func setupUI() {
         setupStrings()
+        setupStringsForAlert()
         navigationController?.view.tintColor = UIColor(red: 255/255, green: 215/255, blue: 0/255, alpha: 1)
         loginTextField.textAlignment = .center
         passwordTextField.textAlignment = .center
@@ -82,7 +89,7 @@ class LogInViewController: UIViewController {
     
     private func showAlert(title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let doneButton = UIAlertAction(title: L10n.alertDoneTitle, style: .default, handler: nil)
+        let doneButton = UIAlertAction(title: self.alertDoneTitle, style: .default, handler: nil)
         alert.addAction(doneButton)
         
         present(alert, animated: true)
@@ -101,6 +108,15 @@ class LogInViewController: UIViewController {
         } else {
             passwordTextField.title = L10n.logInVCPasswordTitle
         }
+    }
+    
+    private func setupStringsForAlert() {
+        alertWrongTitle = L10n.alertWrongTitle
+        alertErrorTitle = L10n.alertErrorTitle
+        alertErrorPasswordMessage = L10n.alertErrorPasswordMessage
+        alertErrorEmptyFieldsMessage = L10n.alertErrorEmptyFieldsMessage
+        alertRecommendationForFieldsMessage = L10n.alertRecommendationForFieldsMessage
+        alertDoneTitle = L10n.alertDoneTitle
     }
     
     private func setupStrings() {
@@ -147,15 +163,15 @@ private extension LogInViewController {
                 if self.dataBase.arrayOfLogins.contains(user.login) && user.password == self.keychain.get(user.login) {
                     self.viewModel.steps.accept(LoginStep.completeStep)
                 } else {
-                    self.setupStyleForTestFields(title: L10n.alertWrongTitle, titleColor: .red)
-                    self.showAlert(title: L10n.alertErrorTitle, message: L10n.alertErrorPasswordMessage)
+                    self.setupStyleForTestFields(title: self.alertWrongTitle, titleColor: .red)
+                    self.showAlert(title: self.alertErrorTitle, message: self.alertErrorPasswordMessage)
                 }
             case .emptyFields:
-                self.setupStyleForTestFields(title: L10n.alertErrorTitle, titleColor: .red)
-                self.showAlert(title: L10n.alertErrorTitle, message: L10n.alertErrorEmptyFieldsMessage)
+                self.setupStyleForTestFields(title: self.alertErrorTitle, titleColor: .red)
+                self.showAlert(title: self.alertErrorTitle, message: self.alertErrorEmptyFieldsMessage)
             case .invalidValidation:
-                self.setupStyleForTestFields(title: L10n.alertWrongTitle, titleColor: .red)
-                self.showAlert(title: L10n.alertErrorTitle, message: L10n.alertRecommendationForFieldsMessage)
+                self.setupStyleForTestFields(title: self.alertWrongTitle, titleColor: .red)
+                self.showAlert(title: self.alertErrorTitle, message: self.alertRecommendationForFieldsMessage)
                 }
             }
         )

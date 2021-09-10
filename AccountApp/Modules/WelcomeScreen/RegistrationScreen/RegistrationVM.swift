@@ -18,6 +18,7 @@ public enum RegistrationState {
     case allIsGood(user: User)
     case emptyFields
     case invalidValidation
+    case loginAlreadyExists
 }
 
 class RegistrationViewModel: AppStepper {
@@ -29,11 +30,14 @@ class RegistrationViewModel: AppStepper {
     private let registrationState = BehaviorRelay<RegistrationState>(value: .emptyFields)
     private let disposeBag = DisposeBag()
     private var state: RegistrationState {
+        dataBase.fetchData()
         let loginValue = self.loginValue.value ?? ""
         let passwordValue = self.passwordValue.value ?? ""
-        switch (ValidationManager.isValidLogin(login: self.loginValue), ValidationManager.isValidPassword(password: self.passwordValue)) {
-        case (true, true):
+        switch (ValidationManager.isValidLogin(login: self.loginValue), ValidationManager.isValidPassword(password: self.passwordValue), isLoginAlreadyExitsts(login: loginValue)) {
+        case (true, true, false):
             return .allIsGood(user: User(login: loginValue, password: passwordValue))
+        case (true, true, true):
+            return .loginAlreadyExists
         default:
             return loginValue.isEmpty && passwordValue.isEmpty ? .emptyFields : .invalidValidation
         }
@@ -50,5 +54,12 @@ class RegistrationViewModel: AppStepper {
             )
         )
         return RegistrationOutput(registrationState: registrationState.asDriver(), disposable: disposable)
+    }
+    
+    private func isLoginAlreadyExitsts(login: String) -> Bool {
+        if self.dataBase.arrayOfLogins.contains(login) {
+            return true
+        }
+        return false
     }
 }

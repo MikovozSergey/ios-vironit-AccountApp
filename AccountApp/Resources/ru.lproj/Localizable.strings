@@ -64,6 +64,7 @@
 "AlertErrorEmptyFieldsMessage" = "Заполните поля для регистрации";
 "AlertFinishSessionTitle" = "Сессия";
 "AlertFinishSessionMessage" = "Ваша сессия закончена. Пожалуйста войдите снова.";
+"AlertErrorLoginExistsMessage" = "Логин уже используется, пожалуйста, введите другой логин";
 
 // MARK: PopTip
 

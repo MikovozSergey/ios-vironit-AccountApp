@@ -14,6 +14,7 @@ class ChangeProfileViewController: UIViewController {
     @IBOutlet private weak var newPasswordTextField: SkyFloatingLabelTextField!
     @IBOutlet private weak var saveButton: UIButton!
     
+    
     // MARK: - Variables
     
     private let dataBase = DataBase()
@@ -21,6 +22,12 @@ class ChangeProfileViewController: UIViewController {
     private let languageHandler = LanguageNotificationHandler()
     private var viewModel: ChangeProfileViewModel!
     private let disposeBag = DisposeBag()
+    private var alertWrongTitle = ""
+    private var alertErrorTitle = ""
+    private var alertErrorPasswordMessage = ""
+    private var alertErrorEmptyFieldsMessage = ""
+    private var alertRecommendationForFieldsMessage = ""
+    private var alertDoneTitle = ""
     
     // MARK: - Lifecycle
     
@@ -58,6 +65,7 @@ class ChangeProfileViewController: UIViewController {
     
     private func setupUI() {
         setupStrings()
+        setupStringsForAlert()
         loginTextField.textAlignment = .center
         passwordTextField.textAlignment = .center
         newLoginTextField.textAlignment = .center
@@ -84,6 +92,15 @@ class ChangeProfileViewController: UIViewController {
         newPasswordTextField.delegate = self
     }
     
+    private func setupStringsForAlert() {
+        alertWrongTitle = L10n.alertWrongTitle
+        alertErrorTitle = L10n.alertErrorTitle
+        alertErrorPasswordMessage = L10n.alertErrorPasswordMessage
+        alertErrorEmptyFieldsMessage = L10n.alertErrorEmptyFieldsMessage
+        alertRecommendationForFieldsMessage = L10n.alertRecommendationForFieldsMessage
+        alertDoneTitle = L10n.alertDoneTitle
+    }
+    
     private func setupStrings() {
         loginTextField.placeholder = L10n.changeProfileVCLoginPlaceholder
         passwordTextField.placeholder = L10n.changeProfileVCPasswordPlaceholder
@@ -95,12 +112,13 @@ class ChangeProfileViewController: UIViewController {
     private func handleLanguage() {
         languageHandler.startListening { [weak self] in
             self?.setupStrings()
+            self?.setupStringsForAlert()
         }
     }
     
     private func showAlert(title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let doneButton = UIAlertAction(title: L10n.alertDoneTitle, style: .default, handler: nil)
+        let doneButton = UIAlertAction(title: self.alertDoneTitle, style: .default, handler: nil)
         alert.addAction(doneButton)
         
         present(alert, animated: true)
@@ -143,15 +161,15 @@ private extension ChangeProfileViewController {
                     self.dataBase.openDatabse(login: newLogin)
                     self.viewModel.steps.accept(ChangeProfileStep.backStep)
                 } else {
-                    self.setupStyleForTestFields(title: L10n.alertWrongTitle, titleColor: .red)
-                    self.showAlert(title: L10n.alertErrorTitle, message: L10n.alertErrorPasswordMessage)
+                    self.setupStyleForTestFields(title: self.alertWrongTitle, titleColor: .red)
+                    self.showAlert(title: self.alertErrorTitle, message: self.alertErrorPasswordMessage)
                 }
             case .emptyFields:
-                self.setupStyleForTestFields(title: L10n.alertErrorTitle, titleColor: .red)
-                self.showAlert(title: L10n.alertErrorTitle, message: L10n.alertErrorEmptyFieldsMessage)
+                self.setupStyleForTestFields(title: self.alertErrorTitle, titleColor: .red)
+                self.showAlert(title: L10n.alertErrorTitle, message: self.alertErrorEmptyFieldsMessage)
             case .invalidValidation:
-                self.setupStyleForTestFields(title: L10n.alertWrongTitle, titleColor: .red)
-                self.showAlert(title: L10n.alertErrorTitle, message: L10n.alertRecommendationForFieldsMessage)
+                self.setupStyleForTestFields(title: self.alertWrongTitle, titleColor: .red)
+                self.showAlert(title: self.alertErrorTitle, message: self.alertRecommendationForFieldsMessage)
             }
         })
         disposeBag.insert(changeProfileStateDisposable,
