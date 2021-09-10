@@ -18,12 +18,6 @@ class AppFlow: Flow {
     
     private let rootWindow: UIWindow
     
-//    private lazy var rootViewController: UINavigationController = {
-//        let viewController = UINavigationController()
-//        viewController.setNavigationBarHidden(true, animated: false)
-//        return viewController
-//    }()
-    
     init(window: UIWindow) {
         self.rootWindow = window
         if let defaultVC = UIStoryboard.init(name: "LaunchScreen", bundle: Bundle.main).instantiateInitialViewController() {
