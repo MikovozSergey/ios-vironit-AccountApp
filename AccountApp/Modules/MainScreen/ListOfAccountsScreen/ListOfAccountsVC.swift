@@ -27,8 +27,8 @@ class ListOfAccountsViewController: UIViewController {
         dataBase.fetchData()
         filteredListOfAccounts = dataBase.arrayOfLogins
         setupTheme()
-        tableView.reloadData()
         handleLanguage()
+        tableView.reloadData()
     }
     
     private func setupTheme() {

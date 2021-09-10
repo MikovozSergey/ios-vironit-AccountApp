@@ -12,8 +12,6 @@ struct SwitchLanguageOutput {
 
 class SwitchLanguageViewModel: AppStepper {
     
-    private let disposeBag = DisposeBag()
-    
     public func bind(input: SwitchLanguageInput) -> SwitchLanguageOutput {
         let switchDisposable = input.switchEvent.subscribe(onNext: { _ in
             let language = UserDefaults.standard.string(forKey: kLanguageApplication)

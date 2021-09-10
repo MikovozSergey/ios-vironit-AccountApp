@@ -17,8 +17,6 @@ struct SettingsOutput {
 
 class SettingsViewModel: AppStepper {
     
-    private let disposeBag = DisposeBag()
-    
     public func bind(input: SettingsInput) -> SettingsOutput {
         let changeLanguageDisposable = input.changeLanguage.subscribe(onNext: { _ in
             self.steps.accept(SettingsStep.changeLanguageStep)

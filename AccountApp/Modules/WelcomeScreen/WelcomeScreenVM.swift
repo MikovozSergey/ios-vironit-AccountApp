@@ -13,8 +13,6 @@ struct WelcomeOutput {
 
 class WelcomeViewModel: AppStepper {
     
-    private let disposeBag = DisposeBag()
-    
     public func bind(input: WelcomeInput) -> WelcomeOutput {
         let loginDisposable = input.loginEvent.subscribe(onNext: { _ in
             self.steps.accept(AuthStep.loginStep)

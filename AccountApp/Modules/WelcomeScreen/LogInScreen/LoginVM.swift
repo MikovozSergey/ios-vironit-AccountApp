@@ -24,7 +24,6 @@ class LoginViewModel: AppStepper {
     private let loginValue = BehaviorRelay<String?>(value: "")
     private let passwordValue = BehaviorRelay<String?>(value: "")
     private let loginState = BehaviorRelay<LoginState>(value: .emptyFields)
-    private let disposeBag = DisposeBag()
     private var state: LoginState {
         let loginValue = self.loginValue.value ?? ""
         let passwordValue = self.passwordValue.value ?? ""

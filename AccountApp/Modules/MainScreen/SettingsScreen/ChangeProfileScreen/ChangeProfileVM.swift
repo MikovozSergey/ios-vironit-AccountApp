@@ -28,7 +28,6 @@ class ChangeProfileViewModel: AppStepper {
     private let passwordValue = BehaviorRelay<String?>(value: "")
     private let newPasswordValue = BehaviorRelay<String?>(value: "")
     private let changeProfileState = BehaviorRelay<ChangeProfileState>(value: .emptyFields)
-    private let disposeBag = DisposeBag()
     private var state: ChangeProfileState {
         let loginValue = self.loginValue.value ?? ""
         let newLoginValue = self.newLoginValue.value ?? ""

@@ -26,7 +26,6 @@ class RegistrationViewModel: AppStepper {
     private let loginValue = BehaviorRelay<String?>(value: "")
     private let passwordValue = BehaviorRelay<String?>(value: "")
     private let registrationState = BehaviorRelay<RegistrationState>(value: .emptyFields)
-    private let disposeBag = DisposeBag()
     private var state: RegistrationState {
         dataBase.fetchData()
         let loginValue = self.loginValue.value ?? ""
