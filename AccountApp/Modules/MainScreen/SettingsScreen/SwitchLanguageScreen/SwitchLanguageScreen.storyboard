@@ -45,7 +45,6 @@
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="tAK-Op-LoJ"/>
-                        <color key="backgroundColor" systemColor="labelColor"/>
                         <constraints>
                             <constraint firstItem="EfZ-NV-75X" firstAttribute="centerY" secondItem="jgO-Gl-JW2" secondAttribute="centerY" id="4vH-Sy-8jH"/>
                             <constraint firstItem="dtH-Pt-VUs" firstAttribute="top" secondItem="EfZ-NV-75X" secondAttribute="bottom" constant="41.5" id="7Lk-aS-K6q"/>
@@ -64,9 +63,6 @@
         </scene>
     </scenes>
     <resources>
-        <systemColor name="labelColor">
-            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
         <systemColor name="secondarySystemGroupedBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
