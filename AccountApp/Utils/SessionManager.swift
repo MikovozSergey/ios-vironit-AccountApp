@@ -19,7 +19,6 @@ final public class SessionManager {
     private func currentTime() -> Date {
         let timezone = TimeZone.current
         let seconds = TimeInterval(timezone.secondsFromGMT(for: Date()))
-        print("CurrentTime = \(Date(timeInterval: seconds, since: Date()))")
         return Date(timeInterval: seconds, since: Date())
     }
     
