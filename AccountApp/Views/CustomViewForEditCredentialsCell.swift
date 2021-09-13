@@ -18,6 +18,8 @@ final class CustomViewForEditCredentialsCell: UITableViewCell {
     private var navigator: UINavigationController?
     private let languageHandler = LanguageNotificationHandler()
     private let disposeBag = DisposeBag()
+    private let attributes: [NSAttributedString.Key: Any] = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14), NSAttributedString.Key.foregroundColor: Theme.currentTheme.textColor]
+    private var textForPopTip = ""
     
     // MARK: - Init
     override func awakeFromNib() {
@@ -25,18 +27,12 @@ final class CustomViewForEditCredentialsCell: UITableViewCell {
         setup()
         handleLanguage()
         setupBinding()
+        setupTextPopTip()
     }
     
     // MARK: - Methods
     
     private func setupBinding() {
-        changeLoginAndPasswordButton.rx.tap.subscribe(onNext:  { [weak self] in
-            let storyboard = UIStoryboard(name: "ChangeProfileScreen", bundle: nil)
-            guard let viewController = storyboard.instantiateViewController(identifier: "ChangeProfileViewController") as? ChangeProfileViewController else { return }
-            guard let navigator = self?.navigator else { return }
-            navigator.pushViewController(viewController, animated: true)
-        }).disposed(by: disposeBag)
-        
         informationButton.rx.tap.subscribe(onNext:  { [weak self] in
             guard let self = self else { return }
             if self.popTip.isVisible {
@@ -83,15 +79,18 @@ final class CustomViewForEditCredentialsCell: UITableViewCell {
         changeLoginAndPasswordButton.setTitle(L10n.settingsProfileVCEditCredentialsTitle, for: .normal)
     }
     
+    private func setupTextPopTip() {
+        textForPopTip = L10n.settingsVCChangeLoginAndPassowrdPopTipSentenses
+    }
+    
     private func setupAtributedText() -> NSMutableAttributedString {
-        let attributes: [NSAttributedString.Key: Any] = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14), NSAttributedString.Key.foregroundColor: Theme.currentTheme.textColor]
-        return NSMutableAttributedString(string: L10n.settingsVCChangeLoginAndPassowrdPopTipSentenses, attributes: attributes)
+        return NSMutableAttributedString(string: textForPopTip, attributes: attributes)
     }
     
     private func handleLanguage() {
         languageHandler.startListening { [weak self] in
             self?.setupStrings()
-            self?.setupAtributedText()
+            self?.setupTextPopTip()
         }
     }
 }

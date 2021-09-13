@@ -21,8 +21,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 //            window.rootViewController = root
 //            window.makeKeyAndVisible()
 //        }
-        
-        guard let _ = (scene as? UIWindowScene) else { return }
+        if (scene as? UIWindowScene) != nil { }
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

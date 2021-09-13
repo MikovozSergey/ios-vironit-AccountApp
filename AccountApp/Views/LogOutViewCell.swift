@@ -18,6 +18,8 @@ final class LogOutViewCell: UITableViewCell {
     private var navigator: UINavigationController?
     private let languageHandler = LanguageNotificationHandler()
     private let disposeBag = DisposeBag()
+    private let attributes: [NSAttributedString.Key: Any] = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14), NSAttributedString.Key.foregroundColor: Theme.currentTheme.textColor]
+    private var textForPopTip = ""
     
     // MARK: - Init
     override func awakeFromNib() {
@@ -25,17 +27,12 @@ final class LogOutViewCell: UITableViewCell {
         setup()
         handleLanguage()
         setupBinding()
+        setupTextForPopTip()
     }
     
     // MARK: - Methods
     
     private func setupBinding() {
-        logOutButton.rx.tap.subscribe(onNext:  { [weak self] in
-            guard let self = self else { return }
-            guard let navigator = self.navigator else { return }
-            navigator.popToRootViewController(animated: true)
-        }).disposed(by: disposeBag)
-        
         informationButton.rx.tap.subscribe(onNext:  { [weak self] in
             guard let self = self else { return }
             if self.popTip.isVisible {
@@ -83,15 +80,18 @@ final class LogOutViewCell: UITableViewCell {
         logOutButton.setTitle(L10n.settingsProfileVCLogOutButton, for: .normal)
     }
     
+    private func setupTextForPopTip() {
+        textForPopTip = L10n.settingsVCLogOutPopTipSentenses
+    }
+    
     private func setupAtributedText() -> NSMutableAttributedString {
-        let attributes: [NSAttributedString.Key: Any] = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14), NSAttributedString.Key.foregroundColor: Theme.currentTheme.textColor]
-        return NSMutableAttributedString(string: L10n.settingsVCLogOutPopTipSentenses, attributes: attributes)
+        return NSMutableAttributedString(string: textForPopTip, attributes: attributes)
     }
     
     private func handleLanguage() {
         languageHandler.startListening { [weak self] in
             self?.setupStrings()
-            self?.setupAtributedText()
+            self?.setupTextForPopTip()
         }
     }
     
