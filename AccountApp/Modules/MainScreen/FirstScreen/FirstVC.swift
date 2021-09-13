@@ -27,7 +27,6 @@ class FirstViewController: UIViewController {
     private func setupTheme() {
         navigationController?.navigationBar.isTranslucent = false
         navigationController?.navigationBar.barTintColor = Theme.currentTheme.backgroundColor
-        navigationController?.navigationBar.topItem?.title = L10n.empty
         view.backgroundColor = Theme.currentTheme.backgroundColor
     }
     

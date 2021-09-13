@@ -7,6 +7,8 @@
 
 // MARK: TabBarItem
 
+"Login" = "Войти";
+"Registration" = "Регистрация";
 "Empty" = "Пусто";
 "Settings" = "Настройки";
 "List" = "Список Аккаунтов";

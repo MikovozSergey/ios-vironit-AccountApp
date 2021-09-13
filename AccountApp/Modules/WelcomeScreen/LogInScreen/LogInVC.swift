@@ -63,10 +63,9 @@ class LogInViewController: UIViewController {
     // MARK: - Logic
     
     private func setupTheme() {
-        self.navigationController!.navigationBar.topItem!.title = ""
-        self.navigationController!.navigationBar.isTranslucent = false
-        self.navigationController?.navigationBar.barTintColor = Theme.currentTheme.backgroundColor
-        self.view.backgroundColor = Theme.currentTheme.backgroundColor
+        navigationController?.navigationBar.isTranslucent = false
+        navigationController?.navigationBar.barTintColor = Theme.currentTheme.backgroundColor
+        view.backgroundColor = Theme.currentTheme.backgroundColor
         loginTextField.textColor = Theme.currentTheme.textColor
         passwordTextField.textColor = Theme.currentTheme.textColor
         logInButton.setTitleColor(Theme.currentTheme.textColor, for: .normal)
@@ -120,6 +119,7 @@ class LogInViewController: UIViewController {
     }
     
     private func setupStrings() {
+        navigationController?.navigationBar.topItem?.title = L10n.login
         loginTextField.placeholder = L10n.logInVCLoginPlaceholder
         passwordTextField.placeholder = L10n.logInVCPasswordPlaceholder
         logInButton.setTitle(L10n.enter, for: .normal)

@@ -68,7 +68,6 @@ class SettingsViewController: UIViewController {
         changeThemeButton.setTitleColor(Theme.currentTheme.textColor, for: .normal)
         navigationController?.navigationBar.isTranslucent = false
         navigationController?.navigationBar.barTintColor = Theme.currentTheme.backgroundColor
-        navigationController?.navigationBar.topItem?.title = L10n.settings
     }
     
     private func setupStrings() {

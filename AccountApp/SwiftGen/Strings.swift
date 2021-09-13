@@ -99,6 +99,10 @@ enum L10n {
   static var list: String {
     return L10n.tr("Localizable", "List")
   }
+  /// Log In
+  static var login: String {
+    return L10n.tr("Localizable", "Login")
+  }
   /// Enter your login
   static var logInVCLoginPlaceholder: String {
     return L10n.tr("Localizable", "LogInVCLoginPlaceholder")
@@ -114,6 +118,10 @@ enum L10n {
   /// Your Password
   static var logInVCPasswordTitle: String {
     return L10n.tr("Localizable", "LogInVCPasswordTitle")
+  }
+  /// Registration
+  static var registration: String {
+    return L10n.tr("Localizable", "Registration")
   }
   /// Enter your login
   static var registrationVCLoginPlaceholder: String {

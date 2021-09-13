@@ -64,10 +64,9 @@ class RegistrationViewController: UIViewController {
     // MARK: - Logic
     
     private func setupTheme() {
-        self.navigationController!.navigationBar.topItem!.title = ""
-        self.navigationController!.navigationBar.isTranslucent = false
-        self.navigationController?.navigationBar.barTintColor = Theme.currentTheme.backgroundColor
-        self.view.backgroundColor = Theme.currentTheme.backgroundColor
+        navigationController?.navigationBar.isTranslucent = false
+        navigationController?.navigationBar.barTintColor = Theme.currentTheme.backgroundColor
+        view.backgroundColor = Theme.currentTheme.backgroundColor
         loginTextField.textColor = Theme.currentTheme.textColor
         passwordTextField.textColor = Theme.currentTheme.textColor
         saveButton.setTitleColor(Theme.currentTheme.textColor, for: .normal)
@@ -122,6 +121,7 @@ class RegistrationViewController: UIViewController {
     }
     
     private func setupStrings() {
+        navigationController?.navigationBar.topItem?.title = L10n.registration
         loginTextField.placeholder = L10n.registrationVCLoginPlaceholder
         passwordTextField.placeholder = L10n.registrationVCPasswordPlaceholder
         saveButton.setTitle(L10n.save, for: .normal)

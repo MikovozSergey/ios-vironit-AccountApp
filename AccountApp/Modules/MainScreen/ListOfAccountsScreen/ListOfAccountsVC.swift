@@ -53,7 +53,6 @@ class ListOfAccountsViewController: UIViewController {
         tableView.backgroundColor = Theme.currentTheme.backgroundColor
         navigationController?.navigationBar.isTranslucent = false
         navigationController?.navigationBar.barTintColor = Theme.currentTheme.backgroundColor
-        navigationController?.navigationBar.topItem?.title = L10n.list
         view.backgroundColor = Theme.currentTheme.backgroundColor
     }
     
@@ -64,6 +63,7 @@ class ListOfAccountsViewController: UIViewController {
     }
     
     private func setupUI() {
+        setupStrings()
         tableView.tableFooterView = UIView()
     }
     

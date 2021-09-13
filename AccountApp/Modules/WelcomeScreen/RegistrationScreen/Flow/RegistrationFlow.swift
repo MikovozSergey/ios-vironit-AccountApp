@@ -38,6 +38,7 @@ class RegistrationFlow: Flow {
         backButton.image = UIImage(named: "iconBack")
         vc.navigationItem.leftBarButtonItem = backButton
         vc.configure(viewModel: viewModel)
+        self.rootViewController.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: Colors.gold]
         self.rootViewController.pushViewController(vc, animated: false)
         return .one(flowContributor: .contribute(withNextPresentable: vc,
                                                  withNextStepper: viewModel))
