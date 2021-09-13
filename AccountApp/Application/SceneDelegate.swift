@@ -16,11 +16,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         self.appFlow = AppFlow(window: window)
         self.coordinator.coordinate(flow: appFlow!, with: AppStepper())
-
-//        Flows.use(appFlow!, when: .created) { root in
-//            window.rootViewController = root
-//            window.makeKeyAndVisible()
-//        }
         if (scene as? UIWindowScene) != nil { }
     }
 
