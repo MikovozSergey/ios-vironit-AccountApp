@@ -5,6 +5,8 @@ public protocol ThemeProtocol {
     var textColor: UIColor { get }
     var accentColor: UIColor { get }
     var questionImage: UIImage { get }
+    var searchImage: UIImage { get }
+    var crossImage: UIImage { get }
 }
 
 class Theme {
