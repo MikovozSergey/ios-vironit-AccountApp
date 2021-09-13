@@ -18,7 +18,6 @@ final class CustomViewForEditCredentialsCell: UITableViewCell {
     private var navigator: UINavigationController?
     private let languageHandler = LanguageNotificationHandler()
     private let disposeBag = DisposeBag()
-    private let attributes: [NSAttributedString.Key: Any] = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14), NSAttributedString.Key.foregroundColor: Theme.currentTheme.textColor]
     private var textForPopTip = ""
     
     // MARK: - Init
@@ -84,6 +83,7 @@ final class CustomViewForEditCredentialsCell: UITableViewCell {
     }
     
     private func setupAtributedText() -> NSMutableAttributedString {
+        let attributes: [NSAttributedString.Key: Any] = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14), NSAttributedString.Key.foregroundColor: Theme.currentTheme.textColor]
         return NSMutableAttributedString(string: textForPopTip, attributes: attributes)
     }
     
