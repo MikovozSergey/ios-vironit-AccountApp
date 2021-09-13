@@ -13,8 +13,7 @@ class ListOfAccountsViewModel {
     
     func bind() -> ListOfAccountsOutput {
         dataBase.fetchData()
-        Observable<[String]>.just(dataBase.array.value).subscribe { value in
-            print(value)
+        Observable<[String]>.just(dataBase.array.value).subscribe { _ in
         }.disposed(by: disposeBag)
         return ListOfAccountsOutput(arrayOfLogins: dataBase.array.asObservable())
     }
