@@ -92,7 +92,7 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
             let output = cell.bind()
             output.mainEvent.subscribe { [weak viewModel] _ in
                 viewModel?.steps.accept(SettingsStep.changeUserNameAndPasswordStep)
-            }
+            }.disposed(by: disposeBag)
             return cell
         } else {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: Xib.LogOutViewCell.rawValue, for: indexPath) as? LogOutViewCell else { return UITableViewCell() }
@@ -100,7 +100,7 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
             output.mainEvent.subscribe { [weak viewModel] _ in
                 self.sessionManager.stopTimer()
                 viewModel?.steps.accept(SettingsStep.logoutStep)
-            }
+            }.disposed(by: disposeBag)
             return cell
         }
     }

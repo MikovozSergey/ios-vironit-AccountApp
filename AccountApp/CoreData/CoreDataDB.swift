@@ -1,4 +1,6 @@
 import CoreData
+import RxSwift
+import RxCocoa
 import UIKit
 
 private struct Keys {
@@ -8,18 +10,24 @@ private struct Keys {
 
 final public class DataBase {
     
-    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    weak var appDelegate = UIApplication.shared.delegate as? AppDelegate
     var context: NSManagedObjectContext!
     var arrayOfLogins: [String] = []
+//    var arrayOfLogins: [String] {
+//        return array.value
+//    }
+//    var array = BehaviorRelay<[String]>(value: [])
     
     func openDatabse(login: String) {
-      context = appDelegate.persistentContainer.viewContext
+        guard let appDelegate = self.appDelegate else { return }
+        context = appDelegate.persistentContainer.viewContext
         let entity = NSEntityDescription.entity(forEntityName: Keys.entityKey, in: context)
         let newUser = NSManagedObject(entity: entity!, insertInto: context)
         saveData(accountObj: newUser, login: login)
     }
     
     func saveData(accountObj: NSManagedObject, login: String) {
+        guard let appDelegate = self.appDelegate else { return }
         context = appDelegate.persistentContainer.viewContext
         accountObj.setValue(login, forKey: Keys.loginKey)
         print("Storing Data..")
@@ -36,13 +44,17 @@ final public class DataBase {
         print("Fetching Data..")
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: Keys.entityKey)
         request.returnsObjectsAsFaults = false
+//        var tempArray: [String] = []
         do {
+            guard let appDelegate = self.appDelegate else { return }
             context = appDelegate.persistentContainer.viewContext
             let result = try context.fetch(request)
             for data in result as! [NSManagedObject] {
                 guard let login = data.value(forKey: Keys.loginKey) as? String else { return }
                 arrayOfLogins.append(login)
+//                tempArray.append(login)
             }
+//            array.accept(tempArray)
         } catch {
             print("Fetching data Failed")
         }

@@ -33,7 +33,7 @@ final class LogOutViewCell: UITableViewCell {
     // MARK: - Methods
     
     private func setupBinding() {
-        informationButton.rx.tap.subscribe(onNext:  { [weak self] in
+        informationButton.rx.tap.subscribe(onNext: { [weak self] in
             guard let self = self else { return }
             if self.popTip.isVisible {
                 self.popTip.hide()

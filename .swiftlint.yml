@@ -18,6 +18,7 @@ disabled_rules:
 - trailing_whitespace
 - force_cast
 - identifier_name
+- discarded_notification_center_observer
 excluded:
 - Pods
 - Weather/Application/AppDelegate.swift

@@ -1,4 +1,6 @@
 import CoreData
+import RxSwift
+import RxCocoa
 import UIKit
 
 class ListOfAccountsViewController: UIViewController {
@@ -13,11 +15,15 @@ class ListOfAccountsViewController: UIViewController {
     private let dataBase = DataBase()
     private let languageHandler = LanguageNotificationHandler()
     private var filteredListOfAccounts: [String] = []
+//    private var fullListOfAccounts: [String] = []
+//    private let viewModel = ListOfAccountsViewModel()
+//    private let disposeBag = DisposeBag()
     
     // MARK: - Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
+//        bind()
         setupDelegate()
         setupUI()
     }
@@ -89,3 +95,16 @@ extension ListOfAccountsViewController: UISearchBarDelegate {
         tableView.reloadData()
     }
 }
+
+//  private extension ListOfAccountsViewController {
+//    func bind() {
+//        let output =  viewModel.bind()
+//        output.arrayOfLogins.subscribe { [weak self] array in
+//            guard let array = array.element else { return }
+//            self?.filteredListOfAccounts = array
+//            self?.fullListOfAccounts = array
+//            self?.tableView.reloadData()
+//        }.disposed(by: disposeBag)
+//    }
+//  }
+//
