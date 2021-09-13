@@ -12,11 +12,11 @@ final public class DataBase {
     
     weak var appDelegate = UIApplication.shared.delegate as? AppDelegate
     var context: NSManagedObjectContext!
-    var arrayOfLogins: [String] = []
-//    var arrayOfLogins: [String] {
-//        return array.value
-//    }
-//    var array = BehaviorRelay<[String]>(value: [])
+//    var arrayOfLogins: [String] = []
+    var arrayOfLogins: [String] {
+        return array.value
+    }
+    var array = BehaviorRelay<[String]>(value: [])
     
     func openDatabse(login: String) {
         guard let appDelegate = self.appDelegate else { return }
@@ -44,17 +44,17 @@ final public class DataBase {
         print("Fetching Data..")
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: Keys.entityKey)
         request.returnsObjectsAsFaults = false
-//        var tempArray: [String] = []
+        var tempArray: [String] = []
         do {
             guard let appDelegate = self.appDelegate else { return }
             context = appDelegate.persistentContainer.viewContext
             let result = try context.fetch(request)
             for data in result as! [NSManagedObject] {
                 guard let login = data.value(forKey: Keys.loginKey) as? String else { return }
-                arrayOfLogins.append(login)
-//                tempArray.append(login)
+//                arrayOfLogins.append(login)
+                tempArray.append(login)
             }
-//            array.accept(tempArray)
+            array.accept(tempArray)
         } catch {
             print("Fetching data Failed")
         }

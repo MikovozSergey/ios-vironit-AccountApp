@@ -336,17 +336,14 @@
 		CE47F433261DE0B9005F1C69 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				CE5E7E4726EF4AA1007A94E5 /* Extensions */,
 				CE1B99B926E10E490004280D /* Themes */,
 				CE477441261F526F00A6DD5B /* Constants.swift */,
 				CED9CF2226DE142900DC239B /* SessionManager.swift */,
 				CE5BEC2B26DFBD5C00685981 /* LanguageEnum.swift */,
-				CE5BEC2D26DFC6E000685981 /* NotificationExtension.swift */,
 				CE5BEC2F26DFC72C00685981 /* LanguageNotificationHandler.swift */,
 				CE5BEC3126DFC74C00685981 /* NotificationHandler.swift */,
-				CE6EAF4C26E78C10002785F0 /* XibExtension.swift */,
 				CE6EAF4E26E78DFF002785F0 /* ValidationManager.swift */,
-				CE5ED20026E8A53C007FCADF /* UIWindowExtension.swift */,
-				CE5ED20B26E8C500007FCADF /* UIViewControllerExtension.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -414,6 +411,17 @@
 				CE5BEC2926DFB6CC00685981 /* Strings.swift */,
 			);
 			path = SwiftGen;
+			sourceTree = "<group>";
+		};
+		CE5E7E4726EF4AA1007A94E5 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				CE5BEC2D26DFC6E000685981 /* NotificationExtension.swift */,
+				CE6EAF4C26E78C10002785F0 /* XibExtension.swift */,
+				CE5ED20026E8A53C007FCADF /* UIWindowExtension.swift */,
+				CE5ED20B26E8C500007FCADF /* UIViewControllerExtension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		CE5ED20226E8AF84007FCADF /* Flow */ = {

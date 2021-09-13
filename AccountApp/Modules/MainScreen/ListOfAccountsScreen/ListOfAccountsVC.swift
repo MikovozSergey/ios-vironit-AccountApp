@@ -15,15 +15,14 @@ class ListOfAccountsViewController: UIViewController {
     private let dataBase = DataBase()
     private let languageHandler = LanguageNotificationHandler()
     private var filteredListOfAccounts: [String] = []
-//    private var fullListOfAccounts: [String] = []
-//    private let viewModel = ListOfAccountsViewModel()
-//    private let disposeBag = DisposeBag()
+    private let viewModel = ListOfAccountsViewModel()
+    private let disposeBag = DisposeBag()
     
     // MARK: - Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
-//        bind()
+        bind()
         setupDelegate()
         setupUI()
     }
@@ -100,15 +99,13 @@ extension ListOfAccountsViewController: UISearchBarDelegate {
 
 // MARK: - Binding
 
-//  private extension ListOfAccountsViewController {
-//    func bind() {
-//        let output =  viewModel.bind()
-//        output.arrayOfLogins.subscribe { [weak self] array in
-//            guard let array = array.element else { return }
-//            self?.filteredListOfAccounts = array
-//            self?.fullListOfAccounts = array
-//            self?.tableView.reloadData()
-//        }.disposed(by: disposeBag)
-//    }
-//  }
-//
+private extension ListOfAccountsViewController {
+    func bind() {
+        let output =  viewModel.bind()
+        output.arrayOfLogins.subscribe { [weak self] array in
+            guard let array = array.element else { return }
+            self?.filteredListOfAccounts = array
+            self?.tableView.reloadData()
+        }.disposed(by: disposeBag)
+    }
+}
