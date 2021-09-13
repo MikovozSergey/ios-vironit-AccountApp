@@ -42,10 +42,14 @@ class ListOfAccountsViewController: UIViewController {
         searchBar.barTintColor = Theme.currentTheme.backgroundColor
         searchBar.tintColor = Colors.gold
         searchBar.searchTextField.backgroundColor = .white
+        searchBar.backgroundImage = UIImage()
         searchBar.setImage(Theme.currentTheme.searchImage, for: UISearchBar.Icon.search, state: UIControl.State.normal)
         searchBar.setImage(Theme.currentTheme.crossImage, for: UISearchBar.Icon.clear, state: UIControl.State.normal)
         textFieldInSearchBar?.backgroundColor = Theme.currentTheme.backgroundColor
         textFieldInSearchBar?.textColor = Theme.currentTheme.textColor
+        textFieldInSearchBar?.layer.borderWidth = 1
+        textFieldInSearchBar?.layer.cornerRadius = 10
+        textFieldInSearchBar?.layer.borderColor = Theme.currentTheme.textColor.cgColor
         tableView.backgroundColor = Theme.currentTheme.backgroundColor
         navigationController?.navigationBar.isTranslucent = false
         navigationController?.navigationBar.barTintColor = Theme.currentTheme.backgroundColor
