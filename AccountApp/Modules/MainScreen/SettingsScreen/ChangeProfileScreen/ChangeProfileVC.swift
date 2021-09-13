@@ -156,7 +156,7 @@ private extension ChangeProfileViewController {
             guard let newLogin = self.newLoginTextField.text, let newPassword = self.newPasswordTextField.text else { return }
             switch state {
             case .allIsGood(let user):
-                if self.dataBase.arrayOfLogins.contains(user.login) && user.password == self.keychain.get(user.login) {
+                if self.dataBase.arrayOfLogins.last == user.login && user.password == self.keychain.get(user.login) {
                     self.setupStyleForTestFields(title: L10n.alertDoneTitle, titleColor: .green)
                     self.keychain.delete(user.login)
                     self.keychain.set(newPassword, forKey: newLogin)
