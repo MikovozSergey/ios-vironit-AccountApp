@@ -25,7 +25,7 @@ final public class SessionManager {
     
     private func saveStartOfSession() {
         let defaults = UserDefaults.standard
-        print("TimeOfStartSession = \(currentTime())")
+        print("StartOfSession = \(currentTime())")
         defaults.set(currentTime(), forKey: "timeOfStartSession")
     }
     
