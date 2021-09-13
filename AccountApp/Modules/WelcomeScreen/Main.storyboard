@@ -46,7 +46,6 @@
                             <constraint firstItem="I1c-Kj-REX" firstAttribute="centerY" secondItem="BhI-kk-WXW" secondAttribute="centerY" id="gcQ-Zh-47P"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="7UF-xG-Mz8"/>
                     <connections>
                         <outlet property="logInButton" destination="I1c-Kj-REX" id="IWt-q1-oXA"/>
                         <outlet property="registrationButton" destination="8bG-PP-LDQ" id="y73-6v-s5s"/>

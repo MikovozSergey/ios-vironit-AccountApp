@@ -39,9 +39,8 @@ class WelcomeViewController: UIViewController {
     // MARK: - Setup
     
     private func setupTheme() {
-        self.navigationController!.navigationBar.isTranslucent = false
-        self.navigationController?.navigationBar.barTintColor = Theme.currentTheme.backgroundColor
-        self.view.backgroundColor = Theme.currentTheme.backgroundColor
+        navigationController?.navigationBar.isHidden = true
+        view.backgroundColor = Theme.currentTheme.backgroundColor
         logInButton.setTitleColor(Theme.currentTheme.textColor, for: .normal)
         registrationButton.setTitleColor(Theme.currentTheme.textColor, for: .normal)
     }
