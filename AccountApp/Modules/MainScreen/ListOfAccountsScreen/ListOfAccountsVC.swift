@@ -69,7 +69,7 @@ class ListOfAccountsViewController: UIViewController {
     }
 }
 
-// MARK: - Delegate / DataSource methods
+// MARK: - UITableViewDelegate + UITableViewDataSource
 
 extension ListOfAccountsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -85,6 +85,8 @@ extension ListOfAccountsViewController: UITableViewDelegate, UITableViewDataSour
     }
 }
 
+// MARK: - UISearchBarDelegate
+
 extension ListOfAccountsViewController: UISearchBarDelegate {
 
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
@@ -95,6 +97,8 @@ extension ListOfAccountsViewController: UISearchBarDelegate {
         tableView.reloadData()
     }
 }
+
+// MARK: - Binding
 
 //  private extension ListOfAccountsViewController {
 //    func bind() {

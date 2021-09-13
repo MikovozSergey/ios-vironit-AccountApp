@@ -148,6 +148,8 @@ extension RegistrationViewController: UITextFieldDelegate {
     
 }
 
+// MARK: - Binding
+
 private extension RegistrationViewController {
     
     func bind() {

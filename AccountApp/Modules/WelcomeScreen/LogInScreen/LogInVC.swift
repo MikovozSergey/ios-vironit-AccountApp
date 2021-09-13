@@ -146,6 +146,8 @@ extension LogInViewController: UITextFieldDelegate {
     
 }
 
+// MARK: - Binding
+
 private extension LogInViewController {
     
     func bind() {

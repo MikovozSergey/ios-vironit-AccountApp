@@ -22,6 +22,8 @@ class FirstViewController: UIViewController {
         handleLanguage()
     }
     
+    // MARK: - Setup
+    
     private func setupTheme() {
         navigationController?.navigationBar.isTranslucent = false
         navigationController?.navigationBar.barTintColor = Theme.currentTheme.backgroundColor

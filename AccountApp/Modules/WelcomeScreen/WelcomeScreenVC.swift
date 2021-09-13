@@ -64,6 +64,8 @@ class WelcomeViewController: UIViewController {
     }
 }
 
+// MARK: - Binding
+
 private extension WelcomeViewController {
     
     func bind() {

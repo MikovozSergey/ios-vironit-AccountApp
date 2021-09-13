@@ -84,6 +84,8 @@ class SettingsViewController: UIViewController {
     }
 }
 
+// MARK: - UITableViewDelegate + UITableViewDataSource
+
 extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
@@ -113,6 +115,8 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
         return 2
     }
 }
+
+// MARK: - Binding
 
 private extension SettingsViewController {
     

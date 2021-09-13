@@ -33,7 +33,7 @@ class SwitchLanguageViewController: UIViewController {
         self.viewModel = viewModel
     }
     
-    // MARK: - Logic
+    // MARK: - Setup
     
     private func setupTheme() {
         navigationController?.view.tintColor = Colors.gold
@@ -61,6 +61,8 @@ class SwitchLanguageViewController: UIViewController {
         }
     }
 }
+
+// MARK: - Binding
 
 private extension SwitchLanguageViewController {
     

@@ -25,7 +25,11 @@ class SwitchThemeViewController: UIViewController {
         bind()
     }
     
-    // MARK: - Logic
+    public func configure(viewModel: SwitchThemeViewModel) {
+        self.viewModel = viewModel
+    }
+    
+    // MARK: - Setup
     
     private func setupUI() {
         setupStrings()
@@ -50,11 +54,9 @@ class SwitchThemeViewController: UIViewController {
             self?.setupStrings()
         }
     }
-    
-    public func configure(viewModel: SwitchThemeViewModel) {
-        self.viewModel = viewModel
-    }
 }
+
+// MARK: - Binding
 
 private extension SwitchThemeViewController {
     

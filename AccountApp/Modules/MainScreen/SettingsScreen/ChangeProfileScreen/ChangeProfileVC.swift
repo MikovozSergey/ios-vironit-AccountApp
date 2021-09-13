@@ -47,7 +47,7 @@ class ChangeProfileViewController: UIViewController {
         self.viewModel = viewModel
     }
     
-    // MARK: - Logic
+    // MARK: - Setup
     
     private func setupTheme() {
         navigationController?.view.tintColor = Colors.gold
@@ -124,6 +124,8 @@ class ChangeProfileViewController: UIViewController {
     }
 }
 
+// MARK: - UITextFieldDelegate
+
 extension ChangeProfileViewController: UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         return true
@@ -134,6 +136,8 @@ extension ChangeProfileViewController: UITextFieldDelegate {
         return true
     }
 }
+
+// MARK: - Binding
 
 private extension ChangeProfileViewController {
     

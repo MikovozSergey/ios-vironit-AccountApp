@@ -32,7 +32,6 @@
 		CE47F44D261DE47F005F1C69 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE47F44C261DE47F005F1C69 /* UserModel.swift */; };
 		CE47F472261DF129005F1C69 /* RegistrationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE47F471261DF129005F1C69 /* RegistrationVC.swift */; };
 		CE47F475261DF19C005F1C69 /* RegistrationScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE47F474261DF19C005F1C69 /* RegistrationScreen.storyboard */; };
-		CE48AEC7262045EA0076B311 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE48AEC6262045EA0076B311 /* StringExtensions.swift */; };
 		CE48AED326207FC60076B311 /* ChangeProfileScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE48AED226207FC60076B311 /* ChangeProfileScreen.storyboard */; };
 		CE48AED626207FEF0076B311 /* ChangeProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE48AED526207FEF0076B311 /* ChangeProfileVC.swift */; };
 		CE52C96326EB7BAA00171C2F /* ListOfAccountsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE52C96226EB7BAA00171C2F /* ListOfAccountsVM.swift */; };
@@ -62,7 +61,7 @@
 		CE649D5126E222CC0043730C /* WelcomeScreenVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE649D5026E222CC0043730C /* WelcomeScreenVM.swift */; };
 		CE6EAF4926E74CB5002785F0 /* SwitchLanguageVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6EAF4826E74CB5002785F0 /* SwitchLanguageVM.swift */; };
 		CE6EAF4B26E75D0F002785F0 /* SwitchThemeVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6EAF4A26E75D0F002785F0 /* SwitchThemeVM.swift */; };
-		CE6EAF4D26E78C10002785F0 /* XibExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6EAF4C26E78C10002785F0 /* XibExtensions.swift */; };
+		CE6EAF4D26E78C10002785F0 /* XibExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6EAF4C26E78C10002785F0 /* XibExtension.swift */; };
 		CE6EAF4F26E78DFF002785F0 /* ValidationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6EAF4E26E78DFF002785F0 /* ValidationManager.swift */; };
 		CE7821A226E7A171006FF957 /* AppFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7821A126E7A171006FF957 /* AppFlow.swift */; };
 		CE7821A426E7A1F2006FF957 /* AppStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7821A326E7A1F2006FF957 /* AppStepper.swift */; };
@@ -118,7 +117,6 @@
 		CE47F44C261DE47F005F1C69 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		CE47F471261DF129005F1C69 /* RegistrationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationVC.swift; sourceTree = "<group>"; };
 		CE47F474261DF19C005F1C69 /* RegistrationScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RegistrationScreen.storyboard; sourceTree = "<group>"; };
-		CE48AEC6262045EA0076B311 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		CE48AED226207FC60076B311 /* ChangeProfileScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChangeProfileScreen.storyboard; sourceTree = "<group>"; };
 		CE48AED526207FEF0076B311 /* ChangeProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeProfileVC.swift; sourceTree = "<group>"; };
 		CE52C96226EB7BAA00171C2F /* ListOfAccountsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOfAccountsVM.swift; sourceTree = "<group>"; };
@@ -149,7 +147,7 @@
 		CE649D5026E222CC0043730C /* WelcomeScreenVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeScreenVM.swift; sourceTree = "<group>"; };
 		CE6EAF4826E74CB5002785F0 /* SwitchLanguageVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchLanguageVM.swift; sourceTree = "<group>"; };
 		CE6EAF4A26E75D0F002785F0 /* SwitchThemeVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchThemeVM.swift; sourceTree = "<group>"; };
-		CE6EAF4C26E78C10002785F0 /* XibExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XibExtensions.swift; sourceTree = "<group>"; };
+		CE6EAF4C26E78C10002785F0 /* XibExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XibExtension.swift; sourceTree = "<group>"; };
 		CE6EAF4E26E78DFF002785F0 /* ValidationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationManager.swift; sourceTree = "<group>"; };
 		CE7821A126E7A171006FF957 /* AppFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFlow.swift; sourceTree = "<group>"; };
 		CE7821A326E7A1F2006FF957 /* AppStepper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStepper.swift; sourceTree = "<group>"; };
@@ -250,7 +248,6 @@
 		CE4514B7260DF1D40069CB6D /* AccountApp */ = {
 			isa = PBXGroup;
 			children = (
-				CE1B99B926E10E490004280D /* Themes */,
 				CE5BEC0D26DFA05000685981 /* SwiftGen */,
 				CE45154E260E11F90069CB6D /* Application */,
 				CE47F432261DE0A2005F1C69 /* CoreData */,
@@ -339,14 +336,14 @@
 		CE47F433261DE0B9005F1C69 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				CE1B99B926E10E490004280D /* Themes */,
 				CE477441261F526F00A6DD5B /* Constants.swift */,
-				CE48AEC6262045EA0076B311 /* StringExtensions.swift */,
 				CED9CF2226DE142900DC239B /* SessionManager.swift */,
 				CE5BEC2B26DFBD5C00685981 /* LanguageEnum.swift */,
 				CE5BEC2D26DFC6E000685981 /* NotificationExtension.swift */,
 				CE5BEC2F26DFC72C00685981 /* LanguageNotificationHandler.swift */,
 				CE5BEC3126DFC74C00685981 /* NotificationHandler.swift */,
-				CE6EAF4C26E78C10002785F0 /* XibExtensions.swift */,
+				CE6EAF4C26E78C10002785F0 /* XibExtension.swift */,
 				CE6EAF4E26E78DFF002785F0 /* ValidationManager.swift */,
 				CE5ED20026E8A53C007FCADF /* UIWindowExtension.swift */,
 				CE5ED20B26E8C500007FCADF /* UIViewControllerExtension.swift */,
@@ -724,7 +721,6 @@
 				CE48AED626207FEF0076B311 /* ChangeProfileVC.swift in Sources */,
 				CE7821AE26E7A567006FF957 /* FirstFlow.swift in Sources */,
 				CE5ED21126E8D10C007FCADF /* RegistrationStep.swift in Sources */,
-				CE48AEC7262045EA0076B311 /* StringExtensions.swift in Sources */,
 				CE7821C026E7B6EE006FF957 /* SwitchLanguageFlow.swift in Sources */,
 				CE47F472261DF129005F1C69 /* RegistrationVC.swift in Sources */,
 				CE5BEC3226DFC74C00685981 /* NotificationHandler.swift in Sources */,
@@ -763,7 +759,7 @@
 				CE649D4B26E21E0B0043730C /* FirstVC.swift in Sources */,
 				CE7821B026E7A575006FF957 /* FirstStep.swift in Sources */,
 				CE52C96326EB7BAA00171C2F /* ListOfAccountsVM.swift in Sources */,
-				CE6EAF4D26E78C10002785F0 /* XibExtensions.swift in Sources */,
+				CE6EAF4D26E78C10002785F0 /* XibExtension.swift in Sources */,
 				CE63301126DCF56C00E8F311 /* LogInVC.swift in Sources */,
 				CE47F44D261DE47F005F1C69 /* UserModel.swift in Sources */,
 				CE6EAF4F26E78DFF002785F0 /* ValidationManager.swift in Sources */,
