@@ -12,7 +12,6 @@ final public class DataBase {
     
     weak var appDelegate = UIApplication.shared.delegate as? AppDelegate
     var context: NSManagedObjectContext!
-//    var arrayOfLogins: [String] = []
     var arrayOfLogins: [String] {
         return array.value
     }
@@ -51,7 +50,6 @@ final public class DataBase {
             let result = try context.fetch(request)
             for data in result as! [NSManagedObject] {
                 guard let login = data.value(forKey: Keys.loginKey) as? String else { return }
-//                arrayOfLogins.append(login)
                 tempArray.append(login)
             }
             array.accept(tempArray)
