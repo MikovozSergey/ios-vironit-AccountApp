@@ -36,9 +36,8 @@ final public class SessionManager {
     
     private func isEndOfSession(startOfSession: Date) -> Bool {
         let finishDate = startOfSession.addingTimeInterval(240.0 * 60.0)
-        let currentTime = currentTime()
-        print("StartTimeOfSession: \(startOfSession) \nCurrentTime: \(currentTime) \nFinishOfSession: \(finishDate)")
-        if finishDate > currentTime { return false } else { return true }
+        print("StartTimeOfSession: \(startOfSession) \nCurrentTime: \(currentTime()) \nFinishOfSession: \(finishDate)")
+        if finishDate > currentTime() { return false } else { return true }
     }
 
     @objc func timerHandler(_ timer: Timer) {
