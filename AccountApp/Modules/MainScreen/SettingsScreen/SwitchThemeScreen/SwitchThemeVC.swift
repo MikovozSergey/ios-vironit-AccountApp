@@ -61,7 +61,10 @@ class SwitchThemeViewController: UIViewController {
 private extension SwitchThemeViewController {
     
     func bind() {
-        guard let viewModel = self.viewModel else { return }
+        guard let viewModel = self.viewModel else {
+            print("\n LOG can’t get viewModel")
+            return
+        }
         let output = viewModel.bind(
             input: SwitchThemeInput(
                 switchEvent: themeSwitch.rx.isOn.changed
@@ -69,7 +72,10 @@ private extension SwitchThemeViewController {
         )
         
         let switchDisposable = output.switchThemeState.subscribe { changedState in
-            guard let value = changedState.element else { return }
+            guard let value = changedState.element else {
+                print("\n LOG can’t get element from ChangedState")
+                return
+            }
             Theme.currentTheme = value ? DarkTheme() : LightTheme()
             self.setupTheme()
             self.themeSwitch.isOn = value

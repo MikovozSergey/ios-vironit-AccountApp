@@ -153,7 +153,10 @@ private extension ChangeProfileViewController {
         )
         let changeProfileStateDisposable = output.changeProfileState.skip(1).drive(onNext: { [weak self] state in
             guard let self = self else { return }
-            guard let newLogin = self.newLoginTextField.text, let newPassword = self.newPasswordTextField.text else { return }
+            guard let newLogin = self.newLoginTextField.text, let newPassword = self.newPasswordTextField.text else {
+                print("\n LOG can’t get text from loginTextField and passwordTextField")
+                return
+            }
             switch state {
             case .allIsGood(let user):
                 if self.dataBase.arrayOfLogins.last == user.login && user.password == self.keychain.get(user.login) {

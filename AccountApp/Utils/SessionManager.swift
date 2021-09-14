@@ -30,7 +30,9 @@ final public class SessionManager {
     }
     
     private func getStartOfSession() -> Date {
-        guard let date = UserDefaults.standard.object(forKey: "timeOfStartSession") as? Date else { return Date() }
+        guard let date = UserDefaults.standard.object(forKey: "timeOfStartSession") as? Date else {
+            print("\n LOG can’t get date from UserDefaults object")
+            return Date() }
         return date
     }
     

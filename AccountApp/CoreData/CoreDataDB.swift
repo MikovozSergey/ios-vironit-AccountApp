@@ -18,7 +18,10 @@ final public class DataBase {
     var array = BehaviorRelay<[String]>(value: [])
     
     func openDatabse(login: String) {
-        guard let appDelegate = self.appDelegate else { return }
+        guard let appDelegate = self.appDelegate else {
+            print("\n LOG can’t get appDelegate")
+            return
+        }
         context = appDelegate.persistentContainer.viewContext
         let entity = NSEntityDescription.entity(forEntityName: Keys.entityKey, in: context)
         let newUser = NSManagedObject(entity: entity!, insertInto: context)
@@ -26,7 +29,10 @@ final public class DataBase {
     }
     
     func saveData(accountObj: NSManagedObject, login: String) {
-        guard let appDelegate = self.appDelegate else { return }
+        guard let appDelegate = self.appDelegate else {
+            print("\n LOG can’t get appDelegate")
+            return
+        }
         context = appDelegate.persistentContainer.viewContext
         accountObj.setValue(login, forKey: Keys.loginKey)
         print("Storing Data..")
@@ -45,11 +51,17 @@ final public class DataBase {
         request.returnsObjectsAsFaults = false
         var tempArray: [String] = []
         do {
-            guard let appDelegate = self.appDelegate else { return }
+            guard let appDelegate = self.appDelegate else {
+                print("\n LOG can’t get appDelegate")
+                return
+            }
             context = appDelegate.persistentContainer.viewContext
             let result = try context.fetch(request)
             for data in result as! [NSManagedObject] {
-                guard let login = data.value(forKey: Keys.loginKey) as? String else { return }
+                guard let login = data.value(forKey: Keys.loginKey) as? String else {
+                    print("\n LOG can’t get value from NSManagedObject")
+                    return
+                }
                 tempArray.append(login)
             }
             array.accept(tempArray)
@@ -63,7 +75,10 @@ final public class DataBase {
         request.returnsObjectsAsFaults = false
         if let result = try? context.fetch(request) {
             for object in result as! [NSManagedObject] {
-                guard let login = object.value(forKey: Keys.loginKey) as? String else { return }
+                guard let login = object.value(forKey: Keys.loginKey) as? String else {
+                    print("\n LOG can’t get value from NSManagedObject")
+                    return
+                }
                 if login == logIn {
                     context.delete(object)
                     print("Delete object \(login) from DB")

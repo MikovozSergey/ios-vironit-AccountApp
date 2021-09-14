@@ -67,7 +67,10 @@ class SwitchLanguageViewController: UIViewController {
 private extension SwitchLanguageViewController {
     
     func bind() {
-        guard let viewModel = self.viewModel else { return }
+        guard let viewModel = self.viewModel else {
+            print("\n LOG can’t get viewModel")
+            return
+        }
         let output = viewModel.bind(
             input: SwitchLanguageInput(
                 switchEvent: switchLanguageButton.rx.tap

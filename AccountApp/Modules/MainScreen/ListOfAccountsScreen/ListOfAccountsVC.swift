@@ -99,7 +99,10 @@ extension ListOfAccountsViewController: UITableViewDelegate, UITableViewDataSour
 extension ListOfAccountsViewController: UISearchBarDelegate {
 
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        guard let searchText = searchBar.text else { return }
+        guard let searchText = searchBar.text else {
+            print("\n LOG can’t get text from searchBar")
+            return
+        }
         filteredListOfAccounts = searchText.isEmpty ? dataBase.arrayOfLogins : dataBase.arrayOfLogins.filter({(dataString: String) -> Bool in
             return dataString.range(of: searchText, options: .caseInsensitive) != nil
         })
@@ -113,7 +116,9 @@ private extension ListOfAccountsViewController {
     func bind() {
         let output =  viewModel.bind()
         output.arrayOfLogins.subscribe { [weak self] array in
-            guard let array = array.element else { return }
+            guard let array = array.element else {
+                print("\n LOG can’t get array.element")
+                return }
             self?.filteredListOfAccounts = array
             self?.tableView.reloadData()
         }.disposed(by: disposeBag)
