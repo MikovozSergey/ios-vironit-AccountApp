@@ -8,7 +8,6 @@ class MainFlow: Flow {
     }
 
     let rootViewController = UITabBarController()
-//    let dataBase = DataBase()
 
     deinit {
         print("\(type(of: self)): \(#function)")
