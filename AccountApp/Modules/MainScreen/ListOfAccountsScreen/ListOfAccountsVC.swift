@@ -47,7 +47,7 @@ class ListOfAccountsViewController: UIViewController {
         searchBar.setImage(Theme.currentTheme.crossImage, for: UISearchBar.Icon.clear, state: UIControl.State.normal)
         textFieldInSearchBar?.backgroundColor = Theme.currentTheme.backgroundColor
         textFieldInSearchBar?.textColor = Theme.currentTheme.textColor
-        textFieldInSearchBar?.layer.borderWidth = 1
+        textFieldInSearchBar?.layer.borderWidth = 1.5
         textFieldInSearchBar?.layer.cornerRadius = 10
         textFieldInSearchBar?.layer.borderColor = Theme.currentTheme.textColor.cgColor
         tableView.backgroundColor = Theme.currentTheme.backgroundColor
