@@ -46,7 +46,7 @@ final class LogOutViewCell: UITableViewCell {
         setupStrings()
         logOutButton.layer.cornerRadius = 10
         logOutButton.layer.borderWidth = 1.5
-        logOutButton.layer.borderColor = CGColor(red: 255/255, green: 215/255, blue: 0/255, alpha: 1)
+        logOutButton.layer.borderColor = Colors.gold.cgColor
         self.selectionStyle = .none
         
         popTip.shouldDismissOnTap = true

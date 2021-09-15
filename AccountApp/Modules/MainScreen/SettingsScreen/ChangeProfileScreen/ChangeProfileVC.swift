@@ -84,7 +84,7 @@ class ChangeProfileViewController: UIViewController {
             $0?.isHidden = true
         }
         saveButton.layer.borderWidth = 1.5
-        saveButton.layer.borderColor = CGColor(red: 255/255, green: 215/255, blue: 0/255, alpha: 1)
+        saveButton.layer.borderColor = Colors.gold.cgColor
     }
     
     private func setupStyleForTestFields(title: String, titleColor: UIColor) {

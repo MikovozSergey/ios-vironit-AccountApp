@@ -40,12 +40,12 @@ class SwitchLanguageViewController: UIViewController {
     
     private func setupUI() {
         switchLanguageButton.layer.borderWidth = 1.5
-        switchLanguageButton.layer.borderColor = CGColor(red: 255/255, green: 215/255, blue: 0/255, alpha: 1)
+        switchLanguageButton.layer.borderColor = Colors.gold.cgColor
     }
     
     private func setupStrings() {
         switchLanguageLabel.text = L10n.switchLanguageVCTitle
-        switchLanguageButton.setTitle(L10n.edit, for: .normal)
+        switchLanguageButton.setTitle(L10n.change, for: .normal)
     }
     
     private func handleLanguage() {

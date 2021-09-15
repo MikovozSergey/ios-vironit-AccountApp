@@ -26,10 +26,10 @@
                                 </constraints>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VOT-ev-A7T">
-                                <rect key="frame" x="7" y="238" width="400" height="50"/>
+                                <rect key="frame" x="107" y="238" width="200" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="1Q6-nf-FUd"/>
-                                    <constraint firstAttribute="width" constant="400" id="KA9-Jn-IOi"/>
+                                    <constraint firstAttribute="width" constant="200" id="KA9-Jn-IOi"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="KohinoorBangla-Regular" family="Kohinoor Bangla" pointSize="14"/>
                             </button>

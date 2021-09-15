@@ -51,6 +51,10 @@ enum L10n {
   static var back: String {
     return L10n.tr("Localizable", "Back")
   }
+  /// Change
+  static var change: String {
+    return L10n.tr("Localizable", "Change")
+  }
   /// Enter your old login
   static var changeProfileVCLoginPlaceholder: String {
     return L10n.tr("Localizable", "ChangeProfileVCLoginPlaceholder")
@@ -82,10 +86,6 @@ enum L10n {
   /// Your old Password
   static var changeProfileVCPasswordTitle: String {
     return L10n.tr("Localizable", "ChangeProfileVCPasswordTitle")
-  }
-  /// Edit
-  static var edit: String {
-    return L10n.tr("Localizable", "Edit")
   }
   /// Empty
   static var empty: String {

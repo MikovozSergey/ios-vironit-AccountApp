@@ -2,7 +2,7 @@
 
 "Enter" = "Войти";
 "Save" = "Сохранить";
-"Edit" = "Изменить";
+"Change" = "Изменить";
 "Back" = "Назад";
 
 // MARK: TabBarItem

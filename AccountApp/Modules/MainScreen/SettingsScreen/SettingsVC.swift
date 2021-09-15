@@ -61,6 +61,13 @@ class SettingsViewController: UIViewController {
     private func setupUI() {
         tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
         tableView.tableFooterView = UIView()
+        [changeLanguageButton, changeThemeButton].forEach {
+            $0?.layer.cornerRadius = 10
+            $0?.layer.borderWidth = 1.5
+            $0?.layer.borderColor = Colors.gold.cgColor
+        }
+        changeLanguageButton.titleLabel?.numberOfLines = 0
+            changeLanguageButton.titleLabel?.lineBreakMode = .byWordWrapping
     }
     
     private func setupStrings() {

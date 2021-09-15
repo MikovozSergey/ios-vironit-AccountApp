@@ -46,7 +46,7 @@ final class CustomViewForEditCredentialsCell: UITableViewCell {
         setupStrings()
         changeLoginAndPasswordButton.layer.cornerRadius = 10
         changeLoginAndPasswordButton.layer.borderWidth = 1.5
-        changeLoginAndPasswordButton.layer.borderColor = CGColor(red: 255/255, green: 215/255, blue: 0/255, alpha: 1)
+        changeLoginAndPasswordButton.layer.borderColor = Colors.gold.cgColor
         self.selectionStyle = .none
         popTip.shouldDismissOnTap = true
         popTip.shouldDismissOnTapOutside = true

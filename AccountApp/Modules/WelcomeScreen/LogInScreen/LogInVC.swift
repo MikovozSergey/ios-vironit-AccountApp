@@ -73,7 +73,7 @@ class LogInViewController: UIViewController {
         showPasswordButton.isHidden = true
         showPasswordButton.setImage(UIImage(named: "iconEye"), for: .normal)
         logInButton.layer.borderWidth = 1.5
-        logInButton.layer.borderColor = CGColor(red: 255/255, green: 215/255, blue: 0/255, alpha: 1)
+        logInButton.layer.borderColor = Colors.gold.cgColor
     }
     
     private func setupDelegate() {
