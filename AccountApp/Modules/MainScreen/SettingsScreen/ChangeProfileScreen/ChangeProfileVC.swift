@@ -13,6 +13,29 @@ class ChangeProfileViewController: UIViewController {
     @IBOutlet private weak var passwordTextField: SkyFloatingLabelTextField!
     @IBOutlet private weak var newPasswordTextField: SkyFloatingLabelTextField!
     @IBOutlet private weak var saveButton: UIButton!
+    @IBOutlet private weak var showPasswordButton: UIButton!
+    @IBOutlet private weak var showNewPassowrdButton: UIButton!
+    
+    // MARK: - IBActions
+    
+    @IBAction private func changedPasswordTextField(_ sender: Any) {
+        showPasswordButton.isHidden = passwordTextField.text?.isEmpty ?? true
+    }
+    @IBAction private func changedNewPassowrdTextField(_ sender: Any) {
+        showNewPassowrdButton.isHidden = newPasswordTextField.text?.isEmpty ?? true
+    }
+    
+    @IBAction private func showPassword(_ sender: Any) {
+        passwordTextField.isSecureTextEntry = !passwordTextField.isSecureTextEntry
+        let image = passwordTextField.isSecureTextEntry ? UIImage(named: "iconEye") : UIImage(named: "iconClosedEye")
+        showPasswordButton.setImage(image, for: .normal)
+    }
+    
+    @IBAction private func showNewPassword(_ sender: Any) {
+        newPasswordTextField.isSecureTextEntry = !newPasswordTextField.isSecureTextEntry
+        let image = newPasswordTextField.isSecureTextEntry ? UIImage(named: "iconEye") : UIImage(named: "iconClosedEye")
+        showNewPassowrdButton.setImage(image, for: .normal)
+    }
     
     // MARK: - Variables
     
@@ -33,6 +56,8 @@ class ChangeProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        setupStrings()
+        setupStringsForAlert()
         handleLanguage()
         bind()
     }
@@ -40,7 +65,9 @@ class ChangeProfileViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         dataBase.fetchData()
-        setupTheme()
+        ThemeManager.setupThemeForNavigationAndView(navigation: navigationController!, view: view)
+        ThemeManager.setupThemeForTextFields(loginTextField: loginTextField, passwordTextField: passwordTextField, newLoginTextField: newLoginTextField, newPasswordTextField: newPasswordTextField)
+        ThemeManager.setupThemeForButtons(saveButton: saveButton)
     }
     
     public func configure(viewModel: ChangeProfileViewModel) {
@@ -49,46 +76,28 @@ class ChangeProfileViewController: UIViewController {
     
     // MARK: - Setup
     
-    private func setupTheme() {
-        navigationController?.view.tintColor = Colors.gold
-        navigationController?.navigationBar.isTranslucent = false
-        navigationController?.navigationBar.barTintColor = Theme.currentTheme.backgroundColor
-        view.backgroundColor = Theme.currentTheme.backgroundColor
-        loginTextField.textColor = Theme.currentTheme.textColor
-        newLoginTextField.textColor = Theme.currentTheme.textColor
-        passwordTextField.textColor = Theme.currentTheme.textColor
-        newPasswordTextField.textColor = Theme.currentTheme.textColor
-        saveButton.setTitleColor(Theme.currentTheme.textColor, for: .normal)
-        
-    }
-    
     private func setupUI() {
-        setupStrings()
-        setupStringsForAlert()
-        loginTextField.textAlignment = .center
-        passwordTextField.textAlignment = .center
-        newLoginTextField.textAlignment = .center
-        newPasswordTextField.textAlignment = .center
+        [loginTextField, passwordTextField, newLoginTextField, newPasswordTextField].forEach {
+            $0.textAlignment = .center
+        }
+        [showPasswordButton, showNewPassowrdButton].forEach {
+            $0?.isHidden = true
+        }
         saveButton.layer.borderWidth = 1.5
         saveButton.layer.borderColor = CGColor(red: 255/255, green: 215/255, blue: 0/255, alpha: 1)
     }
     
     private func setupStyleForTestFields(title: String, titleColor: UIColor) {
-        loginTextField.title = title
-        loginTextField.titleColor = titleColor
-        newLoginTextField.title = title
-        newLoginTextField.titleColor = titleColor
-        passwordTextField.title = title
-        passwordTextField.titleColor = titleColor
-        newPasswordTextField.title = title
-        newPasswordTextField.titleColor = titleColor
+        [loginTextField, passwordTextField, newLoginTextField, newPasswordTextField].forEach {
+            $0?.title = title
+            $0?.titleColor = titleColor
+        }
     }
     
     private func setupDelegate() {
-        loginTextField.delegate = self
-        passwordTextField.delegate = self
-        newLoginTextField.delegate = self
-        newPasswordTextField.delegate = self
+        [loginTextField, passwordTextField, newLoginTextField, newPasswordTextField].forEach {
+            $0.delegate = self
+        }
     }
     
     private func setupStringsForAlert() {

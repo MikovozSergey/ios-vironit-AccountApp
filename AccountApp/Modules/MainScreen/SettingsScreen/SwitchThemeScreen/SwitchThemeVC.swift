@@ -19,10 +19,16 @@ class SwitchThemeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupUI()
+        setupStrings()
         handleLanguage()
-        setupTheme()
         bind()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        ThemeManager.setupThemeForNavigationAndView(navigation: navigationController!, view: view)
+        ThemeManager.setupThemeForSwitchAndTableView(themeSwitch: themeSwitch)
+        ThemeManager.setupThemeForLabels(changeThemeLabel: changeThemeLabel)
     }
     
     public func configure(viewModel: SwitchThemeViewModel) {
@@ -31,22 +37,8 @@ class SwitchThemeViewController: UIViewController {
     
     // MARK: - Setup
     
-    private func setupUI() {
-        setupStrings()
-    }
-    
     private func setupStrings() {
         changeThemeLabel.text = L10n.switchThemeVCLabel
-    }
-    
-    private func setupTheme() {
-        navigationController?.view.tintColor = Colors.gold
-        navigationController?.navigationBar.isTranslucent = false
-        navigationController?.navigationBar.barTintColor = Theme.currentTheme.backgroundColor
-        themeSwitch.tintColor = Theme.currentTheme.accentColor
-        themeSwitch.onTintColor = Theme.currentTheme.accentColor
-        view.backgroundColor = Theme.currentTheme.backgroundColor
-        changeThemeLabel.textColor = Theme.currentTheme.textColor
     }
     
     private func handleLanguage() {
@@ -77,7 +69,9 @@ private extension SwitchThemeViewController {
                 return
             }
             Theme.currentTheme = value ? DarkTheme() : LightTheme()
-            self.setupTheme()
+            ThemeManager.setupThemeForNavigationAndView(navigation: self.navigationController!, view: self.view)
+            ThemeManager.setupThemeForSwitchAndTableView(themeSwitch: self.themeSwitch)
+            ThemeManager.setupThemeForLabels(changeThemeLabel: self.changeThemeLabel)
             self.themeSwitch.isOn = value
         }
         disposeBag.insert(switchDisposable, output.disposable)

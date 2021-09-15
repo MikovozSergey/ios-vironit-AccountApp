@@ -28,14 +28,17 @@ class SettingsViewController: UIViewController {
         super.viewDidLoad()
         setupDelegate()
         setupUI()
+        setupStrings()
         registerNib()
         bind()
+        handleLanguage()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        setupTheme()
-        handleLanguage()
+        ThemeManager.setupThemeForNavigationAndView(navigation: navigationController!, view: view)
+        ThemeManager.setupThemeForSwitchAndTableView(tableView: tableView)
+        ThemeManager.setupThemeForButtons(changeLanguageButton: changeLanguageButton, changeThemeButton: changeThemeButton)
         tableView.reloadData()
     }
     
@@ -56,18 +59,8 @@ class SettingsViewController: UIViewController {
     }
     
     private func setupUI() {
-        setupStrings()
-        tableView.tableFooterView = UIView()
-    }
-    
-    private func setupTheme() {
         tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
-        view.backgroundColor = Theme.currentTheme.backgroundColor
-        tableView.backgroundColor = Theme.currentTheme.backgroundColor
-        changeLanguageButton.setTitleColor(Theme.currentTheme.textColor, for: .normal)
-        changeThemeButton.setTitleColor(Theme.currentTheme.textColor, for: .normal)
-        navigationController?.navigationBar.isTranslucent = false
-        navigationController?.navigationBar.barTintColor = Theme.currentTheme.backgroundColor
+        tableView.tableFooterView = UIView()
     }
     
     private func setupStrings() {

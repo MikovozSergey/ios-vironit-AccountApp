@@ -24,12 +24,14 @@ class WelcomeViewController: UIViewController {
         super.viewDidLoad()
         handleLanguage()
         setupUI()
+        setupStrings()
         bind()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        setupTheme()
+        ThemeManager.setupThemeForNavigationAndView(navigation: navigationController!, view: view)
+        ThemeManager.setupThemeForButtons(logInButton: logInButton, registrationButton: registrationButton)
     }
     
     public func configure(viewModel: WelcomeViewModel) {
@@ -38,15 +40,8 @@ class WelcomeViewController: UIViewController {
     
     // MARK: - Setup
     
-    private func setupTheme() {
-        navigationController?.navigationBar.isHidden = true
-        view.backgroundColor = Theme.currentTheme.backgroundColor
-        logInButton.setTitleColor(Theme.currentTheme.textColor, for: .normal)
-        registrationButton.setTitleColor(Theme.currentTheme.textColor, for: .normal)
-    }
-    
     private func setupUI() {
-        setupStrings()
+        navigationController?.navigationBar.isHidden = true
         logInButton.layer.borderWidth = 1.5
         logInButton.layer.borderColor = CGColor(red: 255/255, green: 215/255, blue: 0/255, alpha: 1)
     }

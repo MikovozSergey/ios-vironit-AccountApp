@@ -25,45 +25,29 @@ class ListOfAccountsViewController: UIViewController {
         bind()
         setupDelegate()
         setupUI()
+        setupStrings()
+        handleLanguage()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         dataBase.fetchData()
         filteredListOfAccounts = dataBase.arrayOfLogins
-        setupTheme()
-        handleLanguage()
+        ThemeManager.setupThemeForNavigationAndView(navigation: navigationController!, view: view)
+        ThemeManager.setupThemeForSwitchAndTableView(tableView: tableView)
+        ThemeManager.setupThemeForSearchBar(searchBar: searchBar)
         tableView.reloadData()
     }
     
-    private func setupTheme() {
-        let textFieldInSearchBar = searchBar.value(forKey: "searchField") as? UITextField
-        searchBar.isTranslucent = true
-        searchBar.barTintColor = Theme.currentTheme.backgroundColor
-        searchBar.tintColor = Colors.gold
-        searchBar.searchTextField.backgroundColor = .white
-        searchBar.backgroundImage = UIImage()
-        searchBar.setImage(Theme.currentTheme.searchImage, for: UISearchBar.Icon.search, state: UIControl.State.normal)
-        searchBar.setImage(Theme.currentTheme.crossImage, for: UISearchBar.Icon.clear, state: UIControl.State.normal)
-        textFieldInSearchBar?.backgroundColor = Theme.currentTheme.backgroundColor
-        textFieldInSearchBar?.textColor = Theme.currentTheme.textColor
-        textFieldInSearchBar?.layer.borderWidth = 1.5
-        textFieldInSearchBar?.layer.cornerRadius = 10
-        textFieldInSearchBar?.layer.borderColor = Theme.currentTheme.textColor.cgColor
-        tableView.backgroundColor = Theme.currentTheme.backgroundColor
-        navigationController?.navigationBar.isTranslucent = false
-        navigationController?.navigationBar.barTintColor = Theme.currentTheme.backgroundColor
-        view.backgroundColor = Theme.currentTheme.backgroundColor
-    }
+    // MARK: - Setup
     
     private func setupDelegate() {
+        searchBar.delegate = self
         tableView.delegate = self
         tableView.dataSource = self
-        searchBar.delegate = self
     }
     
     private func setupUI() {
-        setupStrings()
         tableView.tableFooterView = UIView()
     }
     

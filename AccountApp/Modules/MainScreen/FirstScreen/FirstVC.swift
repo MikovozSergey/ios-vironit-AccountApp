@@ -13,26 +13,16 @@ class FirstViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupUI()
+        setupStrings()
+        handleLanguage()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        setupTheme()
-        handleLanguage()
+        ThemeManager.setupThemeForNavigationAndView(navigation: navigationController!, view: view)
     }
     
     // MARK: - Setup
-    
-    private func setupTheme() {
-        navigationController?.navigationBar.isTranslucent = false
-        navigationController?.navigationBar.barTintColor = Theme.currentTheme.backgroundColor
-        view.backgroundColor = Theme.currentTheme.backgroundColor
-    }
-    
-    private func setupUI() {
-        setupStrings()
-    }
     
     private func setupStrings() {
         navigationController?.navigationBar.topItem?.title = L10n.empty

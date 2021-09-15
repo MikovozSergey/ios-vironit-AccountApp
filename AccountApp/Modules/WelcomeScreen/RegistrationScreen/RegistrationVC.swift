@@ -12,6 +12,7 @@ class RegistrationViewController: UIViewController {
     @IBOutlet private weak var loginTextField: SkyFloatingLabelTextField!
     @IBOutlet private weak var passwordTextField: SkyFloatingLabelTextField!
     @IBOutlet private weak var saveButton: UIButton!
+    @IBOutlet private weak var showPasswordButton: UIButton!
     
     // MARK: - Variables
     
@@ -30,31 +31,33 @@ class RegistrationViewController: UIViewController {
     
     // MARK: - IBActions
     
-    @IBAction private func tappedLoginTextField(_ sender: Any) {
-//        if loginTextField.text?.isEmpty != nil {
-//            setupFieldsTitle(isLogin: true)
-//        }
+    @IBAction private func showPassword(_ sender: Any) {
+        passwordTextField.isSecureTextEntry = !passwordTextField.isSecureTextEntry
+        let image = passwordTextField.isSecureTextEntry ? UIImage(named: "iconEye") : UIImage(named: "iconClosedEye")
+        showPasswordButton.setImage(image, for: .normal)
     }
     
-    @IBAction private func tappedPasswordTextField(_ sender: Any) {
-//        if passwordTextField.text?.isEmpty != nil {
-//            setupFieldsTitle(isLogin: false)
-//        }
+    @IBAction private func changedPasswordTextField(_ sender: Any) {
+        showPasswordButton.isHidden = passwordTextField.text?.isEmpty ?? true
     }
-    
+
     // MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupDelegate()
         setupUI()
+        setupStrings()
+        setupStringsForAlert()
         handleLanguage()
         bind()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        setupTheme()
+        ThemeManager.setupThemeForNavigationAndView(navigation: navigationController!, view: view)
+        ThemeManager.setupThemeForTextFields(loginTextField: loginTextField, passwordTextField: passwordTextField)
+        ThemeManager.setupThemeForButtons(saveButton: saveButton)
     }
     
     public func configure(viewModel: RegistrationViewModel) {
@@ -63,28 +66,20 @@ class RegistrationViewController: UIViewController {
     
     // MARK: - Logic
     
-    private func setupTheme() {
-        navigationController?.navigationBar.isTranslucent = false
-        navigationController?.navigationBar.barTintColor = Theme.currentTheme.backgroundColor
-        view.backgroundColor = Theme.currentTheme.backgroundColor
-        loginTextField.textColor = Theme.currentTheme.textColor
-        passwordTextField.textColor = Theme.currentTheme.textColor
-        saveButton.setTitleColor(Theme.currentTheme.textColor, for: .normal)
-    }
-    
     private func setupUI() {
-        setupStrings()
-        setupStringsForAlert()
-        navigationController?.view.tintColor = UIColor(red: 255/255, green: 215/255, blue: 0/255, alpha: 1)
-        loginTextField.textAlignment = .center
-        passwordTextField.textAlignment = .center
+        showPasswordButton.isHidden = true
+        showPasswordButton.setImage(UIImage(named: "iconEye"), for: .normal)
+        [loginTextField, passwordTextField].forEach {
+            $0.textAlignment = .center
+        }
         saveButton.layer.borderWidth = 1.5
         saveButton.layer.borderColor = CGColor(red: 255/255, green: 215/255, blue: 0/255, alpha: 1)
     }
     
     private func setupDelegate() {
-        loginTextField.delegate = self
-        passwordTextField.delegate = self
+        [loginTextField, passwordTextField].forEach {
+            $0.delegate = self
+        }
     }
     
     private func showAlert(title: String, message: String) {
@@ -96,17 +91,9 @@ class RegistrationViewController: UIViewController {
     }
     
     private func setupStyleForTestFields(title: String, titleColor: UIColor) {
-        loginTextField.title = title
-        loginTextField.titleColor = titleColor
-        passwordTextField.title = title
-        passwordTextField.titleColor = titleColor
-    }
-    
-    private func setupFieldsTitle(isLogin: Bool) {
-        if isLogin {
-            loginTextField.title = L10n.registrationVCLoginTitle
-        } else {
-            passwordTextField.title = L10n.registrationVCPasswordTitle
+        [loginTextField, passwordTextField].forEach {
+            $0?.title = title
+            $0?.titleColor = titleColor
         }
     }
     
@@ -145,7 +132,6 @@ extension RegistrationViewController: UITextFieldDelegate {
         textField.resignFirstResponder()
         return true
     }
-    
 }
 
 // MARK: - Binding

@@ -12,6 +12,7 @@ class LogInViewController: UIViewController {
     @IBOutlet private weak var loginTextField: SkyFloatingLabelTextField!
     @IBOutlet private weak var passwordTextField: SkyFloatingLabelTextField!
     @IBOutlet private weak var logInButton: UIButton!
+    @IBOutlet private weak var showPasswordButton: UIButton!
     
     // MARK: - Variables
 
@@ -29,15 +30,14 @@ class LogInViewController: UIViewController {
     
     // MARK: - IBActions
 
-    @IBAction private func tappedLoginTextField(_ sender: Any) {
-//        if loginTextField.text?.isEmpty != nil {
-//          setupFieldsTitle(isLogin: true)
-//        }
+    @IBAction private func changedPasswordTextField(_ sender: Any) {
+        showPasswordButton.isHidden = passwordTextField.text?.isEmpty ?? true
     }
-    @IBAction private func tappedPasswordTextField(_ sender: Any) {
-//        if passwordTextField.text?.isEmpty != nil {
-//            setupFieldsTitle(isLogin: false)
-//        }
+    
+    @IBAction private func showPassword(_ sender: Any) {
+        passwordTextField.isSecureTextEntry = !passwordTextField.isSecureTextEntry
+        let image = passwordTextField.isSecureTextEntry ? UIImage(named: "iconEye") : UIImage(named: "iconClosedEye")
+        showPasswordButton.setImage(image, for: .normal)
     }
     
     // MARK: - Lifecycle
@@ -46,6 +46,8 @@ class LogInViewController: UIViewController {
         super.viewDidLoad()
         setupDelegate()
         setupUI()
+        setupStrings()
+        setupStringsForAlert()
         handleLanguage()
         bind()
     }
@@ -53,7 +55,9 @@ class LogInViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         dataBase.fetchData()
-        setupTheme()
+        ThemeManager.setupThemeForNavigationAndView(navigation: navigationController!, view: view)
+        ThemeManager.setupThemeForTextFields(loginTextField: loginTextField, passwordTextField: passwordTextField)
+        ThemeManager.setupThemeForButtons(logInButton: logInButton)
     }
     
     public func configure(viewModel: LoginViewModel) {
@@ -61,29 +65,21 @@ class LogInViewController: UIViewController {
     }
     
     // MARK: - Logic
-    
-    private func setupTheme() {
-        navigationController?.navigationBar.isTranslucent = false
-        navigationController?.navigationBar.barTintColor = Theme.currentTheme.backgroundColor
-        view.backgroundColor = Theme.currentTheme.backgroundColor
-        loginTextField.textColor = Theme.currentTheme.textColor
-        passwordTextField.textColor = Theme.currentTheme.textColor
-        logInButton.setTitleColor(Theme.currentTheme.textColor, for: .normal)
-    }
 
     private func setupUI() {
-        setupStrings()
-        setupStringsForAlert()
-        navigationController?.view.tintColor = UIColor(red: 255/255, green: 215/255, blue: 0/255, alpha: 1)
-        loginTextField.textAlignment = .center
-        passwordTextField.textAlignment = .center
+        [loginTextField, passwordTextField].forEach {
+            $0.textAlignment = .center
+        }
+        showPasswordButton.isHidden = true
+        showPasswordButton.setImage(UIImage(named: "iconEye"), for: .normal)
         logInButton.layer.borderWidth = 1.5
         logInButton.layer.borderColor = CGColor(red: 255/255, green: 215/255, blue: 0/255, alpha: 1)
     }
     
     private func setupDelegate() {
-        loginTextField.delegate = self
-        passwordTextField.delegate = self
+        [loginTextField, passwordTextField].forEach {
+            $0.delegate = self
+        }
     }
     
     private func showAlert(title: String, message: String) {
@@ -95,17 +91,9 @@ class LogInViewController: UIViewController {
     }
     
     private func setupStyleForTestFields(title: String, titleColor: UIColor) {
-        loginTextField.title = title
-        loginTextField.titleColor = titleColor
-        passwordTextField.title = title
-        passwordTextField.titleColor = titleColor
-    }
-    
-    private func setupFieldsTitle(isLogin: Bool) {
-        if isLogin {
-            loginTextField.title = L10n.logInVCLoginTitle
-        } else {
-            passwordTextField.title = L10n.logInVCPasswordTitle
+        [loginTextField, passwordTextField].forEach {
+            $0?.title = title
+            $0?.titleColor = titleColor
         }
     }
     

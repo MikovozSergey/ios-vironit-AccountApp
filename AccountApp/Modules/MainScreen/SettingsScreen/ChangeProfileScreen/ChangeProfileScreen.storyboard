@@ -70,6 +70,9 @@
                                                 <color key="value" red="0.99991279840000002" green="0.84313725490000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="changedPasswordTextField:" destination="vye-0s-U07" eventType="editingChanged" id="mXW-GJ-I5G"/>
+                                        </connections>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="O9u-iG-6pn" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
                                         <rect key="frame" x="0.0" y="194" width="250" height="40"/>
@@ -122,6 +125,9 @@
                                                 <color key="value" red="0.99991279840000002" green="0.84313725490000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="changedNewPassowrdTextField:" destination="vye-0s-U07" eventType="editingChanged" id="zbR-ea-nsN"/>
+                                        </connections>
                                     </textField>
                                 </subviews>
                                 <constraints>
@@ -145,13 +151,37 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F5U-UJ-3mC">
+                                <rect key="frame" x="340" y="390" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="FAV-c3-vA2"/>
+                                    <constraint firstAttribute="height" constant="30" id="FDc-uH-Pcq"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="showPassword:" destination="vye-0s-U07" eventType="touchUpInside" id="5pB-po-ih1"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rrC-wp-jnc">
+                                <rect key="frame" x="340" y="583" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="lyl-0r-sID"/>
+                                    <constraint firstAttribute="width" constant="30" id="rzi-Tv-gAZ"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="showNewPassword:" destination="vye-0s-U07" eventType="touchUpInside" id="3KK-pz-9oq"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="jnY-eL-oMg"/>
                         <constraints>
                             <constraint firstItem="S64-3x-vBi" firstAttribute="centerX" secondItem="5XM-7V-siA" secondAttribute="centerX" id="4fg-3W-Jsz"/>
                             <constraint firstItem="S64-3x-vBi" firstAttribute="top" secondItem="6bu-mP-yOd" secondAttribute="bottom" constant="59" id="C2z-SL-TVF"/>
                             <constraint firstItem="6bu-mP-yOd" firstAttribute="centerY" secondItem="5XM-7V-siA" secondAttribute="centerY" id="EyX-vH-Egk"/>
+                            <constraint firstItem="rrC-wp-jnc" firstAttribute="top" secondItem="F5U-UJ-3mC" secondAttribute="bottom" constant="163" id="GxJ-02-0XR"/>
+                            <constraint firstItem="rrC-wp-jnc" firstAttribute="leading" secondItem="Ury-7u-5yB" secondAttribute="trailing" constant="8" symbolic="YES" id="aIb-56-M2p"/>
+                            <constraint firstItem="S64-3x-vBi" firstAttribute="top" secondItem="rrC-wp-jnc" secondAttribute="bottom" constant="59.5" id="d6T-eW-s1U"/>
                             <constraint firstItem="6bu-mP-yOd" firstAttribute="centerX" secondItem="5XM-7V-siA" secondAttribute="centerX" id="h8N-tD-bte"/>
+                            <constraint firstItem="F5U-UJ-3mC" firstAttribute="leading" secondItem="D5V-B3-wo4" secondAttribute="trailing" constant="8" symbolic="YES" id="wo7-rf-6ib"/>
                         </constraints>
                     </view>
                     <connections>
@@ -160,6 +190,8 @@
                         <outlet property="newPasswordTextField" destination="Ury-7u-5yB" id="Qc4-F7-SSF"/>
                         <outlet property="passwordTextField" destination="D5V-B3-wo4" id="F47-uZ-D01"/>
                         <outlet property="saveButton" destination="S64-3x-vBi" id="vkM-yX-oXw"/>
+                        <outlet property="showNewPassowrdButton" destination="rrC-wp-jnc" id="uHX-fq-BXn"/>
+                        <outlet property="showPasswordButton" destination="F5U-UJ-3mC" id="crg-2J-Xkp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9cK-iS-XGt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

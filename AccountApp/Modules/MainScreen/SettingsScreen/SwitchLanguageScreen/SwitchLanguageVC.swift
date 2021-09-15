@@ -20,13 +20,16 @@ class SwitchLanguageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        setupStrings()
         handleLanguage()
         bind()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        setupTheme()
+        ThemeManager.setupThemeForNavigationAndView(navigation: navigationController!, view: view)
+        ThemeManager.setupThemeForButtons(switchLanguageButton: switchLanguageButton)
+        ThemeManager.setupThemeForLabels(switchLanguageLabel: switchLanguageLabel)
     }
     
     public func configure(viewModel: SwitchLanguageViewModel) {
@@ -35,17 +38,7 @@ class SwitchLanguageViewController: UIViewController {
     
     // MARK: - Setup
     
-    private func setupTheme() {
-        navigationController?.view.tintColor = Colors.gold
-        navigationController?.navigationBar.isTranslucent = false
-        navigationController?.navigationBar.barTintColor = Theme.currentTheme.backgroundColor
-        view.backgroundColor = Theme.currentTheme.backgroundColor
-        switchLanguageLabel.textColor = Theme.currentTheme.textColor
-        switchLanguageButton.setTitleColor(Theme.currentTheme.textColor, for: .normal)
-    }
-    
     private func setupUI() {
-        setupStrings()
         switchLanguageButton.layer.borderWidth = 1.5
         switchLanguageButton.layer.borderColor = CGColor(red: 255/255, green: 215/255, blue: 0/255, alpha: 1)
     }

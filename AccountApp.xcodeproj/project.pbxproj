@@ -34,6 +34,7 @@
 		CE47F475261DF19C005F1C69 /* RegistrationScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE47F474261DF19C005F1C69 /* RegistrationScreen.storyboard */; };
 		CE48AED326207FC60076B311 /* ChangeProfileScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE48AED226207FC60076B311 /* ChangeProfileScreen.storyboard */; };
 		CE48AED626207FEF0076B311 /* ChangeProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE48AED526207FEF0076B311 /* ChangeProfileVC.swift */; };
+		CE51BFD126F1DA5C00EA8EBA /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE51BFD026F1DA5C00EA8EBA /* ThemeManager.swift */; };
 		CE52C96326EB7BAA00171C2F /* ListOfAccountsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE52C96226EB7BAA00171C2F /* ListOfAccountsVM.swift */; };
 		CE59069626E5FCC30059C84C /* RegistrationVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE59069526E5FCC30059C84C /* RegistrationVM.swift */; };
 		CE59069826E650710059C84C /* LoginVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE59069726E650710059C84C /* LoginVM.swift */; };
@@ -119,6 +120,7 @@
 		CE47F474261DF19C005F1C69 /* RegistrationScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RegistrationScreen.storyboard; sourceTree = "<group>"; };
 		CE48AED226207FC60076B311 /* ChangeProfileScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChangeProfileScreen.storyboard; sourceTree = "<group>"; };
 		CE48AED526207FEF0076B311 /* ChangeProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeProfileVC.swift; sourceTree = "<group>"; };
+		CE51BFD026F1DA5C00EA8EBA /* ThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
 		CE52C96226EB7BAA00171C2F /* ListOfAccountsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOfAccountsVM.swift; sourceTree = "<group>"; };
 		CE59069526E5FCC30059C84C /* RegistrationVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationVM.swift; sourceTree = "<group>"; };
 		CE59069726E650710059C84C /* LoginVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVM.swift; sourceTree = "<group>"; };
@@ -344,6 +346,7 @@
 				CE5BEC2F26DFC72C00685981 /* LanguageNotificationHandler.swift */,
 				CE5BEC3126DFC74C00685981 /* NotificationHandler.swift */,
 				CE6EAF4E26E78DFF002785F0 /* ValidationManager.swift */,
+				CE51BFD026F1DA5C00EA8EBA /* ThemeManager.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -741,6 +744,7 @@
 				CE5ED1FF26E89D46007FCADF /* MainStep.swift in Sources */,
 				CE477442261F526F00A6DD5B /* Constants.swift in Sources */,
 				CE63301526DCFD7200E8F311 /* CoreDataDB.swift in Sources */,
+				CE51BFD126F1DA5C00EA8EBA /* ThemeManager.swift in Sources */,
 				CE5BEC2A26DFB6CC00685981 /* Strings.swift in Sources */,
 				CE5ED20126E8A53C007FCADF /* UIWindowExtension.swift in Sources */,
 				CE6EAF4926E74CB5002785F0 /* SwitchLanguageVM.swift in Sources */,
