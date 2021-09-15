@@ -39,6 +39,7 @@ class SwitchThemeViewController: UIViewController {
     
     private func setupStrings() {
         changeThemeLabel.text = L10n.switchThemeVCLabel
+        navigationController?.navigationBar.topItem?.title = L10n.switchThemeVCNavigationTitle
     }
     
     private func handleLanguage() {

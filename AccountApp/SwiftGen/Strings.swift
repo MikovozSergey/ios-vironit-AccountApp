@@ -55,6 +55,10 @@ enum L10n {
   static var change: String {
     return L10n.tr("Localizable", "Change")
   }
+  /// Change Language
+  static var changeLanguageVCNavigationTitle: String {
+    return L10n.tr("Localizable", "ChangeLanguageVCNavigationTitle")
+  }
   /// Enter your old login
   static var changeProfileVCLoginPlaceholder: String {
     return L10n.tr("Localizable", "ChangeProfileVCLoginPlaceholder")
@@ -170,6 +174,10 @@ enum L10n {
   /// Change theme on Dark?
   static var switchThemeVCLabel: String {
     return L10n.tr("Localizable", "SwitchThemeVCLabel")
+  }
+  /// Change Theme
+  static var switchThemeVCNavigationTitle: String {
+    return L10n.tr("Localizable", "SwitchThemeVCNavigationTitle")
   }
   /// Change theme?
   static var switchThemeVCTitle: String {

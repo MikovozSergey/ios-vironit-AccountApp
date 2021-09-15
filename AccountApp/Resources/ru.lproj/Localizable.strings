@@ -50,11 +50,13 @@
 // MARK: SwitchLanguageVC
 
 "SwitchLanguageVCTitle" = "Хотите изменить язык приложения на English?";
+"ChangeLanguageVCNavigationTitle" = "Смена Языка";
 
 // MARK: SwitchThemeVC
 
 "SwitchThemeVCTitle" = "Изменить тему?";
 "SwitchThemeVCLabel" = "Изменить тему на темную?";
+"SwitchThemeVCNavigationTitle" = "Смена Темы";
 
 // MARK: Alert
 
