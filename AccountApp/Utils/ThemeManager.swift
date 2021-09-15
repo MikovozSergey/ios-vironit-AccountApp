@@ -14,6 +14,9 @@ final public class ThemeManager {
         themeSwitch?.tintColor = Theme.currentTheme.accentColor
         themeSwitch?.onTintColor = Theme.currentTheme.accentColor
         tableView?.backgroundColor = Theme.currentTheme.backgroundColor
+        tableView?.separatorColor = Theme.currentTheme.separatorColor
+        tableView?.layoutMargins = UIEdgeInsets.zero
+        tableView?.separatorInset = UIEdgeInsets.zero
     }
     
     static func setupThemeForTextFields(loginTextField: SkyFloatingLabelTextField, passwordTextField: SkyFloatingLabelTextField, newLoginTextField: SkyFloatingLabelTextField? = nil, newPasswordTextField: SkyFloatingLabelTextField? = nil) {

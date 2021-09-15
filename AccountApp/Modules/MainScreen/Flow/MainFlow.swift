@@ -44,6 +44,10 @@ class MainFlow: Flow {
             firstRoot.tabBarItem = firstTabBar
             listOfAccountsRoot.tabBarItem = listOfAccountsTabBar
             settingsRoot.tabBarItem = settingsTabBar
+            let topline = CALayer()
+            topline.frame = CGRect(x: 0, y: 0, width: self.rootViewController.tabBar.frame.width, height: 1)
+            topline.backgroundColor = UIColor(named: "separatorTabBarColor")?.cgColor
+            self.rootViewController.tabBar.layer.addSublayer(topline)
             self.rootViewController.tabBar.isTranslucent = false
             self.rootViewController.tabBar.tintColor = Colors.gold
             self.rootViewController.tabBar.barTintColor = Theme.currentTheme.backgroundColor
