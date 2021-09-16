@@ -1,11 +1,14 @@
 import RxCocoa
 import RxSwift
+// import SkyFloatingLabelTextField
 import UIKit
 
 struct LoginInput {
     let logInEvent: ControlEvent<Void>
+ //   let showPasswordEvent: ControlEvent<Void>
     let loginText: Driver<String?>
     let passwordText: Driver<String?>
+//    let passwordField: Driver<SkyFloatingLabelTextField?>
 }
 
 struct LoginOutput {
@@ -44,6 +47,12 @@ class LoginViewModel: AppStepper {
                 self.loginState.accept(self.state)
                 }
             )
+//            input.showPasswordEvent.subscribe(onNext: { [weak self] in
+//                guard let self = self else { return }
+//                self.passwordTextField.isSecureTextEntry = !self.passwordTextField.isSecureTextEntry
+//                let image = self.passwordTextField.isSecureTextEntry ? UIImage(named: "iconEye") : UIImage(named: "iconClosedEye")
+//                self.showPasswordButton.setImage(image, for: .normal)
+//            })
         )
         return LoginOutput(loginState: loginState.asDriver(), disposable: disposable)
     }

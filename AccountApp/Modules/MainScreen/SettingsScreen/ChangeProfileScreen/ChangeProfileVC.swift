@@ -34,6 +34,7 @@ class ChangeProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupDelegate()
         setupUI()
         setupStrings()
         setupStringsForAlert()
@@ -125,6 +126,13 @@ class ChangeProfileViewController: UIViewController {
         saveButton.setTitle(L10n.save, for: .normal)
     }
     
+    private func animateViewMoving(_ up: Bool, moveValue: CGFloat) {
+        let movement: CGFloat = ( up ? -moveValue : moveValue)
+        UIView.animate(withDuration: 0.3) {
+            self.view.frame = self.view.frame.offsetBy(dx: 0, dy: movement)
+        }
+    }
+    
     private func handleLanguage() {
         languageHandler.startListening { [weak self] in
             self?.setupStrings()
@@ -160,6 +168,14 @@ extension ChangeProfileViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+            animateViewMoving(true, moveValue: 100)
+    }
+
+    func textFieldDidEndEditing(_ textField: UITextField) {
+            animateViewMoving(false, moveValue: 100)
     }
 }
 

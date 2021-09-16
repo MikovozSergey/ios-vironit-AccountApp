@@ -117,6 +117,13 @@ class LogInViewController: UIViewController {
         logInButton.setTitle(L10n.enter, for: .normal)
     }
     
+    private func animateViewMoving(_ up: Bool, moveValue: CGFloat) {
+        let movement: CGFloat = ( up ? -moveValue : moveValue)
+        UIView.animate(withDuration: 0.3) {
+            self.view.frame = self.view.frame.offsetBy(dx: 0, dy: movement)
+        }
+    }
+    
     private func handleLanguage() {
         languageHandler.startListening { [weak self] in
             self?.setupStrings()
@@ -145,6 +152,13 @@ extension LogInViewController: UITextFieldDelegate {
         return true
     }
     
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+            animateViewMoving(true, moveValue: 100)
+    }
+
+    func textFieldDidEndEditing(_ textField: UITextField) {
+            animateViewMoving(false, moveValue: 100)
+    }
 }
 
 // MARK: - Binding
@@ -155,8 +169,10 @@ private extension LogInViewController {
         let output = viewModel.bind(
             input: LoginInput(
                 logInEvent: logInButton.rx.tap,
+      //          showPasswordEvent: showPasswordButton.rx.tap,
                 loginText: loginTextField.rx.text.asDriver(),
                 passwordText: passwordTextField.rx.text.asDriver()
+                //            passwordField: passwordTextField.rx.
             )
         )
         let loginStateDisposable = output.loginState.skip(1).drive(onNext: { [weak self] state in
