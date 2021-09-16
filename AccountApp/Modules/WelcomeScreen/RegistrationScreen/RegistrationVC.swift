@@ -28,18 +28,6 @@ class RegistrationViewController: UIViewController {
     private var alertRecommendationForFieldsMessage = ""
     private var alertDoneTitle = ""
     private var alertErrorLoginExistsMessage = ""
-    
-    // MARK: - IBActions
-    
-    @IBAction private func showPassword(_ sender: Any) {
-        passwordTextField.isSecureTextEntry = !passwordTextField.isSecureTextEntry
-        let image = passwordTextField.isSecureTextEntry ? UIImage(named: "iconEye") : UIImage(named: "iconClosedEye")
-        showPasswordButton.setImage(image, for: .normal)
-    }
-    
-    @IBAction private func changedPasswordTextField(_ sender: Any) {
-        showPasswordButton.isHidden = passwordTextField.text?.isEmpty ?? true
-    }
 
     // MARK: - Lifecycle
     
@@ -52,6 +40,7 @@ class RegistrationViewController: UIViewController {
         handleLanguage()
         bind()
         setupKeyboard()
+        setupBinding()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -66,6 +55,20 @@ class RegistrationViewController: UIViewController {
     }
     
     // MARK: - Logic
+    
+    private func setupBinding() {
+        showPasswordButton.rx.tap.subscribe(onNext: { [weak self] in
+            guard let self = self else { return }
+            self.passwordTextField.isSecureTextEntry = !self.passwordTextField.isSecureTextEntry
+            let image = self.passwordTextField.isSecureTextEntry ? UIImage(named: "iconEye") : UIImage(named: "iconClosedEye")
+            self.showPasswordButton.setImage(image, for: .normal)
+        }).disposed(by: disposeBag)
+        
+        passwordTextField.rx.controlEvent(.editingChanged).subscribe(onNext: { [weak self] in
+            guard let self = self else { return }
+            self.showPasswordButton.isHidden = self.passwordTextField.text?.isEmpty ?? true
+        }).disposed(by: disposeBag)
+    }
     
     private func setupUI() {
         showPasswordButton.isHidden = true

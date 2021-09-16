@@ -16,27 +16,6 @@ class ChangeProfileViewController: UIViewController {
     @IBOutlet private weak var showPasswordButton: UIButton!
     @IBOutlet private weak var showNewPassowrdButton: UIButton!
     
-    // MARK: - IBActions
-    
-    @IBAction private func changedPasswordTextField(_ sender: Any) {
-        showPasswordButton.isHidden = passwordTextField.text?.isEmpty ?? true
-    }
-    @IBAction private func changedNewPassowrdTextField(_ sender: Any) {
-        showNewPassowrdButton.isHidden = newPasswordTextField.text?.isEmpty ?? true
-    }
-    
-    @IBAction private func showPassword(_ sender: Any) {
-        passwordTextField.isSecureTextEntry = !passwordTextField.isSecureTextEntry
-        let image = passwordTextField.isSecureTextEntry ? UIImage(named: "iconEye") : UIImage(named: "iconClosedEye")
-        showPasswordButton.setImage(image, for: .normal)
-    }
-    
-    @IBAction private func showNewPassword(_ sender: Any) {
-        newPasswordTextField.isSecureTextEntry = !newPasswordTextField.isSecureTextEntry
-        let image = newPasswordTextField.isSecureTextEntry ? UIImage(named: "iconEye") : UIImage(named: "iconClosedEye")
-        showNewPassowrdButton.setImage(image, for: .normal)
-    }
-    
     // MARK: - Variables
     
     private let dataBase = DataBase()
@@ -61,6 +40,7 @@ class ChangeProfileViewController: UIViewController {
         handleLanguage()
         bind()
         setupKeyboard()
+        setupBinding()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -77,12 +57,39 @@ class ChangeProfileViewController: UIViewController {
     
     // MARK: - Setup
     
+    private func setupBinding() {
+        showPasswordButton.rx.tap.subscribe(onNext: { [weak self] in
+            guard let self = self else { return }
+            self.passwordTextField.isSecureTextEntry = !self.passwordTextField.isSecureTextEntry
+            let image = self.passwordTextField.isSecureTextEntry ? UIImage(named: "iconEye") : UIImage(named: "iconClosedEye")
+            self.showPasswordButton.setImage(image, for: .normal)
+        }).disposed(by: disposeBag)
+        
+        showNewPassowrdButton.rx.tap.subscribe(onNext: { [weak self] in
+            guard let self = self else { return }
+            self.newPasswordTextField.isSecureTextEntry = !self.newPasswordTextField.isSecureTextEntry
+            let image = self.newPasswordTextField.isSecureTextEntry ? UIImage(named: "iconEye") : UIImage(named: "iconClosedEye")
+            self.showNewPassowrdButton.setImage(image, for: .normal)
+        }).disposed(by: disposeBag)
+        
+        passwordTextField.rx.controlEvent(.editingChanged).subscribe(onNext: { [weak self] in
+            guard let self = self else { return }
+            self.showPasswordButton.isHidden = self.passwordTextField.text?.isEmpty ?? true
+        }).disposed(by: disposeBag)
+        
+        newPasswordTextField.rx.controlEvent(.editingChanged).subscribe(onNext: { [weak self] in
+            guard let self = self else { return }
+            self.showNewPassowrdButton.isHidden = self.newPasswordTextField.text?.isEmpty ?? true
+        }).disposed(by: disposeBag)
+    }
+    
     private func setupUI() {
         [loginTextField, passwordTextField, newLoginTextField, newPasswordTextField].forEach {
             $0.textAlignment = .center
         }
         [showPasswordButton, showNewPassowrdButton].forEach {
             $0?.isHidden = true
+            $0?.setImage(UIImage(named: "iconEye"), for: .normal)
         }
         saveButton.layer.borderWidth = 1.5
         saveButton.layer.borderColor = Colors.gold.cgColor

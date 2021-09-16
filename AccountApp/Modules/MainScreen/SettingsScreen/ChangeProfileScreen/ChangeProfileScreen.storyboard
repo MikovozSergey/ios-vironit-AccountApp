@@ -70,9 +70,6 @@
                                                 <color key="value" red="0.99991279840000002" green="0.84313725490000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <action selector="changedPasswordTextField:" destination="vye-0s-U07" eventType="editingChanged" id="mXW-GJ-I5G"/>
-                                        </connections>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="O9u-iG-6pn" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
                                         <rect key="frame" x="0.0" y="194" width="250" height="40"/>
@@ -125,9 +122,6 @@
                                                 <color key="value" red="0.99991279840000002" green="0.84313725490000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <action selector="changedNewPassowrdTextField:" destination="vye-0s-U07" eventType="editingChanged" id="zbR-ea-nsN"/>
-                                        </connections>
                                     </textField>
                                 </subviews>
                                 <constraints>
@@ -157,9 +151,6 @@
                                     <constraint firstAttribute="width" constant="30" id="FAV-c3-vA2"/>
                                     <constraint firstAttribute="height" constant="30" id="FDc-uH-Pcq"/>
                                 </constraints>
-                                <connections>
-                                    <action selector="showPassword:" destination="vye-0s-U07" eventType="touchUpInside" id="5pB-po-ih1"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rrC-wp-jnc">
                                 <rect key="frame" x="340" y="583" width="30" height="30"/>
@@ -167,9 +158,6 @@
                                     <constraint firstAttribute="height" constant="30" id="lyl-0r-sID"/>
                                     <constraint firstAttribute="width" constant="30" id="rzi-Tv-gAZ"/>
                                 </constraints>
-                                <connections>
-                                    <action selector="showNewPassword:" destination="vye-0s-U07" eventType="touchUpInside" id="3KK-pz-9oq"/>
-                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="jnY-eL-oMg"/>

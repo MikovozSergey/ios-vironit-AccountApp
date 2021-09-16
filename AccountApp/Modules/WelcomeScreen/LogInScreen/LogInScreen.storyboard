@@ -70,9 +70,6 @@
                                                 <color key="value" red="0.99991279840000002" green="0.84313725490000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <action selector="changedPasswordTextField:" destination="Y6W-OH-hqX" eventType="editingChanged" id="vNB-Um-0J5"/>
-                                        </connections>
                                     </textField>
                                 </subviews>
                                 <constraints>
@@ -102,9 +99,6 @@
                                     <constraint firstAttribute="width" constant="30" id="6cN-AY-oRF"/>
                                     <constraint firstAttribute="height" constant="30" id="pg4-xL-5rE"/>
                                 </constraints>
-                                <connections>
-                                    <action selector="showPassword:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="VTg-BD-qrq"/>
-                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="K0Y-S8-W2k"/>
