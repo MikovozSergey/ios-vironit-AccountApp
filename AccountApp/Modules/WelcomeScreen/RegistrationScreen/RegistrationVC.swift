@@ -51,6 +51,7 @@ class RegistrationViewController: UIViewController {
         setupStringsForAlert()
         handleLanguage()
         bind()
+        setupKeyboard()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -118,6 +119,15 @@ class RegistrationViewController: UIViewController {
         languageHandler.startListening { [weak self] in
             self?.setupStrings()
         }
+    }
+    
+    private func setupKeyboard() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
+        self.view.addGestureRecognizer(tap)
+    }
+    
+    @objc func hideKeyboard() {
+        self.view.endEditing(true)
     }
 }
 

@@ -26,7 +26,7 @@ class ListOfAccountsViewController: UIViewController {
         setupDelegate()
         setupUI()
         setupStrings()
-        handleLanguage()
+        setupKeyboard()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -36,6 +36,7 @@ class ListOfAccountsViewController: UIViewController {
         ThemeManager.setupThemeForNavigationAndView(navigation: navigationController!, view: view)
         ThemeManager.setupThemeForSwitchAndTableView(tableView: tableView)
         ThemeManager.setupThemeForSearchBar(searchBar: searchBar)
+        handleLanguage()
         tableView.reloadData()
     }
     
@@ -48,6 +49,8 @@ class ListOfAccountsViewController: UIViewController {
     }
     
     private func setupUI() {
+        guard let cancelButton = searchBar.value(forKey: "cancelButton") as? UIButton else { return }
+        cancelButton.setTitle("Cancel", for: .normal)
         tableView.tableFooterView = UIView()
     }
     
@@ -59,6 +62,15 @@ class ListOfAccountsViewController: UIViewController {
         languageHandler.startListening { [weak self] in
             self?.setupStrings()
         }
+    }
+    
+    private func setupKeyboard() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
+        self.view.addGestureRecognizer(tap)
+    }
+    
+    @objc func hideKeyboard() {
+        self.view.endEditing(true)
     }
 }
 
@@ -91,6 +103,17 @@ extension ListOfAccountsViewController: UISearchBarDelegate {
             return dataString.range(of: searchText, options: .caseInsensitive) != nil
         })
         tableView.reloadData()
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.text = ""
+        filteredListOfAccounts =  dataBase.arrayOfLogins
+        searchBar.endEditing(true)
+        tableView.reloadData()
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
     }
 }
 

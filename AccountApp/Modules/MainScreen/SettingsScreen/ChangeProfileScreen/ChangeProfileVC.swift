@@ -60,6 +60,7 @@ class ChangeProfileViewController: UIViewController {
         setupStringsForAlert()
         handleLanguage()
         bind()
+        setupKeyboard()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -130,6 +131,15 @@ class ChangeProfileViewController: UIViewController {
         alert.addAction(doneButton)
         
         present(alert, animated: true)
+    }
+    
+    private func setupKeyboard() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
+        self.view.addGestureRecognizer(tap)
+    }
+    
+    @objc func hideKeyboard() {
+        self.view.endEditing(true)
     }
 }
 

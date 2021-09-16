@@ -46,6 +46,8 @@ final public class ThemeManager {
         searchBar.backgroundImage = UIImage()
         searchBar.isTranslucent = true
         let textFieldInSearchBar = searchBar.value(forKey: "searchField") as? UITextField
+        let cancelButton = searchBar.value(forKey: "cancelButton") as? UIButton
+        cancelButton?.setTitleColor(Colors.gold, for: .normal)
         textFieldInSearchBar?.backgroundColor = Theme.currentTheme.backgroundColor
         textFieldInSearchBar?.textColor = Theme.currentTheme.textColor
         textFieldInSearchBar?.layer.borderWidth = 1.5

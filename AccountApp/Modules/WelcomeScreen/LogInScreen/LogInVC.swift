@@ -13,7 +13,7 @@ class LogInViewController: UIViewController {
     @IBOutlet private weak var passwordTextField: SkyFloatingLabelTextField!
     @IBOutlet private weak var logInButton: UIButton!
     @IBOutlet private weak var showPasswordButton: UIButton!
-    
+
     // MARK: - Variables
 
     private let keychain = KeychainSwift()
@@ -50,6 +50,7 @@ class LogInViewController: UIViewController {
         setupStringsForAlert()
         handleLanguage()
         bind()
+        setupKeyboard()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -117,6 +118,15 @@ class LogInViewController: UIViewController {
         languageHandler.startListening { [weak self] in
             self?.setupStrings()
         }
+    }
+    
+    private func setupKeyboard() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
+        self.view.addGestureRecognizer(tap)
+    }
+    
+    @objc func hideKeyboard() {
+        self.view.endEditing(true)
     }
 }
 

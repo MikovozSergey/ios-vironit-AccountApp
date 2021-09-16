@@ -108,6 +108,7 @@
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="K0Y-S8-W2k"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="Dch-hR-elr" firstAttribute="centerX" secondItem="UEP-La-9jy" secondAttribute="centerX" id="0XK-2s-AN9"/>
                             <constraint firstItem="Ixm-ih-oH0" firstAttribute="centerY" secondItem="UEP-La-9jy" secondAttribute="centerY" id="CQw-ci-AsC"/>

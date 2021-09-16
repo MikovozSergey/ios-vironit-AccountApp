@@ -51,6 +51,10 @@ enum L10n {
   static var back: String {
     return L10n.tr("Localizable", "Back")
   }
+  /// Cancel
+  static var cancel: String {
+    return L10n.tr("Localizable", "Cancel")
+  }
   /// Change
   static var change: String {
     return L10n.tr("Localizable", "Change")

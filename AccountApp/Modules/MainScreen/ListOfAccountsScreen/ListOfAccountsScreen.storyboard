@@ -31,9 +31,9 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="h5N-hw-Qu7">
+                            <searchBar contentMode="redraw" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="h5N-hw-Qu7">
                                 <rect key="frame" x="0.0" y="44" width="414" height="51"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
                             </searchBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="XFK-YU-QDz"/>

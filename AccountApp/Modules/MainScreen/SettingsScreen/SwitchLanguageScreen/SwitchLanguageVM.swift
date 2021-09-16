@@ -15,7 +15,7 @@ class SwitchLanguageViewModel: AppStepper {
     public func bind(input: SwitchLanguageInput) -> SwitchLanguageOutput {
         let switchDisposable = input.switchEvent.subscribe(onNext: { _ in
             let language = UserDefaults.standard.string(forKey: kLanguageApplication)
-            if language ==  Language.english.languageShort {
+            if language == Language.english.languageShort {
                 UserDefaults.standard.set(Language.russian.languageShort, forKey: kLanguageApplication)
                 L10n.bundle = Bundle(path: Bundle.main.path(forResource: "ru", ofType: "lproj")!)
             } else {

@@ -4,6 +4,7 @@
 "Save" = "Сохранить";
 "Change" = "Изменить";
 "Back" = "Назад";
+"Cancel" = "Отмена";
 
 // MARK: TabBarItem
 
