@@ -8,7 +8,12 @@ class RegistrationFlow: Flow {
     }
 
     let rootViewController = UINavigationController()
+    let isLogin: Bool
     let viewModel = RegistrationViewModel()
+    
+    init(isLogin: Bool) {
+        self.isLogin = isLogin
+    }
     
     deinit {
         print("\(type(of: self)): \(#function)")
@@ -32,12 +37,12 @@ class RegistrationFlow: Flow {
     }
     
     private func navigateToRegistration() -> FlowContributors {
-        let storyboard = UIStoryboard(name: "RegistrationScreen", bundle: nil)
-        guard let vc = storyboard.instantiateViewController(identifier: "RegistrationViewController") as? RegistrationViewController else { return .none }
+        let storyboard = UIStoryboard(name: "LogInScreen", bundle: nil)
+        guard let vc = storyboard.instantiateViewController(identifier: "LogInViewController") as? LogInViewController else { return .none }
         let backButton: UIBarButtonItem = UIBarButtonItem(title: nil, style: UIBarButtonItem.Style.done, target: self, action: #selector(backAction))
         backButton.image = UIImage(named: "iconBack")
         vc.navigationItem.leftBarButtonItem = backButton
-        vc.configure(viewModel: viewModel)
+        vc.configure(registrationVM: viewModel, isLogin: false)
         self.rootViewController.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: Colors.gold]
         self.rootViewController.pushViewController(vc, animated: false)
         return .one(flowContributor: .contribute(withNextPresentable: vc,

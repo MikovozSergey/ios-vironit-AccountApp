@@ -8,8 +8,13 @@ class LoginFlow: Flow {
     }
 
     let rootViewController = UINavigationController()
+    let isLogin: Bool
     let viewModel = LoginViewModel()
 
+    init(isLogin: Bool) {
+        self.isLogin = isLogin
+    }
+    
     deinit {
         print("\(type(of: self)): \(#function)")
     }
@@ -36,7 +41,7 @@ class LoginFlow: Flow {
         let backButton: UIBarButtonItem = UIBarButtonItem(title: nil, style: UIBarButtonItem.Style.done, target: self, action: #selector(backAction))
         backButton.image = UIImage(named: "iconBack")
         vc.navigationItem.leftBarButtonItem = backButton
-        vc.configure(viewModel: viewModel)
+        vc.configure(loginVM: viewModel, isLogin: true)
         self.rootViewController.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: Colors.gold]
         self.rootViewController.pushViewController(vc, animated: false)
         return .one(flowContributor: .contribute(withNextPresentable: vc,

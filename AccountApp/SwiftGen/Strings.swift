@@ -172,6 +172,10 @@ enum L10n {
     return L10n.tr("Localizable", "SettingsVCLogOutPopTipSentenses")
   }
   /// Do you want to edit the app language to Russian?
+  static var switchLanguageVCLabel: String {
+    return L10n.tr("Localizable", "SwitchLanguageVCLabel")
+  }
+  /// Change language?
   static var switchLanguageVCTitle: String {
     return L10n.tr("Localizable", "SwitchLanguageVCTitle")
   }

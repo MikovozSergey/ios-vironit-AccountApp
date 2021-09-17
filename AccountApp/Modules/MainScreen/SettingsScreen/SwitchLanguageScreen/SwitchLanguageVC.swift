@@ -44,7 +44,7 @@ class SwitchLanguageViewController: UIViewController {
     }
     
     private func setupStrings() {
-        switchLanguageLabel.text = L10n.switchLanguageVCTitle
+        switchLanguageLabel.text = L10n.switchLanguageVCLabel
         switchLanguageButton.setTitle(L10n.change, for: .normal)
         navigationController?.navigationBar.topItem?.title = L10n.changeLanguageVCNavigationTitle
     }

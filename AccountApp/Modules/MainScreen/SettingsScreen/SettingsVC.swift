@@ -66,8 +66,6 @@ class SettingsViewController: UIViewController {
             $0?.layer.borderWidth = 1.5
             $0?.layer.borderColor = Colors.gold.cgColor
         }
-        changeLanguageButton.titleLabel?.numberOfLines = 0
-            changeLanguageButton.titleLabel?.lineBreakMode = .byWordWrapping
     }
     
     private func setupStrings() {

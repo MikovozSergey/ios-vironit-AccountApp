@@ -50,7 +50,8 @@
 
 // MARK: SwitchLanguageVC
 
-"SwitchLanguageVCTitle" = "Do you want to edit the app language to Russian?";
+"SwitchLanguageVCTitle" = "Change language?";
+"SwitchLanguageVCLabel" = "Do you want to edit the app language to Russian?";
 "ChangeLanguageVCNavigationTitle" = "Change Language";
 
 // MARK: SwitchThemeVC

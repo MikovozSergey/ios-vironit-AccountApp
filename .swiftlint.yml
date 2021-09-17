@@ -19,6 +19,7 @@ disabled_rules:
 - force_cast
 - identifier_name
 - discarded_notification_center_observer
+- function_body_length
 excluded:
 - Pods
 - Weather/Application/AppDelegate.swift

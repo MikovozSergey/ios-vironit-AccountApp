@@ -45,7 +45,7 @@ class AuthFlow: Flow {
     }
     
     private func navigateToLogin() -> FlowContributors {
-        let loginFlow = LoginFlow()
+        let loginFlow = LoginFlow(isLogin: true)
         Flows.use(loginFlow, when: .ready, block: { [weak self] flowRoot in
             guard let self = self else { return }
             self.rootViewController.present(flowRoot, animated: true, presentationStyle: .fullScreen)
@@ -55,7 +55,7 @@ class AuthFlow: Flow {
     }
     
     private func navigateToRegistration() -> FlowContributors {
-        let registrationFlow = RegistrationFlow()
+        let registrationFlow = RegistrationFlow(isLogin: false)
         Flows.use(registrationFlow, when: .ready, block: { [weak self] flowRoot in
             guard let self = self else { return }
             self.rootViewController.present(flowRoot, animated: true, presentationStyle: .fullScreen)
