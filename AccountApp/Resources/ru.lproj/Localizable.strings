@@ -39,6 +39,7 @@
 
 // MARK: ChangeProfileVC
 
+"ChangeProfileVCNavigationTitle" = "Смена логина и пароля";
 "ChangeProfileVCLoginTitle" = "Ваш старый Логин";
 "ChangeProfileVCLoginPlaceholder" = "Введите старый логин";
 "ChangeProfileVCPasswordTitle" = "Ваш старый Пароль";

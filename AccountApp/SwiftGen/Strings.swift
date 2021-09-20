@@ -71,6 +71,10 @@ enum L10n {
   static var changeProfileVCLoginTitle: String {
     return L10n.tr("Localizable", "ChangeProfileVCLoginTitle")
   }
+  /// Change login and password
+  static var changeProfileVCNavigationTitle: String {
+    return L10n.tr("Localizable", "ChangeProfileVCNavigationTitle")
+  }
   /// Enter your new login
   static var changeProfileVCNewLoginPlaceholder: String {
     return L10n.tr("Localizable", "ChangeProfileVCNewLoginPlaceholder")
@@ -204,7 +208,7 @@ enum L10n {
 
 extension L10n {
   private static func tr(_ table: String, _ key: String, _ args: CVarArg...) -> String {
-    let language = UserDefaults.standard.string(forKey: kLanguageApplication)
+    let language = AppSettings.shared.language
     L10n.bundle = Bundle(path: Bundle.main.path(forResource: language, ofType: "lproj")!)
     let format = NSLocalizedString(key, tableName: table, bundle: bundle ?? Bundle(for: BundleToken.self), comment: "")
     return String(format: format, locale: Locale.current, arguments: args)

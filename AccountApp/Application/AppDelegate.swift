@@ -8,18 +8,13 @@
 import UIKit
 import CoreData
 
-public let kLanguageApplication = "kLanguageApplication"
-
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        Theme.currentTheme = UserDefaults.standard.bool(forKey: "DarkTheme") ? DarkTheme() : LightTheme()
-        
-        if UserDefaults.standard.string(forKey: kLanguageApplication) == nil {
-            UserDefaults.standard.set(Language.english.languageShort, forKey: kLanguageApplication)
-        }
+        _ = AppSettings.shared.load()
+        Theme.currentTheme = AppSettings.shared.darkTheme ? DarkTheme() : LightTheme()
         
         return true
     }

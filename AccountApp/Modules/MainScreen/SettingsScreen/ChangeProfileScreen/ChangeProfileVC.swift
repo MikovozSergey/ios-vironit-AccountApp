@@ -123,6 +123,7 @@ class ChangeProfileViewController: UIViewController {
         passwordTextField.placeholder = L10n.changeProfileVCPasswordPlaceholder
         newPasswordTextField.placeholder = L10n.changeProfileVCNewPasswordPlaceholder
         newLoginTextField.placeholder = L10n.changeProfileVCNewLoginPlaceholder
+        navigationController?.navigationBar.topItem?.title = L10n.changeProfileVCNavigationTitle
         saveButton.setTitle(L10n.save, for: .normal)
     }
     

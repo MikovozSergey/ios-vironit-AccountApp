@@ -14,13 +14,11 @@ class SwitchLanguageViewModel: AppStepper {
     
     public func bind(input: SwitchLanguageInput) -> SwitchLanguageOutput {
         let switchDisposable = input.switchEvent.subscribe(onNext: { _ in
-            let language = UserDefaults.standard.string(forKey: kLanguageApplication)
+            let language = AppSettings.shared.language
             if language == Language.english.languageShort {
-                UserDefaults.standard.set(Language.russian.languageShort, forKey: kLanguageApplication)
-                L10n.bundle = Bundle(path: Bundle.main.path(forResource: "ru", ofType: "lproj")!)
+                self.tryAppSettings()
             } else {
-                UserDefaults.standard.set(Language.english.languageShort, forKey: kLanguageApplication)
-                L10n.bundle = Bundle(path: Bundle.main.path(forResource: "en", ofType: "lproj")!)
+                self.resetSettings()
             }
             DispatchQueue.main.async {
                 NotificationCenter.default.post(name: Notification.Name.changeLanguage, object: nil)
@@ -29,4 +27,25 @@ class SwitchLanguageViewModel: AppStepper {
         )
         return SwitchLanguageOutput(disposable: switchDisposable)
     }
+    
+    private func tryAppSettings() {
+        
+        AppSettings.shared.language = "ru"
+        
+        if AppSettings.shared.update() {
+            if let dictionary = AppSettings.shared.toDictionary() {
+                print(dictionary.compactMapValues { $0 })
+            }
+        }
+    }
+    
+    private func resetSettings() {
+        
+        AppSettings.shared.language = "en"
+        
+        if AppSettings.shared.update() {
+            if let dictionary = AppSettings.shared.toDictionary() {
+                print(dictionary.compactMapValues { $0 })
+            }
+        }    }
 }

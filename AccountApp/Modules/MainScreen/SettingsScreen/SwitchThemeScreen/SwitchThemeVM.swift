@@ -12,15 +12,23 @@ struct SwitchThemeOutput {
 }
 
 class SwitchThemeViewModel: AppStepper {
-    
-    private let switchThemeState = BehaviorRelay<Bool>(value: UserDefaults.standard.bool(forKey: "DarkTheme"))
+    private let switchThemeState = BehaviorRelay<Bool>(value: AppSettings.shared.darkTheme)
 
     public func bind(input: SwitchThemeInput) -> SwitchThemeOutput {
         let switchDisposable = input.switchEvent.subscribe(onNext: { [weak self] value in
             self?.switchThemeState.accept(value)
-            UserDefaults.standard.set(value, forKey: "DarkTheme")
+            self?.tryAppSettings(value: value)
             }
         )
         return SwitchThemeOutput(switchThemeState: switchThemeState.asObservable(), disposable: switchDisposable)
+    }
+    
+    private func tryAppSettings(value: Bool) {
+        AppSettings.shared.darkTheme = value
+        if AppSettings.shared.update() {
+            if let dictionary = AppSettings.shared.toDictionary() {
+                print(dictionary.compactMapValues { $0 })
+            }
+        }
     }
 }

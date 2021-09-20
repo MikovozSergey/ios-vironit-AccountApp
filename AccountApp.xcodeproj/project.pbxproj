@@ -32,6 +32,8 @@
 		CE47F44D261DE47F005F1C69 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE47F44C261DE47F005F1C69 /* UserModel.swift */; };
 		CE48AED326207FC60076B311 /* ChangeProfileScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE48AED226207FC60076B311 /* ChangeProfileScreen.storyboard */; };
 		CE48AED626207FEF0076B311 /* ChangeProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE48AED526207FEF0076B311 /* ChangeProfileVC.swift */; };
+		CE507AD526F862F700A4E6B9 /* SettingsManageable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE507AD426F862F700A4E6B9 /* SettingsManageable.swift */; };
+		CE507AD726F8638900A4E6B9 /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE507AD626F8638900A4E6B9 /* AppSettings.swift */; };
 		CE51BFD126F1DA5C00EA8EBA /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE51BFD026F1DA5C00EA8EBA /* ThemeManager.swift */; };
 		CE52C96326EB7BAA00171C2F /* ListOfAccountsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE52C96226EB7BAA00171C2F /* ListOfAccountsVM.swift */; };
 		CE59069626E5FCC30059C84C /* RegistrationVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE59069526E5FCC30059C84C /* RegistrationVM.swift */; };
@@ -116,6 +118,8 @@
 		CE47F44C261DE47F005F1C69 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		CE48AED226207FC60076B311 /* ChangeProfileScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChangeProfileScreen.storyboard; sourceTree = "<group>"; };
 		CE48AED526207FEF0076B311 /* ChangeProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeProfileVC.swift; sourceTree = "<group>"; };
+		CE507AD426F862F700A4E6B9 /* SettingsManageable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsManageable.swift; sourceTree = "<group>"; };
+		CE507AD626F8638900A4E6B9 /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
 		CE51BFD026F1DA5C00EA8EBA /* ThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
 		CE52C96226EB7BAA00171C2F /* ListOfAccountsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOfAccountsVM.swift; sourceTree = "<group>"; };
 		CE59069526E5FCC30059C84C /* RegistrationVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationVM.swift; sourceTree = "<group>"; };
@@ -334,6 +338,7 @@
 		CE47F433261DE0B9005F1C69 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				CE507AD326F862D800A4E6B9 /* Protocols */,
 				CE5E7E4726EF4AA1007A94E5 /* Extensions */,
 				CE1B99B926E10E490004280D /* Themes */,
 				CE477441261F526F00A6DD5B /* Constants.swift */,
@@ -343,6 +348,7 @@
 				CE5BEC3126DFC74C00685981 /* NotificationHandler.swift */,
 				CE6EAF4E26E78DFF002785F0 /* ValidationManager.swift */,
 				CE51BFD026F1DA5C00EA8EBA /* ThemeManager.swift */,
+				CE507AD626F8638900A4E6B9 /* AppSettings.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -400,6 +406,14 @@
 				CE59069926E655470059C84C /* ChangeProfileVM.swift */,
 			);
 			path = ChangeProfileScreen;
+			sourceTree = "<group>";
+		};
+		CE507AD326F862D800A4E6B9 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				CE507AD426F862F700A4E6B9 /* SettingsManageable.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		CE5BEC0D26DFA05000685981 /* SwiftGen */ = {
@@ -741,6 +755,7 @@
 				CE5ED20126E8A53C007FCADF /* UIWindowExtension.swift in Sources */,
 				CE6EAF4926E74CB5002785F0 /* SwitchLanguageVM.swift in Sources */,
 				CE59069A26E655470059C84C /* ChangeProfileVM.swift in Sources */,
+				CE507AD726F8638900A4E6B9 /* AppSettings.swift in Sources */,
 				CE7821C726E7B7A5006FF957 /* ChangeProfileStep.swift in Sources */,
 				CE477431261F387D00A6DD5B /* CustomViewForEditCredentialsCell.swift in Sources */,
 				CE59069626E5FCC30059C84C /* RegistrationVM.swift in Sources */,
@@ -769,6 +784,7 @@
 				CE6EAF4F26E78DFF002785F0 /* ValidationManager.swift in Sources */,
 				CE5BEC2C26DFBD5C00685981 /* LanguageEnum.swift in Sources */,
 				CE4514BB260DF1D40069CB6D /* SceneDelegate.swift in Sources */,
+				CE507AD526F862F700A4E6B9 /* SettingsManageable.swift in Sources */,
 				CE5BEC3026DFC72C00685981 /* LanguageNotificationHandler.swift in Sources */,
 				CED9CF3126DE5CD500DC239B /* SwitchLanguageVC.swift in Sources */,
 				CE1B99B326E100000004280D /* SwitchThemeVC.swift in Sources */,

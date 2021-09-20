@@ -60,7 +60,7 @@ enum {{enumName}} {
 
 extension {{enumName}} {
   private static func tr(_ table: String, _ key: String, _ args: CVarArg...) -> String {
-    let language = UserDefaults.standard.string(forKey: kLanguageApplication)
+    let language = AppSettings.shared.language
     L10n.bundle = Bundle(path: Bundle.main.path(forResource: language, ofType: "lproj")!)
     let format = NSLocalizedString(key, tableName: table, bundle: bundle ?? Bundle(for: BundleToken.self), comment: "")
     return String(format: format, locale: Locale.current, arguments: args)
