@@ -52,7 +52,7 @@
 // MARK: SwitchLanguageVC
 
 "SwitchLanguageVCTitle" = "Изменить язык?";
-"SwitchLanguageVCLabel" = "Хотите изменить язык приложения на English?";
+"SwitchLanguageVCLabel" = "Хотите изменить язык приложения на Английский?";
 "ChangeLanguageVCNavigationTitle" = "Смена Языка";
 
 // MARK: SwitchThemeVC

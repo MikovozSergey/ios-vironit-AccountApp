@@ -16,9 +16,9 @@ class SwitchLanguageViewModel: AppStepper {
         let switchDisposable = input.switchEvent.subscribe(onNext: { _ in
             let language = AppSettings.shared.language
             if language == Language.english.languageShort {
-                self.tryAppSettings()
+                self.tryAppSettings(language: Language.russian.languageShort)
             } else {
-                self.resetSettings()
+                self.tryAppSettings(language: Language.english.languageShort)
             }
             DispatchQueue.main.async {
                 NotificationCenter.default.post(name: Notification.Name.changeLanguage, object: nil)
@@ -28,9 +28,9 @@ class SwitchLanguageViewModel: AppStepper {
         return SwitchLanguageOutput(disposable: switchDisposable)
     }
     
-    private func tryAppSettings() {
+    private func tryAppSettings(language: String) {
         
-        AppSettings.shared.language = "ru"
+        AppSettings.shared.language = language
         
         if AppSettings.shared.update() {
             if let dictionary = AppSettings.shared.toDictionary() {
@@ -38,14 +38,4 @@ class SwitchLanguageViewModel: AppStepper {
             }
         }
     }
-    
-    private func resetSettings() {
-        
-        AppSettings.shared.language = "en"
-        
-        if AppSettings.shared.update() {
-            if let dictionary = AppSettings.shared.toDictionary() {
-                print(dictionary.compactMapValues { $0 })
-            }
-        }    }
 }
