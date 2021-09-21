@@ -57,7 +57,6 @@ class LogInViewController: UIViewController {
         self.loginVM = loginVM
         self.registrationVM = registrationVM
         self.isLogin = isLogin
-       // self.viewModel = viewModel
     }
     
     // MARK: - Logic
