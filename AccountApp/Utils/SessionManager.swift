@@ -16,6 +16,7 @@ final public class SessionManager {
     func stopTimer() {
         print("Stop Timer = \(currentTime())")
         defaults.set(nil, forKey: "timeOfStartSession")
+        defaults.set(nil, forKey: "timer")
         timer?.invalidate()
     }
     
@@ -27,6 +28,7 @@ final public class SessionManager {
     
     private func saveStartOfSession() {
         print("StartOfSession = \(currentTime())")
+        defaults.set(saveTimer(), forKey: "timer")
         defaults.set(currentTime(), forKey: "timeOfStartSession")
     }
     
@@ -41,6 +43,18 @@ final public class SessionManager {
         let finishDate = startOfSession.addingTimeInterval(240.0 * 60.0)
         print("StartTimeOfSession: \(startOfSession) \nCurrentTime: \(currentTime()) \nFinishOfSession: \(finishDate)")
         if finishDate > currentTime() { return false } else { return true }
+    }
+    
+    func saveTimer() -> Date {
+        if defaults.object(forKey: "timer") == nil {
+            let myDateString = "2016-01-01 00:00:00"
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+            let myDate = dateFormatter.date(from: myDateString)!
+            return myDate
+        } else {
+            return defaults.object(forKey: "timer") as! Date
+        }
     }
 
     @objc func timerHandler(_ timer: Timer) {

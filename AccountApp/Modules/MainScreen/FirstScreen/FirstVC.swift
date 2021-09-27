@@ -34,12 +34,11 @@ class FirstViewController: UIViewController {
     // MARK: - Setup
     
     private func setupFormatter() {
-        formatter.timeZone = TimeZone(abbreviation: "UTC")
-        formatter.dateFormat = "h:mm:ss a"
+        formatter.dateFormat = "K:mm:ss"
     }
     
     private func setupTime() {
-        timerLabel.text = formatter.string(from: sessionManager.currentTime())
+        timerLabel.text = formatter.string(from: (sessionManager.defaults.object(forKey: "timer") as! Date))
     }
     
     private func setupStrings() {
@@ -53,7 +52,9 @@ class FirstViewController: UIViewController {
     }
     
     @objc func timerHandler(_ timer: Timer) {
-        timerLabel.text = formatter.string(from: (sessionManager.currentTime()))
+        guard let time = (sessionManager.defaults.object(forKey: "timer") as? Date)?.addingTimeInterval(1.0) else { return }
+        sessionManager.defaults.set(time, forKey: "timer")
+        timerLabel.text = formatter.string(from: sessionManager.defaults.object(forKey: "timer") as! Date)
     }
 
 }
