@@ -2,6 +2,7 @@ import UIKit
 
 final public class SessionManager {
  
+    let defaults = UserDefaults.standard
     weak var timer: Timer?
     weak var viewModel: SettingsViewModel?
     
@@ -24,13 +25,12 @@ final public class SessionManager {
     }
     
     private func saveStartOfSession() {
-        let defaults = UserDefaults.standard
         print("StartOfSession = \(currentTime())")
         defaults.set(currentTime(), forKey: "timeOfStartSession")
     }
     
     private func getStartOfSession() -> Date {
-        guard let date = UserDefaults.standard.object(forKey: "timeOfStartSession") as? Date else {
+        guard let date = defaults.object(forKey: "timeOfStartSession") as? Date else {
             print("\n LOG can’t get date from UserDefaults object")
             return Date() }
         return date

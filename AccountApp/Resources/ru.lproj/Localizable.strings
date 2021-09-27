@@ -76,4 +76,4 @@
 // MARK: PopTip
 
 "SettingsVCChangeLoginAndPassowrdPopTipSentenses" = "Здесь вы можете изменить входные данные для вашего аккаунта.";
-"SettingsVCLogOutPopTipSentenses" = "При нажатии на эту кнопку, ваша сессия заврешится, необходим будет повторный ввод данных.";
+"SettingsVCLogOutPopTipSentenses" = "При нажатии на эту кнопку, ваша сессия завершится, необходим будет повторный ввод данных.";

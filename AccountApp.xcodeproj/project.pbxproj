@@ -338,17 +338,17 @@
 		CE47F433261DE0B9005F1C69 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				CE507AD326F862D800A4E6B9 /* Protocols */,
-				CE5E7E4726EF4AA1007A94E5 /* Extensions */,
-				CE1B99B926E10E490004280D /* Themes */,
+				CE507AD626F8638900A4E6B9 /* AppSettings.swift */,
 				CE477441261F526F00A6DD5B /* Constants.swift */,
-				CED9CF2226DE142900DC239B /* SessionManager.swift */,
 				CE5BEC2B26DFBD5C00685981 /* LanguageEnum.swift */,
 				CE5BEC2F26DFC72C00685981 /* LanguageNotificationHandler.swift */,
 				CE5BEC3126DFC74C00685981 /* NotificationHandler.swift */,
-				CE6EAF4E26E78DFF002785F0 /* ValidationManager.swift */,
+				CED9CF2226DE142900DC239B /* SessionManager.swift */,
 				CE51BFD026F1DA5C00EA8EBA /* ThemeManager.swift */,
-				CE507AD626F8638900A4E6B9 /* AppSettings.swift */,
+				CE6EAF4E26E78DFF002785F0 /* ValidationManager.swift */,
+				CE5E7E4726EF4AA1007A94E5 /* Extensions */,
+				CE507AD326F862D800A4E6B9 /* Protocols */,
+				CE1B99B926E10E490004280D /* Themes */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
