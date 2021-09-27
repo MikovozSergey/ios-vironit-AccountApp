@@ -8,13 +8,21 @@ public struct NoneStep: Step, Equatable {}
 open class AppStepper: RxFlow.Stepper {
 
     public let steps: PublishRelay<Step>
+    private let sessionManager = SessionManager()
 
     public init() {
         steps = PublishRelay()
     }
 
     open var initialStep: Step {
-        return AppStep.authStep
+        if UserDefaults.standard.object(forKey: "timeOfStartSession") == nil {
+            return AppStep.authStep
+        }
+        if sessionManager.isEndOfSession(startOfSession: sessionManager.getStartOfSession()) {
+            return AppStep.authStep
+        } else {
+            return AppStep.mainStep
+        }
     }
 
     public func readyToEmitSteps() {

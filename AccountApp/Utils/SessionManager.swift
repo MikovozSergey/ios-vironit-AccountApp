@@ -15,10 +15,11 @@ final public class SessionManager {
 
     func stopTimer() {
         print("Stop Timer = \(currentTime())")
+        defaults.set(nil, forKey: "timeOfStartSession")
         timer?.invalidate()
     }
     
-    private func currentTime() -> Date {
+    func currentTime() -> Date {
         let timezone = TimeZone.current
         let seconds = TimeInterval(timezone.secondsFromGMT(for: Date()))
         return Date(timeInterval: seconds, since: Date())
@@ -29,14 +30,14 @@ final public class SessionManager {
         defaults.set(currentTime(), forKey: "timeOfStartSession")
     }
     
-    private func getStartOfSession() -> Date {
+    func getStartOfSession() -> Date {
         guard let date = defaults.object(forKey: "timeOfStartSession") as? Date else {
             print("\n LOG can’t get date from UserDefaults object")
             return Date() }
         return date
     }
     
-    private func isEndOfSession(startOfSession: Date) -> Bool {
+    func isEndOfSession(startOfSession: Date) -> Bool {
         let finishDate = startOfSession.addingTimeInterval(240.0 * 60.0)
         print("StartTimeOfSession: \(startOfSession) \nCurrentTime: \(currentTime()) \nFinishOfSession: \(finishDate)")
         if finishDate > currentTime() { return false } else { return true }
