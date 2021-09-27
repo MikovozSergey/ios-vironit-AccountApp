@@ -30,10 +30,17 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="nnU-cL-dbJ" id="ghk-hf-qG0"/>
+                                    <outlet property="delegate" destination="nnU-cL-dbJ" id="QbF-CT-59M"/>
+                                </connections>
                             </tableView>
                             <searchBar contentMode="redraw" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="h5N-hw-Qu7">
                                 <rect key="frame" x="0.0" y="44" width="414" height="51"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                <connections>
+                                    <outlet property="delegate" destination="nnU-cL-dbJ" id="zJ4-Mw-wtx"/>
+                                </connections>
                             </searchBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="XFK-YU-QDz"/>

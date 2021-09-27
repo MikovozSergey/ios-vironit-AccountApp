@@ -24,22 +24,26 @@
                                     <constraint firstAttribute="height" constant="300" id="1UO-K0-Dqd"/>
                                     <constraint firstAttribute="width" constant="414" id="iHP-Tx-lr3"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="dataSource" destination="AFk-Tf-PIU" id="PQX-cD-1Pz"/>
+                                    <outlet property="delegate" destination="AFk-Tf-PIU" id="SGW-0m-74B"/>
+                                </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VOT-ev-A7T">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VOT-ev-A7T">
                                 <rect key="frame" x="107" y="238" width="200" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="1Q6-nf-FUd"/>
                                     <constraint firstAttribute="width" constant="200" id="KA9-Jn-IOi"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="KohinoorBangla-Regular" family="Kohinoor Bangla" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="KohinoorBangla-Semibold" family="Kohinoor Bangla" pointSize="17"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Qs-YC-Nt8">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Qs-YC-Nt8">
                                 <rect key="frame" x="107" y="608" width="200" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="Dmm-GF-H2o"/>
                                     <constraint firstAttribute="height" constant="50" id="PEe-fE-ldN"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="KohinoorBangla-Regular" family="Kohinoor Bangla" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="KohinoorBangla-Semibold" family="Kohinoor Bangla" pointSize="17"/>
                                 <state key="normal">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>

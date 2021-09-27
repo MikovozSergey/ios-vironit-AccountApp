@@ -23,7 +23,6 @@ class ListOfAccountsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         bind()
-        setupDelegate()
         setupUI()
         setupStrings()
         setupKeyboard()
@@ -41,12 +40,6 @@ class ListOfAccountsViewController: UIViewController {
     }
     
     // MARK: - Setup
-    
-    private func setupDelegate() {
-        searchBar.delegate = self
-        tableView.delegate = self
-        tableView.dataSource = self
-    }
     
     private func setupUI() {
         guard let cancelButton = searchBar.value(forKey: "cancelButton") as? UIButton else { return }

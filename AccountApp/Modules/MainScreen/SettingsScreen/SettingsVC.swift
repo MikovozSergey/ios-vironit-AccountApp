@@ -26,12 +26,10 @@ class SettingsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupDelegate()
         setupUI()
         setupStrings()
         registerNib()
         bind()
-        handleLanguage()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -39,6 +37,7 @@ class SettingsViewController: UIViewController {
         ThemeManager.setupThemeForNavigationAndView(navigation: navigationController!, view: view)
         ThemeManager.setupThemeForSwitchAndTableView(tableView: tableView)
         ThemeManager.setupThemeForButtons(changeLanguageButton: changeLanguageButton, changeThemeButton: changeThemeButton)
+        handleLanguage()
         tableView.reloadData()
     }
     
@@ -47,11 +46,6 @@ class SettingsViewController: UIViewController {
     }
     
     // MARK: - Setup
-    
-    private func setupDelegate() {
-        tableView.delegate = self
-        tableView.dataSource = self
-    }
     
     private func registerNib() {
         tableView.register(xib: Xib.CustomViewForEditCredentialsCell)

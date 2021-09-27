@@ -84,7 +84,7 @@
                                     <constraint firstAttribute="height" constant="50" id="Dln-RR-Qdd"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="KohinoorBangla-Semibold" family="Kohinoor Bangla" pointSize="17"/>
-                                <state key="normal" title="Войти">
+                                <state key="normal">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>

@@ -172,11 +172,17 @@ extension ChangeProfileViewController: UITextFieldDelegate {
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
+        if textField == newPasswordTextField {
             animateViewMoving(true, moveValue: 100)
+        }
+        animateViewMoving(true, moveValue: 100)
     }
 
     func textFieldDidEndEditing(_ textField: UITextField) {
+        if textField == newPasswordTextField {
             animateViewMoving(false, moveValue: 100)
+        }
+        animateViewMoving(false, moveValue: 100)
     }
 }
 
