@@ -80,6 +80,10 @@
 		CE7821C226E7B6F8006FF957 /* SwitchLanguageStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7821C126E7B6F8006FF957 /* SwitchLanguageStep.swift */; };
 		CE7821C526E7B796006FF957 /* ChangeProfileFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7821C426E7B796006FF957 /* ChangeProfileFlow.swift */; };
 		CE7821C726E7B7A5006FF957 /* ChangeProfileStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7821C626E7B7A5006FF957 /* ChangeProfileStep.swift */; };
+		CE7BDBA12715745D00A41EE0 /* CustomViewForVideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7BDBA02715745D00A41EE0 /* CustomViewForVideoCell.swift */; };
+		CE7BDBA3271576B900A41EE0 /* PinterestLayoutDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7BDBA2271576B800A41EE0 /* PinterestLayoutDelegate.swift */; };
+		CE7BDBA52715BA6B00A41EE0 /* AlertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7BDBA42715BA6B00A41EE0 /* AlertService.swift */; };
+		CE7BDBA72715BA9F00A41EE0 /* ApplicationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7BDBA62715BA9F00A41EE0 /* ApplicationExtension.swift */; };
 		CED9CF2326DE142900DC239B /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9CF2226DE142900DC239B /* SessionManager.swift */; };
 		CED9CF2526DE265D00DC239B /* LogOutViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9CF2426DE265D00DC239B /* LogOutViewCell.swift */; };
 		CED9CF2726DE266C00DC239B /* LogOutViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CED9CF2626DE266C00DC239B /* LogOutViewCell.xib */; };
@@ -167,6 +171,10 @@
 		CE7821C126E7B6F8006FF957 /* SwitchLanguageStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchLanguageStep.swift; sourceTree = "<group>"; };
 		CE7821C426E7B796006FF957 /* ChangeProfileFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeProfileFlow.swift; sourceTree = "<group>"; };
 		CE7821C626E7B7A5006FF957 /* ChangeProfileStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeProfileStep.swift; sourceTree = "<group>"; };
+		CE7BDBA02715745D00A41EE0 /* CustomViewForVideoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewForVideoCell.swift; sourceTree = "<group>"; };
+		CE7BDBA2271576B800A41EE0 /* PinterestLayoutDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinterestLayoutDelegate.swift; sourceTree = "<group>"; };
+		CE7BDBA42715BA6B00A41EE0 /* AlertService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertService.swift; sourceTree = "<group>"; };
+		CE7BDBA62715BA9F00A41EE0 /* ApplicationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationExtension.swift; sourceTree = "<group>"; };
 		CED9CF2226DE142900DC239B /* SessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
 		CED9CF2426DE265D00DC239B /* LogOutViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogOutViewCell.swift; sourceTree = "<group>"; };
 		CED9CF2626DE266C00DC239B /* LogOutViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LogOutViewCell.xib; sourceTree = "<group>"; };
@@ -209,10 +217,10 @@
 		CE1B99B126E0FFE30004280D /* SwitchThemeScreen */ = {
 			isa = PBXGroup;
 			children = (
-				CE7821B926E7B5A9006FF957 /* Flow */,
-				CE1B99B226E100000004280D /* SwitchThemeVC.swift */,
 				CE1B99B426E1002F0004280D /* SwitchThemeScreen.storyboard */,
+				CE1B99B226E100000004280D /* SwitchThemeVC.swift */,
 				CE6EAF4A26E75D0F002785F0 /* SwitchThemeVM.swift */,
+				CE7821B926E7B5A9006FF957 /* Flow */,
 			);
 			path = SwitchThemeScreen;
 			sourceTree = "<group>";
@@ -275,10 +283,10 @@
 		CE47741B261F33D100A6DD5B /* ListOfAccountsScreen */ = {
 			isa = PBXGroup;
 			children = (
-				CE7821AC26E7A550006FF957 /* Flow */,
 				CE47740D261F31CF00A6DD5B /* ListOfAccountsScreen.storyboard */,
 				CE477413261F337200A6DD5B /* ListOfAccountsVC.swift */,
 				CE52C96226EB7BAA00171C2F /* ListOfAccountsVM.swift */,
+				CE7821AC26E7A550006FF957 /* Flow */,
 			);
 			path = ListOfAccountsScreen;
 			sourceTree = "<group>";
@@ -286,13 +294,13 @@
 		CE47741C261F341700A6DD5B /* SettingsScreen */ = {
 			isa = PBXGroup;
 			children = (
-				CE7821AB26E7A547006FF957 /* Flow */,
-				CE1B99B126E0FFE30004280D /* SwitchThemeScreen */,
-				CED9CF2F26DE5CB500DC239B /* SwitchLanguageScreen */,
-				CE48AED126207F990076B311 /* ChangeProfileScreen */,
 				CE477410261F328600A6DD5B /* SettingsScreen.storyboard */,
 				CE477416261F33AB00A6DD5B /* SettingsVC.swift */,
 				CE59069B26E660360059C84C /* SettingsVM.swift */,
+				CE48AED126207F990076B311 /* ChangeProfileScreen */,
+				CE7821AB26E7A547006FF957 /* Flow */,
+				CED9CF2F26DE5CB500DC239B /* SwitchLanguageScreen */,
+				CE1B99B126E0FFE30004280D /* SwitchThemeScreen */,
 			);
 			path = SettingsScreen;
 			sourceTree = "<group>";
@@ -310,8 +318,8 @@
 			children = (
 				CE7821A026E7A161006FF957 /* Flow */,
 				CE4514C6260DF1D70069CB6D /* LaunchScreen.storyboard */,
-				CE47F43C261DE33D005F1C69 /* WelcomeScreen */,
 				CE47F43A261DE222005F1C69 /* MainScreen */,
+				CE47F43C261DE33D005F1C69 /* WelcomeScreen */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -338,6 +346,7 @@
 		CE47F433261DE0B9005F1C69 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				CE7BDBA42715BA6B00A41EE0 /* AlertService.swift */,
 				CE507AD626F8638900A4E6B9 /* AppSettings.swift */,
 				CE477441261F526F00A6DD5B /* Constants.swift */,
 				CE5BEC2B26DFBD5C00685981 /* LanguageEnum.swift */,
@@ -360,6 +369,7 @@
 				CE477430261F387D00A6DD5B /* CustomViewForEditCredentialsCell.xib */,
 				CED9CF2426DE265D00DC239B /* LogOutViewCell.swift */,
 				CED9CF2626DE266C00DC239B /* LogOutViewCell.xib */,
+				CE7BDBA02715745D00A41EE0 /* CustomViewForVideoCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -367,10 +377,10 @@
 		CE47F43A261DE222005F1C69 /* MainScreen */ = {
 			isa = PBXGroup;
 			children = (
-				CE7821A726E7A40E006FF957 /* Flow */,
 				CE649D4926E21DEE0043730C /* FirstScreen */,
-				CE47741C261F341700A6DD5B /* SettingsScreen */,
+				CE7821A726E7A40E006FF957 /* Flow */,
 				CE47741B261F33D100A6DD5B /* ListOfAccountsScreen */,
+				CE47741C261F341700A6DD5B /* SettingsScreen */,
 			);
 			path = MainScreen;
 			sourceTree = "<group>";
@@ -378,12 +388,12 @@
 		CE47F43C261DE33D005F1C69 /* WelcomeScreen */ = {
 			isa = PBXGroup;
 			children = (
+				CE47F449261DE3B0005F1C69 /* Main.storyboard */,
+				CE47F43D261DE374005F1C69 /* WelcomeScreenVC.swift */,
+				CE649D5026E222CC0043730C /* WelcomeScreenVM.swift */,
 				CE5ED20226E8AF84007FCADF /* Flow */,
 				CE63300F26DCF54C00E8F311 /* LogInScreen */,
 				CE47F46B261DF0DD005F1C69 /* RegistrationScreen */,
-				CE47F43D261DE374005F1C69 /* WelcomeScreenVC.swift */,
-				CE47F449261DE3B0005F1C69 /* Main.storyboard */,
-				CE649D5026E222CC0043730C /* WelcomeScreenVM.swift */,
 			);
 			path = WelcomeScreen;
 			sourceTree = "<group>";
@@ -391,8 +401,8 @@
 		CE47F46B261DF0DD005F1C69 /* RegistrationScreen */ = {
 			isa = PBXGroup;
 			children = (
-				CE5ED20D26E8D0EE007FCADF /* Flow */,
 				CE59069526E5FCC30059C84C /* RegistrationVM.swift */,
+				CE5ED20D26E8D0EE007FCADF /* Flow */,
 			);
 			path = RegistrationScreen;
 			sourceTree = "<group>";
@@ -400,10 +410,10 @@
 		CE48AED126207F990076B311 /* ChangeProfileScreen */ = {
 			isa = PBXGroup;
 			children = (
-				CE7821C326E7B78B006FF957 /* Flow */,
 				CE48AED226207FC60076B311 /* ChangeProfileScreen.storyboard */,
 				CE48AED526207FEF0076B311 /* ChangeProfileVC.swift */,
 				CE59069926E655470059C84C /* ChangeProfileVM.swift */,
+				CE7821C326E7B78B006FF957 /* Flow */,
 			);
 			path = ChangeProfileScreen;
 			sourceTree = "<group>";
@@ -412,6 +422,7 @@
 			isa = PBXGroup;
 			children = (
 				CE507AD426F862F700A4E6B9 /* SettingsManageable.swift */,
+				CE7BDBA2271576B800A41EE0 /* PinterestLayoutDelegate.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -427,10 +438,11 @@
 		CE5E7E4726EF4AA1007A94E5 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				CE7BDBA62715BA9F00A41EE0 /* ApplicationExtension.swift */,
 				CE5BEC2D26DFC6E000685981 /* NotificationExtension.swift */,
-				CE6EAF4C26E78C10002785F0 /* XibExtension.swift */,
-				CE5ED20026E8A53C007FCADF /* UIWindowExtension.swift */,
 				CE5ED20B26E8C500007FCADF /* UIViewControllerExtension.swift */,
+				CE5ED20026E8A53C007FCADF /* UIWindowExtension.swift */,
+				CE6EAF4C26E78C10002785F0 /* XibExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -456,10 +468,10 @@
 		CE63300F26DCF54C00E8F311 /* LogInScreen */ = {
 			isa = PBXGroup;
 			children = (
-				CE78219F26E7A152006FF957 /* Flow */,
-				CE63301026DCF56C00E8F311 /* LogInVC.swift */,
 				CE63301226DCF57E00E8F311 /* LogInScreen.storyboard */,
+				CE63301026DCF56C00E8F311 /* LogInVC.swift */,
 				CE59069726E650710059C84C /* LoginVM.swift */,
+				CE78219F26E7A152006FF957 /* Flow */,
 			);
 			path = LogInScreen;
 			sourceTree = "<group>";
@@ -467,9 +479,9 @@
 		CE649D4926E21DEE0043730C /* FirstScreen */ = {
 			isa = PBXGroup;
 			children = (
-				CE7821AA26E7A542006FF957 /* Flow */,
-				CE649D4A26E21E0B0043730C /* FirstVC.swift */,
 				CE649D4E26E221610043730C /* FirstScreen.storyboard */,
+				CE649D4A26E21E0B0043730C /* FirstVC.swift */,
+				CE7821AA26E7A542006FF957 /* Flow */,
 			);
 			path = FirstScreen;
 			sourceTree = "<group>";
@@ -559,10 +571,10 @@
 		CED9CF2F26DE5CB500DC239B /* SwitchLanguageScreen */ = {
 			isa = PBXGroup;
 			children = (
-				CE7821BE26E7B6E0006FF957 /* Flow */,
-				CED9CF3026DE5CD500DC239B /* SwitchLanguageVC.swift */,
 				CED9CF3226DE5CE300DC239B /* SwitchLanguageScreen.storyboard */,
+				CED9CF3026DE5CD500DC239B /* SwitchLanguageVC.swift */,
 				CE6EAF4826E74CB5002785F0 /* SwitchLanguageVM.swift */,
+				CE7821BE26E7B6E0006FF957 /* Flow */,
 			);
 			path = SwitchLanguageScreen;
 			sourceTree = "<group>";
@@ -754,6 +766,7 @@
 				CE5BEC2A26DFB6CC00685981 /* Strings.swift in Sources */,
 				CE5ED20126E8A53C007FCADF /* UIWindowExtension.swift in Sources */,
 				CE6EAF4926E74CB5002785F0 /* SwitchLanguageVM.swift in Sources */,
+				CE7BDBA52715BA6B00A41EE0 /* AlertService.swift in Sources */,
 				CE59069A26E655470059C84C /* ChangeProfileVM.swift in Sources */,
 				CE507AD726F8638900A4E6B9 /* AppSettings.swift in Sources */,
 				CE7821C726E7B7A5006FF957 /* ChangeProfileStep.swift in Sources */,
@@ -775,6 +788,8 @@
 				CE7821BB26E7B649006FF957 /* SwitchThemeFlow.swift in Sources */,
 				CE59069826E650710059C84C /* LoginVM.swift in Sources */,
 				CE5BEC2E26DFC6E000685981 /* NotificationExtension.swift in Sources */,
+				CE7BDBA12715745D00A41EE0 /* CustomViewForVideoCell.swift in Sources */,
+				CE7BDBA3271576B900A41EE0 /* PinterestLayoutDelegate.swift in Sources */,
 				CE649D4B26E21E0B0043730C /* FirstVC.swift in Sources */,
 				CE7821B026E7A575006FF957 /* FirstStep.swift in Sources */,
 				CE52C96326EB7BAA00171C2F /* ListOfAccountsVM.swift in Sources */,
@@ -786,6 +801,7 @@
 				CE4514BB260DF1D40069CB6D /* SceneDelegate.swift in Sources */,
 				CE507AD526F862F700A4E6B9 /* SettingsManageable.swift in Sources */,
 				CE5BEC3026DFC72C00685981 /* LanguageNotificationHandler.swift in Sources */,
+				CE7BDBA72715BA9F00A41EE0 /* ApplicationExtension.swift in Sources */,
 				CED9CF3126DE5CD500DC239B /* SwitchLanguageVC.swift in Sources */,
 				CE1B99B326E100000004280D /* SwitchThemeVC.swift in Sources */,
 				CE7821C226E7B6F8006FF957 /* SwitchLanguageStep.swift in Sources */,

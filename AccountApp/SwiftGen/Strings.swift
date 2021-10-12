@@ -99,7 +99,7 @@ enum L10n {
   static var changeProfileVCPasswordTitle: String {
     return L10n.tr("Localizable", "ChangeProfileVCPasswordTitle")
   }
-  /// Timer
+  /// Collection of Video
   static var empty: String {
     return L10n.tr("Localizable", "Empty")
   }
