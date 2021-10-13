@@ -84,6 +84,8 @@
 		CE7BDBA3271576B900A41EE0 /* PinterestLayoutDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7BDBA2271576B800A41EE0 /* PinterestLayoutDelegate.swift */; };
 		CE7BDBA52715BA6B00A41EE0 /* AlertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7BDBA42715BA6B00A41EE0 /* AlertService.swift */; };
 		CE7BDBA72715BA9F00A41EE0 /* ApplicationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7BDBA62715BA9F00A41EE0 /* ApplicationExtension.swift */; };
+		CED257B32716FF5800365CB3 /* VideoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED257B22716FF5800365CB3 /* VideoVC.swift */; };
+		CED257B52716FF6900365CB3 /* VideoScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CED257B42716FF6900365CB3 /* VideoScreen.storyboard */; };
 		CED9CF2326DE142900DC239B /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9CF2226DE142900DC239B /* SessionManager.swift */; };
 		CED9CF2526DE265D00DC239B /* LogOutViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9CF2426DE265D00DC239B /* LogOutViewCell.swift */; };
 		CED9CF2726DE266C00DC239B /* LogOutViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CED9CF2626DE266C00DC239B /* LogOutViewCell.xib */; };
@@ -175,6 +177,8 @@
 		CE7BDBA2271576B800A41EE0 /* PinterestLayoutDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinterestLayoutDelegate.swift; sourceTree = "<group>"; };
 		CE7BDBA42715BA6B00A41EE0 /* AlertService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertService.swift; sourceTree = "<group>"; };
 		CE7BDBA62715BA9F00A41EE0 /* ApplicationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationExtension.swift; sourceTree = "<group>"; };
+		CED257B22716FF5800365CB3 /* VideoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoVC.swift; sourceTree = "<group>"; };
+		CED257B42716FF6900365CB3 /* VideoScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = VideoScreen.storyboard; sourceTree = "<group>"; };
 		CED9CF2226DE142900DC239B /* SessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
 		CED9CF2426DE265D00DC239B /* LogOutViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogOutViewCell.swift; sourceTree = "<group>"; };
 		CED9CF2626DE266C00DC239B /* LogOutViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LogOutViewCell.xib; sourceTree = "<group>"; };
@@ -479,6 +483,7 @@
 		CE649D4926E21DEE0043730C /* FirstScreen */ = {
 			isa = PBXGroup;
 			children = (
+				CED257B12716FF4500365CB3 /* VideoScreen */,
 				CE649D4E26E221610043730C /* FirstScreen.storyboard */,
 				CE649D4A26E21E0B0043730C /* FirstVC.swift */,
 				CE7821AA26E7A542006FF957 /* Flow */,
@@ -568,6 +573,15 @@
 			path = Flow;
 			sourceTree = "<group>";
 		};
+		CED257B12716FF4500365CB3 /* VideoScreen */ = {
+			isa = PBXGroup;
+			children = (
+				CED257B22716FF5800365CB3 /* VideoVC.swift */,
+				CED257B42716FF6900365CB3 /* VideoScreen.storyboard */,
+			);
+			path = VideoScreen;
+			sourceTree = "<group>";
+		};
 		CED9CF2F26DE5CB500DC239B /* SwitchLanguageScreen */ = {
 			isa = PBXGroup;
 			children = (
@@ -645,6 +659,7 @@
 				CE47F44A261DE3B0005F1C69 /* Main.storyboard in Resources */,
 				CE1B99B526E1002F0004280D /* SwitchThemeScreen.storyboard in Resources */,
 				CE477411261F328600A6DD5B /* SettingsScreen.storyboard in Resources */,
+				CED257B52716FF6900365CB3 /* VideoScreen.storyboard in Resources */,
 				CE63301326DCF57E00E8F311 /* LogInScreen.storyboard in Resources */,
 				CED9CF3326DE5CE300DC239B /* SwitchLanguageScreen.storyboard in Resources */,
 				CE47F435261DE19B005F1C69 /* .swiftlint.yml in Resources */,
@@ -764,6 +779,7 @@
 				CE63301526DCFD7200E8F311 /* CoreDataDB.swift in Sources */,
 				CE51BFD126F1DA5C00EA8EBA /* ThemeManager.swift in Sources */,
 				CE5BEC2A26DFB6CC00685981 /* Strings.swift in Sources */,
+				CED257B32716FF5800365CB3 /* VideoVC.swift in Sources */,
 				CE5ED20126E8A53C007FCADF /* UIWindowExtension.swift in Sources */,
 				CE6EAF4926E74CB5002785F0 /* SwitchLanguageVM.swift in Sources */,
 				CE7BDBA52715BA6B00A41EE0 /* AlertService.swift in Sources */,

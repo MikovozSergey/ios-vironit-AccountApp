@@ -10,7 +10,6 @@ class FirstViewController: UIViewController {
     private weak var timer: Timer?
     private var photos = [UIImage]()
     private var videos = [URL]()
-    private var heightOfCollection: CGFloat?
     
     // MARK: - IBOutlets
     
@@ -63,7 +62,6 @@ class FirstViewController: UIViewController {
     private func setupCollection() {
         let layout = UICollectionViewFlowLayout()
         layout.itemSize = CGSize(width: collectionView.frame.size.width, height: 300)
-        print(layout.estimatedItemSize)
         collectionView.collectionViewLayout = layout
         collectionView.showsVerticalScrollIndicator = false
         collectionView.isPagingEnabled = true
@@ -99,6 +97,22 @@ extension FirstViewController: UICollectionViewDelegate, UICollectionViewDataSou
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CustomViewForVideoCell.identifier, for: indexPath) as! CustomViewForVideoCell
         cell.configure(with: videos[indexPath.row])
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print(indexPath.row)
+        let storyboard = UIStoryboard(name: "VideoScreen", bundle: nil)
+        guard let vc = storyboard.instantiateViewController(identifier: "VideoViewController") as? VideoViewController else { return }
+        let backButton: UIBarButtonItem = UIBarButtonItem(title: nil, style: UIBarButtonItem.Style.done, target: self, action: #selector(backAction))
+        backButton.image = UIImage(named: "iconBack")
+        vc.navigationItem.leftBarButtonItem = backButton
+        vc.configure(with: videos[indexPath.row])
+        self.navigationController?.pushViewController(vc, animated: false)
+    
+    }
+    
+    @objc func backAction() {
+        navigationController?.popToRootViewController(animated: true)
     }
 }
 

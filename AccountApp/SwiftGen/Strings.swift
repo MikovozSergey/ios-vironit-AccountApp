@@ -199,6 +199,10 @@ enum L10n {
   static var test: String {
     return L10n.tr("Localizable", "Test")
   }
+  /// Video
+  static var video: String {
+    return L10n.tr("Localizable", "Video")
+  }
   /// Do you want to register?
   static var welcomeVCSignUpButton: String {
     return L10n.tr("Localizable", "WelcomeVCSignUpButton")

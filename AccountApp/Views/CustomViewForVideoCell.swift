@@ -53,22 +53,22 @@ class CustomViewForVideoCell: UICollectionViewCell {
         playerView.player = player
         playerView.frame = contentView.bounds
         playerView.videoGravity = .resizeAspect
-        let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap))
-        contentView.addGestureRecognizer(tap)
+     //   let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap))
+     //   contentView.addGestureRecognizer(tap)
         viewOfCell.layer.addSublayer(playerView)
         player?.volume = 0
         player?.play()
     }
     
-    @objc func handleTap() {
-        if playing {
-            playing = false
-            player?.pause()
-        } else {
-            playing = true
-            player?.play()
-        }
-    }
+//    @objc func handleTap() {
+//        if playing {
+//            playing = false
+//            player?.pause()
+//        } else {
+//            playing = true
+//            player?.play()
+//        }
+//    }
 
     @objc func restartVideo() {
         player?.pause()
