@@ -117,7 +117,8 @@ private extension SettingsViewController {
         let output = viewModel.bind(
             input: SettingsInput(
                 changeLanguage: changeLanguageButton.rx.tap,
-                changeTheme: changeThemeButton.rx.tap
+                changeTheme: changeThemeButton.rx.tap,
+                showWalkthrough: showWalkthroughButton.rx.tap
             )
         )
         disposeBag.insert(output.disposable)

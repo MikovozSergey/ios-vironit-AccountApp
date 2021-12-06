@@ -25,8 +25,8 @@ final public class ThemeManager {
         }
     }
     
-    static func setupThemeForLabels(changeThemeLabel: UILabel? = nil, switchLanguageLabel: UILabel? = nil) {
-        [changeThemeLabel, switchLanguageLabel].forEach {
+    static func setupThemeForLabels(changeThemeLabel: UILabel? = nil, switchLanguageLabel: UILabel? = nil, WalkThroughTitleLabel: UILabel? = nil, WalkThroughSubtitleLabel: UILabel? = nil) {
+        [changeThemeLabel, switchLanguageLabel, WalkThroughTitleLabel, WalkThroughSubtitleLabel].forEach {
             $0?.textColor = Theme.currentTheme.textColor
         }
     }

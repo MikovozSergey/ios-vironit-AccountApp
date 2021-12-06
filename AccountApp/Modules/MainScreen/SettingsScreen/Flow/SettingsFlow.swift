@@ -23,6 +23,8 @@ class SettingsFlow: Flow {
             return navigateToSettingsScreen()
         case .changeLanguageStep:
             return navigateToChangeLanguageScreen()
+        case .showWalkthroughStep:
+            return navigateToWalkthroughScreen()
         case .changeUserNameAndPasswordStep:
             return navigateToChangeUserNameAndPasswordScreen()
         case .logoutStep:
@@ -45,6 +47,17 @@ class SettingsFlow: Flow {
         self.rootViewController.pushViewController(vc, animated: false)
         return .one(flowContributor: .contribute(withNextPresentable: vc,
                                                  withNextStepper: viewModel))
+    }
+    
+    private func navigateToWalkthroughScreen() -> FlowContributors {
+        let walkthroughFlow = WalkthroughFlow()
+        Flows.use(walkthroughFlow, when: .ready, block: { [weak self] flowRoot in
+            guard let self = self else { return }
+            self.rootViewController.present(flowRoot, animated: true, presentationStyle: .fullScreen)
+        })
+        return .one(flowContributor: FlowContributor.contribute(withNextPresentable: walkthroughFlow,
+                                                                withNextStepper: OneStepper(withSingleStep:
+                                                                        WalkthroughStep.initialStep)))
     }
     
     private func navigateToChangeLanguageScreen() -> FlowContributors {

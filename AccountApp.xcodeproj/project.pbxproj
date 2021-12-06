@@ -57,6 +57,12 @@
 		CE63301126DCF56C00E8F311 /* LogInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE63301026DCF56C00E8F311 /* LogInVC.swift */; };
 		CE63301326DCF57E00E8F311 /* LogInScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE63301226DCF57E00E8F311 /* LogInScreen.storyboard */; };
 		CE63301526DCFD7200E8F311 /* CoreDataDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE63301426DCFD7200E8F311 /* CoreDataDB.swift */; };
+		CE636AAE275E01A1001BFAC9 /* WalkthroughScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE636AAD275E01A1001BFAC9 /* WalkthroughScreenVC.swift */; };
+		CE636AB0275E01CE001BFAC9 /* WalkthroughScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE636AAF275E01CE001BFAC9 /* WalkthroughScreen.storyboard */; };
+		CE636AB3275E01EE001BFAC9 /* WalkthroughFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE636AB2275E01EE001BFAC9 /* WalkthroughFlow.swift */; };
+		CE636AB5275E01F9001BFAC9 /* WalkthroughStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE636AB4275E01F9001BFAC9 /* WalkthroughStep.swift */; };
+		CE636AB8275E07DF001BFAC9 /* OnboardingScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE636AB7275E07DF001BFAC9 /* OnboardingScreenVC.swift */; };
+		CE636ABC275E1EC7001BFAC9 /* WalkthroughScreenVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE636ABB275E1EC7001BFAC9 /* WalkthroughScreenVM.swift */; };
 		CE649D4B26E21E0B0043730C /* FirstVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE649D4A26E21E0B0043730C /* FirstVC.swift */; };
 		CE649D4F26E221610043730C /* FirstScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE649D4E26E221610043730C /* FirstScreen.storyboard */; };
 		CE649D5126E222CC0043730C /* WelcomeScreenVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE649D5026E222CC0043730C /* WelcomeScreenVM.swift */; };
@@ -150,6 +156,12 @@
 		CE63301026DCF56C00E8F311 /* LogInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInVC.swift; sourceTree = "<group>"; };
 		CE63301226DCF57E00E8F311 /* LogInScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LogInScreen.storyboard; sourceTree = "<group>"; };
 		CE63301426DCFD7200E8F311 /* CoreDataDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataDB.swift; sourceTree = "<group>"; };
+		CE636AAD275E01A1001BFAC9 /* WalkthroughScreenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughScreenVC.swift; sourceTree = "<group>"; };
+		CE636AAF275E01CE001BFAC9 /* WalkthroughScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WalkthroughScreen.storyboard; sourceTree = "<group>"; };
+		CE636AB2275E01EE001BFAC9 /* WalkthroughFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughFlow.swift; sourceTree = "<group>"; };
+		CE636AB4275E01F9001BFAC9 /* WalkthroughStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughStep.swift; sourceTree = "<group>"; };
+		CE636AB7275E07DF001BFAC9 /* OnboardingScreenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingScreenVC.swift; sourceTree = "<group>"; };
+		CE636ABB275E1EC7001BFAC9 /* WalkthroughScreenVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughScreenVM.swift; sourceTree = "<group>"; };
 		CE649D4A26E21E0B0043730C /* FirstVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstVC.swift; sourceTree = "<group>"; };
 		CE649D4E26E221610043730C /* FirstScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = FirstScreen.storyboard; sourceTree = "<group>"; };
 		CE649D5026E222CC0043730C /* WelcomeScreenVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeScreenVM.swift; sourceTree = "<group>"; };
@@ -323,6 +335,7 @@
 				CE7821A026E7A161006FF957 /* Flow */,
 				CE4514C6260DF1D70069CB6D /* LaunchScreen.storyboard */,
 				CE47F43A261DE222005F1C69 /* MainScreen */,
+				CE636AAC275E0151001BFAC9 /* WalkthroughScreen */,
 				CE47F43C261DE33D005F1C69 /* WelcomeScreen */,
 			);
 			path = Modules;
@@ -478,6 +491,35 @@
 				CE78219F26E7A152006FF957 /* Flow */,
 			);
 			path = LogInScreen;
+			sourceTree = "<group>";
+		};
+		CE636AAC275E0151001BFAC9 /* WalkthroughScreen */ = {
+			isa = PBXGroup;
+			children = (
+				CE636AAF275E01CE001BFAC9 /* WalkthroughScreen.storyboard */,
+				CE636AAD275E01A1001BFAC9 /* WalkthroughScreenVC.swift */,
+				CE636ABB275E1EC7001BFAC9 /* WalkthroughScreenVM.swift */,
+				CE636AB1275E01D8001BFAC9 /* Flow */,
+				CE636AB6275E07AB001BFAC9 /* OnboardingScreen */,
+			);
+			path = WalkthroughScreen;
+			sourceTree = "<group>";
+		};
+		CE636AB1275E01D8001BFAC9 /* Flow */ = {
+			isa = PBXGroup;
+			children = (
+				CE636AB2275E01EE001BFAC9 /* WalkthroughFlow.swift */,
+				CE636AB4275E01F9001BFAC9 /* WalkthroughStep.swift */,
+			);
+			path = Flow;
+			sourceTree = "<group>";
+		};
+		CE636AB6275E07AB001BFAC9 /* OnboardingScreen */ = {
+			isa = PBXGroup;
+			children = (
+				CE636AB7275E07DF001BFAC9 /* OnboardingScreenVC.swift */,
+			);
+			path = OnboardingScreen;
 			sourceTree = "<group>";
 		};
 		CE649D4926E21DEE0043730C /* FirstScreen */ = {
@@ -668,6 +710,7 @@
 				CE4514C5260DF1D70069CB6D /* Assets.xcassets in Resources */,
 				CED9CF2B26DE513700DC239B /* Localizable.strings in Resources */,
 				CE47740E261F31CF00A6DD5B /* ListOfAccountsScreen.storyboard in Resources */,
+				CE636AB0275E01CE001BFAC9 /* WalkthroughScreen.storyboard in Resources */,
 				CE1B99B826E10C850004280D /* Colors.xcassets in Resources */,
 				CE48AED326207FC60076B311 /* ChangeProfileScreen.storyboard in Resources */,
 				CE649D4F26E221610043730C /* FirstScreen.storyboard in Resources */,
@@ -778,6 +821,7 @@
 				CE477442261F526F00A6DD5B /* Constants.swift in Sources */,
 				CE63301526DCFD7200E8F311 /* CoreDataDB.swift in Sources */,
 				CE51BFD126F1DA5C00EA8EBA /* ThemeManager.swift in Sources */,
+				CE636AAE275E01A1001BFAC9 /* WalkthroughScreenVC.swift in Sources */,
 				CE5BEC2A26DFB6CC00685981 /* Strings.swift in Sources */,
 				CED257B32716FF5800365CB3 /* VideoVC.swift in Sources */,
 				CE5ED20126E8A53C007FCADF /* UIWindowExtension.swift in Sources */,
@@ -786,12 +830,15 @@
 				CE59069A26E655470059C84C /* ChangeProfileVM.swift in Sources */,
 				CE507AD726F8638900A4E6B9 /* AppSettings.swift in Sources */,
 				CE7821C726E7B7A5006FF957 /* ChangeProfileStep.swift in Sources */,
+				CE636ABC275E1EC7001BFAC9 /* WalkthroughScreenVM.swift in Sources */,
 				CE477431261F387D00A6DD5B /* CustomViewForEditCredentialsCell.swift in Sources */,
 				CE59069626E5FCC30059C84C /* RegistrationVM.swift in Sources */,
 				CE4514C3260DF1D40069CB6D /* AccountApp.xcdatamodeld in Sources */,
+				CE636AB8275E07DF001BFAC9 /* OnboardingScreenVC.swift in Sources */,
 				CE7821C526E7B796006FF957 /* ChangeProfileFlow.swift in Sources */,
 				CE6EAF4B26E75D0F002785F0 /* SwitchThemeVM.swift in Sources */,
 				CE7821A226E7A171006FF957 /* AppFlow.swift in Sources */,
+				CE636AB3275E01EE001BFAC9 /* WalkthroughFlow.swift in Sources */,
 				CE5ED20426E8AF90007FCADF /* AuthFlow.swift in Sources */,
 				CE477414261F337200A6DD5B /* ListOfAccountsVC.swift in Sources */,
 				CE5ED20C26E8C500007FCADF /* UIViewControllerExtension.swift in Sources */,
@@ -827,6 +874,7 @@
 				CED9CF2326DE142900DC239B /* SessionManager.swift in Sources */,
 				CE477417261F33AB00A6DD5B /* SettingsVC.swift in Sources */,
 				CE7821A926E7A41A006FF957 /* MainFlow.swift in Sources */,
+				CE636AB5275E01F9001BFAC9 /* WalkthroughStep.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

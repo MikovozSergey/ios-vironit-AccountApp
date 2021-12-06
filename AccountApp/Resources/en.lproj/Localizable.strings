@@ -14,6 +14,7 @@
 "Settings" = "Settings";
 "List" = "List of Accounts";
 "Video" = "Video";
+"Skip" = "Skip";
 
 // MARK: WelcomVC
 
@@ -53,6 +54,9 @@
 // MARK: ShowWalkthroughVC
 
 "ShowWalkthroughVCTitle" = "Show walkthrough?";
+"WalkthroughFirstVCSubtitle" = "On this screen you can add your video and also watch their collection";
+"WalkthroughSecondVCSubtitle" = "On this screen you can see the list of registered users, as well as find the one you need";
+"WalkthroughThirdVCSubtitle" = "On this screen, you can change your data, change the theme or language of the application, and also exit it.";
 
 // MARK: SwitchLanguageVC
 

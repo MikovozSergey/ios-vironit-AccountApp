@@ -14,6 +14,7 @@
 "Settings" = "Настройки";
 "List" = "Список Аккаунтов";
 "Video" = "Видео";
+"Skip" = "Пропустить";
 
 // MARK: WelcomVC
 
@@ -53,6 +54,9 @@
 // MARK: ShowWalkthroughVC
 
 "ShowWalkthroughVCTitle" = "Обзор приложения";
+"WalkthroughFirstVCSubtitle" = "На этом экране вы можете добавить ваше видео, а также посмотреть их коллекцию";
+"WalkthroughSecondVCSubtitle" = "На этом экране вы сможете посмотреть список зарегистрированных пользователей, а также найти нужного вам";
+"WalkthroughThirdVCSubtitle" = "На этом экране вы можете изменить ваши данные, изменить тему или язык приложения, а также выйти из него";
 
 // MARK: SwitchLanguageVC
 

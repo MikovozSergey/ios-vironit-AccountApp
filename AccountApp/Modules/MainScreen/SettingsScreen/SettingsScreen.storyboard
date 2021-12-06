@@ -49,7 +49,7 @@
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9ca-jt-11U">
-                                <rect key="frame" x="107" y="158" width="200" height="50"/>
+                                <rect key="frame" x="107" y="173" width="200" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="aml-tb-yEZ"/>
                                     <constraint firstAttribute="width" constant="200" id="dAA-K5-VaY"/>
@@ -59,7 +59,7 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="iPq-58-Kwx"/>
                         <constraints>
-                            <constraint firstItem="VOT-ev-A7T" firstAttribute="top" secondItem="9ca-jt-11U" secondAttribute="bottom" constant="30" id="29N-kK-jew"/>
+                            <constraint firstItem="VOT-ev-A7T" firstAttribute="top" secondItem="9ca-jt-11U" secondAttribute="bottom" constant="15" id="29N-kK-jew"/>
                             <constraint firstItem="3Qs-YC-Nt8" firstAttribute="top" secondItem="jPc-wo-oUy" secondAttribute="bottom" constant="10" id="4uf-QD-cdj"/>
                             <constraint firstItem="jPc-wo-oUy" firstAttribute="centerY" secondItem="gaK-kc-XIf" secondAttribute="centerY" id="M0M-42-Cww"/>
                             <constraint firstItem="jPc-wo-oUy" firstAttribute="centerX" secondItem="gaK-kc-XIf" secondAttribute="centerX" id="PCE-Tg-UO7"/>

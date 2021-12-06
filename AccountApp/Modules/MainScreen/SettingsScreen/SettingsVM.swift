@@ -9,6 +9,7 @@ struct CellOutput {
 struct SettingsInput {
     let changeLanguage: ControlEvent<Void>
     let changeTheme: ControlEvent<Void>
+    let showWalkthrough: ControlEvent<Void>
 }
 
 struct SettingsOutput {
@@ -25,6 +26,11 @@ class SettingsViewModel: AppStepper {
         let changeThemeDisposable = input.changeTheme.subscribe(onNext: { _ in
             self.steps.accept(SettingsStep.changeThemeStep)
         })
-        return SettingsOutput(disposable: Disposables.create(changeLanguageDisposable, changeThemeDisposable))
+        
+        let showWalkthroughDisposable = input.showWalkthrough.subscribe { _ in
+            self.steps.accept(SettingsStep.showWalkthroughStep)
+        }
+        
+        return SettingsOutput(disposable: Disposables.create(changeLanguageDisposable, changeThemeDisposable, showWalkthroughDisposable))
     }
 }

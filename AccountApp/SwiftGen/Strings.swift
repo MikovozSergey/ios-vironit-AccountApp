@@ -179,6 +179,10 @@ enum L10n {
   static var showWalkthroughVCTitle: String {
     return L10n.tr("Localizable", "ShowWalkthroughVCTitle")
   }
+  /// Skip
+  static var skip: String {
+    return L10n.tr("Localizable", "Skip")
+  }
   /// Do you want to edit the app language to Russian?
   static var switchLanguageVCLabel: String {
     return L10n.tr("Localizable", "SwitchLanguageVCLabel")
@@ -206,6 +210,18 @@ enum L10n {
   /// Video
   static var video: String {
     return L10n.tr("Localizable", "Video")
+  }
+  /// On this screen you can add your video and also watch their collection
+  static var walkthroughFirstVCSubtitle: String {
+    return L10n.tr("Localizable", "WalkthroughFirstVCSubtitle")
+  }
+  /// On this screen you can see the list of registered users, as well as find the one you need
+  static var walkthroughSecondVCSubtitle: String {
+    return L10n.tr("Localizable", "WalkthroughSecondVCSubtitle")
+  }
+  /// On this screen, you can change your data, change the theme or language of the application, and also exit it.
+  static var walkthroughThirdVCSubtitle: String {
+    return L10n.tr("Localizable", "WalkthroughThirdVCSubtitle")
   }
   /// Do you want to register?
   static var welcomeVCSignUpButton: String {
