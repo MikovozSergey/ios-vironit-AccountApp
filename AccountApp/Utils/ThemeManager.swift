@@ -31,8 +31,8 @@ final public class ThemeManager {
         }
     }
     
-    static func setupThemeForButtons(logInButton: UIButton? = nil, registrationButton: UIButton? = nil, saveButton: UIButton? = nil, switchLanguageButton: UIButton? = nil, changeLanguageButton: UIButton? = nil, changeThemeButton: UIButton? = nil) {
-        [logInButton, registrationButton, saveButton, changeLanguageButton, changeThemeButton, switchLanguageButton].forEach {
+    static func setupThemeForButtons(logInButton: UIButton? = nil, registrationButton: UIButton? = nil, saveButton: UIButton? = nil, switchLanguageButton: UIButton? = nil, changeLanguageButton: UIButton? = nil, changeThemeButton: UIButton? = nil, showWalkthroughButton: UIButton? = nil) {
+        [logInButton, registrationButton, saveButton, changeLanguageButton, changeThemeButton, switchLanguageButton, showWalkthroughButton].forEach {
             $0?.setTitleColor(Theme.currentTheme.textColor, for: .normal)
         }
     }

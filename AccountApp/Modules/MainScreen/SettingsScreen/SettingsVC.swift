@@ -12,6 +12,7 @@ class SettingsViewController: UIViewController {
     // MARK: - IBOutlets
     
     @IBOutlet private weak var tableView: UITableView!
+    @IBOutlet private weak var showWalkthroughButton: UIButton!
     @IBOutlet private weak var changeLanguageButton: UIButton!
     @IBOutlet private weak var changeThemeButton: UIButton!
     
@@ -36,7 +37,7 @@ class SettingsViewController: UIViewController {
         super.viewWillAppear(animated)
         ThemeManager.setupThemeForNavigationAndView(navigation: navigationController!, view: view)
         ThemeManager.setupThemeForSwitchAndTableView(tableView: tableView)
-        ThemeManager.setupThemeForButtons(changeLanguageButton: changeLanguageButton, changeThemeButton: changeThemeButton)
+        ThemeManager.setupThemeForButtons(changeLanguageButton: changeLanguageButton, changeThemeButton: changeThemeButton, showWalkthroughButton: showWalkthroughButton)
         handleLanguage()
         tableView.reloadData()
     }
@@ -55,7 +56,7 @@ class SettingsViewController: UIViewController {
     private func setupUI() {
         tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
         tableView.tableFooterView = UIView()
-        [changeLanguageButton, changeThemeButton].forEach {
+        [changeLanguageButton, changeThemeButton, showWalkthroughButton].forEach {
             $0?.layer.cornerRadius = 10
             $0?.layer.borderWidth = 1.5
             $0?.layer.borderColor = Colors.gold.cgColor
@@ -65,6 +66,7 @@ class SettingsViewController: UIViewController {
     private func setupStrings() {
         changeLanguageButton.setTitle(L10n.switchLanguageVCTitle, for: .normal)
         changeThemeButton.setTitle(L10n.switchThemeVCTitle, for: .normal)
+        showWalkthroughButton.setTitle(L10n.showWalkthroughVCTitle, for: .normal)
         navigationController?.navigationBar.topItem?.title = L10n.settings
     }
     

@@ -50,6 +50,10 @@
 "ChangeProfileVCNewPasswordTitle" = "Ваш старый Пароль";
 "ChangeProfileVCNewPasswordPlaceholder" = "Введите новый пароль";
 
+// MARK: ShowWalkthroughVC
+
+"ShowWalkthroughVCTitle" = "Обзор приложения";
+
 // MARK: SwitchLanguageVC
 
 "SwitchLanguageVCTitle" = "Изменить язык?";

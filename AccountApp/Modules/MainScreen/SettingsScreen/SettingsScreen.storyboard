@@ -48,21 +48,32 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9ca-jt-11U">
+                                <rect key="frame" x="107" y="158" width="200" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="aml-tb-yEZ"/>
+                                    <constraint firstAttribute="width" constant="200" id="dAA-K5-VaY"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="KohinoorBangla-Semibold" family="Kohinoor Bangla" pointSize="17"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="iPq-58-Kwx"/>
                         <constraints>
+                            <constraint firstItem="VOT-ev-A7T" firstAttribute="top" secondItem="9ca-jt-11U" secondAttribute="bottom" constant="30" id="29N-kK-jew"/>
                             <constraint firstItem="3Qs-YC-Nt8" firstAttribute="top" secondItem="jPc-wo-oUy" secondAttribute="bottom" constant="10" id="4uf-QD-cdj"/>
                             <constraint firstItem="jPc-wo-oUy" firstAttribute="centerY" secondItem="gaK-kc-XIf" secondAttribute="centerY" id="M0M-42-Cww"/>
                             <constraint firstItem="jPc-wo-oUy" firstAttribute="centerX" secondItem="gaK-kc-XIf" secondAttribute="centerX" id="PCE-Tg-UO7"/>
                             <constraint firstItem="3Qs-YC-Nt8" firstAttribute="centerX" secondItem="gaK-kc-XIf" secondAttribute="centerX" id="Tud-uc-fj8"/>
                             <constraint firstItem="jPc-wo-oUy" firstAttribute="top" secondItem="VOT-ev-A7T" secondAttribute="bottom" constant="10" id="gtg-K5-5JX"/>
                             <constraint firstItem="VOT-ev-A7T" firstAttribute="centerX" secondItem="gaK-kc-XIf" secondAttribute="centerX" id="kAF-OD-sN0"/>
+                            <constraint firstItem="9ca-jt-11U" firstAttribute="centerX" secondItem="gaK-kc-XIf" secondAttribute="centerX" id="maH-f1-EFr"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="" id="i7y-y0-DKv"/>
                     <connections>
                         <outlet property="changeLanguageButton" destination="VOT-ev-A7T" id="NrY-kb-wCE"/>
                         <outlet property="changeThemeButton" destination="3Qs-YC-Nt8" id="aSU-yv-MP4"/>
+                        <outlet property="showWalkthroughButton" destination="9ca-jt-11U" id="civ-BZ-hbO"/>
                         <outlet property="tableView" destination="jPc-wo-oUy" id="XjR-e6-U9p"/>
                     </connections>
                 </viewController>

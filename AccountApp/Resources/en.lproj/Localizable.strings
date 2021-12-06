@@ -50,6 +50,10 @@
 "ChangeProfileVCNewPassowrdTitle" = "Your new Password";
 "ChangeProfileVCNewPasswordPlaceholder" = "Enter your new password";
 
+// MARK: ShowWalkthroughVC
+
+"ShowWalkthroughVCTitle" = "Show walkthrough?";
+
 // MARK: SwitchLanguageVC
 
 "SwitchLanguageVCTitle" = "Change language?";
