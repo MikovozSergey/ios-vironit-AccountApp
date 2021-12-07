@@ -1,6 +1,8 @@
 import RxFlow
 
 enum WalkthroughStep: Step {
-    case initialStep
-    case skipStep
+    case initialStepAfterSettings
+    case initialStepAfterRegistration
+    case skipStepForSettings
+    case skipStepForRegistration
 }

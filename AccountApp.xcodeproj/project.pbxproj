@@ -274,6 +274,7 @@
 		CE4514B7260DF1D40069CB6D /* AccountApp */ = {
 			isa = PBXGroup;
 			children = (
+				CE636ABD275E3CF9001BFAC9 /* Parents */,
 				CE5BEC0D26DFA05000685981 /* SwiftGen */,
 				CE45154E260E11F90069CB6D /* Application */,
 				CE47F432261DE0A2005F1C69 /* CoreData */,
@@ -373,7 +374,6 @@
 				CE51BFD026F1DA5C00EA8EBA /* ThemeManager.swift */,
 				CE6EAF4E26E78DFF002785F0 /* ValidationManager.swift */,
 				CE5E7E4726EF4AA1007A94E5 /* Extensions */,
-				CE507AD326F862D800A4E6B9 /* Protocols */,
 				CE1B99B926E10E490004280D /* Themes */,
 			);
 			path = Utils;
@@ -520,6 +520,14 @@
 				CE636AB7275E07DF001BFAC9 /* OnboardingScreenVC.swift */,
 			);
 			path = OnboardingScreen;
+			sourceTree = "<group>";
+		};
+		CE636ABD275E3CF9001BFAC9 /* Parents */ = {
+			isa = PBXGroup;
+			children = (
+				CE507AD326F862D800A4E6B9 /* Protocols */,
+			);
+			path = Parents;
 			sourceTree = "<group>";
 		};
 		CE649D4926E21DEE0043730C /* FirstScreen */ = {

@@ -28,6 +28,8 @@ class RegistrationFlow: Flow {
                 return navigateToRegistration()
             case .completeStep:
                 return .end(forwardToParentFlowWithStep: AuthStep.completeStep)
+            case .walkthrough:
+                return navigateToWalkthrough()
             case .backStep:
                 return .end(forwardToParentFlowWithStep: AuthStep.backStep)
             }
@@ -47,6 +49,17 @@ class RegistrationFlow: Flow {
         self.rootViewController.pushViewController(vc, animated: false)
         return .one(flowContributor: .contribute(withNextPresentable: vc,
                                                  withNextStepper: viewModel))
+    }
+    
+    private func navigateToWalkthrough() -> FlowContributors {
+        let walkthroughFlow = WalkthroughFlow()
+        Flows.use(walkthroughFlow, when: .ready, block: { [weak self] flowRoot in
+            guard let self = self else { return }
+            self.rootViewController.present(flowRoot, animated: true, presentationStyle: .fullScreen)
+        })
+        return .one(flowContributor: FlowContributor.contribute(withNextPresentable: walkthroughFlow,
+                                                                withNextStepper: OneStepper(withSingleStep:
+                                                                        WalkthroughStep.initialStepAfterRegistration)))
     }
     
     @objc func backAction() {

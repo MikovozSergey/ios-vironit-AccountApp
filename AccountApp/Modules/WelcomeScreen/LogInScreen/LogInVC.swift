@@ -217,7 +217,7 @@ private extension LogInViewController {
                     self.setupStyleForTestFields(title: L10n.alertDoneTitle , titleColor: .green)
                     self.keychain.set(user.password, forKey: user.login)
                     self.dataBase.openDatabse(login: user.login)
-                    registrationVM.steps.accept(RegistrationStep.completeStep)
+                    registrationVM.steps.accept(RegistrationStep.walkthrough)
                 case .emptyFields:
                     self.setupStyleForTestFields(title: self.alertErrorTitle, titleColor: .red)
                     self.showAlert(title: self.alertErrorTitle, message: self.alertErrorEmptyFieldsMessage)

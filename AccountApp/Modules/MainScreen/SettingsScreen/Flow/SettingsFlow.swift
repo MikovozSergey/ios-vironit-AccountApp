@@ -57,7 +57,7 @@ class SettingsFlow: Flow {
         })
         return .one(flowContributor: FlowContributor.contribute(withNextPresentable: walkthroughFlow,
                                                                 withNextStepper: OneStepper(withSingleStep:
-                                                                        WalkthroughStep.initialStep)))
+                                                                        WalkthroughStep.initialStepAfterSettings)))
     }
     
     private func navigateToChangeLanguageScreen() -> FlowContributors {
