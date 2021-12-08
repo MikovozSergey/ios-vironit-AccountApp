@@ -9,6 +9,7 @@ target 'AccountApp' do
 
   pod 'AMPopTip', '4.5.3'	
   pod 'KeychainSwift', '19.0'
+  pod 'lottie-ios', '3.2.3'
   pod 'RxCocoa', '6.1.0'
   pod 'RxFlow', '2.12.4'
   pod 'RxSwift', '6.1.0'

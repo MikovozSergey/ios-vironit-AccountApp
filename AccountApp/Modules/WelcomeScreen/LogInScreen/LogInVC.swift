@@ -3,6 +3,7 @@ import RxCocoa
 import RxSwift
 import SkyFloatingLabelTextField
 import KeychainSwift
+import Lottie
 import UIKit
 
 class LogInViewController: UIViewController {
@@ -13,7 +14,8 @@ class LogInViewController: UIViewController {
     @IBOutlet private weak var passwordTextField: SkyFloatingLabelTextField!
     @IBOutlet private weak var logInButton: UIButton!
     @IBOutlet private weak var showPasswordButton: UIButton!
-
+    @IBOutlet private weak var animationView: AnimationView!
+    
     // MARK: - Variables
 
     private let keychain = KeychainSwift()
@@ -73,6 +75,12 @@ class LogInViewController: UIViewController {
             guard let self = self else { return }
             self.showPasswordButton.isHidden = self.passwordTextField.text?.isEmpty ?? true
         }).disposed(by: disposeBag)
+    }
+    
+    private func addLoader() {
+        animationView.contentMode = .scaleAspectFit
+        animationView.play()
+        animationView.loopMode = .loop
     }
 
     private func setupUI() {
@@ -185,7 +193,10 @@ private extension LogInViewController {
                 switch state {
                 case .allIsGood(let user):
                     if self.dataBase.arrayOfLogins.contains(user.login) && user.password == self.keychain.get(user.login) {
-                        loginVM.steps.accept(LoginStep.completeStep)
+                        self.addLoader()
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                            loginVM.steps.accept(LoginStep.completeStep)
+                        }
                     } else {
                         self.setupStyleForTestFields(title: self.alertWrongTitle, titleColor: .red)
                         self.showAlert(title: self.alertErrorTitle, message: self.alertErrorPasswordMessage)
@@ -217,7 +228,10 @@ private extension LogInViewController {
                     self.setupStyleForTestFields(title: L10n.alertDoneTitle , titleColor: .green)
                     self.keychain.set(user.password, forKey: user.login)
                     self.dataBase.openDatabse(login: user.login)
-                    registrationVM.steps.accept(RegistrationStep.walkthrough)
+                    self.addLoader()
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                        registrationVM.steps.accept(RegistrationStep.walkthrough)
+                    }
                 case .emptyFields:
                     self.setupStyleForTestFields(title: self.alertErrorTitle, titleColor: .red)
                     self.showAlert(title: self.alertErrorTitle, message: self.alertErrorEmptyFieldsMessage)

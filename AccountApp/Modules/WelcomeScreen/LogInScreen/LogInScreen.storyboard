@@ -100,12 +100,24 @@
                                     <constraint firstAttribute="height" constant="30" id="pg4-xL-5rE"/>
                                 </constraints>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Txx-vq-uBh" customClass="AnimationView" customModule="Lottie">
+                                <rect key="frame" x="157" y="264" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="FDi-BL-1Lu"/>
+                                    <constraint firstAttribute="height" constant="100" id="kmy-NL-Ny4"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="animationName" value="loaderAnimation"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="K0Y-S8-W2k"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="Dch-hR-elr" firstAttribute="centerX" secondItem="UEP-La-9jy" secondAttribute="centerX" id="0XK-2s-AN9"/>
                             <constraint firstItem="Ixm-ih-oH0" firstAttribute="centerY" secondItem="UEP-La-9jy" secondAttribute="centerY" id="CQw-ci-AsC"/>
+                            <constraint firstItem="Ixm-ih-oH0" firstAttribute="top" secondItem="Txx-vq-uBh" secondAttribute="bottom" constant="20" id="ChF-sT-9ws"/>
+                            <constraint firstItem="Txx-vq-uBh" firstAttribute="centerX" secondItem="UEP-La-9jy" secondAttribute="centerX" id="HsZ-QX-swE"/>
                             <constraint firstItem="Dch-hR-elr" firstAttribute="top" secondItem="Vsf-UW-W0Z" secondAttribute="bottom" constant="59" id="LWX-gp-9Xl"/>
                             <constraint firstItem="Vsf-UW-W0Z" firstAttribute="leading" secondItem="NC8-yB-z1e" secondAttribute="trailing" constant="8" symbolic="YES" id="Zz0-lL-H2J"/>
                             <constraint firstItem="Ixm-ih-oH0" firstAttribute="centerX" secondItem="UEP-La-9jy" secondAttribute="centerX" id="jT5-85-qUg"/>
@@ -113,6 +125,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="animationView" destination="Txx-vq-uBh" id="79Q-qm-vXR"/>
                         <outlet property="logInButton" destination="Dch-hR-elr" id="sQA-Ah-nA2"/>
                         <outlet property="loginTextField" destination="7IV-Q7-K6c" id="yFe-fZ-Tia"/>
                         <outlet property="passwordTextField" destination="NC8-yB-z1e" id="NmZ-lD-F59"/>

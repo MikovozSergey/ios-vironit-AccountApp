@@ -40,6 +40,7 @@
 		CE59069826E650710059C84C /* LoginVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE59069726E650710059C84C /* LoginVM.swift */; };
 		CE59069A26E655470059C84C /* ChangeProfileVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE59069926E655470059C84C /* ChangeProfileVM.swift */; };
 		CE59069C26E660360059C84C /* SettingsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE59069B26E660360059C84C /* SettingsVM.swift */; };
+		CE59E50A27609F3F00C4D414 /* loaderAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = CE59E50927609F3F00C4D414 /* loaderAnimation.json */; };
 		CE5BEC2A26DFB6CC00685981 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5BEC2926DFB6CC00685981 /* Strings.swift */; };
 		CE5BEC2C26DFBD5C00685981 /* LanguageEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5BEC2B26DFBD5C00685981 /* LanguageEnum.swift */; };
 		CE5BEC2E26DFC6E000685981 /* NotificationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5BEC2D26DFC6E000685981 /* NotificationExtension.swift */; };
@@ -138,6 +139,7 @@
 		CE59069726E650710059C84C /* LoginVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVM.swift; sourceTree = "<group>"; };
 		CE59069926E655470059C84C /* ChangeProfileVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeProfileVM.swift; sourceTree = "<group>"; };
 		CE59069B26E660360059C84C /* SettingsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVM.swift; sourceTree = "<group>"; };
+		CE59E50927609F3F00C4D414 /* loaderAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loaderAnimation.json; sourceTree = "<group>"; };
 		CE5BEC2826DFB21800685981 /* swiftgen.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = swiftgen.yml; sourceTree = "<group>"; };
 		CE5BEC2926DFB6CC00685981 /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		CE5BEC2B26DFBD5C00685981 /* LanguageEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageEnum.swift; sourceTree = "<group>"; };
@@ -345,6 +347,7 @@
 		CE47F42F261DE015005F1C69 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				CE59E50827609F2900C4D414 /* Animations */,
 				CED9CF2D26DE513700DC239B /* Localizable.strings */,
 				CE4514C4260DF1D70069CB6D /* Assets.xcassets */,
 				CE1B99B726E10C850004280D /* Colors.xcassets */,
@@ -442,6 +445,14 @@
 				CE7BDBA2271576B800A41EE0 /* PinterestLayoutDelegate.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		CE59E50827609F2900C4D414 /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+				CE59E50927609F3F00C4D414 /* loaderAnimation.json */,
+			);
+			path = Animations;
 			sourceTree = "<group>";
 		};
 		CE5BEC0D26DFA05000685981 /* SwiftGen */ = {
@@ -718,6 +729,7 @@
 				CE4514C5260DF1D70069CB6D /* Assets.xcassets in Resources */,
 				CED9CF2B26DE513700DC239B /* Localizable.strings in Resources */,
 				CE47740E261F31CF00A6DD5B /* ListOfAccountsScreen.storyboard in Resources */,
+				CE59E50A27609F3F00C4D414 /* loaderAnimation.json in Resources */,
 				CE636AB0275E01CE001BFAC9 /* WalkthroughScreen.storyboard in Resources */,
 				CE1B99B826E10C850004280D /* Colors.xcassets in Resources */,
 				CE48AED326207FC60076B311 /* ChangeProfileScreen.storyboard in Resources */,

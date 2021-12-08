@@ -1,6 +1,7 @@
 PODS:
   - AMPopTip (4.5.3)
   - KeychainSwift (19.0.0)
+  - lottie-ios (3.2.3)
   - RxCocoa (6.1.0):
     - RxRelay (= 6.1.0)
     - RxSwift (= 6.1.0)
@@ -17,6 +18,7 @@ PODS:
 DEPENDENCIES:
   - AMPopTip (= 4.5.3)
   - KeychainSwift (= 19.0)
+  - lottie-ios (= 3.2.3)
   - RxCocoa (= 6.1.0)
   - RxFlow (= 2.12.4)
   - RxSwift (= 6.1.0)
@@ -28,6 +30,7 @@ SPEC REPOS:
   trunk:
     - AMPopTip
     - KeychainSwift
+    - lottie-ios
     - RxCocoa
     - RxFlow
     - RxRelay
@@ -39,6 +42,7 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   AMPopTip: 77eef4793d50709bef83825b72da4f501263b91d
   KeychainSwift: a06190cf933ad46b1e0abc3d77d29c06331715c7
+  lottie-ios: c058aeafa76daa4cf64d773554bccc8385d0150e
   RxCocoa: 5c51f02d562cbd94629f6c26cf0c80fe4ab8d343
   RxFlow: 03a73c83fb8f183107074b40ab2544c668583f73
   RxRelay: 483e1a19fad961b41f0b0c0bee506f46c1ae14fe
@@ -47,6 +51,6 @@ SPEC CHECKSUMS:
   SwiftGen: cd0bb0c9838c3fc90b78d35b19f492711b19eb55
   SwiftLint: 4fa9579c63416865179bc416f0a92d55f009600d
 
-PODFILE CHECKSUM: 59af37d4dcf112cb981a2b676066128db3a85f9a
+PODFILE CHECKSUM: b8802d9e0ad1b86080bc00c93fd83d6a664f4ac8
 
 COCOAPODS: 1.10.2
