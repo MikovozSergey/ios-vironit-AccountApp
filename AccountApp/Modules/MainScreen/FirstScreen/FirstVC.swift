@@ -140,12 +140,27 @@ extension FirstViewController: UINavigationControllerDelegate, UIImagePickerCont
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-     
-        if let videoURL = info[UIImagePickerController.InfoKey.mediaURL] as? URL {
-            print(videoURL)
-            videos.append(videoURL)
-        }
+        guard let videoURL = info[UIImagePickerController.InfoKey.mediaURL] as? URL else { return }
+        videos.append(videoURL)
+        let videoData = NSData(contentsOf: videoURL)
+        let paths = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)[0]
+        let dataPath = paths.appending("/videoFileName.mp4")
+        videoData?.write(toFile: dataPath, atomically: false)
         collectionView.reloadData()
-        dismiss(animated: true, completion: nil)
+        let yesAction = UIAlertAction(title: "Yes", style: .default, handler: { _ in
+            PHPhotoLibrary.shared().performChanges({
+                PHAssetChangeRequest.creationRequestForAssetFromVideo(atFileURL: URL(fileURLWithPath: dataPath))
+            }) { saved, _ in
+                if saved {
+                    let fetchOptions = PHFetchOptions()
+                    fetchOptions.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: false)]
+                    _ = PHAsset.fetchAssets(with: .video, options: fetchOptions).firstObject
+                }
+            }
+        })
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        dismiss(animated: true, completion: {
+            AlertService.showAlert(style: .alert, title: "Save", message: "Do you want to save this video?", actions: [yesAction, cancelAction], completion: nil)
+        })
     }
 }
