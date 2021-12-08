@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -18,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Ub3-As-s8g">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="115" width="414" height="747"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="rXU-Rw-x4J">
                                     <size key="itemSize" width="414" height="254"/>
@@ -32,18 +33,35 @@
                                     <outlet property="delegate" destination="PBE-xa-eOT" id="x9j-Y6-biD"/>
                                 </connections>
                             </collectionView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bordered" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="zFX-oB-myR">
+                                <rect key="frame" x="107" y="64" width="200" height="32"/>
+                                <color key="backgroundColor" name="accentLightColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="fUd-rv-H1g"/>
+                                </constraints>
+                                <segments>
+                                    <segment title=""/>
+                                    <segment title=""/>
+                                </segments>
+                                <connections>
+                                    <action selector="switchSegmentControl:" destination="PBE-xa-eOT" eventType="valueChanged" id="FmT-bl-jbG"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="o91-hd-gje"/>
                         <constraints>
-                            <constraint firstItem="Ub3-As-s8g" firstAttribute="top" secondItem="o91-hd-gje" secondAttribute="top" id="2oa-Mh-O4V"/>
                             <constraint firstItem="Ub3-As-s8g" firstAttribute="leading" secondItem="o91-hd-gje" secondAttribute="leading" id="GsY-tP-tlV"/>
                             <constraint firstItem="Ub3-As-s8g" firstAttribute="trailing" secondItem="o91-hd-gje" secondAttribute="trailing" id="Lb2-vJ-LXY"/>
+                            <constraint firstItem="Ub3-As-s8g" firstAttribute="top" secondItem="zFX-oB-myR" secondAttribute="bottom" constant="20" id="ijy-CQ-bMc"/>
                             <constraint firstItem="Ub3-As-s8g" firstAttribute="bottom" secondItem="o91-hd-gje" secondAttribute="bottom" id="jLg-xL-uHI"/>
+                            <constraint firstItem="zFX-oB-myR" firstAttribute="top" secondItem="o91-hd-gje" secondAttribute="top" constant="20" id="kkO-b2-XPd"/>
+                            <constraint firstItem="zFX-oB-myR" firstAttribute="centerX" secondItem="A08-g2-84d" secondAttribute="centerX" id="vgW-VX-7qY"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="" id="iyu-Vv-PbM"/>
                     <connections>
                         <outlet property="collectionView" destination="Ub3-As-s8g" id="uGd-Vr-KZe"/>
+                        <outlet property="segmentControl" destination="zFX-oB-myR" id="MTg-No-bwp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6ii-vu-L11" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -52,6 +70,9 @@
         </scene>
     </scenes>
     <resources>
+        <namedColor name="accentLightColor">
+            <color red="0.94509803921568625" green="0.7686274509803922" blue="0.058823529411764705" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

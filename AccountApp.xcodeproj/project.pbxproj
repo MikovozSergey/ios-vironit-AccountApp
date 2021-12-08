@@ -41,6 +41,12 @@
 		CE59069A26E655470059C84C /* ChangeProfileVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE59069926E655470059C84C /* ChangeProfileVM.swift */; };
 		CE59069C26E660360059C84C /* SettingsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE59069B26E660360059C84C /* SettingsVM.swift */; };
 		CE59E50A27609F3F00C4D414 /* loaderAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = CE59E50927609F3F00C4D414 /* loaderAnimation.json */; };
+		CE59E50C2760B0B100C4D414 /* rocketAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = CE59E50B2760B0B100C4D414 /* rocketAnimation.json */; };
+		CE59E50E2760B0B900C4D414 /* pumpkinAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = CE59E50D2760B0B900C4D414 /* pumpkinAnimation.json */; };
+		CE59E5102760B0C100C4D414 /* limonAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = CE59E50F2760B0C100C4D414 /* limonAnimation.json */; };
+		CE59E5122760B0C800C4D414 /* christmasAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = CE59E5112760B0C800C4D414 /* christmasAnimation.json */; };
+		CE59E5142760B0CE00C4D414 /* bicycleAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = CE59E5132760B0CE00C4D414 /* bicycleAnimation.json */; };
+		CE59E5162760CD3300C4D414 /* CustomViewForAnimationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE59E5152760CD3300C4D414 /* CustomViewForAnimationCell.swift */; };
 		CE5BEC2A26DFB6CC00685981 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5BEC2926DFB6CC00685981 /* Strings.swift */; };
 		CE5BEC2C26DFBD5C00685981 /* LanguageEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5BEC2B26DFBD5C00685981 /* LanguageEnum.swift */; };
 		CE5BEC2E26DFC6E000685981 /* NotificationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5BEC2D26DFC6E000685981 /* NotificationExtension.swift */; };
@@ -140,6 +146,12 @@
 		CE59069926E655470059C84C /* ChangeProfileVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeProfileVM.swift; sourceTree = "<group>"; };
 		CE59069B26E660360059C84C /* SettingsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVM.swift; sourceTree = "<group>"; };
 		CE59E50927609F3F00C4D414 /* loaderAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loaderAnimation.json; sourceTree = "<group>"; };
+		CE59E50B2760B0B100C4D414 /* rocketAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = rocketAnimation.json; sourceTree = "<group>"; };
+		CE59E50D2760B0B900C4D414 /* pumpkinAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = pumpkinAnimation.json; sourceTree = "<group>"; };
+		CE59E50F2760B0C100C4D414 /* limonAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = limonAnimation.json; sourceTree = "<group>"; };
+		CE59E5112760B0C800C4D414 /* christmasAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = christmasAnimation.json; sourceTree = "<group>"; };
+		CE59E5132760B0CE00C4D414 /* bicycleAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = bicycleAnimation.json; sourceTree = "<group>"; };
+		CE59E5152760CD3300C4D414 /* CustomViewForAnimationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewForAnimationCell.swift; sourceTree = "<group>"; };
 		CE5BEC2826DFB21800685981 /* swiftgen.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = swiftgen.yml; sourceTree = "<group>"; };
 		CE5BEC2926DFB6CC00685981 /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		CE5BEC2B26DFBD5C00685981 /* LanguageEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageEnum.swift; sourceTree = "<group>"; };
@@ -390,6 +402,7 @@
 				CED9CF2426DE265D00DC239B /* LogOutViewCell.swift */,
 				CED9CF2626DE266C00DC239B /* LogOutViewCell.xib */,
 				CE7BDBA02715745D00A41EE0 /* CustomViewForVideoCell.swift */,
+				CE59E5152760CD3300C4D414 /* CustomViewForAnimationCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -450,6 +463,11 @@
 		CE59E50827609F2900C4D414 /* Animations */ = {
 			isa = PBXGroup;
 			children = (
+				CE59E5132760B0CE00C4D414 /* bicycleAnimation.json */,
+				CE59E5112760B0C800C4D414 /* christmasAnimation.json */,
+				CE59E50F2760B0C100C4D414 /* limonAnimation.json */,
+				CE59E50D2760B0B900C4D414 /* pumpkinAnimation.json */,
+				CE59E50B2760B0B100C4D414 /* rocketAnimation.json */,
 				CE59E50927609F3F00C4D414 /* loaderAnimation.json */,
 			);
 			path = Animations;
@@ -717,14 +735,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				CED9CF2726DE266C00DC239B /* LogOutViewCell.xib in Resources */,
+				CE59E5122760B0C800C4D414 /* christmasAnimation.json in Resources */,
 				CE47F44A261DE3B0005F1C69 /* Main.storyboard in Resources */,
+				CE59E5102760B0C100C4D414 /* limonAnimation.json in Resources */,
 				CE1B99B526E1002F0004280D /* SwitchThemeScreen.storyboard in Resources */,
 				CE477411261F328600A6DD5B /* SettingsScreen.storyboard in Resources */,
 				CED257B52716FF6900365CB3 /* VideoScreen.storyboard in Resources */,
+				CE59E50E2760B0B900C4D414 /* pumpkinAnimation.json in Resources */,
 				CE63301326DCF57E00E8F311 /* LogInScreen.storyboard in Resources */,
+				CE59E50C2760B0B100C4D414 /* rocketAnimation.json in Resources */,
 				CED9CF3326DE5CE300DC239B /* SwitchLanguageScreen.storyboard in Resources */,
 				CE47F435261DE19B005F1C69 /* .swiftlint.yml in Resources */,
 				CE4514C8260DF1D70069CB6D /* LaunchScreen.storyboard in Resources */,
+				CE59E5142760B0CE00C4D414 /* bicycleAnimation.json in Resources */,
 				CE477432261F387D00A6DD5B /* CustomViewForEditCredentialsCell.xib in Resources */,
 				CE4514C5260DF1D70069CB6D /* Assets.xcassets in Resources */,
 				CED9CF2B26DE513700DC239B /* Localizable.strings in Resources */,
@@ -868,6 +891,7 @@
 				CE59069C26E660360059C84C /* SettingsVM.swift in Sources */,
 				CE649D5126E222CC0043730C /* WelcomeScreenVM.swift in Sources */,
 				CE4514B9260DF1D40069CB6D /* AppDelegate.swift in Sources */,
+				CE59E5162760CD3300C4D414 /* CustomViewForAnimationCell.swift in Sources */,
 				CE7821BB26E7B649006FF957 /* SwitchThemeFlow.swift in Sources */,
 				CE59069826E650710059C84C /* LoginVM.swift in Sources */,
 				CE5BEC2E26DFC6E000685981 /* NotificationExtension.swift in Sources */,

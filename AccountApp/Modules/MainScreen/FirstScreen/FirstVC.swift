@@ -10,11 +10,31 @@ class FirstViewController: UIViewController {
     private weak var timer: Timer?
     private var photos = [UIImage]()
     private var videos = [URL]()
+    private let animations = ["christmasAnimation", "bicycleAnimation", "limonAnimation", "pumpkinAnimation", "rocketAnimation"]
+    private var isVideo = true
+    private var isVideoFromLive = false
+    private var messageForAlert: String?
+    private var doneText: String?
+    private var cancelText: String?
+    private var saveText: String?
     
     // MARK: - IBOutlets
     
  //   @IBOutlet private weak var timerLabel: UILabel!
     @IBOutlet private weak var collectionView: UICollectionView!
+    @IBOutlet private weak var segmentControl: UISegmentedControl!
+    
+    // MARK: - IBActions
+    
+    @IBAction private func switchSegmentControl(_ sender: Any) {
+        if isVideo {
+            isVideo = false
+            collectionView.reloadData()
+        } else {
+            isVideo = true
+            collectionView.reloadData()
+        }
+    }
     
     // MARK: - Variables
     
@@ -57,6 +77,8 @@ class FirstViewController: UIViewController {
     
     private func registreCell() {
         collectionView.register(CustomViewForVideoCell.self, forCellWithReuseIdentifier: CustomViewForVideoCell.identifier)
+        collectionView.register(CustomViewForAnimationCell.self, forCellWithReuseIdentifier:
+            CustomViewForAnimationCell.identifier)
     }
     
     private func setupCollection() {
@@ -69,6 +91,12 @@ class FirstViewController: UIViewController {
     
     private func setupStrings() {
         navigationController?.navigationBar.topItem?.title = L10n.empty
+        segmentControl.setTitle(L10n.firstVCSegmentControlFirst, forSegmentAt: 0)
+        segmentControl.setTitle(L10n.firstVCSegmentControlSecond, forSegmentAt: 1)
+        messageForAlert = L10n.alertSaveVideoMessage
+        doneText = L10n.alertDoneTitle
+        cancelText = L10n.cancel
+        saveText = L10n.save
     }
     
     private func handleLanguage() {
@@ -85,30 +113,42 @@ class FirstViewController: UIViewController {
         guard let time = (sessionManager.defaults.object(forKey: "timer") as? Date)?.addingTimeInterval(1.0) else { return }
         sessionManager.defaults.set(time, forKey: "timer")
     }
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        collectionView.reloadData()
+    }
 
 }
 
 extension FirstViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return videos.count
+        return isVideo ? videos.count : animations.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CustomViewForVideoCell.identifier, for: indexPath) as! CustomViewForVideoCell
-        cell.configure(with: videos[indexPath.row])
-        return cell
+        if isVideo {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CustomViewForVideoCell.identifier, for: indexPath) as! CustomViewForVideoCell
+            cell.configure(with: videos[indexPath.row])
+            return cell
+        } else {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CustomViewForAnimationCell.identifier, for: indexPath) as! CustomViewForAnimationCell
+            cell.configure(with: animations[indexPath.row])
+            return cell
+        }
+
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print(indexPath.row)
-        let storyboard = UIStoryboard(name: "VideoScreen", bundle: nil)
-        guard let vc = storyboard.instantiateViewController(identifier: "VideoViewController") as? VideoViewController else { return }
-        let backButton: UIBarButtonItem = UIBarButtonItem(title: nil, style: UIBarButtonItem.Style.done, target: self, action: #selector(backAction))
-        backButton.image = UIImage(named: "iconBack")
-        vc.navigationItem.leftBarButtonItem = backButton
-        vc.configure(with: videos[indexPath.row])
-        self.navigationController?.pushViewController(vc, animated: false)
-    
+        if isVideo {
+            let storyboard = UIStoryboard(name: "VideoScreen", bundle: nil)
+            guard let vc = storyboard.instantiateViewController(identifier: "VideoViewController") as? VideoViewController else { return }
+            let backButton: UIBarButtonItem = UIBarButtonItem(title: nil, style: UIBarButtonItem.Style.done, target: self, action: #selector(backAction))
+            backButton.image = UIImage(named: "iconBack")
+            vc.navigationItem.leftBarButtonItem = backButton
+            vc.configure(with: videos[indexPath.row])
+            self.navigationController?.pushViewController(vc, animated: false)
+        }
     }
     
     @objc func backAction() {
@@ -125,12 +165,17 @@ extension FirstViewController: UINavigationControllerDelegate, UIImagePickerCont
         let cameraAction = UIAlertAction(title: "Make video", style: .default) { _ in
             self.showImagePicker(sourceType: .camera)
         }
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        let cancelAction = UIAlertAction(title: cancelText, style: .cancel, handler: nil)
         
         AlertService.showAlert(style: .actionSheet, title: "Choose your image", message: nil, actions: [photoLibraryAction, cameraAction, cancelAction], completion: nil)
     }
     
     func showImagePicker(sourceType: UIImagePickerController.SourceType) {
+        if sourceType == .camera {
+            isVideoFromLive = true
+        } else {
+            isVideoFromLive = false
+        }
         let imagePickerVC = UIImagePickerController()
         imagePickerVC.delegate = self
         imagePickerVC.allowsEditing = true
@@ -147,7 +192,7 @@ extension FirstViewController: UINavigationControllerDelegate, UIImagePickerCont
         let dataPath = paths.appending("/videoFileName.mp4")
         videoData?.write(toFile: dataPath, atomically: false)
         collectionView.reloadData()
-        let yesAction = UIAlertAction(title: "Yes", style: .default, handler: { _ in
+        let yesAction = UIAlertAction(title: doneText, style: .default, handler: { _ in
             PHPhotoLibrary.shared().performChanges({
                 PHAssetChangeRequest.creationRequestForAssetFromVideo(atFileURL: URL(fileURLWithPath: dataPath))
             }) { saved, _ in
@@ -158,9 +203,11 @@ extension FirstViewController: UINavigationControllerDelegate, UIImagePickerCont
                 }
             }
         })
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        let cancelAction = UIAlertAction(title: cancelText, style: .cancel, handler: nil)
         dismiss(animated: true, completion: {
-            AlertService.showAlert(style: .alert, title: "Save", message: "Do you want to save this video?", actions: [yesAction, cancelAction], completion: nil)
+            if self.isVideoFromLive {
+                AlertService.showAlert(style: .alert, title: self.saveText, message: self.messageForAlert, actions: [yesAction, cancelAction], completion: nil)
+            }
         })
     }
 }

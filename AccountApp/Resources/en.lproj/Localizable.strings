@@ -15,6 +15,7 @@
 "List" = "List of Accounts";
 "Video" = "Video";
 "Skip" = "Skip";
+"Save" = "Save";
 
 // MARK: WelcomVC
 
@@ -81,9 +82,15 @@
 "AlertFinishSessionTitle" = "Session";
 "AlertFinishSessionMessage" = "Your session is over. Please log in again.";
 "AlertErrorLoginExistsMessage" = "Username is already exsists, pleaase enter another username";
+"AlertSaveVideoMessage" = "Do you want to save this video?";
 
 // MARK: PopTip
 
 "SettingsVCChangeLoginAndPassowrdPopTipSentenses" = "Here you can change the login details for your account.";
 "SettingsVCLogOutPopTipSentenses" = "When you press this button, your session will end, you will need to re-enter the data.";
 "Test" = "Test";
+
+// MARK: SegmentControl
+
+"FirstVCSegmentControlFirst" = "Usual";
+"FirstVCSegmentControlSecond" = "Lottie";

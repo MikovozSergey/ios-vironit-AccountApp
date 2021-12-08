@@ -43,6 +43,10 @@ enum L10n {
   static var alertRecommendationForFieldsMessage: String {
     return L10n.tr("Localizable", "AlertRecommendationForFieldsMessage")
   }
+  /// Do you want to save this video?
+  static var alertSaveVideoMessage: String {
+    return L10n.tr("Localizable", "AlertSaveVideoMessage")
+  }
   /// Wrong
   static var alertWrongTitle: String {
     return L10n.tr("Localizable", "AlertWrongTitle")
@@ -106,6 +110,14 @@ enum L10n {
   /// Log In
   static var enter: String {
     return L10n.tr("Localizable", "Enter")
+  }
+  /// Usual
+  static var firstVCSegmentControlFirst: String {
+    return L10n.tr("Localizable", "FirstVCSegmentControlFirst")
+  }
+  /// Lottie
+  static var firstVCSegmentControlSecond: String {
+    return L10n.tr("Localizable", "FirstVCSegmentControlSecond")
   }
   /// List of Accounts
   static var list: String {

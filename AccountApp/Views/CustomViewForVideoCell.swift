@@ -1,5 +1,6 @@
 import UIKit
 import AVFoundation
+import Lottie
 
 class CustomViewForVideoCell: UICollectionViewCell {
     
@@ -58,6 +59,16 @@ class CustomViewForVideoCell: UICollectionViewCell {
         viewOfCell.layer.addSublayer(playerView)
         player?.volume = 0
         player?.play()
+    }
+    
+    private func configureAnimation(with name: String) {
+        let animationView = AnimationView(name: name)
+        animationView.frame = contentView.bounds
+        animationView.contentMode = .scaleAspectFit
+        viewOfCell.addSubview(animationView)
+        animationView.play()
+        animationView.loopMode = .loop
+        
     }
     
 //    @objc func handleTap() {

@@ -15,6 +15,7 @@
 "List" = "Список Аккаунтов";
 "Video" = "Видео";
 "Skip" = "Пропустить";
+"Save" = "Сохранить";
 
 // MARK: WelcomVC
 
@@ -81,8 +82,14 @@
 "AlertFinishSessionTitle" = "Сессия";
 "AlertFinishSessionMessage" = "Ваша сессия закончена. Пожалуйста войдите снова.";
 "AlertErrorLoginExistsMessage" = "Логин уже используется, пожалуйста, введите другой логин";
+"AlertSaveVideoMessage" = "Вы хотите сохранить это видео?";
 
 // MARK: PopTip
 
 "SettingsVCChangeLoginAndPassowrdPopTipSentenses" = "Здесь вы можете изменить входные данные для вашего аккаунта.";
 "SettingsVCLogOutPopTipSentenses" = "При нажатии на эту кнопку, ваша сессия завершится, необходим будет повторный ввод данных.";
+
+// MARK: SegmentControl
+
+"FirstVCSegmentControlFirst" = "Обычный";
+"FirstVCSegmentControlSecond" = "Лотти";
