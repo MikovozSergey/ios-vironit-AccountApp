@@ -36,7 +36,7 @@ class WalkthroughFlow: Flow {
         guard let viewController = storyboard.instantiateViewController(identifier: "WalkthroughViewController") as? WalkthroughViewController else { return .none }
         let backButton: UIBarButtonItem = UIBarButtonItem(title: L10n.skip, style: UIBarButtonItem.Style.done, target: self, action: isFromRegistration ? #selector(backActionFromRegistration) : #selector(backActionFromSettings))
         viewController.navigationItem.leftBarButtonItem = backButton
-        viewController.configure(viewModel: viewModel)
+        viewController.configure(viewModel: viewModel, isRegistrationFlow: isFromRegistration)
         self.rootViewController.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: Colors.gold]
         self.rootViewController.pushViewController(viewController, animated: false)
         return .one(flowContributor: .contribute(withNextPresentable: viewController,

@@ -9,6 +9,7 @@ class WalkthroughViewController: UIPageViewController {
     private let initialPage = 0
     private let languageHandler = LanguageNotificationHandler()
     private var viewModel: WalkthroughViewModel?
+    private var isRegistrationFlow: Bool?
 
     // MARK: - Constraints
     
@@ -24,8 +25,9 @@ class WalkthroughViewController: UIPageViewController {
         layout()
     }
     
-    public func configure(viewModel: WalkthroughViewModel) {
+    public func configure(viewModel: WalkthroughViewModel, isRegistrationFlow: Bool) {
         self.viewModel = viewModel
+        self.isRegistrationFlow = isRegistrationFlow
     }
     
     // MARK: - Setup
@@ -128,7 +130,13 @@ extension WalkthroughViewController: UIPageViewControllerDataSource, UIPageViewC
         if currentIndex < pages.count - 1 {
             return pages[currentIndex + 1]  // go next
         } else {
-            return pages.first              // wrap first
+            guard let registrationFlow = isRegistrationFlow else { return nil }
+            if registrationFlow {
+                viewModel?.steps.accept(WalkthroughStep.skipStepForRegistration)
+            } else {
+                viewModel?.steps.accept(WalkthroughStep.skipStepForSettings)
+            }
+            return nil              // wrap first
         }
     }
     
